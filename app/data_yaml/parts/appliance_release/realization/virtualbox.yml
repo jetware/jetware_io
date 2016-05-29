@@ -1,0 +1,7 @@
+title: VirtualBox
+virtualization: virtualbox
+extension: ova
+description.erb.md: |
+  VirtualBox OVA-appliance
+install.erb.md: |
+  Import .ova-file and run virtual machine.

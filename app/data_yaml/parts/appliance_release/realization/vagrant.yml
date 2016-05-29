@@ -1,0 +1,37 @@
+title: Vagrant
+virtualization: virtualbox
+extension: box
+description.erb.md: |
+  {ML}
+  {lang en}
+  You can use the appliance as a Vagrant base box for any OS with VirtualBox support (Windows, OS X, Linux).
+
+  Copy `Vagrantfile` in your project's directory:
+  {lang ru}
+  Вы можете использовать сборку в качестве базового бокса Vagrant в любой операционной системе, поддерживающей VirtualBox (Windows, OS X, Linux).
+
+  Скопируйте в каталог вашего проекта `Vagrantfile`:
+  {/ML}
+
+  ~~~
+  <%= render_erb(@object.file 'Vagrantfile').chomp %>
+  ~~~
+  {ML}
+  {lang en}
+  or add base box to your local boxes:
+  {lang ru}
+  или добавьте сборку как базовый бокс в ваши локальные боксы:
+  {/ML}
+
+  ~~~
+  <%= render_erb(@object.file 'command').chomp %>
+  ~~~
+file:
+  command.erb: |
+    vagrant box add "<%= url_for @object.download_url %>" --name "<%= @object.base_box_name %>"
+  vagrantfile.erb: |
+    Vagrant.configure(2) do |config|
+      config.vm.box = "<%= @object.base_box_name %>"
+      config.vm.box_url = "<%= url_for @object.download_url %>"
+      config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
+    end

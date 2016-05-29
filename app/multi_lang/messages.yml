@@ -1,0 +1,27 @@
+'User not found':
+  ru: Аккаунт не найден
+'Not yet created':
+  ru: Пока не создано
+'Appliance not found':
+  ru: Сборка не найдена
+'Package not found':
+  ru: Пакет не найден
+'Page not found':
+  ru: Страница не найдена
+'Layout not found':
+  ru: Схема не найдена
+'Access denied':
+  ru: Доступ запрещен
+'Early access required':
+  en: Early access members only
+  ru: Только для участников с ранним доступом
+'Thank you, the message has been received':
+  ru: Спасибо, сообщение принято
+share:
+  'My own constructed Jetware appliance #{full_name}, check it out!':
+    ru: 'Jetware сборка моей собственной конструкции #{full_name}, посмотрите!'
+  'Jetware appliance #{full_name}':
+    ru: 'Сборка Jetware #{full_name}'
+'Are you sure?':
+  ru: Вы уверены?
+  it: Sei sicuro?

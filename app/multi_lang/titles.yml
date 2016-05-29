@@ -1,0 +1,46 @@
+'Layout':
+  ru: Схема
+'Appliance':
+  ru: Сборка
+'Recent layouts':
+  ru: Новые схемы
+'Popular appliances':
+  ru: Популярные сборки
+'Ready appliances':
+  ru: Готовые сборки
+'Use appliance':
+  ru: Использование сборки
+'Installers':
+  ru: Установщики
+'Virtual machines':
+  ru: Виртуальные машины
+'Base images':
+  ru: Базовые образы
+appliance:
+  multistep_form:
+    'Appliance info':
+      ru: Информация о сборке
+    'Required packages':
+      ru: Обязательные пакеты
+    'Optional packages':
+      ru: Опциональные пакеты
+'Share appliance':
+  ru: Поделиться сборкой
+'Share your appliance':
+  ru: Поделиться своей сборкой
+'Previous version':
+  ru: Предыдущая версия
+'Next version':
+  ru: Следующая версия
+'Recent version':
+  ru: Последняя версия
+'Description':
+  ru: Описание
+'Private':
+  ru: Личное
+'Subject':
+  ru: Тема
+'Message':
+  ru: Сообщение
+'Name':
+  ru: Имя

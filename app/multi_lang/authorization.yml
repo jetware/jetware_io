@@ -1,0 +1,52 @@
+Login:
+  ru: Вход
+  it: Entrata
+Logout:
+  ru: Выход
+  it: Uscita
+Register:
+  ru: Регистрация
+  it: Registrati
+Profile:
+  ru: Профиль
+  it: Profilo
+'Sign up':
+  ru: Регистрация
+'Sign in':
+  ru: Вход
+'Sign out':
+  ru: Выход
+'Change password':
+  ru: Сменить пароль
+'Forgot password?':
+  ru: Забыли пароль?
+'Reset password':
+  ru: Сбосить пароль
+'Change password':
+  ru: Изменить пароль
+'Create your personal account':
+  ru: Создать свой личный аккаунт
+'Send password recovery link':
+  ru: Выслать ссылку на восстановление пароля
+'Login or email':
+  ru: Логин или email
+'Password':
+  ru: Пароль
+'Confirm password':
+  ru: Подтвердить пароль
+'Remember me':
+  ru: Запомнить меня
+'Email':
+  ru: Электронная почта
+'Add or remove email addresses':
+  ru: Добавить или удалить электронную почту
+'Rename account name':
+  ru: Переименовать аккаунт
+'Full name':
+  ru: ФИО
+'Company':
+  ru: Организация
+'Web site':
+  ru: Веб-сайт
+'Location':
+  ru: Местоположение

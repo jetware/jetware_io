@@ -1,0 +1,7 @@
+title: Qemu/KVM
+virtualization: qemu
+extension: qcow2.xz
+description.erb.md: |
+  Qemu/KVM disk image
+install.erb.md: |
+  Run qemu-kvm with the downloaded and uncompressed file as disk image.

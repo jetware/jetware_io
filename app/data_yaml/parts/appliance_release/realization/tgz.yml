@@ -1,0 +1,31 @@
+title: !ruby/object:StringML
+  en: Install on Linux
+  ru: Установка в Linux
+extension: tar.gz
+description.erb.md: |
+  {ML}
+  {lang en}
+  You can install the appliance directly on any Linux with 64-bit kernel (>=2.6.32).
+
+  Run as administrator (root) from command line:
+  {lang ru}
+  Вы можете установить сборку непосредственно на любую ОС Linux с 64-битным ядром (>=2.6.32).
+
+  Выполните в правами администратора (root) в коммандной строке:
+  {/ML}
+
+  ~~~
+  curl <%= url_for @object.file_url 'setup' %> | sh
+  ~~~
+  {ML}
+  {lang en}
+  or download archive, unpack it to `/jet` directory and start appliance executing the command `/jet/bin/start`.
+  {lang ru}
+  или скачайте архив, распакуйте его в каталог '/jet' и запустите сборку выполнив команду `/jet/bin/start`.
+  {/ML}
+file:
+  setup.erb: |
+    #!/bin/sh
+
+    mkdir /jet &&
+    wget <%= url_for @object.download_url %> | tar xpaf -C /jet

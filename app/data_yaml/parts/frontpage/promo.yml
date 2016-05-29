@@ -1,0 +1,33 @@
+- !ruby/object:StringML
+  en: |
+    ## Fine fitted to your app
+
+    A wide choice of programs and libraries with multiple versions and building parameters. Unrestricted package combination without dependency conflicts. Long-term support and updates with bug and vulnerability fixes.
+
+  ru: |
+    ## Точно подходит требованиям приложения
+
+    Богатый выбор программ и библиотек с разными версиями и параметрами сборки. Свободное сочетание пакетов без конфликтов зависимостей. Долгосрочная поддержка и оперативное обновление с устранением багов и уязвимостей.
+
+
+- !ruby/object:StringML
+  en: |
+    ## Optimized and pre-configured
+
+    Ready for immediate use - one-click install with no additional configuration. All components are optimized for web-specific jobs with more efficient use of computing resources. Costs reduction up to 15-80% with site responsiveness increase.
+  
+  ru: |
+    ## Оптимизировано и преднастроено
+
+    Готово к работе немедленно - устанавливается за один шаг и не требует дополнительных настроек. Компоненты оптимизированы для веб-задач и эффективнее используют вычислительные ресурсы. Затраты снижаются на 15-80% при повышении скорости работы.
+
+- !ruby/object:StringML
+  en: |
+    ## It works the same anywhere
+
+    Install your appliance on any 64-bit Linux distribution or run it on any virtualization system. It works the same on any hardware or platform: on a laptop, desktop, VPS, dedicated server, or a cloud. Easy deploy and migration across any platform.
+  
+  ru: |
+    ## Работает везде и одинаково
+  
+    Устанавливается на любой 64-битный дистрибутив Linux или запускается в любой системе виртуализации. Работает одинаково на любом оборудовании и платформе: на ноутбуке, десктопе, VPS, выделенном сервере, в облаке. Легкое разворачивание и миграция приложений между любыми платформами.

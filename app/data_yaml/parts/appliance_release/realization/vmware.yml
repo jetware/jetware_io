@@ -1,0 +1,7 @@
+title: VMWare
+virtualization: vmware
+extension: zip
+description.erb.md: |
+  VMWare virtual machine image
+install.erb.md: |
+  Unpack zip-archive with virtual machine configuration and disk image. Run .vmx file

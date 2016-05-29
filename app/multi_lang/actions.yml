@@ -1,0 +1,43 @@
+appliances_controller: &appliances_controller
+  'Construct appliance':
+    ru: Конструировать сборку
+  'Adjust appliance':
+    ru: Доработать сборку
+appliance_viewer: *appliances_controller
+layout_viewer:
+  'Created':
+    ru: Создана
+  'Construct appliance':
+    ru: Конструировать сборку
+  'Primary':
+    ru: Основное
+  'Optional':
+    ru: Дополнительно
+'Edit page':
+  ru: Редактировать страницу
+'Send message':
+  ru: Отправить сообщение
+'Submit':
+  ru: Отправить
+'Write us letters':
+  ru: Пишите нам письма
+'Construct':
+  ru: Конструировать
+'Done':
+  ru: Готово
+'Back':
+  ru: Назад
+'Next':
+  ru: Дальше
+'Skip':
+  ru: Пропустить
+'Download':
+  ru: Скачать
+'Save':
+  ru: Сохранить
+'Edit':
+  ru: Редактировать
+'Create':
+  ru: Создать
+'Destroy':
+  ru: Удалить

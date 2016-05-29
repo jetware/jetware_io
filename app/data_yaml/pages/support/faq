@@ -1,0 +1,22 @@
+<div class="faq">
+
+# Frequently Asked Questions
+
+### Virtual machine images
+
+###### Deploy and run it anywhere
+
+Launch in one click on cloud, download virtual machine image or Docker container, or install directly on any Linux OS. Move it easily to any VPS or dedicated server, cloud platform, your own server or laptop. Use it in production, development, testing and staging.
+
+###### Keep it up to date and secure
+
+Get fresh version just after it has been released. Apply urgent security fixes for components and libraries. Update only packages you want or appliance at all.
+
+<script>
+$(document).ready(function(){
+	$('.faq h6').css('cursor','pointer');
+	$('.faq h6').nextUntil('h1, h2, h3, h4, h5, h6').hide();
+	$('.faq h6').click(function() {$(this).nextUntil('h1, h2, h3, h4, h5, h6').toggle();});
+});
+</script>
+</div>
