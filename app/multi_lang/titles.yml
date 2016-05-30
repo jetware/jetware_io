@@ -1,46 +1,68 @@
 'Layout':
   ru: Схема
+  it: Pianta
 'Appliance':
   ru: Сборка
+  it: Appliance
 'Recent layouts':
   ru: Новые схемы
+  it: Piante recente
 'Popular appliances':
   ru: Популярные сборки
+  it: Appliances popolari
 'Ready appliances':
   ru: Готовые сборки
+  it: Appliances pronti
 'Use appliance':
   ru: Использование сборки
+  it:  L’uso di appliances 
 'Installers':
   ru: Установщики
+  it: Installatori
 'Virtual machines':
   ru: Виртуальные машины
+  it: Macchine virtuali
 'Base images':
   ru: Базовые образы
+  it: Immagini di base
 appliance:
   multistep_form:
     'Appliance info':
       ru: Информация о сборке
+      it: Appliance info
     'Required packages':
       ru: Обязательные пакеты
+      it: Pacchetti obbligatori
     'Optional packages':
       ru: Опциональные пакеты
+      it: Pacchetti opzionali
 'Share appliance':
   ru: Поделиться сборкой
+  it: Condividi appliance
 'Share your appliance':
   ru: Поделиться своей сборкой
+  it: Condividi il tuo appliance
 'Previous version':
   ru: Предыдущая версия
+  it: Versione precedente
 'Next version':
   ru: Следующая версия
+  it: Versione seguente
 'Recent version':
   ru: Последняя версия
+  it: Versione recente
 'Description':
   ru: Описание
+  it: Descrizione
 'Private':
   ru: Личное
+  it: Privato
 'Subject':
   ru: Тема
+  it: Soggetto
 'Message':
   ru: Сообщение
+  it: Messaggio
 'Name':
   ru: Имя
+  it: Nome

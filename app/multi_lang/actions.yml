@@ -1,43 +1,63 @@
 appliances_controller: &appliances_controller
   'Construct appliance':
     ru: Конструировать сборку
+    it: Costruire appliance
   'Adjust appliance':
     ru: Доработать сборку
+    it: Aggiustare appliance
 appliance_viewer: *appliances_controller
 layout_viewer:
   'Created':
     ru: Создана
+    it: Creato
   'Construct appliance':
     ru: Конструировать сборку
+    it: Costruire appliance
   'Primary':
     ru: Основное
+    it: Principale
   'Optional':
     ru: Дополнительно
+    it: Supplementare
 'Edit page':
   ru: Редактировать страницу
+  it: Modificare pagina
 'Send message':
   ru: Отправить сообщение
+  it: Inviare il messaggio
 'Submit':
   ru: Отправить
+  it: Mandare
 'Write us letters':
   ru: Пишите нам письма
+  it: Scriveteci
 'Construct':
   ru: Конструировать
+  it: Costruire
 'Done':
   ru: Готово
+  it: Pronto
 'Back':
   ru: Назад
+  it: Indietro
 'Next':
   ru: Дальше
+  it: Avanti
 'Skip':
   ru: Пропустить
+  it: Saltare
 'Download':
   ru: Скачать
+  it: Scaricare
 'Save':
   ru: Сохранить
+  it: Salvare
 'Edit':
   ru: Редактировать
+  it: Modificare
 'Create':
   ru: Создать
+  it: Creare
 'Destroy':
   ru: Удалить
+  it: Cancellare

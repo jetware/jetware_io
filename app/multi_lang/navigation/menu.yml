@@ -6,7 +6,7 @@ Layouts:
   it: Piante
 Appliances:
   ru: Сборки
-  it: Apparecchi
+  it: Appliances
 Support:
   ru: Поддержка
   it: Supporto
@@ -15,7 +15,10 @@ Contacts:
   it: Contatti
 Profile:
   ru: Профиль
+  it: Profilo
 Username:
   ru: Имя
+  it: Nome
 Password:
   ru: Пароль
+  it: Password
