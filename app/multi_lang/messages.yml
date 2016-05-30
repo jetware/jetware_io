@@ -1,27 +1,38 @@
 'User not found':
   ru: Аккаунт не найден
+  it: L'utente non è stato trovato
 'Not yet created':
   ru: Пока не создано
+  it: Non è stato ancora realizzato
 'Appliance not found':
   ru: Сборка не найдена
+  it: Appliance non è stato trovato
 'Package not found':
   ru: Пакет не найден
+  it: Pachetto non è stato trovato
 'Page not found':
   ru: Страница не найдена
+  it: La pagina non è stata trovata
 'Layout not found':
   ru: Схема не найдена
+  it: La pianta non è stata trovata
 'Access denied':
   ru: Доступ запрещен
+  it: Accesso vietato
 'Early access required':
   en: Early access members only
   ru: Только для участников с ранним доступом
+  it: Accesso limitato solo per gli utenti precoci
 'Thank you, the message has been received':
   ru: Спасибо, сообщение принято
+  it: Il tuo messaggio è  stato ricevuto, grazie per averci contattato
 share:
   'My own constructed Jetware appliance #{full_name}, check it out!':
     ru: 'Jetware сборка моей собственной конструкции #{full_name}, посмотрите!'
   'Jetware appliance #{full_name}':
     ru: 'Сборка Jetware #{full_name}'
+    it: 'Ho costruito un Jetware appliance #{full_name}'
+    it: 'Jetware appliance #{full_name}'
 'Are you sure?':
   ru: Вы уверены?
   it: Sei sicuro?
