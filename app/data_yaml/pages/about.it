@@ -1,89 +1,76 @@
+# Chi siamo
 
-# О проекте
+Jetware offre un manager degli ambienti operativi ed una collezione dei pacchetti per le applicazioni server. Possono essere le applicazioni web popolari come Wordpress, Drupal, Redmine, Confluence ecc..., come le applicazioni del tuo proprio progetto. Servizi on-line ed i programmi sono forniti gratuitamente.
 
-Jetware предоставляет менеджер рабочих сред и коллекцию пакетов - программ и библиотек, используемых для работы серверных приложений. Такими приложениями могут быть как популярные веб-приложения (Wordpress, Drupal, Redmine, Confluence и другие), так и ваши собственные разработки. Онлайн-сервис и программы предоставляются бесплатно.
+#### Ambiente operativo – l’appliance
+L’ambiente operativo delle applicazioni web è rappresentato in forma dell’appliance (il termine “appliance” significa apparecchio di applicazione). L’appliance è un set completo di tutti i programmi e le librerie utilizzate da questa applicazione. Per ogni applicazione è possibile  di creare un appliance utilizzando i vari programmi di diversi versioni, gli impostazioni, ecc.
+Tutti i programmi della collezione Jetware sono ottimizzati e configurati per il web-task, e per interagire l’uno con l'altro. L’appliance pronto allʼuso subito dopo lʼinstallazione e non richiede il software o la configurazione aggiuntiva.
 
-#### Рабочее окружение - сборка
+#### Costruttore degli appliance online
+ 
+Con l'aiuto del  costruttore online sul sito jetware.org puoi creare facilmente un nuovo appliance, selezionando i programmi e le versioni desiderati dal nostro catalogo. Puoi anche selezionare un appliance già esistente e modificarlo come è necessario, aggiungendo qualche programma o modificando le versione utilizzate. È inoltre puoi utilizzare qualsiasi appliance aggiunto al catalogo.
+Una volta creato l’appliance va riutilizzato senza alcun limito di volte, e può essere condiviso con gli altri.
+Configurazione dell’appliance è descritta come il YAML-documento e memorizzata nello stesso file dell’appliance. Ogni appliance può essere riprodotto subito con l’aiuto di questo documento.
 
-Рабочее окружение веб-приложения поставляется в виде *сборки* - полного комплекта всех программ и библиотек, используемых этим приложением. Различные приложения могут использовать различные программы, их версии, их настройки, и для каждого приложения можно создать сборку, учитывающую все эти особенности.
+#### Forme degli appliance
 
-Все программы из коллекции Jetware оптимизированы для веб-задач и настроены на взаимодействие друг с другом. Сборка готова к использованию сразу же после создания и не требует установки дополнительных программ или выполнения дополнительных настроек.
+##### Lo stack degli soluzioni
 
-#### Онлайн-конструктор для сборок
+Questo tipo degli appliance include uno stack tecnologico: LAMP, LEMP, MEAN, etc. Ai componenti principali dello stack, puoi aggiungere anche i programmi supplementari, per esempio, può essere aggiunto MongoDB o Memcached al LAMP. Scegli i componenti dello stack, e dopo aver composto l’appliance, puoi impostare la sua applicazione e configurarla per lavorare in questo ambiente.
 
-С помощью онлайн-конструктора на сайте jetware.org можно создать новую сборку, выбрав требуемые программы и их версии, или выбрать в каталоге уже готовую сборку. Можно также выбрать существующую сборку и доработать ее до своих требований, добавив недостающие программы или изменив версии используемых программ.
+ ##### Applicazione singola
+L’appliance può essere creato a base dell’applicazione principale, come ad esempio, Wordpress, Drupal o Redmine. Basta selezionare solo l'applicazione e la versione. Tutti gli altri componenti e l'ambiente vanno selezionati e configurati per lavorare con questa applicazione automaticamente. Così creato, l’appliance presenta l'applicazione che funziona subito dopo averlo avviato. 
 
-Созданную сборку можно многократно использовать повторно, а также делиться ею с другими.
+##### Applicazioni integrate
 
-Конфигурация сборки описывается в виде YAML-документа и сохраняется в сборке. Сборку можно в любой момент воспроизвести по этому файлу.
+L’appliance può includere diverse applicazioni legate. Ad esempio, Redmine + Gitlab + OwnCloud. Per l’appliance  di questo tipo si prepara un ambiente operativo comune per tutte le applicazioni. Tutti i programmi e le librerie utilizzate da questa applicazione si impostano automaticamente. Dopo aver avviato l’appliance, avrai un sistema integrata delle applicazioni multiple. 
 
-#### Разновидности сборок
+#### Una vasta selezione delle versioni e opzioni software
 
-##### Стек решений
+La maggior parte del software della collezione Jetware possiede diverse versioni e compilazioni. Ad esempio, i pacchetti di DBMS includono: le versioni di MySQL 5.1, 5.5, 5.6 e 5.7; le versioni di MariaDB 5.3, 5.5, 10.0, 10.1; le versioni di Percona 5.1, 5.5, 5.6; per PHP ci sono le versioni 5.2, 5.3, 5.4, 5.5, 5.6, 7.0. E così molti altri programmi e le librerie sono disponibili in diverse versioni.
+Ciò permette di selezionare una combinazione dei programmi e le librerie che risponde in modo più preciso alle esigenze delle applicazioni. Per un progetto fatto tanto tempo fa che richiede PHP 5.2 e MySQL 5.1 è possibile creare l'ambiente proprio con queste versioni. Per un progetto attuale che utilizza le ultime versioni del software, sarà creato l'ambiente con PHP 7.0 e 10.1 MariaDB. 
 
-Сборка может включать только стек технологий - LAMP, LEMP, MEAN и т.д. Кроме основных компонентов стека к ним можно также добавлять дополнительные программы, например, к LAMP можно добавлять MongoDB или memcached. В этом случае пользователь сам выбирает компоненты стек, получает сборку, а затем устанавливает самостоятельно свое приложение и настраивает его для работы в этом окружении.
+#### Supporto a lungo termine e gli aggiornamenti
 
-##### Отдельное приложение
+Seguiamo e pubblichiamo gli aggiornamenti del software per tutti i programmi della nostra collezione. Non hai bisogno impegnarsi in "configure make install" ed installare una nuova versione ogni anno, ricordando come stato composto questo pacchetto prima. Avrai gli aggiornamenti per ogni pacchetto utilizzato.
+Grazie agli sviluppatori che producono correzioni bug e le patch relative alla vulnerabilità della sicurezza, e le aziende come Atomic Corp, abbiamo la possibilità di mantenere e aggiornare le versioni precedenti del software.
 
-Сборка может строиться вокруг основного приложения, например, Wordpress, Drupal или Redmine. В этом случае пользователь выбирает требуемое приложение и его версию, а все остальные компоненты и окружение подбирается автоматически и настраивается на работу с этим приложением. Полученная таким образом сборка после запуска дает сразу же работающее приложение.
+#### Nessun conflitto
 
-##### Интегрированные приложения
+I programmi e le librerie Jetware sono indipendenti dal ambiento del sistema operativo e del software installato. L’appliance Jetware può essere impostato non solamente in un server nuovo, ma anche in un server gia in funzione, senza conflitti e senza il rischio di disturbare il lavoro del sistema.
 
-Сборка может включать несколько связанных между собой приложений. Например, Redmine+Gitlab+OwnCloud. В этом случае при создании сборки подготавливается общая среда для всех приложений, устанавливаются и настраиваются программы и библиотеки, и настраивается взаимодействие связанных приложений. После запуска сборки мы получаем готовую к работе систему нескольких приложений.
+#### Ottimizzazione per le applicazioni web based
 
-#### Богатый выбор версий и вариантов программ
+Noi ci concentriamo principalmente sulle applicazioni web based: il front end ed il  back end dei siti web, il back end delle applicazioni mobili, i servizi intranet, ed altri servizi di supporto. Perciò abbiamo ottimizzato e preconfigurato gli appliance ed il software per le attività di questo tipo.
+Ovviamente, puoi utilizzare gli appliance Jetware anche per qualsiasi altro scopo.
 
-Большая часть программ в коллекции Jetware имеет несколько версий или вариантов компиляции. Например, в число пакетов СУБД входят MySQL версий 5.1, 5.5, 5.6 и 5.7, MariaDB версий 5.3, 5.5, 10.0, 10.1 и Percona 5.1, 5.5, 5.6; для PHP существуют версии 5.2, 5.3, 5.4, 5.5, 5.6, 7.0. Точно так же многие другие серверные программы и библиотеки существуют в нескольких версиях.
+#### L'uso più efficiente delle risorse
 
-Это позволяет выбрать комбинацию программ и библиотек, наиболее полно отвечающую требованиям приложения. Если у вас есть старый проект, требующий PHP 5.2 и MySQL 5.1, вы можете использовать окружение именно с этими версиями. Если вы разрабатываете новый проект и вам нужны самые последние версии ПО, вы можете сконструировать окружение с PHP 7.0 и MariaDB 10.1.
+L’ambiento operativo Jetware è organizzato per l’uso più efficiente dei componenti hardware (CPU, RAM e Storage). Ciò riduce il consumo delle risorse di calcolo e velocizza i programmi rispetto ai pacchetti standard delle distribuzioni OS. Di conseguenza, questo riduce le spese per l'hardware e l’hosting del 15-80%, migliorando la velocità dei siti web e delle applicazioni. 
 
-#### Долгосрочная поддержка и обновления
+#### Funziona con qualsiasi Linux
 
-Мы отслеживаем и выпускаем обновления для всех программ из нашей коллекции. Вам не нужно заниматься ручной сборкой "configure make install" и раз в год при необходимости установить новую версию вспоминать, как вы собирали этот пакет раньше. Вы получаете готовые обновления каждого используемого пакета.
+L’appliance ed i programmi sono compatibili con qualsiasi sistema operativo Linux e funzionano su qualsiasi hardware x86_64 Intel. Basta avere un kernel a 64 bit e di versione >= 2.6.32.
+Con Jetware è possibile avviare il servizio di stack il più moderno PHP 7 + 10,1 MariaDB sul server con CentOS 6, o installare PHP 5.2 su Ubuntu 16.04.
+Ci sono anche le collezioni dei pacchetti per i vecchi kernel e per le altre architetture, ma per il momento sono in uno stato sperimentale e non sono disponibili per l'uso regolare. 
 
-Благодаря разработчикам, выпускающим исправления багов и патчи уязвимостей, и таким компаниям, как Atomic Corp, мы можем поддерживать и обновлять также устаревшие версии программ.
+#### Installazione facile
 
-#### Отсутствие конфликтов
+Gli appliance Jetware sono facili da usare. Per comodità, sono disponibili in diverse realizzazioni. L’appliance può essere installato in un solo passo in qualsiasi sistema operativo Linux con un programma di installazione automatica. L’appliance può essere scaricato come un’immagine di macchina virtuale VMWare, VirtualBox o KVM / OpenStack ed avviato subito dopo. L’appliance può essre incluso nel tuo progetto Vagrant, o in LXC, o in un contenitore Docker. L’appliance può essere avviato da AMI su Amazon EC2, o  come DigitalOcean droplet.
 
-Программы и библиотеки Jetware максимально независимы от рабочего окружения операционной системы и устанавливаемых из различных репозиториев программ. Сборки Jetware устанавливаются и на новый, и на давно работающий сервер, без конфликтов и риска нарушить работу.
+#### Funziona ovunque e sempre nello stesso modo
 
-#### Оптимизация для веб-задач
+L’appliance funziona ugualmente in tutte le sue realizzazioni. Puoi utilizzare uno appliance in diversi posti ed avere sempre lo stesso ambiento operativo per  la tua applicazione.
+Ad esempio, il tuo sito in Drupal funzionerà in un ambiente uguale ovunque: in un progetto Vagrant sul computer portatile dello sviluppatore, in un test-contenitore di Docker sul server in ufficio, in VMware Player sul desktop del cliente e sul sito principale nel cloud di Amazon EC2.  
 
-Мы ориентируемся главным образом на веб-приложения - фронтенд и бэкенд веб-сайтов, бэкенд для мобильных приложений, интранет-сервисы, и вспомогательные сервисы для всего этого. Поэтому мы оптимизировали и преднастроили сборки и программы для задач такого профиля.
+#### Infrastruttura permanente
 
-Конечно же, вы можете использовать сборки и программы Jetware и для любых других целей.
+Oltre di lavorare sui server abituali, gli appliance Jetware sono progettati per operare su un cluster di failover, e nel cloud, con il server on demand. Gli appliance sono comodi per utilizzarli in un arsenale dei DevOps strumenti per il modello “infrastrutture immutabile”. Tutto questo fa più semplice la manutenzione e l'aggiornamento di un gran numero dei server omogenei o i piccoli gruppi specializzati dei server. 
 
-#### Оптимально использует ресурсы
+#### Una prova prima dell’aggiornamento dell’ambiento operativo
 
-Рабочие окружения Jetware организованы для более эффективного использования процессора, оперативной памяти и систем хранения данных. Это снижает расход вычислительных ресурсов и ускоряет работу программ по сравнению с стандартными пакетами из дистрибутивов ОС. В итоге это уменьшает затраты на оборудование и хостинг на 15-80% одновременно при улучшении отзывчивости сайтов и приложений.
+Se hai deciso di aggiornare l’ambiento operativo, per te sarà facile provare l'applicazione in un ambiente nuovo. Basta scаricare una macchina virtuale con un appliance nuovo, avviare la tua applicazione, e fare dei test. 
 
-#### Работает на любом Linux
+#### Migrazione facile
 
-Сборки и программы совместимы с любой операционной системой Linux и работают на любом оборудовании архитектуры Intel x86_64. Достаточно иметь работающее в 64-битном режиме ядро версии >= 2.6.32.
-
-С помощью Jetware вы можете запустить на сервере с CentOS 6 самый современный стек PHP 7 + MariaDB 10.1, или запустить PHP 5.2 на сервере с Ubuntu 16.04.
-
-Есть также коллекции пакетов для более старых ядер и для других архитектур, но они находятся в экспериментальном статусе и не готовы сейчас для полноценного использования.
-
-#### Простая установка
-
-Сборки Jetware легко использовать. Для удобства они поставляются в разных реализациях. Сборку можно установить за один шаг в любую ОС Linux с помощью автоматического скрипта-инсталлятора. Сборка можно скачать в виде образа виртуальной машины VMWare, VirtualBox или KVM/OpenStack и сразу же запустить. Сборку можно включить в ваш Vagrant-проект, в LXC или Docker-контейнер. Сборку можно запустить из AMI на Amazon EC2 или запустить как дроплет в DigitalOcean.
-
-#### Работает везде и одинаково
-
-Сборка работает одинаково во всех своих реализациях. Вы можете использовать одну сборку в разных местах и получить везде одинаковую рабочую среду для вашего приложения.
-
-Например, разрабатываемый вами сайт на Drupal будет работать в одинаковом окружении в Vagrant-проекте на ноутбуке разработчика, в тестовом Docker-контейнере на сервере в офисе, в VMWare Player на десктопе заказчика и на основном сайте в облаке Amazon EC2.
-
-#### Постоянная инфраструктура
-
-В дополнение к работе на обычных серверах, сборки Jetware спроектированы с возможностью работы на отказоустойчивых кластерах и в облаке с запуском машин по требованию. Их удобно использовать в арсенале DevOps инструментов для паттерна *immutable infrastructure*. Это упрощает обслуживание и обновление как большого числа гомогенных серверов, так и множества небольших специализированных групп серверов.
-
-#### Тестирование перед обновлением окружения
-
-Если вы решили обновить рабочее окружение, вам будет легко проверить работу приложения в новых условиях. Достаточно скачать виртуальную машину с новой сборкой, развернуть в ней ваше приложение и прогнать тесты.
-
-#### Легкая миграция
-
-Вы можете свободно переносить свое приложение с полным окружением между выделенным сервером, виртуальной машиной, VPS или облачными платформами Amazon EC2, Google Compute Engine, Microsoft Azure. Вы можете быстро развернуть копию на новом месте при аварии. Вы можете легко сменить провайдера, если нашли лучшие условия.
-
+Puoi trasferire liberamente la tua applicazione con tutto l’ambiento operativo, tra un server dedicato, una macchina virtuale, VPS, o le piattaforme di cloud Amazon EC2, Google Compute Engine, Microsoft Azure. Puoi avviare subito una copia sul posto nuovo in caso di incidente. Puoi cambiare hosting provider, se hai trovato  proposte migliori.
