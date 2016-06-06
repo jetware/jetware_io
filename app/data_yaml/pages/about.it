@@ -18,7 +18,7 @@ Configurazione dell’appliance è descritta come il YAML-documento e memorizzat
 
 Questo tipo degli appliance include uno stack tecnologico: LAMP, LEMP, MEAN, etc. Ai componenti principali dello stack, puoi aggiungere anche i programmi supplementari, per esempio, può essere aggiunto MongoDB o Memcached al LAMP. Scegli i componenti dello stack, e dopo aver composto l’appliance, puoi impostare la sua applicazione e configurarla per lavorare in questo ambiente.
 
- ##### Applicazione singola
+##### Applicazione singola
 L’appliance può essere creato a base dell’applicazione principale, come ad esempio, Wordpress, Drupal o Redmine. Basta selezionare solo l'applicazione e la versione. Tutti gli altri componenti e l'ambiente vanno selezionati e configurati per lavorare con questa applicazione automaticamente. Così creato, l’appliance presenta l'applicazione che funziona subito dopo averlo avviato. 
 
 ##### Applicazioni integrate
