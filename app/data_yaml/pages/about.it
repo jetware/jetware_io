@@ -1,8 +1,10 @@
 # Chi siamo
 
+
 Jetware offre un manager degli ambienti operativi ed una collezione dei pacchetti per le applicazioni server. Possono essere le applicazioni web popolari come Wordpress, Drupal, Redmine, Confluence ecc..., come le applicazioni del tuo proprio progetto. Servizi on-line ed i programmi sono forniti gratuitamente.
 
 #### Ambiente operativo – l’appliance
+
 L’ambiente operativo delle applicazioni web è rappresentato in forma dell’appliance (il termine “appliance” significa apparecchio di applicazione). L’appliance è un set completo di tutti i programmi e le librerie utilizzate da questa applicazione. Per ogni applicazione è possibile  di creare un appliance utilizzando i vari programmi di diversi versioni, gli impostazioni, ecc.
 Tutti i programmi della collezione Jetware sono ottimizzati e configurati per il web-task, e per interagire l’uno con l'altro. L’appliance pronto allʼuso subito dopo lʼinstallazione e non richiede il software o la configurazione aggiuntiva.
 
@@ -19,6 +21,7 @@ Configurazione dell’appliance è descritta come il YAML-documento e memorizzat
 Questo tipo degli appliance include uno stack tecnologico: LAMP, LEMP, MEAN, etc. Ai componenti principali dello stack, puoi aggiungere anche i programmi supplementari, per esempio, può essere aggiunto MongoDB o Memcached al LAMP. Scegli i componenti dello stack, e dopo aver composto l’appliance, puoi impostare la sua applicazione e configurarla per lavorare in questo ambiente.
 
 ##### Applicazione singola
+
 L’appliance può essere creato a base dell’applicazione principale, come ad esempio, Wordpress, Drupal o Redmine. Basta selezionare solo l'applicazione e la versione. Tutti gli altri componenti e l'ambiente vanno selezionati e configurati per lavorare con questa applicazione automaticamente. Così creato, l’appliance presenta l'applicazione che funziona subito dopo averlo avviato. 
 
 ##### Applicazioni integrate
