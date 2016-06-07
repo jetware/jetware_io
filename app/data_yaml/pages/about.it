@@ -35,7 +35,7 @@ Ciò permette di selezionare una combinazione dei programmi e le librerie che ri
 
 #### Supporto a lungo termine e gli aggiornamenti
 
-Seguiamo e pubblichiamo gli aggiornamenti del software per tutti i programmi della nostra collezione. Non hai bisogno impegnarsi in "configure make install" ed ogni volta, installando una nuova versione, ricordare come stato composto questo pacchetto prima. Avrai gli aggiornamenti per ogni pacchetto utilizzato.
+Seguiamo e pubblichiamo gli aggiornamenti del software per tutti i programmi della nostra collezione. Non hai bisogno impegnarsi in "configure make install", ed installando una nuova versione, sempre ricordare come stato composto questo pacchetto prima. Avrai gli aggiornamenti per ogni pacchetto utilizzato.
 Grazie agli sviluppatori che producono correzioni bug e le patch relative alla vulnerabilità della sicurezza, e le aziende come Atomic Corp, abbiamo la possibilità di mantenere e aggiornare le versioni obsolete del software.
 
 #### Nessun conflitto
