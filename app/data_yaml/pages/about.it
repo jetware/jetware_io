@@ -59,7 +59,7 @@ Ci sono anche le collezioni dei pacchetti per i vecchi kernel e per le altre arc
 
 #### Installazione facile
 
-Gli appliance Jetware sono facili da usare. Per comodità, sono disponibili in diverse realizzazioni. L’appliance può essere installato in un solo passo in qualsiasi sistema operativo Linux con un programma di installazione automatica. L’appliance può essere scaricato come un’immagine di macchina virtuale VMWare, VirtualBox o KVM / OpenStack ed avviato subito dopo. L’appliance può essre incluso nel tuo progetto Vagrant, o in LXC, o in un contenitore Docker. L’appliance può essere avviato da AMI su Amazon EC2, o  come DigitalOcean droplet.
+Gli appliance Jetware sono facili da usare. Per comodità, sono disponibili in diverse realizzazioni. L’appliance può essere installato in un solo passo in qualsiasi sistema operativo Linux con un programma di installazione automatica. L’appliance può essere scaricato come un’immagine di macchina virtuale VMWare, VirtualBox o KVM / OpenStack ed avviato subito dopo. L’appliance può essere incluso nel tuo progetto Vagrant, o in LXC, o in un contenitore Docker. L’appliance può essere avviato da AMI su Amazon EC2, o  come DigitalOcean droplet.
 
 #### Funziona ovunque e sempre nello stesso modo
 
