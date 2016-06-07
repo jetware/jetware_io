@@ -41,7 +41,7 @@ It lets us to select a combination of programs and libraries that best meets the
 
 #### Long-term support and updates
 
-We track and release updates for all programs in our collection. You do not need to mess with "configure make install" and to recall it how you have built the program before, once a year when you urgently need to install a new version. You get from our collection an update for each package used.
+We track and release updates for all programs in our collection. You do not need to mess with "configure make install" and to recall it how you have built the program before, every time when you urgently need to install a new version. You get from our collection a fresh updates for each package used.
 
 Thanks to the developers, providing new patches for bug and vulnerabilities, and companies like an Atomic Corp, we can also maintain and update a legacy software versions.
 
