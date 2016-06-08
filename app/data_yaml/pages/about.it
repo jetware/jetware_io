@@ -5,20 +5,20 @@ Jetware offre un manager degli ambienti operativi ed una collezione dei pacchett
 
 #### Ambiente operativo – l’appliance
 
-L’ambiente operativo delle applicazioni web è rappresentato in forma dell’appliance (il termine *appliance* significa apparecchio di applicazione). L’appliance è un set completo di tutti i programmi e le librerie utilizzate da questa applicazione. Per ogni applicazione è possibile di creare un appliance utilizzando i vari programmi di diversi versioni, gli impostazioni, ecc.
-Tutti i programmi della collezione Jetware sono ottimizzati e configurati per il web-task, e per interagire l’uno con l'altro. L’appliance pronto allʼuso subito dopo lʼinstallazione e non richiede il software o la configurazione aggiuntiva.
+L’ambiente operativo delle applicazioni web è rappresentato in forma dell’appliance (il termine *appliance* significa _apparecchio di applicazione_). L’appliance è un set completo di tutti i programmi e le librerie utilizzate da questa applicazione. Per ogni applicazione è possibile di creare un appliance utilizzando i vari programmi di diversi versioni, gli impostazioni, ecc.
+Tutti i programmi della collezione Jetware sono ottimizzati e configurati per i web-task, e per interagire l’uno con l'altro. L’appliance pronto allʼuso subito dopo lʼinstallazione e non richiede il software o la configurazione aggiuntiva.
 
 #### Costruttore degli appliance online
  
 Con l'aiuto del costruttore online sul sito jetware.org puoi creare facilmente un nuovo appliance, selezionando i programmi e le versioni desiderati dal nostro catalogo. Puoi anche selezionare un appliance già esistente e modificarlo come è necessario, aggiungendo qualche programma o modificando le versione utilizzate. È inoltre puoi utilizzare qualsiasi appliance aggiunto al catalogo.
-Una volta creato l’appliance va riutilizzato senza alcun limito di volte, e può essere condiviso con gli altri.
+Una volta creato l’appliance va riutilizzato senza alcun limite di volte, e può essere condiviso con gli altri.
 Configurazione dell’appliance è descritta come il YAML-documento e memorizzata nello stesso file dell’appliance. Ogni appliance può essere riprodotto subito con l’aiuto di questo documento.
 
 #### Forme degli appliance
 
 ##### Lo stack degli soluzioni
 
-Questo tipo degli appliance include uno stack tecnologico: LAMP, LEMP, MEAN, etc. Ai componenti principali dello stack, puoi aggiungere anche i programmi supplementari, per esempio, può essere aggiunto MongoDB o Memcached al LAMP. Scegli i componenti dello stack, e dopo aver composto l’appliance, puoi impostare la sua applicazione e configurarla per lavorare in questo ambiente.
+Questo tipo degli appliance include lo stack tecnologico: LAMP, LEMP, MEAN, etc. Ai componenti principali dello stack, puoi aggiungere anche i programmi supplementari, per esempio, può essere aggiunto MongoDB o Memcached al LAMP. Scegli i componenti dello stack, e dopo aver composto l’appliance, puoi impostare la tua applicazione e configurarla per lavorare in questo ambiente.
 
 ##### Applicazione singola
 
