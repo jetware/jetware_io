@@ -5,7 +5,7 @@ Jetware offre un manager degli ambienti operativi ed una collezione dei pacchett
 
 #### Ambiente operativo – l’appliance
 
-L’ambiente operativo delle applicazioni web è rappresentato in forma dell’appliance (il termine *appliance* significa _apparecchio di applicazione_). L’appliance è un set completo di tutti i programmi e le librerie utilizzate da questa applicazione. Per ogni applicazione è possibile di creare un appliance utilizzando i vari programmi di diversi versioni, gli impostazioni, ecc.
+L’ambiente operativo delle applicazioni web è rappresentato in forma dell’appliance (il termine **appliance** significa _apparecchio di applicazione_). L’appliance è un set completo di tutti i programmi e le librerie utilizzate da questa applicazione. Per ogni applicazione è possibile di creare un appliance utilizzando i vari programmi di diversi versioni, gli impostazioni, ecc.
 Tutti i programmi della collezione Jetware sono ottimizzati e configurati per i web-task, e per interagire l’uno con l'altro. L’appliance pronto allʼuso subito dopo lʼinstallazione e non richiede il software o la configurazione aggiuntiva.
 
 #### Costruttore degli appliance online
@@ -68,7 +68,7 @@ Ad esempio, il tuo sito in Drupal funzionerà in un ambiente uguale ovunque: in 
 
 #### Infrastruttura permanente
 
-Oltre di lavorare sui server abituali, gli appliance Jetware sono progettati per operare su un cluster di failover, e nel cloud, con il server on demand. Gli appliance sono comodi per utilizzarli in un arsenale dei DevOps strumenti per il modello *infrastrutture immutabile*. Tutto questo fa più semplice la manutenzione e l'aggiornamento di un gran numero dei server omogenei o i piccoli gruppi specializzati dei server. 
+Oltre di lavorare sui server abituali, gli appliance Jetware sono progettati per operare su un cluster di failover, e nel cloud, con il server on demand. Gli appliance sono comodi per utilizzarli in un arsenale dei DevOps strumenti per il modello "infrastrutture immutabile". Tutto questo fa più semplice la manutenzione e l'aggiornamento di un gran numero dei server omogenei o i piccoli gruppi specializzati dei server. 
 
 #### Una prova prima dell’aggiornamento dell’ambiento operativo
 
