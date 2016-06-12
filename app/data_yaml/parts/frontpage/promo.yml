@@ -9,6 +9,10 @@
 
     Богатый выбор программ и библиотек с разными версиями и параметрами сборки. Свободное сочетание пакетов без конфликтов зависимостей. Долгосрочная поддержка и оперативное обновление с устранением багов и уязвимостей.
 
+  it: |
+    ## Corrisponde esattamente alle esigenze delle  applicazioni
+
+    Una vasta scelta dei programmi e le librerie con diverse versioni ed opzioni dell’assiemaggio. Una combinazione libera dei pacchetti senza alcun conflitto di dipendenza. Il supporto a lungo termine e gli aggiornamenti immediati con le patch di sicurezza e le correzioni dei bug.
 
 - !ruby/object:StringML
   en: |
@@ -19,7 +23,12 @@
   ru: |
     ## Оптимизировано и преднастроено
 
-    Готово к работе немедленно - устанавливается за один шаг и не требует дополнительных настроек. Компоненты оптимизированы для веб-задач и эффективнее используют вычислительные ресурсы. Затраты снижаются на 15-80% при повышении скорости работы.
+    Готово к работе немедленно и устанавливается за один шаг. Не требует дополнительных настроек. Компоненты оптимизированы для веб-задач и эффективнее используют вычислительные ресурсы. Затраты снижаются на 15-80% при повышении скорости работы.
+ 
+  it: |
+    ## Ottimizzato e preconfigurato
+
+    Pronto allʼuso subito e viene eseguito in un solo passo. Non richiede alcuna configurazione aggiuntiva. I componenti sono ottimizzati per i web-task ed utilizzano le risorse di calcolo in modo più efficiente. Ciò permette ridurre le spese del 15-80%, migliorando la velocità.
 
 - !ruby/object:StringML
   en: |
@@ -31,3 +40,8 @@
     ## Работает везде и одинаково
   
     Устанавливается на любой 64-битный дистрибутив Linux или запускается в любой системе виртуализации. Работает одинаково на любом оборудовании и платформе: на ноутбуке, десктопе, VPS, выделенном сервере, в облаке. Легкое разворачивание и миграция приложений между любыми платформами.
+  
+  it: |
+    ## Funziona ovunque e sempre nello stesso modo
+  
+    Funziona con qualsiasi Linux a 64 bit e viene eseguito  su qualsiasi sistema di virtualizzazione. Funziona allo stesso modo su tutte le piattaforme hardware: su un computer portatile, un desktop, un VPS, un server dedicato, o nel cloud. L’esecuzione e la migrazione facile delle applicazioni tra le piattaforme diverse.

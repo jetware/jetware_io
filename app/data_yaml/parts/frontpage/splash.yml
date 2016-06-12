@@ -1,9 +1,14 @@
 - !ruby/object:StringML
   ru: |
-    * Получи среду, идеальную для твоего приложения
-    * Используй ее везде - от ноутбука до облака
+    * Получи идеальную среду для твоего приложения
+    * Используй ее везде, от ноутбука до облака
     * Применяй для разработки, тестирования и эксплуатации
   en: |
     * Get your own environment fitted to your app
     * Run it everywhere from a laptop to a cloud
     * Use it for development, testing and production
+  it: |
+    * L'ambiente ideale per la tua applicazione
+    * Funziona ovunque,  dal computer portatile al cloud
+    * Usalo per lo sviluppo, per i test e per la produzione
+
