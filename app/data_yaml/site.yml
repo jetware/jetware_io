@@ -2,4 +2,5 @@ name: JetWare
 motto: !ruby/object:StringML
   en: customized runtime environments for web applications
   ru: конструируемые рабочие окружения для веб-приложений
+  it: ambienti operativi personalizzati per le applicazioni web 
 copyright: '&copy; 2016 <a href=/contacts>Jetware team</a>'
