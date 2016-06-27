@@ -35,7 +35,7 @@ An appliance may include a number of integrated applications. For example, Redmi
 
 #### A wide choice of versions and software flavours
 
-Most of the software in Jetware collection is represented in multiple versions or compilation parameters. For example, the database packages include MySQL versions 5.1, 5.5, 5.6 and 5.7, MariaDB versions 5.3, 5.5, 10.0, 10.1 and Percona 5.1, 5.5, 5.6; for PHP there are versions 5.2, 5.3, 5.4, 5.5, 5.6, 7.0. Many other server programs and libraries are available in multiple versions too.
+  Most of the software in Jetware collection is represented in multiple versions or compilation parameters. For example, the database packages include MySQL versions 5.1, 5.5, 5.6 and 5.7, MariaDB versions 5.5, 10.0, 10.1, 10.2 and Percona 5.7, WebScaleSQL; for PHP there are versions 5.2, 5.3, 5.4, 5.5, 5.6, 7.0, 7.1. Many other server programs and libraries are available in multiple versions too.
 
 It lets us to select a combination of programs and libraries that best meets the application requirements. If you have an old project requiring PHP 5.2 and MySQL 5.1, you can create the environment with these versions. If you are developing a new project and you need the latest version of the software, you can construct the appliance with PHP 7.0 and MariaDB 10.1.
 
