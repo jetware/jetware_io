@@ -30,7 +30,7 @@ L’appliance può includere diverse applicazioni legate. Ad esempio, Redmine + 
 
 #### Una vasta selezione delle versioni e opzioni software
 
-La maggior parte del software della collezione Jetware possiede diverse versioni e compilazioni. Ad esempio, i pacchetti di DBMS includono: le versioni di MySQL 5.1, 5.5, 5.6 e 5.7; le versioni di MariaDB 5.3, 5.5, 10.0, 10.1; le versioni di Percona 5.1, 5.5, 5.6; per PHP ci sono le versioni 5.2, 5.3, 5.4, 5.5, 5.6, 7.0. E così molti altri programmi e le librerie sono disponibili in diverse versioni.
+La maggior parte del software della collezione Jetware possiede diverse versioni e compilazioni. Ad esempio, i pacchetti di DBMS includono: le versioni di MySQL 5.1, 5.5, 5.6 e 5.7; le versioni di MariaDB 5.5, 10.0, 10.1, 10.2; le versioni di Percona 5.7, WebScaleSQL; per PHP ci sono le versioni 5.2, 5.3, 5.4, 5.5, 5.6, 7.0, 7.1. E così molti altri programmi e le librerie sono disponibili in diverse versioni.
 Ciò permette di selezionare una combinazione dei programmi e le librerie che risponde in modo più preciso alle esigenze delle applicazioni. Per un progetto fatto tanto tempo fa che richiede PHP 5.2 e MySQL 5.1 è possibile creare l'ambiente proprio con queste versioni. Per un progetto attuale che utilizza le ultime versioni del software, sarà creato l'ambiente con PHP 7.0 e 10.1 MariaDB. 
 
 #### Supporto a lungo termine e gli aggiornamenti
