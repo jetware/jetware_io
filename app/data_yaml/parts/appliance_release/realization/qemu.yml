@@ -1,6 +1,6 @@
 title: Qemu/KVM
 virtualization: qemu
-extension: qcow2.xz
+extension: qcow2.gz
 description.erb.md: |
   Qemu/KVM disk image
 install.erb.md: |
