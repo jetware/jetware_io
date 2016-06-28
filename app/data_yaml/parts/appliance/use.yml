@@ -2,3 +2,8 @@ description.erb: !ruby/object:StringML
   en: |
     You can install the appliance on any new or existing Linux server, download and run virtual machine, use it as a base image for Docker or Vagrant, or launch it with a new cloud platform instance, VPS or dedicated server for a supported hosting providers.
 
+    ###### Settings
+
+    | Login: | **jet**
+    | Password: | **jet**
+    {:.text}
