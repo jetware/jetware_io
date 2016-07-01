@@ -46,9 +46,15 @@ layout_viewer:
 'Skip':
   ru: Пропустить
   it: Saltare
+'Assembly':
+  ru: Собрать
+  it: Assemblare
 'Download':
   ru: Скачать
   it: Scaricare
+'Assembly and download':
+  ru: Собрать и скачать
+  it: Assemblare e scaricare
 'Save':
   ru: Сохранить
   it: Salvare
