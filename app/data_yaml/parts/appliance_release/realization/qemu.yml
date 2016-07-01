@@ -1,4 +1,7 @@
 title: Qemu/KVM
+title_long: !ruby/object:StringML
+  en: Qemu/KVM virtual machine
+  ru: Виртуальная машина Qemu/KVM
 virtualization: qemu
 extension: qcow2.gz
 description.erb.md: |

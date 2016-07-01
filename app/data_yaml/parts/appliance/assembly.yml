@@ -1,0 +1,12 @@
+notice: !ruby/object:StringML
+  en: |
+    The file assembling requires from 15 seconds to 5 minutes, depending on the attaching packages and the form of appliance (archive, virtual machine image etc).
+
+    File download will start automatically after assembly completion.
+
+  ru: |
+    Сборка файла длится от 15 секунд до 5 минут, в зависимости от количества подключаемых в апплаенс пакетов и формы реализации (инсталляционный архив, образ виртуальной машины и т.д.).
+
+    Скачивание файла начнется автоматически после выполнения сборки.
+
+

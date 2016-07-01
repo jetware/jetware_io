@@ -1,6 +1,9 @@
 title: !ruby/object:StringML
   en: Install on Linux
   ru: Установка в Linux
+title_long: !ruby/object:StringML
+  en: Install archive for Linux
+  ru: Инсталляционный архив для Linux
 extension: tar.gz
 description.erb.md: |
   {ML}

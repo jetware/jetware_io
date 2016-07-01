@@ -4,6 +4,17 @@
 'Not yet created':
   ru: Пока не создано
   it: Non è stato ancora realizzato
+'There is another assembling in progress':
+  ru: Сейчас уже выполняется другая сборка
+'Please retry later':
+  ru: Пожалуйста, повторите попытку позже
+'File has been assembled and is ready to use':
+  ru: Файл собран и готов к использованию
+  it: File è stato assemblato ed è pronto per l'uso
+'Assembling now':
+  ru: Собираются сейчас
+'Ready to use':
+  ru: Готовы к использованию
 'Appliance not found':
   ru: Сборка не найдена
   it: Appliance non è stato trovato

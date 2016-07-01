@@ -1,4 +1,7 @@
 title: VMWare
+title_long: !ruby/object:StringML
+  en: VMWare virtual machine
+  ru: Виртуальная машина VMWare
 virtualization: vmware
 extension: zip
 description.erb.md: |

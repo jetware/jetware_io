@@ -1,4 +1,7 @@
 title: VirtualBox
+title_long: !ruby/object:StringML
+  en: VirtualBox virtual machine
+  ru: Виртуальная машина VirtualBox
 virtualization: virtualbox
 extension: ova
 description.erb.md: |

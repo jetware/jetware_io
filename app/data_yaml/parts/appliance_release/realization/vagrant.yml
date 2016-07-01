@@ -1,4 +1,7 @@
 title: Vagrant
+title_long: !ruby/object:StringML
+  en: Vagrant base image
+  ru: Базовый образ для Vagrant
 virtualization: virtualbox
 extension: box
 description.erb.md: |
