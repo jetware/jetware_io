@@ -10,11 +10,11 @@ description.erb.md: |
   {lang en}
   You can install the appliance directly on any Linux with 64-bit kernel (>=2.6.32).
 
-  Run as administrator (root) from command line:
+  Run from the command line:
   {lang ru}
   Вы можете установить сборку непосредственно на любую ОС Linux с 64-битным ядром (>=2.6.32).
 
-  Выполните в правами администратора (root) в коммандной строке:
+  Выполните в коммандной строке:
   {/ML}
 
   ~~~
@@ -22,9 +22,13 @@ description.erb.md: |
   ~~~
   {ML}
   {lang en}
-  or download archive, unpack it to `/jet` directory and start appliance executing the command `/jet/bin/start`.
+  You'll be asked to execute some operations as root via `sudo` during the installation.
+
+  Or download archive, unpack it to `/jet` directory and install appliance executing the command `/jet/bin/appliance_install`.
   {lang ru}
-  или скачайте архив, распакуйте его в каталог '/jet' и запустите сборку выполнив команду `/jet/bin/start`.
+  Во время установки вас попросят выполнить через `sudo` несколько операций с правами администратора.
+
+  Или скачайте архив, распакуйте его в каталог '/jet' и инсталлируйте апплаенс выполнив команду `/jet/bin/appliance_install`.
   {/ML}
 file:
   setup.erb: |
