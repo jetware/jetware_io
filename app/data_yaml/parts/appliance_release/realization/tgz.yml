@@ -24,15 +24,50 @@ description.erb.md: |
   {lang en}
   You'll be asked to execute some operations as root via `sudo` during the installation.
 
-  Or download archive, unpack it to `/jet` directory and install appliance executing the command `/jet/bin/appliance_install`.
+  Or download archive, unpack it to `/jet` directory and install appliance executing the command `/jet/enter /jet/own/bin/fasten`.
+
+  ##### How to use
+
+  To enter the runtime environment or to execute a command inside the runtime environment you can use the utility `/jet/enter`. If no arguments are present, the standard shell will be executed inside the runtime environment. You can specify a command as an argument, it will be executed inside the runtime environment.
+
+  For example, to start all services in the runtime environment you can do `/jet/enter start`. To execute a mysql client you can do `/jet/enter mysql`; or run first `/jet/enter`, and than run from the new command line `mysql`.
+
   {lang ru}
   Во время установки вас попросят выполнить через `sudo` несколько операций с правами администратора.
 
-  Или скачайте архив, распакуйте его в каталог '/jet' и инсталлируйте апплаенс выполнив команду `/jet/bin/appliance_install`.
+  Или скачайте архив, распакуйте его в каталог '/jet' и инсталлируйте апплаенс выполнив команду `/jet/enter /jet/own/bin/fasten`.
+
+  ##### Как использовать
+
+  Для входа в окружение или запуска команд в окружении используется утилита `/jet/enter`. При запуске утилиты без аргументов будет запущена оболочка командной строки. В качестве аргументов можно указывать команды, эти команды будут запущены внутри окружения.
+
+  Например, для старта сервисов из окружения можно выполнить `/jet/enter start`. Для запуска клиента mysql внутри окружения можно выполнить `/jet/enter mysql`; или выполнить сначала `/jet/enter` и затем ввести `mysql`.
   {/ML}
 file:
   setup.erb: |
     #!/bin/sh
-
-    mkdir /jet &&
-    wget <%= url_for @object.download_url %> | tar xpaf -C /jet
+    
+    : ${DOWNLOAD_URL:='<%= url_for @object.download_url %>'}
+    : ${DESTDIR:=/jet}
+    
+    if [ `id -u` = 0 ]; then
+      mkdir -p "$DESTDIR"
+    else
+      sudo mkdir -p "$DESTDIR"
+      sudo chown $USER "$DESTDIR"
+    fi
+    
+    if command -v curl >/dev/null; then
+      download() { curl -L "$@"; }
+    elif command -v wget >/dev/null; then
+      download() { wget -O - "$@"; }
+    else
+      echo "$0 requires 'curl' or 'wget''" >&2
+      exit 1
+    fi
+    
+    echo Downloading and extracting "$DOWNLOAD_URL" ...
+    download "$DOWNLOAD_URL" | tar xpzf - -C "$DESTDIR" || { echo "Can't unpack archive" >&2; exit 1; }
+    
+    echo Installing ...
+    "$DESTDIR"/enter "$DESTDIR"/own/bin/fasten
