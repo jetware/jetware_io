@@ -24,7 +24,7 @@ description.erb.md: |
   {lang en}
   You'll be asked to execute some operations as root via `sudo` during the installation.
 
-  Or download archive, unpack it to `/jet` directory and install appliance executing the command `/jet/enter /jet/own/bin/fasten`.
+  Or download archive, unpack it to `/jet` directory, install appliance executing the command `/jet/enter /jet/own/bin/fasten` and start the services by running `/jet/enter start`.
 
   ##### How to use
 
@@ -35,7 +35,7 @@ description.erb.md: |
   {lang ru}
   Во время установки вас попросят выполнить через `sudo` несколько операций с правами администратора.
 
-  Или скачайте архив, распакуйте его в каталог '/jet' и инсталлируйте апплаенс выполнив команду `/jet/enter /jet/own/bin/fasten`.
+  Или скачайте архив, распакуйте его в каталог '/jet', инсталлируйте апплаенс выполнив команду `/jet/enter /jet/own/bin/fasten` и запустите его сервисы командой `/jet/enter start`.
 
   ##### Как использовать
 
@@ -71,3 +71,6 @@ file:
     
     echo Installing ...
     "$DESTDIR"/enter "$DESTDIR"/own/bin/fasten
+
+    echo Starting ...
+    "$DESTDIR"/enter start
