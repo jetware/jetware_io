@@ -1,12 +1,12 @@
 
 # About
 
-Jetware provides a runtime environment manager and a software packages collections - programs and libraries used in server applications. These can be either popular web applications (Wordpress, Drupal, Redmine, Confluence, and others), or your own developed applications. The online services and the software package collections are provided free of charge.
+Jetware provides a runtime environment manager and a software packages collections &mdash; programs and libraries used in server applications. These can be either popular web applications (Wordpress, Drupal, Redmine, Confluence, and others), or your own developed applications. The online services and the software package collections are provided free of charge.
 
 
-#### Runtime environment - appliance
+#### Runtime environment &mdash; appliance
 
-The web application runtime environment is supplied as an "appliance* - a complete set of all the programs and libraries used by this application. Different applications may use different programs, their version, and their configuration, and for each application can be created a runtime environment fine fitted to all of these requirements.
+The web application runtime environment is supplied as an "appliance* &mdash; a complete set of all the programs and libraries used by this application. Different applications may use different programs, their version, and their configuration, and for each application can be created a runtime environment fine fitted to all of these requirements.
 
 All programs from Jetware collection are optimized for web-oriented jobs and configured to interact with each other. The appliance is ready for immediate use just after the installation and it requires neither additional software nor further configuration.
 
@@ -22,7 +22,7 @@ The configuration of an appliance is stored in a YAML-document inside the applia
 
 ##### Solution stack
 
-An appliance may include only the solution stack - LAMP, LEMP, MEAN, etc. In addition to the main components of the stack, you can also include additional programs, for example, you can add MongoDB or memcached to the LAMP. In this case, the user selects the components of the stack, gets the appliance and then installs its own application and configures it for this runtime environment.
+An appliance may include only the solution stack &mdash; LAMP, LEMP, MEAN, etc. In addition to the main components of the stack, you can also include additional programs, for example, you can add MongoDB or memcached to the LAMP. In this case, the user selects the components of the stack, gets the appliance and then installs its own application and configures it for this runtime environment.
 
 ##### Single application
 
@@ -51,7 +51,7 @@ The programs and libraries from Jetware collections are independent of the runti
 
 #### Optimization for web-oriented tasks
 
-We focus primarily on web-based applications - web sites' frontend and backend, backend for mobile applications, intranet services. Therefore, we have optimized and pre-configured appliances and software packages for this load profile.
+We focus primarily on web-based applications &mdash; web sites' frontend and backend, backend for mobile applications, intranet services. Therefore, we have optimized and pre-configured appliances and software packages for this load profile.
 
 Of course, you can use the appliance and Jetware programs for any other purpose.
 

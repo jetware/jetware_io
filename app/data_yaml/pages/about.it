@@ -6,12 +6,15 @@ Jetware offre un manager degli ambienti operativi ed una collezione dei pacchett
 #### Ambiente operativo – l’appliance
 
 L’ambiente operativo delle applicazioni web è rappresentato in forma dell’appliance (il termine **appliance** significa _apparecchio di applicazione_). L’appliance è un set completo di tutti i programmi e le librerie utilizzate da questa applicazione. Per ogni applicazione è possibile di creare un appliance utilizzando i vari programmi di diversi versioni, gli impostazioni, ecc.
+
 Tutti i programmi della collezione Jetware sono ottimizzati e configurati per i web-task, e per interagire l’uno con l'altro. L’appliance pronto allʼuso subito dopo lʼinstallazione e non richiede il software o la configurazione aggiuntiva.
 
 #### Costruttore degli appliance online
  
 Con l'aiuto del costruttore online sul sito jetware.org puoi creare facilmente un nuovo appliance, selezionando i programmi e le versioni desiderati dal nostro catalogo. Puoi anche selezionare un appliance già esistente e modificarlo come è necessario, aggiungendo qualche programma o modificando le versione utilizzate. È inoltre puoi utilizzare qualsiasi appliance aggiunto al catalogo.
+
 Una volta creato l’appliance va riutilizzato senza alcun limite di volte, e può essere condiviso con gli altri.
+
 Configurazione dell’appliance è descritta come il YAML-documento e memorizzata nello stesso file dell’appliance. Ogni appliance può essere riprodotto subito con l’aiuto di questo documento.
 
 #### Forme degli appliance
@@ -31,11 +34,13 @@ L’appliance può includere diverse applicazioni legate. Ad esempio, Redmine + 
 #### Una vasta selezione delle versioni e opzioni software
 
 La maggior parte del software della collezione Jetware possiede diverse versioni e compilazioni. Ad esempio, i pacchetti di DBMS includono: le versioni di MySQL 5.1, 5.5, 5.6 e 5.7, le versioni di MariaDB 5.5, 10.0, 10.1, 10.2, le versioni di Percona 5.5, 5.6, 5.7, e WebScaleSQL; per PHP ci sono le versioni 5.2, 5.3, 5.4, 5.5, 5.6, 7.0, 7.1. E così molti altri programmi e le librerie sono disponibili in diverse versioni.
+
 Ciò permette di selezionare una combinazione dei programmi e le librerie che risponde in modo più preciso alle esigenze delle applicazioni. Per un progetto fatto tanto tempo fa che richiede PHP 5.2 e MySQL 5.1 è possibile creare l'ambiente proprio con queste versioni. Per un progetto attuale che utilizza le ultime versioni del software, sarà creato l'ambiente con PHP 7.0 e 10.1 MariaDB. 
 
 #### Supporto a lungo termine e gli aggiornamenti
 
 Seguiamo e pubblichiamo gli aggiornamenti del software per tutti i programmi della nostra collezione. Non hai bisogno impegnarsi in "configure make install", ed installando una nuova versione, sempre ricordare come stato composto questo pacchetto prima. Avrai gli aggiornamenti per ogni pacchetto utilizzato.
+
 Grazie agli sviluppatori che producono correzioni bug e le patch relative alla vulnerabilità della sicurezza, e le aziende come Atomic Corp, abbiamo la possibilità di mantenere e aggiornare le versioni obsolete del software.
 
 #### Nessun conflitto
@@ -45,6 +50,7 @@ I programmi e le librerie Jetware sono indipendenti dal ambiento del sistema ope
 #### Ottimizzazione per le applicazioni web based
 
 Noi ci concentriamo principalmente sulle applicazioni web based: il front end ed il back end dei siti web, il back end delle applicazioni mobili, i servizi intranet, ed i servizi di supporto per tutto questo. Perciò abbiamo ottimizzato e preconfigurato gli appliance ed il software per le attività di questo tipo.
+
 Ovviamente, puoi utilizzare gli appliance Jetware anche per qualsiasi altro scopo.
 
 #### L'uso più efficiente delle risorse
@@ -54,7 +60,9 @@ L’ambiento operativo Jetware è organizzato per l’uso più efficiente dei co
 #### Funziona con qualsiasi Linux
 
 L’appliance ed i programmi sono compatibili con qualsiasi sistema operativo Linux e funzionano su qualsiasi hardware x86_64 Intel. Basta avere un kernel a 64 bit e di versione >= 2.6.32.
+
 Con Jetware è possibile avviare il servizio di stack il più moderno PHP 7 + 10,1 MariaDB sul server con CentOS 6, o installare PHP 5.2 su Ubuntu 16.04.
+
 Ci sono anche le collezioni dei pacchetti per i vecchi kernel e per le altre architetture, ma per il momento sono in uno stato sperimentale e non sono disponibili per l'uso regolare. 
 
 #### Installazione facile
@@ -64,6 +72,7 @@ Gli appliance Jetware sono facili da usare. Per comodità, sono disponibili in d
 #### Funziona ovunque e sempre nello stesso modo
 
 L’appliance funziona ugualmente in tutte le sue realizzazioni. Puoi utilizzare uno appliance in diversi posti ed avere sempre lo stesso ambiento operativo per la tua applicazione.
+
 Ad esempio, il tuo sito in Drupal funzionerà in un ambiente uguale ovunque: in un progetto Vagrant sul computer portatile dello sviluppatore, in un test-contenitore di Docker sul server in ufficio, in VMware Player sul desktop del cliente e sul sito principale nel cloud di Amazon EC2.
 
 #### Infrastruttura permanente
