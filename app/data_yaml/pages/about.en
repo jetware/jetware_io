@@ -1,8 +1,9 @@
 
 # About
 
-Jetware provides a runtime environment manager and a software packages collections &mdash; programs and libraries used in server applications. These can be either popular web applications (Wordpress, Drupal, Redmine, Confluence, and others), or your own developed applications. The online services and the software package collections are provided free of charge.
+Jetware is a automation tool for configuration and management of server applications. It can be a server software (databases, web servers, application servers), a popular web applications such as Wordpress, Drupal, Redmine, Confluence, or your own created applications.
 
+Jetware includes a runtime environments manager, a software applications collection and an runtime environemtns constructor (online service and a command line utility). The online services and the package collections are provided free of charge.
 
 #### Runtime environment &mdash; appliance
 

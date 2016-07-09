@@ -1,11 +1,15 @@
 About:
-  ru: О проекте
+  en: What is Jetware?
+  ru: О проекте Jetware
+  it: Che cosa è Jetware?
+Company:
+  ru: Компания
   it: Chi siamo
 Layouts:
   ru: Схемы
   it: Piante
 Appliances:
-  ru: Сборки
+  ru: Апплайнсы
   it: Appliances
 Support:
   ru: Поддержка

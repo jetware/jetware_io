@@ -1,0 +1,45 @@
+# Company
+
+Jetware — the company that is changing the idea of managing servers and applications.
+
+We conduct research and development on automating IT infrastructure, implementation and support of automated system administration for customers. We help our users to focus on their products development, eliminating the complexity of configuring, updating and maintaining servers and software.
+
+Our solution is designed for IT-professionals in various areas. It is conflict-free and independent runtime environment for server applications, providing the same work on any platform. Automatic configuration makes it easy to create and deploy the software system.
+
+This innovation is a result of few years and a large amount of research, exploration and discovery. We now know exactly what should be a modern runtime environment for server applications, we can manage it and are willing to share our experience and technology with developers and system administrators.
+
+## History
+
+Jetware team has been developing system software, design and operation of the server infrastructure and network for over 20 years. 
+We provided professional web hosting service since 1999, beginning with Perl, PHP and MySQL, then JSP, Python and PostgreSQL in 2001, and Ruby on Rails in 2005. We have over 10 years of experience in web sites and internet services development with PHP, Ruby, Python and Java. In 2001, we built one of the first CDN, in 2008, we designed and launched one of the first cloud platforms with virtualization Xen and KVM, and in 2013 we created an infrastructure for internet services based on geographically distributed failover clusters.
+
+In recent years, we worked on automation of system administration of a large number of Internet services. Since 2014 we are researching on a new principle of organization of the server software, libraries, and operating systems. The result of these research and development has become to establishing the Jetware project in January 2016. In June 2016 we opened to the public a free online service for assembly, distribution and deployment of the Jetware-based appliances.
+
+## Our competence
+
+* Unix system administration
+* DevOps / IT infrastructure automation
+* System programming
+* Linux kernel development
+* Software stacks
+* Application servers
+* One click apps
+* Databases (SQL/NoSQL)
+* Web development (Ruby, Python, Java, PHP, Node.js)
+* Virtualization (Xen, KVM)
+* Linux containers (LXC, Docker, OpenVZ)
+* Data processing (Hadoop/Hive/Spark)
+* High availability clusters
+
+## Founders
+
+##### Kirill Vechera, CTO/CEO
+
+[Contacts](/contacts?contacts_form[subject]=Attn: Kirill Vechera), [LinkedIn](https://www.linkedin.com/in/kirill-vechera-74116b)
+
+## See also
+
+* Stay in touch: [Twitter](http://twitter.com/jetware_org) [Facebook](http://facebook.com/jetwareorg)
+* [Read more about Jetware appliances](/page/about)
+* [Open positions](/page/jobs)
+* [Contacts](/contacts)
