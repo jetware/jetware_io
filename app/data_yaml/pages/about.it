@@ -45,7 +45,7 @@ Grazie agli sviluppatori che producono correzioni bug e le patch relative alla v
 
 #### Nessun conflitto
 
-I programmi e le librerie Jetware sono indipendenti dal ambiento del sistema operativo e del software installato. L’appliance Jetware può essere impostato non solamente in un server nuovo, ma anche in un server gia in funzione, senza conflitti e senza il rischio di disturbare il lavoro del sistema.
+I programmi e le librerie Jetware sono indipendenti dal ambiente del sistema operativo e del software installato. L’appliance Jetware può essere impostato non solamente in un server nuovo, ma anche in un server gia in funzione, senza conflitti e senza il rischio di disturbare il lavoro del sistema.
 
 #### Ottimizzazione per le applicazioni web based
 
@@ -55,7 +55,7 @@ Ovviamente, puoi utilizzare gli appliance Jetware anche per qualsiasi altro scop
 
 #### L'uso più efficiente delle risorse
 
-L’ambiento operativo Jetware è organizzato per l’uso più efficiente dei componenti hardware (CPU, RAM e Storage). Ciò riduce il consumo delle risorse di calcolo e velocizza i programmi rispetto ai pacchetti standard delle distribuzioni OS. Di conseguenza, questo riduce le spese per l'hardware e l’hosting del 15-80%, migliorando la velocità dei siti web e delle applicazioni. 
+L’ambiente operativo Jetware è organizzato per l’uso più efficiente dei componenti hardware (CPU, RAM e Storage). Ciò riduce il consumo delle risorse di calcolo e velocizza i programmi rispetto ai pacchetti standard delle distribuzioni OS. Di conseguenza, questo riduce le spese per l'hardware e l’hosting del 15-80%, migliorando la velocità dei siti web e delle applicazioni. 
 
 #### Funziona con qualsiasi Linux
 
@@ -71,7 +71,7 @@ Gli appliance Jetware sono facili da usare. Per comodità, sono disponibili in d
 
 #### Funziona ovunque e sempre nello stesso modo
 
-L’appliance funziona ugualmente in tutte le sue realizzazioni. Puoi utilizzare uno appliance in diversi posti ed avere sempre lo stesso ambiento operativo per la tua applicazione.
+L’appliance funziona ugualmente in tutte le sue realizzazioni. Puoi utilizzare uno appliance in diversi posti ed avere sempre lo stesso ambiente operativo per la tua applicazione.
 
 Ad esempio, il tuo sito in Drupal funzionerà in un ambiente uguale ovunque: in un progetto Vagrant sul computer portatile dello sviluppatore, in un test-contenitore di Docker sul server in ufficio, in VMware Player sul desktop del cliente e sul sito principale nel cloud di Amazon EC2.
 
@@ -79,10 +79,10 @@ Ad esempio, il tuo sito in Drupal funzionerà in un ambiente uguale ovunque: in 
 
 Oltre di lavorare sui server abituali, gli appliance Jetware sono progettati per operare su un cluster di failover, e nel cloud, con il server on demand. Gli appliance sono comodi per utilizzarli in un arsenale dei DevOps strumenti per il modello "infrastrutture immutabile". Tutto questo fa più semplice la manutenzione e l'aggiornamento di un gran numero dei server omogenei o i piccoli gruppi specializzati dei server. 
 
-#### Una prova prima dell’aggiornamento dell’ambiento operativo
+#### Una prova prima dell’aggiornamento dell’ambiente operativo
 
-Se hai deciso di aggiornare l’ambiento operativo, per te sarà facile provare l'applicazione in un ambiente nuovo. Basta scаricare una macchina virtuale con un appliance nuovo, avviare la tua applicazione, e fare dei test. 
+Se hai deciso di aggiornare l’ambiente operativo, per te sarà facile provare l'applicazione in un ambiente nuovo. Basta scаricare una macchina virtuale con un appliance nuovo, avviare la tua applicazione, e fare dei test. 
 
 #### Migrazione facile
 
-Puoi trasferire liberamente la tua applicazione con tutto l’ambiento operativo, tra un server dedicato, una macchina virtuale, VPS, o le piattaforme di cloud Amazon EC2, Google Compute Engine, Microsoft Azure. Puoi avviare subito una copia sul posto nuovo in caso di incidente. Puoi cambiare hosting provider, se hai trovato una proposta migliore.
+Puoi trasferire liberamente la tua applicazione con tutto l’ambiente operativo, tra un server dedicato, una macchina virtuale, VPS, o le piattaforme di cloud Amazon EC2, Google Compute Engine, Microsoft Azure. Puoi avviare subito una copia sul posto nuovo in caso di incidente. Puoi cambiare hosting provider, se hai trovato una proposta migliore.
