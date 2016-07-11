@@ -1,8 +1,9 @@
 - !ruby/object:StringML
   en: |
-    ## Fine fitted to your app
+    ## Fine-fitted to your app
 
-    A wide choice of programs and libraries with multiple versions and building parameters. Unrestricted package combination without dependency conflicts. Long-term support and updates with bug and vulnerability fixes.
+    A wide choice of programs and libraries, with multiple versions and building parameters. Unrestricted package combinations without dependency conflicts. Long-term support and updates with bug and vulnerability fixes.
+
 
   ru: |
     ## Точно подходит требованиям приложения
@@ -18,7 +19,7 @@
   en: |
     ## Optimized and pre-configured
 
-    Ready for immediate use - one-click install with no additional configuration. All components are optimized for web-specific jobs with more efficient use of computing resources. Costs reduction up to 15-80% with site responsiveness increase.
+    Ready for immediate use — just one click to install and with no additional configuration. All components are optimized for web-specific jobs with more efficient use of computing resources. Cost reduces by 15–80% while site responsiveness increases.
   
   ru: |
     ## Оптимизировано и преднастроено
@@ -34,8 +35,8 @@
   en: |
     ## It works the same anywhere
 
-    Install your appliance on any 64-bit Linux distribution or run it on any virtualization system. It works the same on any hardware or platform: on a laptop, desktop, VPS, dedicated server, or a cloud. Easy deploy and migration across any platform.
-  
+    Install your appliance on any 64-bit Linux distribution or run it on any virtualization system. It works the same on any hardware or platform: laptop, desktop, VPS, dedicated server, or a cloud. Easy to deploy and migrate across any platform.
+
   ru: |
     ## Работает везде и одинаково
   

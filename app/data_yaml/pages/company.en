@@ -2,18 +2,19 @@
 
 Jetware — the company that is changing the idea of managing servers and applications.
 
-We conduct research and development on automating IT infrastructure, implementation and support of automated system administration for customers. We help our users to focus on their products development, eliminating the complexity of configuring, updating and maintaining servers and software.
+We conduct research and development for automating IT infrastructure and implementation, and provide administrative support to automated system customers. We help our users focus on their product development by eliminating the complexity of configuring, updating, and maintaining servers and software.
 
-Our solution is designed for IT-professionals in various areas. It is conflict-free and independent runtime environment for server applications, providing the same work on any platform. Automatic configuration makes it easy to create and deploy the software system.
+Our solution is designed for IT-professionals in various areas. It is conflict-free, with an independent runtime environment for server applications on any platform. Automatic configuration makes it easy to create and deploy the software system.
 
-This innovation is a result of few years and a large amount of research, exploration and discovery. We now know exactly what should be a modern runtime environment for server applications, we can manage it and are willing to share our experience and technology with developers and system administrators.
+This innovation is the culmination of years of research and funds spent on research, exploration, and discovery. With precise knowledge of the modern runtime environment for server applications, we can now offer to share our experience and technology with developers and system administrators.
 
 ## History
 
-Jetware team has been developing system software, design and operation of the server infrastructure and network for over 20 years. 
-We provided professional web hosting service since 1999, beginning with Perl, PHP and MySQL, then JSP, Python and PostgreSQL in 2001, and Ruby on Rails in 2005. We have over 10 years of experience in web sites and internet services development with PHP, Ruby, Python and Java. In 2001, we built one of the first CDN, in 2008, we designed and launched one of the first cloud platforms with virtualization Xen and KVM, and in 2013 we created an infrastructure for internet services based on geographically distributed failover clusters.
+The Jetware team has been developing system software and designing and operating server infrastructure and networks for over 20 years. 
 
-In recent years, we worked on automation of system administration of a large number of Internet services. Since 2014 we are researching on a new principle of organization of the server software, libraries, and operating systems. The result of these research and development has become to establishing the Jetware project in January 2016. In June 2016 we opened to the public a free online service for assembly, distribution and deployment of the Jetware-based appliances.
+We have provided a professional web hosting service since 1999, beginning with Perl, PHP, and MySQL, then JSP, Python, and PostgreSQL in 2001, and Ruby on Rails in 2005. We have over 10 years’ experience in website and internet services development with PHP, Ruby, Python, and Java. In 2001, we built one of the first CDN; in 2008, we designed and launched one of the first cloud platforms with virtualization Xen and KVM; and in 2013, we created an infrastructure for internet services based on geographically distributed fail-over clusters.
+
+In recent years, we have worked on the automation of system administration for a large number of internet services. Since 2014, we have researched and developed a new principle of organization for server software, libraries, and operating systems. The result of this R&D has been the establishment of the Jetware project in January 2016. In June 2016, we opened to the public a free online service for the assembly, distribution, and deployment of the Jetware-based appliances.
 
 ## Our competence
 

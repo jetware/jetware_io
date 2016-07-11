@@ -1,15 +1,15 @@
 
 # What is Jetware?
 
-Jetware is a automation tool for configuration and management of server applications. It can be a server software (databases, web servers, application servers), a popular web applications such as Wordpress, Drupal, Redmine, Confluence, or your own created applications.
+Jetware is an automation tool to configure and manage server applications, such as databases, web servers, application servers, popular web applications such as Wordpress, Drupal, Redmine, and Confluence, or your own created applications.
 
-Jetware includes a runtime environments manager, a software applications collection and an runtime environemtns constructor (online service and a command line utility). The online services and the package collections are provided free of charge.
+Jetware includes a runtime environment manager, a software applications collection, and a runtime environment constructor (online service and a command line utility). The online services and the package collections are provided free of charge.
 
-#### Runtime environment &mdash; appliance
+#### Runtime environment — appliance
 
-The web application runtime environment is supplied as an "appliance* &mdash; a complete set of all the programs and libraries used by this application. Different applications may use different programs, their version, and their configuration, and for each application can be created a runtime environment fine fitted to all of these requirements.
+The web application runtime environment is supplied as an *appliance*, which comprises a complete set of all the programs and libraries used by this application. Different applications may use different programs, versions, or configurations — a runtime environment can be fine-fitted to meet the requirements of each.
 
-All programs from Jetware collection are optimized for web-oriented jobs and configured to interact with each other. The appliance is ready for immediate use just after the installation and it requires neither additional software nor further configuration.
+All programs in the Jetware collection are optimized for web-oriented jobs and configured to interact with each other. The appliance is ready for immediate use just after the installation and it requires neither additional software nor further configuration.
 
 #### Online constructor of appliances
 
@@ -23,46 +23,46 @@ The configuration of an appliance is stored in a YAML-document inside the applia
 
 ##### Solution stack
 
-An appliance may include only the solution stack &mdash; LAMP, LEMP, MEAN, etc. In addition to the main components of the stack, you can also include additional programs, for example, you can add MongoDB or memcached to the LAMP. In this case, the user selects the components of the stack, gets the appliance and then installs its own application and configures it for this runtime environment.
+An appliance may include only the solution stack: LAMP, LEMP, MEAN, etc. In addition to the main components of the stack, you can also include additional programs, for example, you can add MongoDB or memcached to the LAMP. In this case, the user selects the components of the stack, gets the appliance, and then installs some application and configures it for this runtime environment.
 
 ##### Single application
 
-An appliance can be built fitting the requirements of the target application, for example, Wordpress, Drupal or Redmine. In this case, the user selects the targets application and its version, and all other components are added and configured automatically by the online constructor service. After staring the appliance, we get the target application running and ready.
+An appliance can be built fitting the requirements of the target application, for example, Wordpress, Drupal, or Redmine. In this case, the user selects the targets application and its version, whereas all other components are added and configured automatically by the online constructor service. After starting the appliance, we get the target application running and ready.
 
 ##### Integrated applications
 
-An appliance may include a number of integrated applications. For example, Redmine + Gitlab + OwnCloud. In this case, when you create an appliance, the constructor prepares a common runtime environment for all installing applications, configures the programs and libraries, and sets up the interconnection of applications. After starting the appliance we get all that applications running, ready and integrated.
+An appliance may include a number of integrated applications, for example, Redmine + Gitlab + OwnCloud. In this case, when you create an appliance, the constructor prepares a common runtime environment for all installing applications, configures the programs and libraries, and sets up the interconnection of applications. After starting the appliance we get all applications running, ready, and integrated.
 
 
-#### A wide choice of versions and software flavours
+#### A wide choice of versions and software flavors
 
-Most of the software in Jetware collection is represented in multiple versions or compilation parameters. For example, the database packages include MySQL versions 5.1, 5.5, 5.6 and 5.7, MariaDB versions 5.5, 10.0, 10.1, 10.2, Percona 5.5, 5.6, 5.7, and WebScaleSQL; for PHP there are versions 5.2, 5.3, 5.4, 5.5, 5.6, 7.0, 7.1. Many other server programs and libraries are available in multiple versions too.
+Most software in the Jetware collection is represented in multiple versions or compilation parameters. For example, the database packages include MySQL versions 5.1, 5.5, 5.6, and 5.7; MariaDB versions 5.5, 10.0, 10.1, and 10.2; Percona 5.5, 5.6, 5.7, and WebScaleSQL; for PHP there are versions 5.2, 5.3, 5.4, 5.5, 5.6, 7.0, and 7.1. Many other server programs and libraries also are available in multiple versions
 
-It lets us to select a combination of programs and libraries that best meets the application requirements. If you have an old project requiring PHP 5.2 and MySQL 5.1, you can create the environment with these versions. If you are developing a new project and you need the latest version of the software, you can construct the appliance with PHP 7.0 and MariaDB 10.1.
+This attribute allows us to select the combination of programs and libraries that best meets the application requirements. If you have an old project requiring PHP 5.2 and MySQL 5.1, then you can create the environment with these versions. If you are developing a new project and you need the latest version of the software, then you can construct the appliance with PHP 7.0 and MariaDB 10.1.
 
 #### Long-term support and updates
 
-We track and release updates for all programs in our collection. You do not need to mess with "configure make install" and to recall it how you have built the program before, every time when you urgently need to install a new version. You get from our collection a fresh updates for each package used.
+We track and release updates for all programs in our collection. You do not need to mess with "configure make install" and recall how you have built the program every time you urgently need to install a new version. You will receive fresh updates from our collection for each package.
 
-Thanks to the developers, providing new patches for bug and vulnerabilities, and companies like an Atomic Corp, we can also maintain and update a legacy software versions.
+Thanks to the developers, providing new patches for bugs and vulnerabilities, and companies like Atomic Corp., we can also maintain and update legacy software versions.
 
 #### No conflicts
 
-The programs and libraries from Jetware collections are independent of the runtime environment of the operating system and of the programs from a repositories. Jetware appliances can be installed both on new or already long-running server without the risk of conflict and disrupting.
+The programs and libraries from the Jetware collection are independent of the operating system runtime environment and of the programs from the repositories. Jetware appliances can be installed both on new or already long-running servers without the risk of conflict or disrupting.
 
 #### Optimization for web-oriented tasks
 
-We focus primarily on web-based applications &mdash; web sites' frontend and backend, backend for mobile applications, intranet services. Therefore, we have optimized and pre-configured appliances and software packages for this load profile.
+We focus primarily on web-based applications — websites' frontend and backend, backend for mobile applications, and intranet services. Therefore, we have optimized and pre-configured appliances and software packages for this load profile.
 
 Of course, you can use the appliance and Jetware programs for any other purpose.
 
 #### Optimal use of resources
 
-Jetware runtime environment is organized for more efficient use of CPU, RAM and storage systems. This both reduces the consumption of computing resources and speeds up the program comparing with the standard packages from the OS distributions. As a result, it reduces the cost of hardware and hosting up to 15-80% and at the same time improves the responsiveness of web sites and mobile applications.
+The Jetware runtime environment is organized for more efficient use of CPU, RAM, and storage systems. This both reduces the consumption of computing resources and increases the speed of programs compared with the standard packages from the OS distributions. As a result, it reduces the cost of hardware and hosting up to 15–80% and improves the responsiveness of websites and mobile applications.
 
 #### Works on any Linux
 
-Appliances and programs are compatible with any Linux operating system and any hardware based on Intel x86_64 architecture.  A 64-bit mode kernel version >= 2.6.32 is enough.
+Appliances and programs are compatible with any Linux operating system and any hardware based on Intel x86_64 architecture. A 64-bit mode kernel version >= 2.6.32 is enough.
 
 You can run the most modern PHP stack 7 + MariaDB 10.1 on a server with CentOS 6, or run legacy PHP 5.2 application on a server with Ubuntu 16.04.
 
@@ -70,22 +70,22 @@ There is also a collection of packages for older kernels and for other architect
 
 #### Easy installation
 
-The Jetware appliances are easy to use. They are available in different implementations. The appliance can be one-click installed into any Linux operating system using an automatic script installer. The appliance can be downloaded and run as a virtual machine image of VMWare, VirtualBox or KVM / OpenStack. The appliance can be used as a base in your Vagrant-project, Docker or LXC container. The appliance can be launched from AMI on Amazon EC2, or as a droplet in DigitalOcean.
+The Jetware appliances are easy to use. They are available in different implementations. The appliance can be one-click installed into any Linux operating system using an automatic script installer. The appliance can be downloaded and run as a virtual machine image of VMWare, VirtualBox, or KVM/OpenStack. The appliance can be used as a base in your Vagrant-project, Docker, or LXC container. The appliance can be launched from AMI on Amazon EC2, or as a droplet in DigitalOcean.
 
 #### It works everywhere and it works the same
 
-An appliance works the same way in all their implementations. You can use the same appliance everywhere and see your application working in the same runtime environment.
+An appliance works the same way in all implementations. You can use the same appliance everywhere and see your application working in the same runtime environment.
 
-For example, your developing site on Drupal will work in the same environment in Vagrant-project on your laptop, in a testing Docker-container on a server in the office, in the VMWare Player on the customer's desktop and at the production web site on Amazon EC2 cloud.
+For example, your developing site on Drupal will work in the same environment in a Vagrant-project on your laptop, in a testing Docker-container on a server in the office, in the VMWare Player on the customer's desktop, and at the production website on Amazon EC2 cloud.
 
 #### Immutable infrastructure
 
-In addition to regular servers, Jetware appliances are designed to operate on fail-over clusters and in the cloud with instances on demand. It's a handy tool for DevOps' arsenal for implementing the *immutable infrastructure* pattern. Using appliances simplifies upgrade and maintenance either large number of homogeneous servers, or multiple small specialized groups of servers.
+In addition to regular servers, Jetware appliances are designed to operate on failover clusters and in the cloud with instances on demand. It's a handy tool for DevOps' arsenal for implementing the *immutable infrastructure* pattern. Using appliances simplifies the upgrade and maintenance of either a large number of homogeneous servers, or multiple, small specialized groups of servers.
 
 #### Test before upgrade
 
-You can easily test the new runtime environment on a virtual machine with new appliance before upgrading your production server.
+You can easily test the new runtime environment on a virtual machine with a new appliance before upgrading your production server.
 
 #### Easy migration
 
-You can easily move your application with entire runtime environment across a dedicated server, virtual machine, VPS and cloud platform Amazon EC2, Google Compute Engine, Microsoft Azure. You can quickly deploy a copy at the new location as a disaster response. You can freely change provider with a better new one.
+You can easily move your application with the entire runtime environment across a dedicated server, virtual machine, VPS and cloud platform Amazon EC2, Google Compute Engine, or Microsoft Azure. You can quickly deploy a copy at the new location as a disaster response. You can freely change providers.
