@@ -25,6 +25,9 @@
 'Base images':
   ru: Базовые образы
   it: Immagini di base
+'Development tools':
+  ru: Инструменты разработки
+  it: Strumenti di sviluppo
 appliance:
   multistep_form:
     'Appliance info':
