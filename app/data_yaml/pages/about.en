@@ -23,7 +23,7 @@ The configuration of an appliance is stored in a YAML-document inside the applia
 
 ##### Solution stack
 
-An appliance may include only the solution stack: LAMP, LEMP, MEAN, etc. In addition to the main components of the stack, you can also include additional programs, for example, you can add MongoDB or memcached to the LAMP. In this case, the user selects the components of the stack, gets the appliance, and then installs some application and configures it for this runtime environment.
+An appliance may include only the solution stack: LAMP, LEMP, MEAN, etc, without a web application. In addition to the main components of the stack, you can also include additional programs, for example, you can add MongoDB or memcached to the LAMP. In this case, the user selects the components of the stack, installs the appliance on a server, and then installs and configures the web application.
 
 ##### Single application
 
