@@ -40,5 +40,6 @@ Jetware — компания, которая меняет представлен
 
 * Следите за новостями Jetware на [Twitter](http://twitter.com/jetware_org) и [Facebook](http://facebook.com/jetwareorg)
 * [Узнайте больше о работе аплайнсов Jetware](/page/about)
+* [Решения](/page/solutions/)
 * [Работа в Jetware](/page/jobs)
 * [Контакты](/contacts)
