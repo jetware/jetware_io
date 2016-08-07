@@ -16,7 +16,7 @@
 'Ready to use':
   ru: Готовы к использованию
 'Appliance not found':
-  ru: Сборка не найдена
+  ru: Аплайнс не найден
   it: Appliance non è stato trovato
 'Package not found':
   ru: Пакет не найден
@@ -25,8 +25,8 @@
   ru: Страница не найдена
   it: La pagina non è stata trovata
 'Layout not found':
-  ru: Схема не найдена
-  it: La pianta non è stata trovata
+  ru: Лейаут не найден
+  it: Il layout non è stato trovato
 'Access denied':
   ru: Доступ запрещен
   it: Accesso vietato
@@ -39,9 +39,9 @@
   it: Il tuo messaggio è  stato ricevuto, grazie per averci contattato
 share:
   'My own constructed Jetware appliance #{full_name}, check it out!':
-    ru: 'Jetware сборка моей собственной конструкции #{full_name}, посмотрите!'
+    ru: 'Аплайнс Jetware моей собственной конструкции #{full_name}, посмотрите!'
   'Jetware appliance #{full_name}':
-    ru: 'Сборка Jetware #{full_name}'
+    ru: 'Аплайнс Jetware #{full_name}'
     it: 'Ho costruito un Jetware appliance #{full_name}'
     it: 'Jetware appliance #{full_name}'
 'Are you sure?':

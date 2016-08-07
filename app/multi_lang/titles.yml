@@ -1,20 +1,20 @@
 'Layout':
-  ru: Схема
-  it: Pianta
+  ru: Лейаут
+  it: Layout
 'Appliance':
-  ru: Сборка
+  ru: Аплайнс
   it: Appliance
 'Recent layouts':
-  ru: Новые схемы
-  it: Piante recente
+  ru: Новые лейауты
+  it: Layouts recente
 'Popular appliances':
-  ru: Популярные сборки
+  ru: Популярные аплайнсы
   it: Appliances popolari
 'Ready appliances':
-  ru: Готовые сборки
+  ru: Готовые аплайнсы
   it: Appliances pronti
 'Use appliance':
-  ru: Использование сборки
+  ru: Использование аплайнса
   it:  L’uso di appliance 
 'Installers':
   ru: Установщики
@@ -31,7 +31,7 @@
 appliance:
   multistep_form:
     'Appliance info':
-      ru: Информация о сборке
+      ru: Информация об аплайнсе
       it: Appliance info
     'Required packages':
       ru: Обязательные пакеты
@@ -40,10 +40,10 @@ appliance:
       ru: Опциональные пакеты
       it: Pacchetti opzionali
 'Share appliance':
-  ru: Поделиться сборкой
+  ru: Поделиться аплайнсом
   it: Condividi appliance
 'Share your appliance':
-  ru: Поделиться своей сборкой
+  ru: Поделиться своим аплайнсом
   it: Condividi il tuo appliance
 'Previous version':
   ru: Предыдущая версия

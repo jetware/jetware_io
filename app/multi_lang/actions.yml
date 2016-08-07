@@ -1,9 +1,9 @@
 appliances_controller: &appliances_controller
   'Construct appliance':
-    ru: Конструировать сборку
+    ru: Конструировать аплайнс
     it: Costruire appliance
   'Adjust appliance':
-    ru: Доработать сборку
+    ru: Доработать аплайнс
     it: Aggiustare appliance
   'Run installer':
     ru: Запустить установщик
@@ -17,7 +17,7 @@ layout_viewer:
     ru: Создана
     it: Creato
   'Construct appliance':
-    ru: Конструировать сборку
+    ru: Конструировать аплайнс
     it: Costruire appliance
   'Primary':
     ru: Основное
