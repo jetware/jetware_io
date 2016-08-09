@@ -1,6 +1,6 @@
 # Решения
 
-### [Разработчикам веб-сайтов](web_developers)
+### [Стартапам и веб-разработчикам](web_developers)
 
 <ul id="markdown-toc">
   <li><a href="web_developers#one-click-stack" id="markdown-toc-one-click-stack">Аплайнсы One-click stack</a></li>
@@ -12,7 +12,7 @@
   <li><a href="web_developers#section-7" id="markdown-toc-section-7">Репликация и резервное копирование</a></li>
 </ul>
 
-### [Владельцам веб-сайтов и малому бизнесу](web_sites)
+### [Малому бизнесу и владельцам веб-сайтов](web_sites)
 
 <ul id="markdown-toc">
   <li><a href="web_sites#one-click-app" id="markdown-toc-one-click-app">Аплайнсы One-click app</a></li>
