@@ -1,15 +1,5 @@
 # Решения
 
-### [Владельцам веб-сайтов и малому бизнесу](web_sites)
-
-<ul id="markdown-toc">
-  <li><a href="web_sites#one-click-app" id="markdown-toc-one-click-app">Аплайнсы One-click app</a></li>
-  <li><a href="web_sites#one-click-stack" id="markdown-toc-one-click-stack">Аплайнсы One-click stack</a></li>
-  <li><a href="web_sites#section-2" id="markdown-toc-section-2">Автоматическое администрирование</a></li>
-  <li><a href="web_sites#section-3" id="markdown-toc-section-3">История изменений настроек</a></li>
-  <li><a href="web_sites#section-4" id="markdown-toc-section-4">Аплайнсы работают везде одинаково</a></li>
-</ul>
-
 ### [Разработчикам веб-сайтов](web_developers)
 
 <ul id="markdown-toc">
@@ -20,6 +10,16 @@
   <li><a href="web_developers#section-5" id="markdown-toc-section-5">История изменений настроек</a></li>
   <li><a href="web_developers#section-6" id="markdown-toc-section-6">Автоматическое администрирование</a></li>
   <li><a href="web_developers#section-7" id="markdown-toc-section-7">Репликация и резервное копирование</a></li>
+</ul>
+
+### [Владельцам веб-сайтов и малому бизнесу](web_sites)
+
+<ul id="markdown-toc">
+  <li><a href="web_sites#one-click-app" id="markdown-toc-one-click-app">Аплайнсы One-click app</a></li>
+  <li><a href="web_sites#one-click-stack" id="markdown-toc-one-click-stack">Аплайнсы One-click stack</a></li>
+  <li><a href="web_sites#section-2" id="markdown-toc-section-2">Автоматическое администрирование</a></li>
+  <li><a href="web_sites#section-3" id="markdown-toc-section-3">История изменений настроек</a></li>
+  <li><a href="web_sites#section-4" id="markdown-toc-section-4">Аплайнсы работают везде одинаково</a></li>
 </ul>
 
 ### [Разработчикам серверных приложений](software_developers)
