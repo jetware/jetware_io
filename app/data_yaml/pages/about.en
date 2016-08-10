@@ -66,7 +66,7 @@ Appliances and programs are compatible with any Linux operating system and any h
 
 You can run the most modern PHP stack 7 + MariaDB 10.1 on a server with CentOS 6, or run legacy PHP 5.2 application on a server with Ubuntu 16.04.
 
-There is also a collection of packages for older kernels and for other architectures. However, they are mostly experimental and are now ready for production use.
+There is also a collection of packages for older kernels and for other architectures. However, they are mostly experimental and are not ready for production use.
 
 #### Easy installation
 
