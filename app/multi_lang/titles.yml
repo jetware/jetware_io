@@ -32,6 +32,10 @@
   ru: Конфигурация и подробности
 'Quick start guide':
   ru: Краткая инструкция
+'Details':
+  ru: Подробности
+'Configuration details':
+  ru: Подробности конфигурации
 appliance:
   multistep_form:
     'Appliance info':
