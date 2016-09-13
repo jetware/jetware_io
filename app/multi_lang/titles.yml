@@ -28,6 +28,10 @@
 'Development tools':
   ru: Инструменты разработки
   it: Strumenti di sviluppo
+'Configuration and detail':
+  ru: Конфигурация и подробности
+'Quick start guide':
+  ru: Краткая инструкция
 appliance:
   multistep_form:
     'Appliance info':
