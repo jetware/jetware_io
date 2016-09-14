@@ -8,13 +8,9 @@ extension: tar.gz
 description.erb.md: |
   {ML}
   {lang en}
-  You can install the appliance directly on any Linux with 64-bit kernel (>=2.6.32).
-
-  Run from the command line:
+  You can install the appliance directly on any Linux with 64-bit kernel (>=2.6.32). Run from the command line:
   {lang ru}
-  Вы можете установить сборку непосредственно на любую ОС Linux с 64-битным ядром (>=2.6.32).
-
-  Выполните в коммандной строке:
+  Вы можете установить сборку непосредственно на любую ОС Linux с 64-битным ядром (>=2.6.32). Выполните в коммандной строке:
   {/ML}
 
   ~~~
@@ -26,22 +22,29 @@ description.erb.md: |
 
   Or download archive, unpack it to `/jet` directory, install appliance executing the command `/jet/enter /jet/own/bin/fasten` and start the services by running `/jet/enter start`.
 
+  {::options parse_block_html="true" /}
+  <div data-show-more="How to use">
+
   ##### How to use
 
   To enter the runtime environment or to execute a command inside the runtime environment you can use the utility `/jet/enter`. If no arguments are present, the standard shell will be executed inside the runtime environment. You can specify a command as an argument, it will be executed inside the runtime environment.
 
   For example, to start all services in the runtime environment you can do `/jet/enter start`. To execute a mysql client you can do `/jet/enter mysql`; or run first `/jet/enter`, and than run from the new command line `mysql`.
-
+  </div>
   {lang ru}
   Во время установки вас попросят выполнить через `sudo` несколько операций с правами администратора.
 
   Или скачайте архив, распакуйте его в каталог '/jet', инсталлируйте апплаенс выполнив команду `/jet/enter /jet/own/bin/fasten` и запустите его сервисы командой `/jet/enter start`.
+
+  {::options parse_block_html="true" /}
+  <div data-show-more="Как использовать">
 
   ##### Как использовать
 
   Для входа в окружение или запуска команд в окружении используется утилита `/jet/enter`. При запуске утилиты без аргументов будет запущена оболочка командной строки. В качестве аргументов можно указывать команды, эти команды будут запущены внутри окружения.
 
   Например, для старта сервисов из окружения можно выполнить `/jet/enter start`. Для запуска клиента mysql внутри окружения можно выполнить `/jet/enter mysql`; или выполнить сначала `/jet/enter` и затем ввести `mysql`.
+  </div>
   {/ML}
 file:
   setup.erb: |
