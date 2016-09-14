@@ -1,17 +1,24 @@
-description.erb: !ruby/object:StringML
-  en: |
-    You can install the appliance on any new or existing Linux server, download and run virtual machine, use it as a base image for Docker or Vagrant, or launch it with a new cloud platform instance, VPS or dedicated server for a supported hosting providers.
-
-    ###### Settings
-
+description: |
+  {ML}
+  {lang en}
+  You can install the appliance on any new or existing Linux server, download and run virtual machine, use it as a base image for Docker or Vagrant, or launch it with a new cloud platform instance, VPS or dedicated server for a supported hosting providers.
+  {lang ru}
+  Вы можете установить аплайнс на любой новый или уже существующий Linux-сервер, скачать и запустить виртуальную машину, использовать базовый образ для Docker или Vagrant, или запустить новый инстанс облачной платформы, VPS или выделенный сервер у провайдеров хостинга, поддерживающих эту возможность.
+  {/ML}
+vm_image:
+  description: |
+    {ML}
+    {lang en}
+    You can access the virtual machine via console or SSH:
+  
     | Login: | **jet**
     | Password: | **jet**
     {:.text}
-  ru: |
-    Вы можете установить аплайнс на любой новый или уже существующий Linux-сервер, скачать и запустить виртуальную машину, использовать базовый образ для Docker или Vagrant, или запустить новый инстанс облачной платформы, VPS или выделенный сервер у провайдеров хостинга, поддерживающих эту возможность.
 
-    ###### Настройки
-
+    {lang ru}
+    Доступ к виртуальной машине возможен через консоль или по SSH:
+  
     | Login: | **jet**
     | Password: | **jet**
     {:.text}
+    {/ML}
