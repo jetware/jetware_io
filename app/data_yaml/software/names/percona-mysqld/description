@@ -1,0 +1,7 @@
+Percona Server is a fork of the MySQL relational database management system created by Percona.
+
+It aims to retain close compatibility to the official MySQL releases, while focusing on performance and increased visibility into server operations. Also included in Percona Server is XtraDB, Percona's fork of the InnoDB Storage Engine.
+
+Percona freely includes a number of scalability, availability, security and backup features only available in MySQL's commercial Enterprise edition.
+
+[Wikipedia](https://en.wikipedia.org/wiki/Percona_Server)
