@@ -1,0 +1,3 @@
+Tarantool is a database and a cache all in one. Which means that it combines cool features from both of the worlds. Database features are ACID transactions, replication, tables, primary & secondary indexes, server-side scripting, stored procedures, cursors, range and full-scan queries. Cache features are sub one ms latency, extremely high throughput on both queries and transactions, optimization for heavy parallel workloads.
+
+You can think about Tarantool as an extremely fast DBMS or a fully-transactional cache. In other words, Tarantool is a great solution to the perennial problem - what to choose, speed or durability.
