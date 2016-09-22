@@ -95,3 +95,7 @@ appliance:
 'Alternatives':
   ru: Альтернативы
   it: Alternative
+'Options':
+  ru: Опции
+'Variants':
+  ru: Варианты
