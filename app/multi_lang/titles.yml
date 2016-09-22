@@ -77,3 +77,21 @@ appliance:
 'Name':
   ru: Имя
   it: Nome
+'Company':
+  ru: Компания
+  it: Compagnia
+'Web site':
+  ru: Веб-сайт
+  it: Sito web
+'Location':
+  ru: Местоположение
+  it: Ubicazione
+'Versions':
+  ru: Версии
+  it: Versione
+'Role':
+  ru: Роль
+  it: Ruolo
+'Alternatives':
+  ru: Альтернативы
+  it: Alternative
