@@ -1,0 +1,86 @@
+# Solutions
+{:.no_toc}
+
+## Small business and website owners
+{:.no_toc}
+
+Jetware appliances will let you to run a website of any level of complexity as easily as you launch a normal application on your computer. The Jetware appliance will save you from having to configure and administer servers and server software. Your website will work on any server with any hosting provider. You can choose any of a variety of prepared appliances containing applications necessary for your site.
+
+* TOC
+{:toc}
+
+### One-click app appliances
+
+The Jetware software collection covers all popular web applications: CMS for web sites, forums, online stores, document management systems, and many others. Prepared for these applications are the **One-click app** appliances, e.g., One-click app / Wordpress, One-click app / Drupal or One-click app / Redmine. In the **One-click app** appliance is an installed and fully configured **web application** and the **runtime environment** (all necessary software: web server, database, programming languages and libraries). To run the web application does not require technical knowledge or assistance from an administrator. The appliance installs in one step, and the application is immediately ready for operation.
+
+The One-click app appliance can be installed with an installer on any dedicated server or VPS with a Linux operating system on any hosting provider to run in your office on a virtual platform such as  VMWare, Hyper-V or VirtualBox, or to run through cloud on the Launcher on popular cloud hosting services such as Amazon Web Services, Google Cloud Platform, DigitalOcean, Microsoft Azure.
+
+If your desired web application is not in our collection, [write us a request](/contacts?contacts_form[subject]=Add application to One-click app) and we will add it.
+
+* All popular web applications
+* Automatic installation in one step 
+* Available for any user without technical knowledge 
+* Does not require configuration  of server and server software 
+* Works on any server with any hosting provider
+{: .summary}
+
+### One-click stack appliances
+
+These appliances are aimed at users who want to install a web application, but don't want to deal with configuring and administering servers and server programs. In the **One-click stack** appliance, a fully configured **runtime environment** is installed, providing features of professional web hosting services or “platform as a service” PaaS (web server, database, programming languages and libraries). To install and work with it does not require the skills and qualifications of the system administrator. Among the web hosting environments,  various software stacks are included: LAMP, LEMP, Tomcat Java, MEAN, Ruby on Rails and others. The appliance installs in one step, and the application is immediately ready for operation.
+
+The One-click stack appliance can be installed with an installer on any dedicated server or VPS with a Linux operating system on any hosting provider to run in your office on a virtual platform such as  VMWare, Hyper-V or VirtualBox, or to run through cloud on the Launcher on popular cloud hosting services such as Amazon Web Services, Google Cloud Platform, DigitalOcean, Microsoft Azure.
+
+If your desired web hosting environment is not in our collection, [write us a request](/contacts?contacts_form[subject]=Add application to One-click stack) and we will add it.
+
+* Features of professional web hosting or PaaS (“platform as a service”)
+* Automatic installation in one step
+* Available for any user without technical knowledge
+* Requires neither server nor server software configuration
+* Works on any server with any hosting provider
+{: .summary}
+
+### Automated administration
+
+Jetware appliances include an **automatic administration** engine.  It is responsible for monitoring the work of the services (web servers, databases, etc.), checks the adequacy of the resources available, and proactively reports on situations which can lead to malfunctions. To help diagnose problems, it runs logs of resource consumption and service quality (speed of execution of requests, etc.)
+
+In addition to problem detection, it also uses tools that  independently prevent or resolve problems. For example, restart services stopped in an emergency, freeing the disc from secondary data (temporary files and log files) if there is insufficient free space. To protect the website against hacking, when it sees updates that address vulnerabilities it automatically installs new versions of packages.
+
+Thus most of the tasks of server support are handled automatically. The participation of the user or system administrator is limited only to those cases which the robot cannot handle.
+
+* Automatic monitoring of services 
+* Automatic troubleshooting
+* Warning about potential problems
+* A decline in the number of accidents and website downtime 
+* Reducing the need for a system administrator 
+{: .summary}
+
+### History of settings changes
+
+Jetware appliances can automatically save the changes to websites and software program settings, as well as changes to websites' code and scripts. To store the change history, the Git version control system is used.
+
+Verification and saving of changes is done automatically every hour. This period may be increased or decreased. Changes can also be saved  manually.
+
+The **history of changes** can be used for many purposes: test a new system configuration with the ability to return to previous settings; learn what changes from what dates are different from the current settings compared with settings that existed at another time. A return to any saved state of the settings can be fully implemented or selectively restored with only a subset of the settings.
+
+If you encounter problems in the system or web site, checking the change history helps to find the cause of the problem. Tracking the history of changes to the settings along with the issue of resource consumption and the speed of the pages helps to see how changing settings affects the performance and speed of your site.
+
+* Automatically save changes 
+* Easy rollback (full or partial) to the old settings 
+* Safe testing of a new system setup by the site owner 
+* Helps to find the cause of the problem when you change settings 
+* Helps to evaluate the effect of settings on performance 
+{: .summary}
+
+### Appliances work the same everywhere
+
+Jetware appliances are arranged in such a way that they work the same everywhere: on a dedicated server or VPS from a hosting provider, cloud hosting, office server, desktop or laptop. The same appliances installed on all those computers contain identical programs and settings, and the web site will work the same on any of these computers.
+
+For the One-click app appliance and One-click stack there is a utility to copy the web application to other computers. It automatically duplicates all necessary programs and libraries to the new computer, configures them, copies the website into the resulting workspace, and launches it in a new location. All this is done with a single command and is completed in a few minutes.
+
+This allows you to develop and configure a website not only on the server of the hosting provider, but also on a personal laptop, desktop or office server.
+
+* Development and setup of website on your computer 
+* Easy transfer of website to new hosting in one step
+* Works on any server with any hosting provider
+* Can be run on your office server for internal projects
+{: .summary}

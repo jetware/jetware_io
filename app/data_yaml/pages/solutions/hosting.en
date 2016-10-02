@@ -1,0 +1,84 @@
+# Solutions
+{:.no_toc}
+
+## Hosting providers
+{:.no_toc}
+
+Service for the automatic installation and administration of servers, friendly to users without technical knowledge. Facilitates the client working with the server, reduces administration costs and enhances the stability of the server, simplifies the acquisition and installation of new servers, and helps the provider to sell additional services.
+
+* TOC
+{:toc}
+
+### Installation of appliances on the hosting service in one click
+
+Jetware offers service providers a simple method of installing web applications on the client's server. After the integration of the **Jetware appliances** directory via the hosting control panel, customers can get a fully configured and ready to work web site with one click within a few minutes.
+
+The appliances collection includes a large number of web applications, CMS for websites, forums, online stores, document management systems etc: Wordpress, Drupal, SugarCRM, Alfresco, Prestashop, Plone and more. In addition to individual web applications are also integrated solutions that includes multiple applications configured to work together, e.g., Redmine + GitLab + OwnCloud. There is also a wide range of software stacks: LAMP, LEMP, Ruby on Rails, MEAN, Django, etc.
+
+Appliances can be installed on any dedicated servers, VPS or cloud virtual machines. It's possible to install it in an existing operating system or on a clean server with its own operating system.
+
+* A large selection of web apps and stacks 
+* Installation from the control panel in one click 
+* Users require no technical knowledge 
+* Installs on dedicated servers, VPS, cloud hosting 
+{: .summary}
+
+[Appliance application form directory](/contacts?contacts_form[subject]=Appliances for providers) 
+
+### Integrating hosting with the online builder
+
+The **Jetware online builder** is used for a client's more complex tasks when you need to install additional programs or libraries, or to use specific versions of web applications, programs, or libraries. Integrating a builder in the hosting control panel easily solves this problem. In a few simple steps in the web interface, the client can independently select the necessary components or versions and add them to appliance. After that, the appliance is automatically installed on the server and the client gets the configured and ready to use web site or web hosting environment.
+
+For existing appliances, the builder allows you to modify versions of the web applications (Wordpress, Drupal, etc.) and versions of the components of the stack (LAMP, Ruby on Rails, MEAN). Also the builder allows you to add individual components both in new and existing appliances: libraries and compilers, database servers (PostgreSQL, MongoDB, Redis, etc.), application server for PHP, Java, Ruby, Python, NodeJS, and applications, e.g., Solr, Gitolite, Zabbix.
+
+Appliances can be installed on any dedicated servers, VPS or cloud virtual machines. It's possible to install in an already existing operating system or on a clean server with its own operating system.
+
+* Easy creation of appliances with any web application or environment 
+* Installation from control panel in one click 
+* Users require no technical knowledge 
+* A large selection of programs and libraries
+* Easy to add additional components 
+* Installs on dedicated servers, VPS, cloud hosting
+{: .summary}
+
+[The application for integration with the online builder](/contacts?contacts_form[subject]=Constructor for providers) 
+
+
+### Online demo for appliances
+
+Jetware Cloud Demo designed to launch a demonstration of appliances in containers on cloud virtual machines, VPS and dedicated servers.
+
+This service lets the user assess the possibility of trying appliances of interest to him on his hosting provider to check the speed of the application on the server and to learn more about the services proposed by the provider. Terms and conditions for the demonstration period are determined by the provider. If the user is satisfied with the demonstration, he can upgrade the demo servers to paid or order the server with a clean installation of the selected appliances.
+
+Demonstration run in containers are characterized by the minimal consumption of resources and allows the simultaneous work of several hundred demonstration sessions on one server of average capacity. For virtual machines, the optimization of resource use allows the density of about a hundred machines on a server of average capacity. Installation and startup of the appliances requires from 10 seconds to 3 minutes.
+
+* Create a server with a working web site or application in one click
+* Quick demonstration for the user of the application running at the provider
+* A low cost demonstration of the user sessions 
+* Upgrade the demo servers to a paid account
+{: .summary}
+
+[Application form for online demo](/contacts?contacts_form[subject]=Online demo for providers) 
+
+### Tools for web developers
+
+Jetware appliances help web developers organize the development process. The user can download the same appliances to his computer that were installed on the host, get a runtime environment identical to the hosting environment, and develop the site in the appliance. The changes are then deployed automatically on the hosting by running a single command.
+
+The hosting provider can offer the developer the service of a test server to organize  the continuous integration process. For a test server for small projects, it's convenient to use a short-lived snapshot of the production server. This service allows the client to automatically check all changes on the test server before they are deployed on the production server. In this configuration, a copy of the working website is run and tested on on the test server, it is deployed and the update is tested, and if all tests are successful, the update will be deployed on the production server.
+
+* Identical runtime environment on the hosting and developer computer 
+* Automatic deployment of web site on the hosting
+* Test server offering for Continuous Integration
+{: .summary}
+
+### Automation of server maintenance
+
+Jetware appliances have built-in server maintenance automation. It includes automatic administration: monitoring performance, checking available resources, logging of resource consumption, notification of potential problems, troubleshooting certain types of problems. To protect against website hacking, it automatically installs new versions of packages when a security updates are available. Thus, most of the tasks of server maintenance are performed automatically, without user involvement.
+
+The hosting provider can offer a backup storage service. In that case, all the backup settings for the use of this service will be made automatically.
+
+* Automatic server administration 
+* A decrease in the number of problems on the website
+* A decrease in the number of calls to tech support 
+* Automatic backup configuration when ordering services
+{: .summary}

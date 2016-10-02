@@ -1,0 +1,88 @@
+# Solutions
+{:.no_toc}
+
+## SaaS providers and multi-user services
+{:.no_toc}
+
+The systems for automatically building, installing, configuring and managing your own project software modules and third-party software. Reduce the cost of operation and administration of large projects, and increase development speed and testing efficiency.
+
+* TOC
+{:toc}
+
+### Works the same everywhere
+
+The Jetware runtime environments are isolated from the operating system working environment. It uses its own libraries and system utilities and its own file hierarchy. This eliminates dependency conflicts with operating system components and allows you to use any combination of packages and versions. The operating system requires a minimum: the kernel to perform system calls, the POSIX shell and the file system. That is, any JeOS (just enough operating system) option. The main collection of programs are built for the Linux kernel >= 2.6.32 x86_64 architectures. There is also experimental support for other kernel versions and architectures.
+
+One and the same Jetware operating environment provides the same conditions for the application to work on different hardware, different OS versions, different methods of virtualization or containerization. The  application works the same everywhere: servers, desktops and laptops; directly in the operating system in containers or in virtual machines.The single runtime environment of the application allows you to reduce the cost of configuration and operation of systems with a large number of servers. In the Continuous Integration pipeline it helps to more easily organize and maintain automated system tests and testing more efficiently through better simulating operating conditions. Developers eliminate errors and incompatibility caused by differences in the settings and versions of components.
+
+* Reduces the administration costs of large systems
+* Reduces the time to configure and maintain a development and testing environment 
+* The developer uses a working environment identical to the server
+* Eliminates errors associated with the different software versions used by developers 
+* Increases the effectiveness of testing, providing simulated working conditions
+{: .summary}
+
+### Quality work environment
+{::comment} duplicates 'software_developers' {:/comment}
+
+The large selection of programs and libraries from the Jetware collection, give you the choice of different versions and build options, allowing you to use the application with the most suitable components. The latest software versions provide  developers with the most complete functionality and reduce development time. Stable versions have wider compatibility and well-debugged code that reduces the number of errors during development and the time for diagnosing and troubleshooting problems.
+
+When building a runtime environment for your application, it's automatically installed and configured with all the dependencies, providing them to the app in a ready-to-use form.
+
+The build can also include additional Jetware tools for package upgrade, automatic administration, the history of changes in settings, backup. These tool set facilitates the operation and maintenance of the application by the user, helping the user to quickly return to a healthy state after an accident or when not configured correctly, warns in advance about potential problems and automatically resolves or prevent some problems.
+
+* Available in different versions and variants of the compilation
+* Latest versions of software 
+* Fresh updates to stable software versions
+* Fewer mistakes and wasted time diagnosing and troubleshooting problems 
+* Additional Jetware tools for app maintenance
+{: .summary}
+
+### Own variants of build of programs
+
+Jetware runtime environment manager supports multiple repositories of packages. It may be a public repository, for example, a collection of Jetware programs, and private repositories owned by customer, or a customer's individual project.
+
+Private repositories are useful for the building and storage of software packages with their own versions and build settings. For example, disable unnecessary or to apply additional patches, compile for a group of servers based on their processor version and memory type, configure the optimization for the nature of the task. When building packages and when building runtime environments it may be considered the project, type of task, the profile of the equipment used, the server group, and on this basis automatically select the options of the packages used.
+
+If similar packages are already in the Jetware collection of programs, you can use them as a base and expand existing specifications. In addition to the Jetware specifications, when building, packages can be implemented to be compatible with the specifications of software packaging for Debian or RHEL. Some types of applications can be automatically converted into packages using a packetization utility.
+
+* Reduces operating costs of the private component builds
+* Allows the use of components, modified for the requirements of the project 
+* Allows components to be optimized for different types of equipment and tasks 
+* Automatic selection of a suitable package’s variants when building runtime environments 
+{: .summary}
+
+### Decomposition of the project into packages
+
+In large projects, typically, there are independent or loosely-coupled sections as well as elements frequently used in different parts of the project. To facilitate collaborative development and testing of such parts, they are allocated in separate modules (sub-projects) with their own development cycles. Private repositories and the Jetware package manager help to arrange a modular structure for the project and then build project releases from  the packages.
+
+Jetware provides a framework for decomposition, which helps to convert modules into packages or create specifications to build packages from source code, to specify the dependencies of modules on each other and on third-party components. Packages can be built automatically from the source code of the module from a central code repository, or the module can be converted to a package and stored in this form in the central code repositories.
+
+Modules of the project are presented in the form of packages with dependencies on each other and on third-party components; they can have their own system of version numbering (for example, semantic versioning), dependings on the versions and upgrade policies with different complexity; they may have separate build rules for different use cases. The Package Manager automatically checks the feasibility of the dependencies and conflicts for the different conditions of building of the modules. The project, divided into modules,can be more easily implemented in microservices architecture.
+
+The modularity of the project allows the use of fine-grained update releases and improves the efficiency of the continuous integration pipeline. Fine-grained updates accelerate the execution of tests and help in the early stages of finding new bugs.  They help to automatically locate combinations of modules that have changed, resulting in regression.  They reduce the amount of changes when you deploy an upgrade and can help you downgrade faster to a previous state when problems arise.
+
+* The framework of decomposing the project into packages 
+* Improved maintenance of the software project
+* Reduces the number of errors and incompatibilities
+* Increases the efficiency of testing
+* Reduces the duration of failures of the working system
+{: .summary}
+
+### Immutable or boot images
+
+Jetware runtime environment manager lets you to build boot or immutable (unchangeable) images with components from the Jetware collection of programs and private repositories. In addition to 64-bit Linux kernel for x86 based systems, you can use other hardware platforms and other operating systems, including non POSIX-compliant.Embedded or autonomous devices traditionally used immutable or boot images to run software. For devices with a remote bootloading or remote overwriting of the storage device, the use of images provides a simple way of installing and updating software.
+
+Currently, boot or immutable images are increasingly used for data center automation and horizontal applications scaling. Network boot images comfortably fit to build an  infrastructure layer on top of the hardware layer, e.g., OpenStack or abstraction of various equipment to single type use of virtualization (KVM, Xen) or containers. Images are used for mass deployment of applications on virtual servers on the cloud or directly on physical servers. This allows the software system, consisting of a large number of compute nodes,  to deploy or reconfigureat a low cost and in a short time.
+
+Creating images by building from the packages allows you to more clearly specify the requirements for the programs and configurations for different working profiles, making it easier to develop and maintain the project. For specialized tasks, variations of packages can be used that exclude unnecessary components and functions to reduce resource requirements.
+
+The Jetware image building system is successfully plugging into the Continuous Integration pipeline. It allows you to quickly perform testing when upgrading code or settings. The reuse of intermediate results greatly reduces building time up to several seconds or several tens of seconds for one image. With the modular organization of the project and the use of different combinations of modules for different devices and tasks, the parallel building allows you to quickly run tests for all combinations.
+
+* Build boot images from packages 
+* Variations of packages for different usage profiles
+* Quick building of a large number of images
+* Embedding of a building of images in Continuous Integration 
+* Deployment of applications on many servers
+* Install and upgrade on remote or standalone devices
+{: .summary}

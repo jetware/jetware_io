@@ -1,0 +1,67 @@
+# Solutions
+{:.no_toc}
+
+## Control system integrators and IoT developers
+{:.no_toc}
+
+The system of building and on-demand deployment of applications for processing or controlling on endpoint devices or IoT gateways. Migrates computation  closer to data sources or actuators, increasing the speed of information processing, and providing more accurate results. Help to develop systems or to adapt them to changing tasks.
+
+* TOC
+{:toc}
+
+### Quality work environment
+{::comment} duplicates 'software_developers' {:/comment}
+
+The large selection of programs and libraries from the Jetware collection, give you the choice of different versions and build options, allowing you to use the application with the most suitable components. The latest software versions provide  developers with the most complete functionality and reduce development time. Stable versions have wider compatibility and well-debugged code that reduces the number of errors during development and the time for diagnosing and troubleshooting problems.
+
+When building a runtime environment for your application, it's automatically installed and configured with all the dependencies, providing them to the app in a ready-to-use form.
+
+The build can also include additional Jetware tools for package upgrade, automatic administration, the history of changes in settings, backup. These tool set facilitates the operation and maintenance of the application by the user, helping the user to quickly return to a healthy state after an accident or when not configured correctly, warns in advance about potential problems and automatically resolves or prevent some problems.
+
+* Available in different versions and variants of the compilation
+* Latest versions of software 
+* Fresh updates to stable software versions
+* Fewer mistakes and wasted time diagnosing and troubleshooting problems 
+* Additional Jetware tools for app maintenance
+{: .summary}
+
+### Immutable or boot images
+{::comment} duplicates 'online_services' {:/comment}
+
+Jetware runtime environment manager lets you to build boot or immutable (unchangeable) images with components from the Jetware collection of programs and private repositories. In addition to 64-bit Linux kernel for x86 based systems, you can use other hardware platforms and other operating systems, including non POSIX-compliant.Embedded or autonomous devices traditionally used immutable or boot images to run software. For devices with a remote bootloading or remote overwriting of the storage device, the use of images provides a simple way of installing and updating software.
+
+Currently, boot or immutable images are increasingly used for data center automation and horizontal applications scaling. Network boot images comfortably fit to build an  infrastructure layer on top of the hardware layer, e.g., OpenStack or abstraction of various equipment to single type use of virtualization (KVM, Xen) or containers. Images are used for mass deployment of applications on virtual servers on the cloud or directly on physical servers. This allows the software system, consisting of a large number of compute nodes,  to deploy or reconfigureat a low cost and in a short time.
+
+Creating images by building from the packages allows you to more clearly specify the requirements for the programs and configurations for different working profiles, making it easier to develop and maintain the project. For specialized tasks, variations of packages can be used that exclude unnecessary components and functions to reduce resource requirements.
+
+The Jetware image building system is successfully plugging into the Continuous Integration pipeline. It allows you to quickly perform testing when upgrading code or settings. The reuse of intermediate results greatly reduces building time up to several seconds or several tens of seconds for one image. With the modular organization of the project and the use of different combinations of modules for different devices and tasks, the parallel building allows you to quickly run tests for all combinations.
+
+* Build boot images from packages 
+* Variations of packages for different usage profiles
+* Quick building of a large number of images
+* Embedding of a building of images in Continuous Integration 
+* Deployment of applications on many servers
+* Install and upgrade on remote or standalone devices
+{: .summary}
+
+### Deployment of applications on devices
+
+The application and its Jetware runtime environment  is isolated from the runtime environment of the operating system and from other applications. This allows you to freely install, modify or delete on endpoint devices or IoT gateways, one or more applications, without breaking the operating system or components.
+
+Isolation functions in Yocto Linux, Wind River Linux and other POSIX-compliant operating systems, including real-time operating systems. Requirements for the computational resources of the device are determined only by the requirements of the application and its dependencies. Isolation does not bring extra overhead and retains the possibility of co-operative use of shared files and RAM by different applications, allowing you to effectively save on resource consumption.
+
+Jetware runtime environment manager enables you to update the application and its components by separate packages, or everything in a single transaction. Failed updates or errors when testing after updating returns the app to the initial state. Installation and updating can be performed on a shared medium data channel and is able to minimize the amount of data transferred when using slow channels.
+
+Applications running on terminal or intermediate devices let you move the computation closer to the data. The application that runs on IoT gateways can perform the initial processing or aggregation of data from sensors, transmit it to the neighboring nodes higher in the hierarchy, or make decisions and pass commands to the actuators. Independent data processing and aggregation for transmission allows for a faster response to critical values and efficient use of the available bandwidth of the channels.
+
+Deployment of new or the reconfiguration of installed applications allows you to quickly change the data processing flows, adapting them to the changing nature of incoming information or to the changes in the task. Automatic configuration of applications is implemented according to the profile data processed, the type of the device and adjacent devices, and simplifies the management of a large number of devices and complex topologies.
+
+Automatic deployment of code or updates of the configuration of applications on the device allows you to quickly make improvements and to adapt to changes in the task. Along with the automated builds of applications from packages and testing, they create a full Continuous Delivery pipeline for the implementation and development of complex control systems.
+
+* Isolating applications from each other and the operating system
+* Update the application via components or in a single transaction
+* Reliable updating of applications on remote devices 
+* Building and deployment of applications on devices on-demand
+* Migrate computation closer to the data 
+* Continuous Delivery in the development of control systems
+{: .summary}

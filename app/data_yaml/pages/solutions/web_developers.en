@@ -1,0 +1,130 @@
+# Solutions
+{:.no_toc}
+
+## Startups and web developers
+{:.no_toc}
+
+Jetware appliances are designed to develop, test, and work sites, and will allow you to quickly and economically deploy any professional level services. Working in appliances will save you from having to configure and administer servers, and automates the processes of monitoring, backups and updates. Jetware appliances will provide an identical environment;  the site will work the same on any server, desktop or laptop. You can build an appliance with a runtime environment for your website in the online constructor by selecting the desired components from the Jetware software collection, or take ready-made appliances from the catalog.
+
+* TOC
+{:toc}
+
+### One-click stack appliances
+{::comment} duplicates 'web_sites' {:/comment}
+
+These appliances are aimed at users who want to install a web application, but don't want to deal with configuring and administering servers and server programs. In the **One-click stack** appliance, a fully configured **runtime environment** is installed, providing features of professional web hosting services or “platform as a service” PaaS (web server, database, programming languages and libraries). To install and work with it does not require the skills and qualifications of the system administrator. Among the web hosting environments,  various software stacks are included: LAMP, LEMP, Tomcat Java, MEAN, Ruby on Rails and others. The appliance installs in one step, and the application is immediately ready for operation.
+
+The One-click stack appliance can be installed with an installer on any dedicated server or VPS with a Linux operating system on any hosting provider to run in your office on a virtual platform such as  VMWare, Hyper-V or VirtualBox, or to run through cloud on the Launcher on popular cloud hosting services such as Amazon Web Services, Google Cloud Platform, DigitalOcean, Microsoft Azure.
+
+If your desired web hosting environment is not in our collection, [write us a request](/contacts?contacts_form[subject]=Add application to One-click stack) and we will add it.
+
+* Features of professional web hosting or PaaS (“platform as a service”)
+* Automatic installation in one step
+* Available for any user without technical knowledge
+* Requires neither server nor server software configuration
+* Works on any server with any hosting provider
+{: .summary}
+
+### Free choice of programs and their versions
+
+The Jetware collection of programs is created using a private build system and specifications of packages. At the moment it includes more than 800 free open source programs and commercial programs, and the number continues to grow.
+
+The **Jetware software collection** includes components that fully cover the work of modern software projects, from GNU C library and compilers, database servers, SQL and NoSQL, application servers for PHP, Java, Ruby, Python, NodeJS, to web applications Wordpress, Drupal, Redmine, etc. and the big data processing tool, Apache Hadoop.
+
+Many programs are available in several versions or variants of the compilation, each of which has its own update's branch and its own dependencies. The latest software provides developers with the most complete functionality and reduces development time. The stable version has wider compatibility and a well-debugged code that reduces the number of errors during development and the time for diagnosing and troubleshooting problems.
+
+All programs from the Jetware collection are optimized for server tasks. Most of the software includes settings for collaboration.
+
+* More than 800 programs in the Jetware collection Jetware 
+* Available in different compilation versions and variants
+* The latest software 
+* Fresh updates to stable program versions 
+* Saves developer time and reduces the number of errors 
+{: .summary}
+
+### Identical environments for development, testing and production server
+
+Jetware appliances are arranged in such a way that they work the same everywhere: on a dedicated server or VPS from a hosting provider, cloud hosting, office server, desktop or laptop. The same appliance installed on all those computers contains identical software and settings, and the web site will work the same on any of these computers.
+
+You can design a website in appliance on a personal laptop, test it in the same appliance on the office server and post a working site with this appliance on cloud hosting. The website always receives the same versions of PHP, Python, Ruby, JavaScript or Java, the same version and configuration of the database, the same versions of application server and web server, and the same libraries.
+
+A unified work environment reduces the time spent on installation, configuration and maintenance of runtime environments for the developer, for the test server, for the production server. With its help, errors or unexpected behavior due to different versions and settings of the programs used by the developer, the tester and on the production server are excluded. Testing becomes more effective due to the ability to as fully as possible simulate production conditions.
+
+* Works the same on a dedicated server, VPS or cloud hosting
+* The developer uses a runtime environment identical to the server
+* Reduces time for the setup and maintenance of a development environment
+* Increases the effectiveness of testing, providing simulated production conditions 
+* Eliminates errors associated with different versions used by developers 
+{: .summary}
+
+### Deploy a site with a full runtime environment
+
+Jetware appliances contain a tool for developers to automatically deploy a website to a testing or production server. It's convenient to use for the initial launch of the new website and to update the existing one.
+
+For projects with one or more developers, it may be used in simplified mode. In this case, the developer can start updating the site from his own computer and the server will automatically deploy a copy of the site from the developer's computer.
+
+For projects with a shared repository of a site's code , which is used for collaborative development, use the standard mode. In this embodiment, the update is performed automatically from a repository by the configuration rules, or manually, once the person responsible for the project confirms the update. If you have a test server it can automatically check for updates on the test server before updating to a production server.
+
+Deployment of the website on the server is done along  with its runtime environment: not only is the site  updated, but also its programs, libraries, data and settings. If, during initial deployment of the website, the runtime environment on the server does not yet exist, it will be installed and configured automatically.
+
+An update for an existing website runs with the ability to quickly return to a previous state, if after the update a bug is discovered. To do this, when updating, a copy of the previous state of the site and work environment is saved.
+
+For all types of applications, you can use the same utility with the same work scheme. There's no need to learn the peculiarities of the system of deployment of different applications and sites.
+
+* Website updates from the developer's computer or from a shared repository 
+* Automates a large number of steps and reduces the risk of human error 
+* Allows you to quickly return to its original state if problems arise
+* Integration with automatic testing before site deployment
+* Automatic launch of the site on the new server in a few minutes 
+{: .summary}
+
+### History of settings changes
+{::comment} duplicates 'web_sites' {:/comment}
+
+Jetware appliances can automatically save the changes to websites and software program settings, as well as changes to websites' code and scripts. To store the change history, the Git version control system is used.
+
+Verification and saving of changes is done automatically every hour. This period may be increased or decreased. Changes can also be saved  manually.
+
+The **history of changes** can be used for many purposes: test a new system configuration with the ability to return to previous settings; learn what changes from what dates are different from the current settings compared with settings that existed at another time. A return to any saved state of the settings can be fully implemented or selectively restored with only a subset of the settings.
+
+If you encounter problems in the system or web site, checking the change history helps to find the cause of the problem. Tracking the history of changes to the settings along with the issue of resource consumption and the speed of the pages helps to see how changing settings affects the performance and speed of your site.
+
+* Automatically save changes 
+* Easy rollback (full or partial) to the old settings 
+* Safe testing of a new system setup by the site owner 
+* Helps to find the cause of the problem when you change settings 
+* Helps to evaluate the effect of settings on performance 
+{: .summary}
+
+### Automated administration
+{::comment} duplicates 'web_sites' {:/comment}
+
+Jetware appliances include an **automatic administration** engine.  It is responsible for monitoring the work of the services (web servers, databases, etc.), checks the adequacy of the resources available, and proactively reports on situations which can lead to malfunctions. To help diagnose problems, it runs logs of resource consumption and service quality (speed of execution of requests, etc.)
+
+In addition to problem detection, it also uses tools that  independently prevent or resolve problems. For example, restart services stopped in an emergency, freeing the disc from secondary data (temporary files and log files) if there is insufficient free space. To protect the website against hacking, when it sees updates that address vulnerabilities it automatically installs new versions of packages.
+
+Thus most of the tasks of server support are handled automatically. The participation of the user or system administrator is limited only to those cases which the robot cannot handle.
+
+* Automatic monitoring of services 
+* Automatic troubleshooting
+* Warning about potential problems
+* A decline in the number of accidents and website downtime 
+* Reducing the need for a system administrator 
+{: .summary}
+
+
+### Replication and backup
+
+The Jetware runtime environment is designed with the ability to quickly recover from disasters. This is facilitated by splitting data into permanent and changeable, as well as by a file hierarchy, separating changeable data to storage classes.
+
+In appliances, an agent can  automatically be installed and configured for free and commercial backup systems, or tools for backup on external storage (FTP, S3, Dropbox).
+
+The files can be copied as a whole runtime environment including program and data, or only modified data. In the first case, to restore the working condition after an accident, it will be enough to unpack and run the saved copy on the new server. In the second case, you need to install appliance on the new server and to run the data recovery tool and settings from the saved copy.
+
+The structure of the runtime environment and packages makes it easy to integrate appliances in a fault-tolerant cluster with storage replication (Pacemake+Corosync+DRBD) or use appliances as a immutable images in the cloud when working with external data storage systems (Apache Mesos, Kubernetes, Docker Swarm).
+
+* Integration with various backup systems 
+* Automatic backup configuration to remote storage 
+* Quick disaster recovery
+* Simplified integration in fault-tolerant clusters
+{: .summary}

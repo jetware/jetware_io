@@ -1,0 +1,81 @@
+# Solutions
+
+<ul id="markdown-toc">
+  <li><a href="web_developers">Startups and web developers</a></li>
+  <li><a href="web_sites">Small business and website owners</a></li>
+  <li><a href="software_developers">Developers of server applications</a></li>
+  <li><a href="industrial">Control system integrators and IoT developers</a></li>
+  <li><a href="hosting">Hosting providers</a></li>
+  <li><a href="online_services">SaaS providers and multi-user services</a></li>
+</ul>
+
+### [Startups and web developers](web_developers)
+
+Ready-to-use software stacks and builder to select components allow to get for one click without any complicated installations and settings a professional runtime environment optimized for web applications. It is possible to use the same runtime environment for development, testing and production servers. It simplifies deployment and operation of the project, increases the speed of development and efficiency of testing, reduces the cost of server administration.
+
+<ul id="markdown-toc">
+  <li><a href="web_developers#one-click-stack-appliances" id="markdown-toc-one-click-stack-appliances">One-click stack appliances</a></li>
+  <li><a href="web_developers#free-choice-of-programs-and-their-versions" id="markdown-toc-free-choice-of-programs-and-their-versions">Free choice of programs and their versions</a></li>
+  <li><a href="web_developers#identical-environments-for-development-testing-and-production-server" id="markdown-toc-identical-environments-for-development-testing-and-production-server">Identical environments for development, testing and production server</a></li>
+  <li><a href="web_developers#deploy-a-site-with-a-full-runtime-environment" id="markdown-toc-deploy-a-site-with-a-full-runtime-environment">Deploy a site with a full runtime environment</a></li>
+  <li><a href="web_developers#history-of-settings-changes" id="markdown-toc-history-of-settings-changes">History of settings changes</a></li>
+  <li><a href="web_developers#automated-administration" id="markdown-toc-automated-administration">Automated administration</a></li>
+  <li><a href="web_developers#replication-and-backup" id="markdown-toc-replication-and-backup">Replication and backup</a></li>
+</ul>
+
+### [Small business and website owners](web_sites)
+
+The large selection of web applications for professional tasks: online stores, corporate sites and catalogs, CRM, document management systems or project management. Applications are prepared for the average user and equally easy to install on any hosting or computer. Installation, configuration and administration are done automatically, the user gets ready to work web site. It helps user without technical knowledge to deploy complex web applications, decreases the number of outages and reduces the need for technical support.
+
+<ul id="markdown-toc">
+  <li><a href="web_sites#one-click-app-appliances" id="markdown-toc-one-click-app-appliances">One-click app appliances</a></li>
+  <li><a href="web_sites#one-click-stack-appliances" id="markdown-toc-one-click-stack-appliances">One-click stack appliances</a></li>
+  <li><a href="web_sites#automated-administration" id="markdown-toc-automated-administration">Automated administration</a></li>
+  <li><a href="web_sites#history-of-settings-changes" id="markdown-toc-history-of-settings-changes">History of settings changes</a></li>
+  <li><a href="web_sites#appliances-work-the-same-everywhere" id="markdown-toc-appliances-work-the-same-everywhere">Appliances work the same everywhere</a></li>
+</ul>
+
+### [Developers of server applications](software_developers)
+
+Service for building of distributions applications, unified for all versions of Linux OS and all platforms. Unification of an application increases the number of application uses, expands the user base, and reduces the number of problems and incompatibilities on the user side. The publishing of an application in the Jetware software collection gives the opportunity to offer it to more users.
+
+<ul id="markdown-toc">
+  <li><a href="software_developers#unified-app-for-all-platforms" id="markdown-toc-unified-app-for-all-platforms">Unified app for all platforms</a></li>
+  <li><a href="software_developers#quality-work-environment" id="markdown-toc-quality-work-environment">Quality work environment</a></li>
+  <li><a href="software_developers#publishing-your-application-in-the-jetware-software-collection" id="markdown-toc-publishing-your-application-in-the-jetware-software-collection">Publishing your application in the Jetware software collection</a></li>
+</ul>
+
+### [Control system integrators and IoT developers](industrial)
+
+The system of building and on-demand deployment of applications for processing or controlling on endpoint devices or IoT gateways. Migrates computation  closer to data sources or actuators, increasing the speed of information processing, and providing more accurate results. Help to develop systems or to adapt them to changing tasks.
+
+<ul id="markdown-toc">
+  <li><a href="industrial#quality-work-environment" id="markdown-toc-quality-work-environment">Quality work environment</a></li>
+  <li><a href="industrial#immutable-or-boot-images" id="markdown-toc-immutable-or-boot-images">Immutable or boot images</a></li>
+  <li><a href="industrial#deployment-of-applications-on-devices" id="markdown-toc-deployment-of-applications-on-devices">Deployment of applications on devices</a></li>
+</ul>
+
+### [Hosting providers](hosting)
+
+Service for the automatic installation and administration of servers, friendly to users without technical knowledge. Facilitates the client working with the server, reduces administration costs and enhances the stability of the server, simplifies the acquisition and installation of new servers, and helps the provider to sell additional services.
+
+<ul id="markdown-toc">
+  <li><a href="hosting#installation-of-appliances-on-the-hosting-service-in-one-click" id="markdown-toc-installation-of-appliances-on-the-hosting-service-in-one-click">Installation of appliances on the hosting service in one click</a></li>
+  <li><a href="hosting#integrating-hosting-with-the-online-builder" id="markdown-toc-integrating-hosting-with-the-online-builder">Integrating hosting with the online builder</a></li>
+  <li><a href="hosting#online-demo-for-appliances" id="markdown-toc-online-demo-for-appliances">Online demo for appliances</a></li>
+  <li><a href="hosting#tools-for-web-developers" id="markdown-toc-tools-for-web-developers">Tools for web developers</a></li>
+  <li><a href="hosting#automation-of-server-maintenance" id="markdown-toc-automation-of-server-maintenance">Automation of server maintenance</a></li>
+</ul>
+
+### [SaaS providers and multi-user services](online_services)
+
+The systems for automatically building, installing, configuring and managing your own project software modules and third-party software. Reduce the cost of operation and administration of large projects, and increase development speed and testing efficiency.
+
+<ul id="markdown-toc">
+  <li><a href="online_services#works-the-same-everywhere" id="markdown-toc-works-the-same-everywhere">Works the same everywhere</a></li>
+  <li><a href="online_services#quality-work-environment" id="markdown-toc-quality-work-environment">Quality work environment</a></li>
+  <li><a href="online_services#own-variants-of-build-of-programs" id="markdown-toc-own-variants-of-build-of-programs">Own variants of build of programs</a></li>
+  <li><a href="online_services#decomposition-of-the-project-into-packages" id="markdown-toc-decomposition-of-the-project-into-packages">Decomposition of the project into packages</a></li>
+  <li><a href="online_services#immutable-or-boot-images" id="markdown-toc-immutable-or-boot-images">Immutable or boot images</a></li>
+</ul>
+

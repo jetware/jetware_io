@@ -1,0 +1,59 @@
+# Solutions
+{:.no_toc}
+
+## Developers of server applications
+{:.no_toc}
+
+Service for building of distributions applications, unified for all versions of Linux OS and all platforms. Unification of an application increases the number of application uses, expands the user base, and reduces the number of problems and incompatibilities on the user side. The publishing of an application in the Jetware software collection gives the opportunity to offer it to more users.
+
+* TOC
+{:toc}
+
+### Unified app for all platforms
+
+The Jetware runtime environment lets you create a unified build of the application with all the required components. Such an application can be installed on any Linux OS, without conflict with already-installed applications and libraries, and it will work the same way.
+
+The application is automatically supplied with distributions for all methods of installation and use: installers for any Linux OS, packages in deb and rpm format, containers for Docker, LXC and rkt, virtual machine images for VMWare, VirtualBox, and OpenStack/KVM and virtual machine images for platforms such as Amazon Web Services, Google Cloud Platform and Microsoft Azure.
+
+A unified build reduces the variety of factors that can affect the operation of the application. This makes it easier to reproduce the situation for the user, and faster to diagnose a problem. It also helps to focus the testing on application functionality and not on its behavior in different environments.
+
+* Unified build apps for any Linux OS
+* A decrease in the number of errors and incompatibilities on the user side 
+* Rapid diagnosis of problems
+* A decrease in the number of calls to tech support 
+* The expansion of the user base
+{: .summary}
+
+### Quality work environment
+
+The large selection of programs and libraries from the Jetware collection, give you the choice of different versions and build options, allowing you to use the application with the most suitable components. The latest software versions provide  developers with the most complete functionality and reduce development time. Stable versions have wider compatibility and well-debugged code that reduces the number of errors during development and the time for diagnosing and troubleshooting problems.
+
+When building a runtime environment for your application, it's automatically installed and configured with all the dependencies, providing them to the app in a ready-to-use form.
+
+The build can also include additional Jetware tools for package upgrade, automatic administration, the history of changes in settings, backup. These tool set facilitates the operation and maintenance of the application by the user, helping the user to quickly return to a healthy state after an accident or when not configured correctly, warns in advance about potential problems and automatically resolves or prevent some problems.
+
+* Available in different versions and variants of the compilation
+* Latest versions of software 
+* Fresh updates to stable software versions
+* Fewer mistakes and wasted time diagnosing and troubleshooting problems 
+* Additional Jetware tools for app maintenance
+{: .summary}
+
+## Publishing your application in the Jetware software collection
+
+It's possible to add any new software to the Jetware collection of programs. All that is necessary is to describe in the package specifications the build rules for the programs and how they integrate with other components. The package and its updates are created and tested automatically. The program collection can contain multiple versions and builds of packages, with their own specifications and dependencies.
+
+The application can be placed into its developer's own appliance and published in the appliance catalog. The application also can be used as a normal package in the Jetware online appliance builder or the Jetware runtime environment manager. Depending on the nature of the application, it can be a main application,  serving for some user tasks or an optional component that extends the capabilities of other applications.
+
+Appliances can be downloaded from the Jetware website in the form of an installer, container or virtual machine. When using private appliances it's possible to use of virtual machines images for pay-as-you-go rent  on the Amazon Web Service, Google Cloud Platform and Microsoft Azure.
+
+Currently, free applications or commercial applications BYOL (bring your own license) can by published in the Jetware software collection.
+
+* Publishing your app in the Jetware software collection
+* Creation and storage of your product distribution on the Jetware site
+* Empowerment of your product by other applications 
+* Install your product in addition to other applications 
+* The ability to quickly install your product for customers of hosting providers
+{: .summary}
+
+[Application for publishing applications](/contacts?contacts_form[subject]=Publishing application on Jetware)
