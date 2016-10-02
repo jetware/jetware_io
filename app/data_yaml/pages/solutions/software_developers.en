@@ -43,7 +43,7 @@ The build can also include additional Jetware tools for package upgrade, automat
 
 It's possible to add any new software to the Jetware collection of programs. All that is necessary is to describe in the package specifications the build rules for the programs and how they integrate with other components. The package and its updates are created and tested automatically. The program collection can contain multiple versions and builds of packages, with their own specifications and dependencies.
 
-The application can be placed into its developer's own appliance and published in the appliance catalog. The application also can be used as a normal package in the Jetware online appliance builder or the Jetware runtime environment manager. Depending on the nature of the application, it can be a main application,  serving for some user tasks or an optional component that extends the capabilities of other applications.
+The application can be placed into its developer's own appliance and published in the appliance catalog. The application also can be used as a normal package in the Jetware online appliance constructor or the Jetware runtime environment manager. Depending on the nature of the application, it can be a main application,  serving for some user tasks or an optional component that extends the capabilities of other applications.
 
 Appliances can be downloaded from the Jetware website in the form of an installer, container or virtual machine. When using private appliances it's possible to use of virtual machines images for pay-as-you-go rent  on the Amazon Web Service, Google Cloud Platform and Microsoft Azure.
 

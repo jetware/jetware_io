@@ -25,11 +25,11 @@ Appliances can be installed on any dedicated servers, VPS or cloud virtual machi
 
 [Appliance application form directory](/contacts?contacts_form[subject]=Appliances for providers) 
 
-### Integrating hosting with the online builder
+### Integrating hosting with the online constructor
 
-The **Jetware online builder** is used for a client's more complex tasks when you need to install additional programs or libraries, or to use specific versions of web applications, programs, or libraries. Integrating a builder in the hosting control panel easily solves this problem. In a few simple steps in the web interface, the client can independently select the necessary components or versions and add them to appliance. After that, the appliance is automatically installed on the server and the client gets the configured and ready to use web site or web hosting environment.
+The **Jetware online constructor** is used for a client's more complex tasks when you need to install additional programs or libraries, or to use specific versions of web applications, programs, or libraries. Integrating the constructor in the hosting control panel easily solves this problem. In a few simple steps in the web interface, the client can independently select the necessary components or versions and add them to appliance. After that, the appliance is automatically installed on the server and the client gets the configured and ready to use web site or web hosting environment.
 
-For existing appliances, the builder allows you to modify versions of the web applications (Wordpress, Drupal, etc.) and versions of the components of the stack (LAMP, Ruby on Rails, MEAN). Also the builder allows you to add individual components both in new and existing appliances: libraries and compilers, database servers (PostgreSQL, MongoDB, Redis, etc.), application server for PHP, Java, Ruby, Python, NodeJS, and applications, e.g., Solr, Gitolite, Zabbix.
+For existing appliances, the constructor allows you to modify versions of the web applications (Wordpress, Drupal, etc.) and versions of the components of the stack (LAMP, Ruby on Rails, MEAN). Also the constructor allows you to add individual components both in new and existing appliances: libraries and compilers, database servers (PostgreSQL, MongoDB, Redis, etc.), application server for PHP, Java, Ruby, Python, NodeJS, and applications, e.g., Solr, Gitolite, Zabbix.
 
 Appliances can be installed on any dedicated servers, VPS or cloud virtual machines. It's possible to install in an already existing operating system or on a clean server with its own operating system.
 
@@ -41,7 +41,7 @@ Appliances can be installed on any dedicated servers, VPS or cloud virtual machi
 * Installs on dedicated servers, VPS, cloud hosting
 {: .summary}
 
-[The application for integration with the online builder](/contacts?contacts_form[subject]=Constructor for providers) 
+[The application for integration with the online constructor](/contacts?contacts_form[subject]=Constructor for providers) 
 
 
 ### Online demo for appliances

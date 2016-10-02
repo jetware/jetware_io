@@ -11,7 +11,7 @@
 
 ### [Startups and web developers](web_developers)
 
-Ready-to-use software stacks and builder to select components allow to get for one click without any complicated installations and settings a professional runtime environment optimized for web applications. It is possible to use the same runtime environment for development, testing and production servers. It simplifies deployment and operation of the project, increases the speed of development and efficiency of testing, reduces the cost of server administration.
+Ready-to-use software stacks and the runtime environment constructor allow to get for one click without any complicated installations and settings a professional runtime environment optimized for web applications. It is possible to use the same runtime environment for development, testing and production servers. It simplifies deployment and operation of the project, increases the speed of development and efficiency of testing, reduces the cost of server administration.
 
 <ul id="markdown-toc">
   <li><a href="web_developers#one-click-stack-appliances" id="markdown-toc-one-click-stack-appliances">One-click stack appliances</a></li>
@@ -61,7 +61,7 @@ Service for the automatic installation and administration of servers, friendly t
 
 <ul id="markdown-toc">
   <li><a href="hosting#installation-of-appliances-on-the-hosting-service-in-one-click" id="markdown-toc-installation-of-appliances-on-the-hosting-service-in-one-click">Installation of appliances on the hosting service in one click</a></li>
-  <li><a href="hosting#integrating-hosting-with-the-online-builder" id="markdown-toc-integrating-hosting-with-the-online-builder">Integrating hosting with the online builder</a></li>
+  <li><a href="hosting#integrating-hosting-with-the-online-constructor" id="markdown-toc-integrating-hosting-with-the-online-constructor">Integrating hosting with the online constructor</a></li>
   <li><a href="hosting#online-demo-for-appliances" id="markdown-toc-online-demo-for-appliances">Online demo for appliances</a></li>
   <li><a href="hosting#tools-for-web-developers" id="markdown-toc-tools-for-web-developers">Tools for web developers</a></li>
   <li><a href="hosting#automation-of-server-maintenance" id="markdown-toc-automation-of-server-maintenance">Automation of server maintenance</a></li>
