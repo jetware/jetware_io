@@ -18,9 +18,9 @@ The One-click app appliance can be installed with an installer on any dedicated 
 If your desired web application is not in our collection, [write us a request](/contacts?contacts_form[subject]=Add application to One-click app) and we will add it.
 
 * All popular web applications
-* Automatic installation in one step 
-* Available for any user without technical knowledge 
-* Does not require configuration  of server and server software 
+* Automatic installation in one step
+* Available for any user without technical knowledge
+* Does not require configuration  of server and server software
 * Works on any server with any hosting provider
 {: .summary}
 
@@ -47,11 +47,11 @@ In addition to problem detection, it also uses tools that  independently prevent
 
 Thus most of the tasks of server support are handled automatically. The participation of the user or system administrator is limited only to those cases which the robot cannot handle.
 
-* Automatic monitoring of services 
+* Automatic monitoring of services
 * Automatic troubleshooting
 * Warning about potential problems
-* A decline in the number of accidents and website downtime 
-* Reducing the need for a system administrator 
+* A decline in the number of accidents and website downtime
+* Reducing the need for a system administrator
 {: .summary}
 
 ### History of settings changes
@@ -64,11 +64,11 @@ The **history of changes** can be used for many purposes: test a new system conf
 
 If you encounter problems in the system or web site, checking the change history helps to find the cause of the problem. Tracking the history of changes to the settings along with the issue of resource consumption and the speed of the pages helps to see how changing settings affects the performance and speed of your site.
 
-* Automatically save changes 
-* Easy rollback (full or partial) to the old settings 
-* Safe testing of a new system setup by the site owner 
-* Helps to find the cause of the problem when you change settings 
-* Helps to evaluate the effect of settings on performance 
+* Automatically save changes
+* Easy rollback (full or partial) to the old settings
+* Safe testing of a new system setup by the site owner
+* Helps to find the cause of the problem when you change settings
+* Helps to evaluate the effect of settings on performance
 {: .summary}
 
 ### Appliances work the same everywhere
@@ -79,7 +79,7 @@ For the One-click app appliance and One-click stack there is a utility to copy t
 
 This allows you to develop and configure a website not only on the server of the hosting provider, but also on a personal laptop, desktop or office server.
 
-* Development and setup of website on your computer 
+* Development and setup of website on your computer
 * Easy transfer of website to new hosting in one step
 * Works on any server with any hosting provider
 * Can be run on your office server for internal projects

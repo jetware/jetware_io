@@ -4,7 +4,7 @@
 ## Hosting providers
 {:.no_toc}
 
-Service for the automatic installation and administration of servers, friendly to users without technical knowledge. Facilitates the client working with the server, reduces administration costs and enhances the stability of the server, simplifies the acquisition and installation of new servers, and helps the provider to sell additional services.
+Service for the automatic installation and administration of servers, friendly to users without technical knowledge. Facilitates the client working with the server, reduces administration costs, and enhances the stability of the server, simplifies the acquisition and installation of new servers, and helps the provider sell additional services.
 
 * TOC
 {:toc}
@@ -17,13 +17,13 @@ The appliances collection includes a large number of web applications, CMS for w
 
 Appliances can be installed on any dedicated servers, VPS or cloud virtual machines. It's possible to install it in an existing operating system or on a clean server with its own operating system.
 
-* A large selection of web apps and stacks 
-* Installation from the control panel in one click 
-* Users require no technical knowledge 
-* Installs on dedicated servers, VPS, cloud hosting 
+* A large selection of web apps and stacks
+* Installation from the control panel in one click
+* Users require no technical knowledge
+* Installs on dedicated servers, VPS, cloud hosting
 {: .summary}
 
-[Appliance application form directory](/contacts?contacts_form[subject]=Appliances for providers) 
+[Appliance application form directory](/contacts?contacts_form[subject]=Appliances for providers)
 
 ### Integrating hosting with the online constructor
 
@@ -33,15 +33,15 @@ For existing appliances, the constructor allows you to modify versions of the we
 
 Appliances can be installed on any dedicated servers, VPS or cloud virtual machines. It's possible to install in an already existing operating system or on a clean server with its own operating system.
 
-* Easy creation of appliances with any web application or environment 
-* Installation from control panel in one click 
-* Users require no technical knowledge 
+* Easy creation of appliances with any web application or environment
+* Installation from control panel in one click
+* Users require no technical knowledge
 * A large selection of programs and libraries
-* Easy to add additional components 
+* Easy to add additional components
 * Installs on dedicated servers, VPS, cloud hosting
 {: .summary}
 
-[The application for integration with the online constructor](/contacts?contacts_form[subject]=Constructor for providers) 
+[The application for integration with the online constructor](/contacts?contacts_form[subject]=Constructor for providers)
 
 
 ### Online demo for appliances
@@ -54,11 +54,11 @@ Demonstration run in containers are characterized by the minimal consumption of 
 
 * Create a server with a working web site or application in one click
 * Quick demonstration for the user of the application running at the provider
-* A low cost demonstration of the user sessions 
+* A low cost demonstration of the user sessions
 * Upgrade the demo servers to a paid account
 {: .summary}
 
-[Application form for online demo](/contacts?contacts_form[subject]=Online demo for providers) 
+[Application form for online demo](/contacts?contacts_form[subject]=Online demo for providers)
 
 ### Tools for web developers
 
@@ -66,7 +66,7 @@ Jetware appliances help web developers organize the development process. The use
 
 The hosting provider can offer the developer the service of a test server to organize  the continuous integration process. For a test server for small projects, it's convenient to use a short-lived snapshot of the production server. This service allows the client to automatically check all changes on the test server before they are deployed on the production server. In this configuration, a copy of the working website is run and tested on on the test server, it is deployed and the update is tested, and if all tests are successful, the update will be deployed on the production server.
 
-* Identical runtime environment on the hosting and developer computer 
+* Identical runtime environment on the hosting and developer computer
 * Automatic deployment of web site on the hosting
 * Test server offering for Continuous Integration
 {: .summary}
@@ -77,8 +77,8 @@ Jetware appliances have built-in server maintenance automation. It includes auto
 
 The hosting provider can offer a backup storage service. In that case, all the backup settings for the use of this service will be made automatically.
 
-* Automatic server administration 
+* Automatic server administration
 * A decrease in the number of problems on the website
-* A decrease in the number of calls to tech support 
+* A decrease in the number of calls to tech support
 * Automatic backup configuration when ordering services
 {: .summary}

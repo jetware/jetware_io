@@ -4,7 +4,7 @@
 ## Control system integrators and IoT developers
 {:.no_toc}
 
-The system of building and on-demand deployment of applications for processing or controlling on endpoint devices or IoT gateways. Migrates computation  closer to data sources or actuators, increasing the speed of information processing, and providing more accurate results. Help to develop systems or to adapt them to changing tasks.
+The system of building and on-demand deployment of applications for processing or controlling on endpoint devices or IoT gateways. Migrates computation closer to data sources or actuators, thus increasing the speed of information processing and providing more accurate results. Helps develop systems or adapt them to changing tasks.
 
 * TOC
 {:toc}
@@ -19,9 +19,9 @@ When building a runtime environment for your application, it's automatically ins
 The build can also include additional Jetware tools for package upgrade, automatic administration, the history of changes in settings, backup. These tool set facilitates the operation and maintenance of the application by the user, helping the user to quickly return to a healthy state after an accident or when not configured correctly, warns in advance about potential problems and automatically resolves or prevent some problems.
 
 * Available in different versions and variants of the compilation
-* Latest versions of software 
+* Latest versions of software
 * Fresh updates to stable software versions
-* Fewer mistakes and wasted time diagnosing and troubleshooting problems 
+* Fewer mistakes and wasted time diagnosing and troubleshooting problems
 * Additional Jetware tools for app maintenance
 {: .summary}
 
@@ -36,10 +36,10 @@ Creating images by building from the packages allows you to more clearly specify
 
 The Jetware image building system is successfully plugging into the Continuous Integration pipeline. It allows you to quickly perform testing when upgrading code or settings. The reuse of intermediate results greatly reduces building time up to several seconds or several tens of seconds for one image. With the modular organization of the project and the use of different combinations of modules for different devices and tasks, the parallel building allows you to quickly run tests for all combinations.
 
-* Build boot images from packages 
+* Build boot images from packages
 * Variations of packages for different usage profiles
 * Quick building of a large number of images
-* Embedding of a building of images in Continuous Integration 
+* Embedding of a building of images in Continuous Integration
 * Deployment of applications on many servers
 * Install and upgrade on remote or standalone devices
 {: .summary}
@@ -60,8 +60,8 @@ Automatic deployment of code or updates of the configuration of applications on 
 
 * Isolating applications from each other and the operating system
 * Update the application via components or in a single transaction
-* Reliable updating of applications on remote devices 
+* Reliable updating of applications on remote devices
 * Building and deployment of applications on devices on-demand
-* Migrate computation closer to the data 
+* Migrate computation closer to the data
 * Continuous Delivery in the development of control systems
 {: .summary}

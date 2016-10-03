@@ -4,7 +4,7 @@
 ## SaaS providers and multi-user services
 {:.no_toc}
 
-The systems for automatically building, installing, configuring and managing your own project software modules and third-party software. Reduce the cost of operation and administration of large projects, and increase development speed and testing efficiency.
+Systems for automatically building, installing, configuring, and managing your own project software modules and third-party software. These reduce the cost of operation and administration of large projects and increase development speed and testing efficiency.
 
 * TOC
 {:toc}
@@ -16,9 +16,9 @@ The Jetware runtime environments are isolated from the operating system working 
 One and the same Jetware operating environment provides the same conditions for the application to work on different hardware, different OS versions, different methods of virtualization or containerization. The  application works the same everywhere: servers, desktops and laptops; directly in the operating system in containers or in virtual machines.The single runtime environment of the application allows you to reduce the cost of configuration and operation of systems with a large number of servers. In the Continuous Integration pipeline it helps to more easily organize and maintain automated system tests and testing more efficiently through better simulating operating conditions. Developers eliminate errors and incompatibility caused by differences in the settings and versions of components.
 
 * Reduces the administration costs of large systems
-* Reduces the time to configure and maintain a development and testing environment 
+* Reduces the time to configure and maintain a development and testing environment
 * The developer uses a working environment identical to the server
-* Eliminates errors associated with the different software versions used by developers 
+* Eliminates errors associated with the different software versions used by developers
 * Increases the effectiveness of testing, providing simulated working conditions
 {: .summary}
 
@@ -32,9 +32,9 @@ When building a runtime environment for your application, it's automatically ins
 The build can also include additional Jetware tools for package upgrade, automatic administration, the history of changes in settings, backup. These tool set facilitates the operation and maintenance of the application by the user, helping the user to quickly return to a healthy state after an accident or when not configured correctly, warns in advance about potential problems and automatically resolves or prevent some problems.
 
 * Available in different versions and variants of the compilation
-* Latest versions of software 
+* Latest versions of software
 * Fresh updates to stable software versions
-* Fewer mistakes and wasted time diagnosing and troubleshooting problems 
+* Fewer mistakes and wasted time diagnosing and troubleshooting problems
 * Additional Jetware tools for app maintenance
 {: .summary}
 
@@ -47,9 +47,9 @@ Private repositories are useful for the building and storage of software package
 If similar packages are already in the Jetware collection of programs, you can use them as a base and expand existing specifications. In addition to the Jetware specifications, when building, packages can be implemented to be compatible with the specifications of software packaging for Debian or RHEL. Some types of applications can be automatically converted into packages using a packetization utility.
 
 * Reduces operating costs of the private component builds
-* Allows the use of components, modified for the requirements of the project 
-* Allows components to be optimized for different types of equipment and tasks 
-* Automatic selection of a suitable package’s variants when building runtime environments 
+* Allows the use of components, modified for the requirements of the project
+* Allows components to be optimized for different types of equipment and tasks
+* Automatic selection of a suitable package’s variants when building runtime environments
 {: .summary}
 
 ### Decomposition of the project into packages
@@ -62,7 +62,7 @@ Modules of the project are presented in the form of packages with dependencies o
 
 The modularity of the project allows the use of fine-grained update releases and improves the efficiency of the continuous integration pipeline. Fine-grained updates accelerate the execution of tests and help in the early stages of finding new bugs.  They help to automatically locate combinations of modules that have changed, resulting in regression.  They reduce the amount of changes when you deploy an upgrade and can help you downgrade faster to a previous state when problems arise.
 
-* The framework of decomposing the project into packages 
+* The framework of decomposing the project into packages
 * Improved maintenance of the software project
 * Reduces the number of errors and incompatibilities
 * Increases the efficiency of testing
@@ -79,10 +79,10 @@ Creating images by building from the packages allows you to more clearly specify
 
 The Jetware image building system is successfully plugging into the Continuous Integration pipeline. It allows you to quickly perform testing when upgrading code or settings. The reuse of intermediate results greatly reduces building time up to several seconds or several tens of seconds for one image. With the modular organization of the project and the use of different combinations of modules for different devices and tasks, the parallel building allows you to quickly run tests for all combinations.
 
-* Build boot images from packages 
+* Build boot images from packages
 * Variations of packages for different usage profiles
 * Quick building of a large number of images
-* Embedding of a building of images in Continuous Integration 
+* Embedding of a building of images in Continuous Integration
 * Deployment of applications on many servers
 * Install and upgrade on remote or standalone devices
 {: .summary}

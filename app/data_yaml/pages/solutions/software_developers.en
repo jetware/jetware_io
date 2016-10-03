@@ -4,7 +4,7 @@
 ## Developers of server applications
 {:.no_toc}
 
-Service for building of distributions applications, unified for all versions of Linux OS and all platforms. Unification of an application increases the number of application uses, expands the user base, and reduces the number of problems and incompatibilities on the user side. The publishing of an application in the Jetware software collection gives the opportunity to offer it to more users.
+Service for building of distributions applications, unified for all versions of Linux OS and all platforms. Unification of an application increases the number of application uses, expands the user base, and reduces the number of problems and incompatibilities on the user side. The publishing of an application in the Jetware software collection provides an opportunity to offer it to more users.
 
 * TOC
 {:toc}
@@ -18,9 +18,9 @@ The application is automatically supplied with distributions for all methods of 
 A unified build reduces the variety of factors that can affect the operation of the application. This makes it easier to reproduce the situation for the user, and faster to diagnose a problem. It also helps to focus the testing on application functionality and not on its behavior in different environments.
 
 * Unified build apps for any Linux OS
-* A decrease in the number of errors and incompatibilities on the user side 
+* A decrease in the number of errors and incompatibilities on the user side
 * Rapid diagnosis of problems
-* A decrease in the number of calls to tech support 
+* A decrease in the number of calls to tech support
 * The expansion of the user base
 {: .summary}
 
@@ -33,9 +33,9 @@ When building a runtime environment for your application, it's automatically ins
 The build can also include additional Jetware tools for package upgrade, automatic administration, the history of changes in settings, backup. These tool set facilitates the operation and maintenance of the application by the user, helping the user to quickly return to a healthy state after an accident or when not configured correctly, warns in advance about potential problems and automatically resolves or prevent some problems.
 
 * Available in different versions and variants of the compilation
-* Latest versions of software 
+* Latest versions of software
 * Fresh updates to stable software versions
-* Fewer mistakes and wasted time diagnosing and troubleshooting problems 
+* Fewer mistakes and wasted time diagnosing and troubleshooting problems
 * Additional Jetware tools for app maintenance
 {: .summary}
 
@@ -51,8 +51,8 @@ Currently, free applications or commercial applications BYOL (bring your own lic
 
 * Publishing your app in the Jetware software collection
 * Creation and storage of your product distribution on the Jetware site
-* Empowerment of your product by other applications 
-* Install your product in addition to other applications 
+* Empowerment of your product by other applications
+* Install your product in addition to other applications
 * The ability to quickly install your product for customers of hosting providers
 {: .summary}
 

@@ -35,11 +35,11 @@ Many programs are available in several versions or variants of the compilation, 
 
 All programs from the Jetware collection are optimized for server tasks. Most of the software includes settings for collaboration.
 
-* More than 800 programs in the Jetware collection Jetware 
+* More than 800 programs in the Jetware collection Jetware
 * Available in different compilation versions and variants
-* The latest software 
-* Fresh updates to stable program versions 
-* Saves developer time and reduces the number of errors 
+* The latest software
+* Fresh updates to stable program versions
+* Saves developer time and reduces the number of errors
 {: .summary}
 
 ### Identical environments for development, testing and production server
@@ -53,8 +53,8 @@ A unified work environment reduces the time spent on installation, configuration
 * Works the same on a dedicated server, VPS or cloud hosting
 * The developer uses a runtime environment identical to the server
 * Reduces time for the setup and maintenance of a development environment
-* Increases the effectiveness of testing, providing simulated production conditions 
-* Eliminates errors associated with different versions used by developers 
+* Increases the effectiveness of testing, providing simulated production conditions
+* Eliminates errors associated with different versions used by developers
 {: .summary}
 
 ### Deploy a site with a full runtime environment
@@ -71,11 +71,11 @@ An update for an existing website runs with the ability to quickly return to a p
 
 For all types of applications, you can use the same utility with the same work scheme. There's no need to learn the peculiarities of the system of deployment of different applications and sites.
 
-* Website updates from the developer's computer or from a shared repository 
-* Automates a large number of steps and reduces the risk of human error 
+* Website updates from the developer's computer or from a shared repository
+* Automates a large number of steps and reduces the risk of human error
 * Allows you to quickly return to its original state if problems arise
 * Integration with automatic testing before site deployment
-* Automatic launch of the site on the new server in a few minutes 
+* Automatic launch of the site on the new server in a few minutes
 {: .summary}
 
 ### History of settings changes
@@ -89,11 +89,11 @@ The **history of changes** can be used for many purposes: test a new system conf
 
 If you encounter problems in the system or web site, checking the change history helps to find the cause of the problem. Tracking the history of changes to the settings along with the issue of resource consumption and the speed of the pages helps to see how changing settings affects the performance and speed of your site.
 
-* Automatically save changes 
-* Easy rollback (full or partial) to the old settings 
-* Safe testing of a new system setup by the site owner 
-* Helps to find the cause of the problem when you change settings 
-* Helps to evaluate the effect of settings on performance 
+* Automatically save changes
+* Easy rollback (full or partial) to the old settings
+* Safe testing of a new system setup by the site owner
+* Helps to find the cause of the problem when you change settings
+* Helps to evaluate the effect of settings on performance
 {: .summary}
 
 ### Automated administration
@@ -105,11 +105,11 @@ In addition to problem detection, it also uses tools that  independently prevent
 
 Thus most of the tasks of server support are handled automatically. The participation of the user or system administrator is limited only to those cases which the robot cannot handle.
 
-* Automatic monitoring of services 
+* Automatic monitoring of services
 * Automatic troubleshooting
 * Warning about potential problems
-* A decline in the number of accidents and website downtime 
-* Reducing the need for a system administrator 
+* A decline in the number of accidents and website downtime
+* Reducing the need for a system administrator
 {: .summary}
 
 
@@ -123,8 +123,8 @@ The files can be copied as a whole runtime environment including program and dat
 
 The structure of the runtime environment and packages makes it easy to integrate appliances in a fault-tolerant cluster with storage replication (Pacemake+Corosync+DRBD) or use appliances as a immutable images in the cloud when working with external data storage systems (Apache Mesos, Kubernetes, Docker Swarm).
 
-* Integration with various backup systems 
-* Automatic backup configuration to remote storage 
+* Integration with various backup systems
+* Automatic backup configuration to remote storage
 * Quick disaster recovery
 * Simplified integration in fault-tolerant clusters
 {: .summary}
