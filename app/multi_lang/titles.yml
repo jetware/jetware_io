@@ -92,6 +92,9 @@ appliance:
 'Role':
   ru: Роль
   it: Ruolo
+'Roles':
+  ru: Роли
+  it: Ruoli
 'Alternatives':
   ru: Альтернативы
   it: Alternative
@@ -101,3 +104,8 @@ appliance:
   ru: Варианты
 'Packages':
   ru: Пакеты
+packages:
+  'Principal':
+    ru: Принципиальные
+  'Active':
+    ru: Активные
