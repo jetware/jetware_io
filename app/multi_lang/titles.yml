@@ -1,9 +1,15 @@
 'Layout':
   ru: Схема
   it: Layout
+'Layouts':
+  ru: Схемы
+  it: Layouts
 'Appliance':
   ru: Аплайнс
   it: Appliance
+'Appliances':
+  ru: Аплайнсы
+  it: Appliances
 'Recent layouts':
   ru: Новые схемы
   it: Layouts recente
@@ -104,6 +110,8 @@ appliance:
   ru: Варианты
 'Packages':
   ru: Пакеты
+'Package':
+  ru: Пакет
 packages:
   'Principal':
     ru: Принципиальные

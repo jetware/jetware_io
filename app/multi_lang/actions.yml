@@ -5,6 +5,9 @@ appliances_controller: &appliances_controller
   'Adjust appliance':
     ru: Доработать аплайнс
     it: Aggiustare appliance
+  'Customize appliance':
+    ru: Доработать аплайнс
+    it: Aggiustare appliance
   'Run installer':
     ru: Запустить установщик
   'Download virtual machine':
