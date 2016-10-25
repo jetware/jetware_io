@@ -1,0 +1,10 @@
+Percona Server for MongoDB is a free, enhanced, fully compatible, open source, drop-in replacement for the MongoDB Community Edition that includes enterprise-grade features and functionality.
+
+Percona Server for MongoDB provides:
+
+* All features and benefits of MongoDB 3.2 Community Edition.
+* MongoDB distributed MMAP v1 and WiredTiger storage engines
+* Optional RocksDB and Percona Memory Engine storage engines
+* Full online backup support for PerconaFT and MongoRocks
+* SASL Authentication plugin, enabling authentication through OpenLDAP or Active Directory.
+* Audit plugin, providing the ability to track and query database interactions of users or applications
