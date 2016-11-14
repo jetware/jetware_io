@@ -15,7 +15,7 @@ appliances_controller: &appliances_controller
   'Development integration':
     ru: Интеграция с разработкой
 appliance_viewer: *appliances_controller
-layout_viewer:
+constructor_viewer:
   'Created':
     ru: Создана
     it: Creato

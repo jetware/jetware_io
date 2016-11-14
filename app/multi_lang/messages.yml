@@ -24,9 +24,9 @@
 'Page not found':
   ru: Страница не найдена
   it: La pagina non è stata trovata
-'Layout not found':
-  ru: Схема не найдена
-  it: Il layout non è stato trovato
+'Constructor not found':
+  ru: Конструктор не найден
+  it: Il costruttore non è stato trovato
 'Access denied':
   ru: Доступ запрещен
   it: Accesso vietato
