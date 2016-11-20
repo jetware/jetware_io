@@ -1,6 +1,6 @@
 name: Jetware
 motto: !ruby/object:StringML
   en: self-constructing autonomous software systems
-  ru: самособирающиеся автономные программные системы
+  ru: самоконструируемые автономные программные системы
   it: ambienti operativi personalizzati per le applicazioni web 
 copyright: '&copy; 2016 <a href=/contacts>Jetware team</a>'
