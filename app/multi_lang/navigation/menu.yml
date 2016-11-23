@@ -1,7 +1,21 @@
-About:
-  en: What is Jetware?
+solutions:
+  Web developers:
+    ru: Веб-разработчикам
+  Website owners:
+    ru: Владельцам веб-сайтов
+  Software developers:
+    ru: Разработчикам приложение
+  Industrial&#x002f;IoT:
+    ru: Системы управления&#x002f;IOT
+  Hosting providers:
+    ru: Провайдерам хостинга
+  SaaS providers:
+    ru: SaaS-провайдерам
+'What is Jetware?':
   ru: О проекте Jetware
   it: Che cosa è Jetware?
+About:
+  ru: Проект
 Company:
   ru: Компания
   it: Chi siamo
@@ -34,3 +48,7 @@ Username:
 Password:
   ru: Пароль
   it: Password
+Products:
+  ru: Продукты
+Careers:
+  ru: Вакансии
