@@ -19,6 +19,14 @@ An appliance can be reused again or can be shared with other Jetware users.
 
 The configuration of an appliance is stored in a YAML-document inside the appliance and can be used at any time to reproduce the appliance from scratch.
 
+### Using Jetware solutions
+
+With the help of Jetware’s constructors and appliances, startups and web developers can create and deploy server software stacks to use in their applications and websites. Self-constructing and self-administration tools eliminate manual operations and settings and allow complex software configurations to be easily built.
+
+Businesses, organizations, and website owners use Jetware constructors and appliances for customizing or installing server or web applications on the cloud or office servers. The application is already pre-configured and ready for immediate use, including self-management, self-monitoring, and self-healing components. This helps users without technical knowledge deploy and run complex applications.
+
+Software developers integrate the Jetware runtime environment manager and Jetware Appliance Builder with their own continuous delivery and release automation pipeline. The boot images, virtual machines, and containers then are deployed on the SaaS-provider’s infrastructure, installed on a server or automation appliances, delivered to the customer to on-premises usage, or published in a marketplaces or apps listings. This minimizes manual operations, accelerates the release of product, improves product quality, and facilitates the delivery and deployment of the product to the end user.
+
 #### Appliance types
 
 ##### Solution stack

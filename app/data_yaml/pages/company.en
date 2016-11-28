@@ -8,6 +8,12 @@ Our solution is designed for IT-professionals in various areas. It is conflict-f
 
 This innovation is the culmination of years of research and funds spent on exploration and discovery. By applying our precise knowledge of the modern runtime environment for server applications, we have created new principles and technology that we can now share with developers and system administrators.
 
+## What we do
+
+Jetware develops automation tools to setup, integrate, run, and manage server software. The main application areas are self-constructing applications and self-managed clusters.
+
+Jetware’s technologies are implemented to create virtual machines or containers with applications or software stacks; integrate services using the orchestration layer in service-oriented clusters; and provide a continuous delivery pipeline for building, testing, packaging, and distributing applications.
+
 ## History
 
 The Jetware team has been developing system software and designing and operating server infrastructure and networks for over 20 years. 
