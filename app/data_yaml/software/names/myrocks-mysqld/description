@@ -1,0 +1,25 @@
+MyRocks is an open source project that integrates with RocksDB as a new MySQL storage engine. It gives users better read efficiency, better write efficiency, and better space efficiency for better performance on flash storage.
+
+## Key MyRocks features
+
+### Greater Space Efficiency
+
+MyRocks has 2x better compression compared to compressed InnoDB, 3-4x better compression compared to uncompressed InnoDB, meaning you use less space.
+
+### Greater Writing Efficiency
+
+MyRocks has a 10x less write amplification compared to InnoDB, giving you better endurance of flash storage and improving overall throughput.
+
+### Faster Replication
+
+No random reads for updating secondary keys, except for unique indexes. The Read-Free Replication option does away with random reads when updating primary keys, regardless of uniqueness, with a row-based binary logging format.
+
+### Faster Data Loading
+
+MyRocks writes data directly onto the bottommost level, which avoids all compaction overheads when you enable faster data loading for a session.
+
+## Links
+
+[Getting Started](http://myrocks.io/docs/getting-started/)
+[FAQ](http://myrocks.io/docs/support/faq.html)
+[MyRocks implementation at Facebook](https://code.facebook.com/posts/190251048047090/myrocks-a-space-and-write-optimized-mysql-database/)
