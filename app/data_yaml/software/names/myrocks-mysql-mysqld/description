@@ -20,6 +20,6 @@ MyRocks writes data directly onto the bottommost level, which avoids all compact
 
 ## Links
 
-[Getting Started](http://myrocks.io/docs/getting-started/)
-[FAQ](http://myrocks.io/docs/support/faq.html)
-[MyRocks implementation at Facebook](https://code.facebook.com/posts/190251048047090/myrocks-a-space-and-write-optimized-mysql-database/)
+* [Getting Started](http://myrocks.io/docs/getting-started/)
+* [FAQ](http://myrocks.io/docs/support/faq.html)
+* [MyRocks implementation at Facebook](https://code.facebook.com/posts/190251048047090/myrocks-a-space-and-write-optimized-mysql-database/)
