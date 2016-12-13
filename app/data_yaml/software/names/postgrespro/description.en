@@ -1,0 +1,3 @@
+Postgres Pro is a PostgreSQL fork developed by Postgres Professional company.
+
+Each new Postgres Pro version is an actual PostgreSQL version with some patches commited to community PostgreSQL, and Postgres Professional extensions and patches. In most cases, they are published at commitfest.
