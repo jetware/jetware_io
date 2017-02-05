@@ -10,6 +10,8 @@ appliances_controller: &appliances_controller
     it: Aggiustare appliance
   'Run installer':
     ru: Запустить установщик
+  'Launch in the cloud':
+    ru: Запустить в облаке
   'Download virtual machine':
     ru: Скачать виртуальную машину
   'Development integration':
