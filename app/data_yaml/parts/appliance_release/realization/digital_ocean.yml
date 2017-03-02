@@ -1,0 +1,22 @@
+title: Digital Ocean
+provider_url: https://www.digitalocean.com/
+control_panel_url: https://cloud.digitalocean.com/
+instance_configuration: !ruby/object:StringML
+  en: Droplet configuration
+  ru: Конфигурация дроплета
+state:
+  installing:
+    title: !ruby/object:StringML
+      en: Droplet is installing
+      ru: Дроплет инсталлируется
+  ready:
+    title: !ruby/object:StringML
+      en: Droplet is ready to use
+      ru: Дроплет готов к использованю
+    message: |
+      {ML}
+      {lang en}
+      The droplet has been created with the installed appliance %{appliance}, and is ready to use.
+      {lang ru}
+      Дроплет запущен с установленным аплайнсом %{appliance} и готов к использованию.
+      {/ML}

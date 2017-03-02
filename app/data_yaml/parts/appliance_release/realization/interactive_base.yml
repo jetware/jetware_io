@@ -1,0 +1,32 @@
+title_long_format: !ruby/object:StringML
+  en: Launch in the %{title} cloud
+  ru: Запуск в облаке %{title}
+instance_configuration: !ruby/object:StringML
+  en: Instance configuration
+state:
+  installing:
+    title_brief: !ruby/object:StringML
+      en: Installing
+      ru: Инсталлируется
+    message: |
+      {ML}
+      {lang en}
+      The installation may require from 1 to 15 minutes. You'll get email notification after the installation will be completed.
+      {lang ru}
+      Для установки аплайнса требуется от 1 до 15 минут. После завершения установки на ваш email будет выслано уведомление.
+      {/ML}
+  ready:
+    title_brief: !ruby/object:StringML
+      en: Ready
+      ru: Готов
+  broken:
+    title_brief: !ruby/object:StringML
+      en: Broken
+      ru: Неисправен
+    message: |
+      {ML}
+      {lang en}
+      The launching or installation of the instance has been failed.
+      {lang ru}
+      Запуск или установка этого инстанса произошла с ошибкой.
+      {/ML}

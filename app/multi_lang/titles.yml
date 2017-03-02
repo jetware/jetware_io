@@ -114,6 +114,8 @@ appliance:
   ru: Пакеты
 'Package':
   ru: Пакет
+'Principal modules':
+  ru: Принципиальные модули
 packages:
   'Principal':
     ru: Принципиальные
@@ -121,3 +123,18 @@ packages:
     ru: Активные
   'All':
     ru: Все
+Software:
+  ru: Программное обеспечение
+Region:
+  ru: Регион
+Machine:
+  ru: Машина
+Operating system:
+  ru: Операционная система
+History:
+  ru: История
+Launch once more:
+  ru: Запустить еще
+Remove record:
+  ru: Удалить запись
+
