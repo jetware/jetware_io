@@ -91,6 +91,9 @@ appliance:
 'Web site':
   ru: Веб-сайт
   it: Sito web
+'Address':
+  ru: Адрес
+  it: Indirizzo
 'Location':
   ru: Местоположение
   it: Ubicazione
