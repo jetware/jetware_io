@@ -4,6 +4,17 @@ title_long_format: !ruby/object:StringML
 instance_configuration: !ruby/object:StringML
   en: Instance configuration
 state:
+  starting:
+    title_brief: !ruby/object:StringML
+      en: Starting
+      ru: Запускается
+    message: |
+      {ML}
+      {lang en}
+      The virtual machine is starting now, it may require from 10 seconds up to 3 minutes. The appliance installation will be initiated after the virtual machine had been started.
+      {lang ru}
+      Виртуальная машина запускается в течение от 10 секунд до 3 минут. После старта будет начата установка аплайнса.
+      {/ML}
   installing:
     title_brief: !ruby/object:StringML
       en: Installing

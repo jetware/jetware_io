@@ -5,9 +5,13 @@ instance_configuration: !ruby/object:StringML
   en: Droplet configuration
   ru: Конфигурация дроплета
 state:
+  starting:
+    title: !ruby/object:StringML
+      en: Droplet is starting now
+      ru: Дроплет запускается
   installing:
     title: !ruby/object:StringML
-      en: Droplet is installing
+      en: Droplet is installing now
       ru: Дроплет инсталлируется
   ready:
     title: !ruby/object:StringML
