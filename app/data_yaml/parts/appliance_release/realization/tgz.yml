@@ -251,19 +251,19 @@ file:
     #
     
     if [ -n "$new_user" ]; then
-    echo -n "\
+    	echo -n "\
     -----------------------------------------------------------------------------
     
     To enter the runtime environment, log in as the user '$JET_USER'.
     
     " >&2
-    	else
+    else
     	echo -n "\
     -----------------------------------------------------------------------------
     
     To enter the runtime environment, run:
     
-    	"$DESTDIR"/enter
+    	$DESTDIR/enter
     
     " >&2
     fi
@@ -278,7 +278,7 @@ file:
     
     if [ -n "$quick_start" ]; then
     	if [ -n "$new_user" ]; then
-    	echo -n "\
+    		echo -n "\
     To execute a command, i.e. show quick start configuration
     via '$quick_start' command, log in as the user '$JET_USER':
     
@@ -294,11 +294,11 @@ file:
     
     " >&2
     	else
-    	echo -n "\
+    		echo -n "\
     To execute a command, i.e. show quick start configuration
     via '$quick_start' command, run:
     
-    	"$DESTDIR"/enter $quick_start
+    	$DESTDIR/enter $quick_start
     
     " >&2
     	fi
