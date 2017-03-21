@@ -4,16 +4,16 @@ title_long_format: !ruby/object:StringML
 instance_configuration: !ruby/object:StringML
   en: Instance configuration
 state:
-  starting:
+  booting:
     title_brief: !ruby/object:StringML
-      en: Starting
-      ru: Запускается
+      en: Booting
+      ru: Загружается
     message: |
       {ML}
       {lang en}
-      The virtual machine is starting now, it may require from 10 seconds up to 3 minutes. The appliance installation will be initiated after the virtual machine had been started.
+      The virtual machine is booting now, it may require from 10 seconds up to 3 minutes. The appliance installation will be initiated after the virtual machine had been booted.
       {lang ru}
-      Виртуальная машина запускается в течение от 10 секунд до 3 минут. После старта будет начата установка аплайнса.
+      Виртуальная машина загружается в течение от 10 секунд до 3 минут. После завершения загрузки будет начата установка аплайнса.
       {/ML}
   installing:
     title_brief: !ruby/object:StringML
@@ -25,6 +25,17 @@ state:
       The installation may require from 1 to 15 minutes. You'll get email notification after the installation will be completed.
       {lang ru}
       Для установки аплайнса требуется от 1 до 15 минут. После завершения установки на ваш email будет выслано уведомление.
+      {/ML}
+  starting:
+    title_brief: !ruby/object:StringML
+      en: Starting
+      ru: Запускается
+    message: |
+      {ML}
+      {lang en}
+      The appliance services are starting now, it may require up to 30 seconds. The appliance will be ready to use after all the services had been started.
+      {lang ru}
+      Запускаются сервисы аплайнсы, это может потребовать до 30 секунд. Аплайнс будет готов к работе после запуска всех сервисов.
       {/ML}
   ready:
     title_brief: !ruby/object:StringML
