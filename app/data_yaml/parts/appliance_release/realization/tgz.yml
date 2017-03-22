@@ -112,7 +112,7 @@ file:
     if [ -n "$running_root" ]; then
     	run_priv() { "$@"; }
     	user_sh() {
-    		su -m "$JET_USER" -- "$@"
+    		su "$JET_USER" -s /bin/sh -- "$@"
     	}
     else
     	command -v sudo >/dev/null || die "'sudo' command required or run install from root"
@@ -124,7 +124,7 @@ file:
     		}
     	else
     		user_sh() {
-    			sudo su -m "$JET_USER" -- "$@"
+    			sudo su "$JET_USER" -s /bin/sh -- "$@"
     		}
     	fi
     fi
