@@ -28,3 +28,7 @@ state:
       {lang ru}
       Дроплет запущен с установленным аплайнсом %{appliance} и готов к использованию.
       {/ML}
+  broken:
+    title: !ruby/object:StringML
+      en: An error encounered while launching the droplet or installing the appliance
+      ru: При запуске дроплета или установке аплайнса произошла ошибка

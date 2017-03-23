@@ -45,6 +45,9 @@ state:
     title_brief: !ruby/object:StringML
       en: Broken
       ru: Неисправен
+    title: !ruby/object:StringML
+      en: Launch or installation error
+      ru: Ошибка при запуске или установке
     message: |
       {ML}
       {lang en}
