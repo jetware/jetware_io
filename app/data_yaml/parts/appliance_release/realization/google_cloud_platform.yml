@@ -1,3 +1,5 @@
 title: Google Cloud Platform
-provider_url: https://cloud.google.com
-control_panel_url: https://console.cloud.google.com/
+provider:
+  website: https://cloud.google.com
+  pricing: https://cloud.google.com/compute/pricing
+  control_panel: https://console.cloud.google.com/

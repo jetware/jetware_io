@@ -1,18 +1,19 @@
 title: Digital Ocean
-provider_url: https://www.digitalocean.com/
-pricing_url: https://www.digitalocean.com/pricing/
-control_panel_url: https://cloud.digitalocean.com/
-description.erb.md: |
-  {ML}
-  {lang en}
-  DigitalOcean is a cloud infrastructure provider with data centers worldwide. DigitalOcean provides developers cloud services that help to deploy and scale applications that run simultaneously on multiple computers.
+provider:
+  website: https://www.digitalocean.com/
+  pricing: https://www.digitalocean.com/pricing/
+  control_panel: https://cloud.digitalocean.com/
+  about.erb.md: |
+    {ML}
+    {lang en}
+    DigitalOcean is a cloud infrastructure provider with data centers worldwide. DigitalOcean provides developers cloud services that help to deploy and scale applications that run simultaneously on multiple computers.
 
-  DigitalOcean offers a wide range of SSD-based virtual privates servers starting from 512 Mb RAM, 1 CPU core, 20 Gb SSD for $5/month to 224 Gb RAM, 32 CPU cores, 500 Gb SSD for $1680/month. DigitalOcean offers both monthly and hourly billing.
-  {lang ru}
-  DigitalOcean - это провайдер облачной инфраструктуры с дата-центрами, находящимися по всему миру. DigitalOcean предлагает разработчикам облачный сервис, позволяющий разворачивать и масштабировать приложения, одновременно выполняющиеся на множественных компьютерах.
+    DigitalOcean offers a wide range of SSD-based virtual privates servers starting from 512 Mb RAM, 1 CPU core, 20 Gb SSD for $5/month to 224 Gb RAM, 32 CPU cores, 500 Gb SSD for $1680/month. DigitalOcean offers both monthly and hourly billing.
+    {lang ru}
+    DigitalOcean - это провайдер облачной инфраструктуры с дата-центрами, находящимися по всему миру. DigitalOcean предлагает разработчикам облачный сервис, позволяющий разворачивать и масштабировать приложения, одновременно выполняющиеся на множественных компьютерах.
 
-  DigitalOcean предлагает широкий выбор виртуальных выделенных серверов на SSD, начиная c 512 Mb RAM, 1 CPU core, 20 Gb SSD за $5/месяц до 224 Gb RAM, 32 CPU cores, 500 Gb SSD за $1680/month. DigitalOcean предлагает как помесячную, так и почасовую оплату.
-  {/ML}
+    DigitalOcean предлагает широкий выбор виртуальных выделенных серверов на SSD, начиная c 512 Mb RAM, 1 CPU core, 20 Gb SSD за $5/месяц до 224 Gb RAM, 32 CPU cores, 500 Gb SSD за $1680/month. DigitalOcean предлагает как помесячную, так и почасовую оплату.
+    {/ML}
 instance_configuration: !ruby/object:StringML
   en: Droplet configuration
   ru: Конфигурация дроплета
@@ -42,5 +43,5 @@ state:
       {/ML}
   broken:
     title: !ruby/object:StringML
-      en: An error encounered while launching the droplet or installing the appliance
+      en: An error occured while launching the droplet or installing the appliance
       ru: При запуске дроплета или установке аплайнса произошла ошибка

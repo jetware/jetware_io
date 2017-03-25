@@ -51,7 +51,7 @@ state:
     message: |
       {ML}
       {lang en}
-      The launching or installation of the instance has been failed.
+      The launching or installation has been failed.
       {lang ru}
-      Запуск или установка этого инстанса произошла с ошибкой.
+      Запуск или установка произошли с ошибкой.
       {/ML}
