@@ -1,6 +1,6 @@
 title_long_format: !ruby/object:StringML
-  en: Launch in the %{title} cloud
-  ru: Запуск в облаке %{title}
+  en: Launch on %{title}
+  ru: Запуск на %{title}
 instance_configuration: !ruby/object:StringML
   en: Instance configuration
 state:
