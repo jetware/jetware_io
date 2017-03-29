@@ -8,10 +8,13 @@ state:
     title_brief: !ruby/object:StringML
       en: Booting
       ru: Загружается
+    title: !ruby/object:StringML
+      en: Instance is booting now
+      ru: Инстанс загружается
     message: |
       {ML}
       {lang en}
-      The virtual machine is booting now, it may require from 10 seconds up to 3 minutes. The appliance installation will be initiated after the virtual machine had been booted.
+      The instance has been created and is booting now. This may require from 10 seconds to 3 minutes. The appliance installation will be initiated after the instance boots.
       {lang ru}
       Виртуальная машина загружается в течение от 10 секунд до 3 минут. После завершения загрузки будет начата установка аплайнса.
       {/ML}
@@ -19,21 +22,27 @@ state:
     title_brief: !ruby/object:StringML
       en: Installing
       ru: Инсталлируется
+    title: !ruby/object:StringML
+      en: Instance is installing now
+      ru: Инстанс инсталлируется
     message: |
       {ML}
       {lang en}
-      The installation may require from 1 to 15 minutes. You'll get email notification after the installation will be completed.
+      The appliance is installing now. The installation may require from 1 to 15 minutes. You will receive an email notification after the installation is completed.
       {lang ru}
-      Для установки аплайнса требуется от 1 до 15 минут. После завершения установки на ваш email будет выслано уведомление.
+      Идет установка аплайнса, для этого требуется от 1 до 15 минут. После завершения установки на ваш email будет выслано уведомление.
       {/ML}
   starting:
     title_brief: !ruby/object:StringML
       en: Starting
       ru: Запускается
+    title: !ruby/object:StringML
+      en: Services are starting now
+      ru: Запускаются сервисы
     message: |
       {ML}
       {lang en}
-      The appliance services are starting now, it may require up to 30 seconds. The appliance will be ready to use after all the services had been started.
+      The appliance services are starting now. This may require up to 30 seconds. The appliance will be ready to use after all the services have been started.
       {lang ru}
       Запускаются сервисы аплайнсы, это может потребовать до 30 секунд. Аплайнс будет готов к работе после запуска всех сервисов.
       {/ML}
@@ -41,6 +50,16 @@ state:
     title_brief: !ruby/object:StringML
       en: Ready
       ru: Готов
+    title: !ruby/object:StringML
+      en: Instance is ready to use
+      ru: Инстанс готов к использованию
+    message: |
+      {ML}
+      {lang en}
+      The instance has been created with the installed appliance %{appliance} and is ready to use.
+      {lang ru}
+      Инстанс запущен с установленным аплайнсом %{appliance} и готов к использованию.
+      {/ML}
   broken:
     title_brief: !ruby/object:StringML
       en: Broken
@@ -48,10 +67,6 @@ state:
     title: !ruby/object:StringML
       en: Launch or installation error
       ru: Ошибка при запуске или установке
-    message: |
-      {ML}
-      {lang en}
-      The launching or installation has been failed.
-      {lang ru}
-      Запуск или установка произошли с ошибкой.
-      {/ML}
+    message: !ruby/object:StringML
+      en: An error has occurred while launching the instance or installing the appliance
+      ru: При запуске инстанса или установке аплайнса произошла ошибка
