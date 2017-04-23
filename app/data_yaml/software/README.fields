@@ -1,0 +1,16 @@
+
+title
+
+	canonical software name, i.e. Apache HTTP Server, MongoDB
+
+inline_description
+
+	short one-sentence description, starting with lowercase letter and without ending point and
+
+description
+
+	full long description
+
+links
+
+	hash of URL, with key as the link title, and value as the link URL
