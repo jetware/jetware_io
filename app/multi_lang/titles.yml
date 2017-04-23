@@ -119,9 +119,13 @@ appliance:
   ru: Пакет
 'Principal modules':
   ru: Принципиальные модули
+'Crucial modules':
+  ru: Ключевые модули
 packages:
   'Principal':
     ru: Принципиальные
+  'Crucial':
+    ru: Ключевые
   'Active':
     ru: Активные
   'All':
