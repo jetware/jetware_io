@@ -1,0 +1,1 @@
+An general-purpose distributed memory caching system with in-memory key-value store. It's used for caching small chunks of arbitrary data (strings, objects) from results of database calls, API calls, or page rendering.

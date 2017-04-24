@@ -17,9 +17,3 @@ No random reads for updating secondary keys, except for unique indexes. The Read
 ### Faster Data Loading
 
 MyRocks writes data directly onto the bottommost level, which avoids all compaction overheads when you enable faster data loading for a session.
-
-## Links
-
-* [Getting Started](http://myrocks.io/docs/getting-started/)
-* [FAQ](http://myrocks.io/docs/support/faq.html)
-* [MyRocks implementation at Facebook](https://code.facebook.com/posts/190251048047090/myrocks-a-space-and-write-optimized-mysql-database/)
