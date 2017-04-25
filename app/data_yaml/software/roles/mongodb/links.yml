@@ -1,0 +1,6 @@
+? !ruby/object:StringML
+  en: Wikipedia
+  ru: Википедия
+: !ruby/object:StringML
+  en: https://en.wikipedia.org/wiki/MongoDB
+  ru: https://ru.wikipedia.org/wiki/MongoDB
