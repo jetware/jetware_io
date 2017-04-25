@@ -1,0 +1,6 @@
+? !ruby/object:StringML
+  en: nginx documentation
+  ru: nginx: документация
+: !ruby/object:StringML
+  en: https://nginx.org/en/docs/
+  ru: https://nginx.org/ru/docs/
