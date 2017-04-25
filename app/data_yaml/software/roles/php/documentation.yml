@@ -1,0 +1,6 @@
+? !ruby/object:StringML
+  en: PHP Manual
+  ru: Руководство по PHP
+: !ruby/object:StringML
+  en: http://php.net/manual/en/
+  ru: http://php.net/manual/ru/
