@@ -36,11 +36,19 @@ Jetware разрабатывает инструменты автоматизац
 * Data processing (Hadoop/Hive/Spark)
 * High availability clusters
 
-## Руководство
+## Основатели
 
-##### Кирилл Вечера, CTO/CEO
+##### Кирилл Вечера, CTO
 
 [Контакты](/contacts?contacts_form[subject]=Attn: Kirill Vechera), [LinkedIn](https://www.linkedin.com/in/kirill-vechera-74116b)
+
+##### Александр Переяславец, System engineer
+
+[Контакты](/contacts?contacts_form[subject]=Attn: Alexander Pereyaslavets), [LinkedIn](https://www.linkedin.com/in/alexander-pereyaslavets/)
+
+##### Анна Журавлева, User experience, Design
+
+[Контакты](/contacts?contacts_form[subject]=Attn: Anna Zhuravleva)
 
 ## Смотрите также
 
