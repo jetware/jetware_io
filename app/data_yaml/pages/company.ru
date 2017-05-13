@@ -61,7 +61,7 @@ REA: RM 1511908
 
 ## Смотрите также
 
-* Следите за новостями Jetware на [Twitter](http://twitter.com/jetware_org) и [Facebook](http://facebook.com/jetwareorg)
+* Следите за новостями Jetware на [Twitter](http://twitter.com/jetware_io) и [Facebook](http://facebook.com/jetwareio)
 * [Узнайте больше о работе аплайнсов Jetware](/page/about)
 * [Решения](/page/solutions/)
 * [Работа в Jetware](/page/jobs)
