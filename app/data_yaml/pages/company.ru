@@ -50,6 +50,15 @@ Jetware разрабатывает инструменты автоматизац
 
 [Контакты](/contacts?contacts_form[subject]=Attn: Anna Zhuravleva)
 
+## Реквизиты
+
+Jetware Srl  
+Адрес: Circonvallazione Clodia 163/171 - 00195 Рим (RM), Италия  
+Tel.: +39 0694801737  
+PEC: cvjetware@pec.it  
+VAT: 14315501008  
+REA: RM 1511908  
+
 ## Смотрите также
 
 * Следите за новостями Jetware на [Twitter](http://twitter.com/jetware_org) и [Facebook](http://facebook.com/jetwareorg)
