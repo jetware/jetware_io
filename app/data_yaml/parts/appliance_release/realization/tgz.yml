@@ -235,10 +235,8 @@ file:
     echo Setting up ... >&2
     "$DESTDIR"/enter "$JET_ROOT"/own/bin/fasten || exit
     
-    if ! [ -e "$DESTDIR"/tmp/init ]; then
-    	echo Starting ... >&2
-    	"$DESTDIR"/enter start
-    fi
+    echo Starting ... >&2
+    "$DESTDIR"/enter start
     
     echo Done >&2
     
