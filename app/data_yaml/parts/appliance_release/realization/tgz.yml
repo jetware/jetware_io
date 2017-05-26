@@ -233,7 +233,7 @@ file:
     sudo mv "$destdir_tmp" "$DESTDIR" || exit
     
     echo Setting up ... >&2
-    "$DESTDIR"/enter "$JET_ROOT"/own/bin/fasten || exit
+    "$DESTDIR"/own/bin/run "$JET_ROOT"/own/bin/fasten || exit
     
     echo Starting ... >&2
     "$DESTDIR"/enter start
