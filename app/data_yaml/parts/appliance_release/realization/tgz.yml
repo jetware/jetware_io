@@ -51,17 +51,18 @@ file:
     #!/bin/sh
     
     die() {
-    	[ -n "$1" ] && echo ERROR "$1" >&2
-    	exit ${2:-1}
+      [ -n "$1" ] && echo ERROR "$1" >&2
+      exit ${2:-1}
     }
     
     usage() {
-    	die "\
-    Usage: $0 [-s download_url] [-d destdir] [-u jet_user]
+      die "\
+    Usage: $0 [-s download_url] [-d destdir] [-u jet_user] [-S]
     
-    	-s - source download URL, env DOWNLOAD_URL (default: $DOWNLOAD_URL)
-    	-d - destination directory, env DESTDIR (default: $DESTDIR)
-    	-u - jet user, env JET_USER (default: $JET_USER)
+      -s - source download URL, env DOWNLOAD_URL (default: $DOWNLOAD_URL)
+      -d - destination directory, env DESTDIR (default: $DESTDIR)
+      -u - jet user, env JET_USER (default: $JET_USER)
+      -S - don't start jet after downloading and installing
     "
     }
     
@@ -74,11 +75,11 @@ file:
     : ${DESTDIR:=$JET_ROOT}
     
     if [ `id -u` = 0 ]; then
-    	running_root=yes
-    	: ${JET_USER:=jet}
+      running_root=yes
+      : ${JET_USER:=jet}
     else
-    	running_root=
-    	: ${JET_USER:=$USER}
+      running_root=
+      : ${JET_USER:=$USER}
     fi
     
     
@@ -86,18 +87,20 @@ file:
     # Parse options
     #
     
-    while getopts s:d:u:lh? opt; do
-    	case $opt in
-    	s)
-    		DOWNLOAD_URL="$OPTARG" ;;
-    	d)
-    		DESTDIR="$OPTARG" ;;
-    	u)
-    		JET_USER="$OPTARG" ;;
-    	*)
-    		usage
-    		;;
-    	esac
+    while getopts s:d:u:Slh? opt; do
+      case $opt in
+      s)
+        DOWNLOAD_URL="$OPTARG" ;;
+      d)
+        DESTDIR="$OPTARG" ;;
+      u)
+        JET_USER="$OPTARG" ;;
+      S)
+        DONT_START=yes ;;
+      *)
+        usage
+        ;;
+      esac
     done
     
     shift $((OPTIND-1))
@@ -110,23 +113,23 @@ file:
     # 
     
     if [ -n "$running_root" ]; then
-    	run_priv() { "$@"; }
-    	user_sh() {
-    		su "$JET_USER" -s /bin/sh -- "$@"
-    	}
+      run_priv() { "$@"; }
+      user_sh() {
+        su "$JET_USER" -s /bin/sh -- "$@"
+      }
     else
-    	command -v sudo >/dev/null || die "'sudo' command required or run install from root"
-    	sudo -l >/dev/null || die "Insufficient sudo permissions"
-    	run_priv() { sudo "$@"; }
-    	if [ "$USER" = "$JET_USER" ]; then
-    		user_sh() {
-    			sh "$@"
-    		}
-    	else
-    		user_sh() {
-    			sudo su "$JET_USER" -s /bin/sh -- "$@"
-    		}
-    	fi
+      command -v sudo >/dev/null || die "'sudo' command required or run install from root"
+      sudo -l >/dev/null || die "Insufficient sudo permissions"
+      run_priv() { sudo "$@"; }
+      if [ "$USER" = "$JET_USER" ]; then
+        user_sh() {
+          sh "$@"
+        }
+      else
+        user_sh() {
+          sudo su "$JET_USER" -s /bin/sh -- "$@"
+        }
+      fi
     fi
     
     #
@@ -136,20 +139,20 @@ file:
     
     missing=
     for cmd in $required_binaries; do
-    	command -v $cmd >/dev/null || missing="$missing $cmd"
+      command -v $cmd >/dev/null || missing="$missing $cmd"
     done
     
     if [ -n "$missing" ]; then
-    	if command -v apt-get >/dev/null; then
-    		# debian 7, 8; ubuntu 14.04, 16.04
-    		run_priv apt-get update || die "apt-get update"
-    		run_priv apt-get install -y login passwd sudo curl gzip libcap2-bin || die "apt-get install"
-    	elif command -v yum >/dev/null; then
-    		# redhat, centos, fedora
-    		run_priv yum install -y util-linux shadow-utils sudo curl tar gzip libcap || die "yum"
-    	else
-    		die "Missing binaries: $missing"
-    	fi
+      if command -v apt-get >/dev/null; then
+        # debian 7, 8; ubuntu 14.04, 16.04
+        run_priv apt-get update || die "apt-get update"
+        run_priv apt-get install -y login passwd sudo curl gzip libcap2-bin || die "apt-get install"
+      elif command -v yum >/dev/null; then
+        # redhat, centos, fedora
+        run_priv yum install -y util-linux shadow-utils sudo curl tar gzip libcap || die "yum"
+      else
+        die "Missing binaries: $missing"
+      fi
     fi
     
     
@@ -162,19 +165,19 @@ file:
     tmp_sudoers=
     
     CLEANUP() {
-    	trap '' EXIT
-    	[ -n "$tmp_sudoers" -a -e "$tmp_sudoers" ] && run_priv rm -f "$tmp_sudoers"
-    	# delete temporary directory new user 
-    	if [ -d "$destdir_tmp" ]; then
-    		run_priv rm -rf "$destdir_tmp"
-    		[ -n "$new_user" ] && userdel $JET_USER
-    	fi
+      trap '' EXIT
+      [ -n "$tmp_sudoers" -a -e "$tmp_sudoers" ] && run_priv rm -f "$tmp_sudoers"
+      # delete temporary directory new user 
+      if [ -d "$destdir_tmp" ]; then
+        run_priv rm -rf "$destdir_tmp"
+        [ -n "$new_user" ] && userdel $JET_USER
+      fi
     }
     
     TERMINATE() {
-    	local err=$?
-    	trap '' INT TERM
-    	exit $err
+      local err=$?
+      trap '' INT TERM
+      exit $err
     }
     
     trap CLEANUP EXIT
@@ -198,13 +201,13 @@ file:
     #
     
     if [ -n "$running_root" ]; then
-    	id $JET_USER >/dev/null 2>&1 && die "User $JET_USER already exists"
+      id $JET_USER >/dev/null 2>&1 && die "User $JET_USER already exists"
     
-    	new_user=yes
-    	run_priv useradd --system --home "$DESTDIR" --shell "$DESTDIR/login" $JET_USER || die
+      new_user=yes
+      run_priv useradd --system --home "$DESTDIR" --shell "$DESTDIR/login" $JET_USER || die
     
-    	tmp_sudoers=/etc/sudoers.d/99-tmp-$$
-    	run_priv sh <<_EOF_
+      tmp_sudoers=/etc/sudoers.d/99-tmp-$$
+      run_priv sh <<_EOF_
     echo "\
     $JET_USER ALL=NOPASSWD: ALL
     Defaults:$JET_USER !requiretty
@@ -222,9 +225,9 @@ file:
     user_sh <<_EOF_ || exit $?
     
     if command -v curl >/dev/null; then
-    	download() { curl -L "\$@"; }
+      download() { curl -L "\$@"; }
     elif command -v wget >/dev/null; then
-    	download() { wget -O - "\$@"; }
+      download() { wget -O - "\$@"; }
     fi
     
     echo Downloading and extracting "$DOWNLOAD_URL" ... >&2
@@ -235,8 +238,10 @@ file:
     echo Setting up ... >&2
     "$DESTDIR"/own/bin/run "$JET_ROOT"/own/bin/fasten || exit
     
-    echo Starting ... >&2
-    "$DESTDIR"/enter start
+    if [ -z "$DONT_START" ]; then
+      echo Starting ... >&2
+      "$DESTDIR"/enter start
+    fi
     
     echo Done >&2
     
@@ -249,55 +254,55 @@ file:
     #
     
     if [ -n "$new_user" ]; then
-    	echo -n "\
+      echo -n "\
     -----------------------------------------------------------------------------
     
     To enter the runtime environment, log in as the user '$JET_USER'.
     
     " >&2
     else
-    	echo -n "\
+      echo -n "\
     -----------------------------------------------------------------------------
     
     To enter the runtime environment, run:
     
-    	$DESTDIR/enter
+      $DESTDIR/enter
     
     " >&2
     fi
     
     quick_start=
     for file in usage config_show; do
-    	if [ -e "$DESTDIR/bin/$file" ]; then
-    		quick_start="$file"
-    		break
-    	fi
+      if [ -e "$DESTDIR/bin/$file" ]; then
+        quick_start="$file"
+        break
+      fi
     done
     
     if [ -n "$quick_start" ]; then
-    	if [ -n "$new_user" ]; then
-    		echo -n "\
+      if [ -n "$new_user" ]; then
+        echo -n "\
     To execute a command, i.e. show quick start configuration
     via '$quick_start' command, log in as the user '$JET_USER':
     
-    	su -l $JET_USER
+      su -l $JET_USER
     
     and run:
     
-    	$quick_start
+      $quick_start
     
     or run from root:
     
-    	su -l $JET_USER -c $quick_start
+      su -l $JET_USER -c $quick_start
     
     " >&2
-    	else
-    		echo -n "\
+      else
+        echo -n "\
     To execute a command, i.e. show quick start configuration
     via '$quick_start' command, run:
     
-    	$DESTDIR/enter $quick_start
+      $DESTDIR/enter $quick_start
     
     " >&2
-    	fi
+      fi
     fi
