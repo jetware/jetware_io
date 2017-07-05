@@ -56,7 +56,7 @@ Jetware Srl
 Адрес: Circonvallazione Clodia 163/171 - 00195 Рим (RM), Италия  
 Tel.: +39 0694801737  
 PEC: cvjetware@pec.it  
-VAT: 14315501008  
+VAT: IT14315501008  
 REA: RM 1511908  
 
 ## Смотрите также
