@@ -235,6 +235,13 @@ file:
     download "$DOWNLOAD_URL" | tar xpzf - -C "$destdir_tmp" || exit
     sudo mv "$destdir_tmp" "$DESTDIR" || exit
     
+    "$DESTDIR"/own/bin/run "$JET_ROOT"/own/bin/config \
+               appliance.author="<%= @object.version.login.name %>" \
+               appliance.name="<%= @object.version.name %>" \
+               appliance.version="<%= @object.version.version %>" \
+               appliance.url="<%= url_for @object.appliance_url %>" \
+               appliance.support_url="<%= url_for controller: :contacts, action: :submit, 'contacts_form[subject]' => "Appliance: #{@object.appliance_id}", only_path: false %>"
+
     echo Setting up ... >&2
     "$DESTDIR"/own/bin/run "$JET_ROOT"/own/bin/fasten || exit
     
