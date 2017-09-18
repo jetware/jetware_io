@@ -88,6 +88,8 @@ appliance:
 'Company':
   ru: Компания
   it: Compagnia
+'Job title':
+  ru: Должность
 'Web site':
   ru: Веб-сайт
   it: Sito web
@@ -148,3 +150,5 @@ Remove record:
   ru: Удалить запись
 Documentation:
   ru: Документация
+Machine learning:
+  ru: Машинное обучение
