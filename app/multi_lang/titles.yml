@@ -85,6 +85,9 @@ appliance:
 'Name':
   ru: Имя
   it: Nome
+'Name, Surname':
+  ru: Имя, Фамилия
+  it: Nome, Cognome
 'Company':
   ru: Компания
   it: Compagnia
