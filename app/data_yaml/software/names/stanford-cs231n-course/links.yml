@@ -1,0 +1,16 @@
+? !ruby/object:StringML
+  en: Course notes
+  ru: Информация о курсе
+: http://cs231n.github.io/
+? !ruby/object:StringML
+  en: Syllabus
+  ru: Учебная программа
+: http://cs231n.stanford.edu/2017/syllabus.html
+? !ruby/object:StringML
+  en: Python Numpy Introduction
+  ru: Введение в Python Numpy
+: http://cs231n.github.io/python-numpy-tutorial/
+? !ruby/object:StringML
+  en: Lecture Collection
+  ru: Записи лекций
+: https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv
