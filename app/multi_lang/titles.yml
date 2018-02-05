@@ -55,9 +55,9 @@ appliance:
     'Optional packages':
       ru: Опциональные пакеты
       it: Pacchetti opzionali
-'Share appliance':
-  ru: Поделиться аплайнсом
-  it: Condividi appliance
+'Share':
+  ru: Поделиться
+  it: Condividi
 'Share your appliance':
   ru: Поделиться своим аплайнсом
   it: Condividi il tuo appliance
