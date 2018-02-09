@@ -1,0 +1,11 @@
+This is a runtime environment for tutorials and examples of the Fast.ai's
+courses Practical Deep Learning for Coders, 2017 edition, part 1. 
+
+###### Runtime environment
+
+The runtime environment includes everything needed for the examples and
+tutorials from the course. All programs are built, installed, configured,
+tested, and are ready to use.
+
+There are different software bundles (appliances), optimized for different
+hardware capabilities: x86 CPU only, or x86 CPU with NVidia GPU.

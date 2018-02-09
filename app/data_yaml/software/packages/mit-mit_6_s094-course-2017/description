@@ -1,0 +1,27 @@
+This is runtime environment for tutorials of the MIT 6.S094 course: Deep
+Learning for Self-Driving Cars.
+
+###### Runtime environment
+
+The runtime environment includes everything needed for the DeepCars and
+DeepTesla examples and tutorials from the course. All programs are built,
+installed, configured, tested, and are ready to use.
+
+There are different software bundles (appliances), optimized for different
+hardware capabilities: x86 CPU only, or x86 CPU with NVidia GPU.
+
+###### DeepCars
+
+DeepCars include notebooks with an example of implementing the Perceptron,
+an example of implementing a neural network using TensorFlow. It also
+includes an example of the traffic light recognition with program code
+and images for training.
+
+###### DeepTesla
+
+DeepTesla is a tutorial with the end-to-end steering model using a videostream
+for input.
+
+The tutorial includes Python script for training and prediction, video files
+for neural network training (~200 Mb). The neural network and video processing
+are based on TensorFlow and OpenCV libraries.
