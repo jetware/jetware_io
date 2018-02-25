@@ -1,0 +1,62 @@
+---
+- path: googletest-release-1.8.0/README.md
+  type: UnclassifiedLicense
+  text: "\n# Google Test #\n\n[![Build Status](https://travis-ci.org/google/googletest.svg?branch=master)](https://travis-ci.org/google/googletest)\n[![Build
+    status](https://ci.appveyor.com/api/projects/status/4o38plt0xbo1ubc8/branch/master?svg=true)](https://ci.appveyor.com/project/BillyDonahue/googletest/branch/master)\n\nWelcome
+    to **Google Test**, Google's C++ test framework!\n\nThis repository is a merger
+    of the formerly separate GoogleTest and\nGoogleMock projects. These were so closely
+    related that it makes sense to\nmaintain and release them together.\n\nPlease
+    see the project page above for more information as well as the\nmailing list for
+    questions, discussions, and development.  There is\nalso an IRC channel on OFTC
+    (irc.oftc.net) #gtest available.  Please\njoin us!\n\nGetting started information
+    for **Google Test** is available in the \n[Google Test Primer](googletest/docs/Primer.md)
+    documentation.\n\n**Google Mock** is an extension to Google Test for writing and
+    using C++ mock\nclasses.  See the separate [Google Mock documentation](googlemock/README.md).\n\nMore
+    detailed documentation for googletest (including build instructions) are\nin its
+    interior [googletest/README.md](googletest/README.md) file.\n\n## Features ##\n\n
+    \ * An [XUnit](https://en.wikipedia.org/wiki/XUnit) test framework.\n  * Test
+    discovery.\n  * A rich set of assertions.\n  * User-defined assertions.\n  * Death
+    tests.\n  * Fatal and non-fatal failures.\n  * Value-parameterized tests.\n  *
+    Type-parameterized tests.\n  * Various options for running the tests.\n  * XML
+    test report generation.\n\n## Platforms ##\n\nGoogle test has been used on a variety
+    of platforms:\n\n  * Linux\n  * Mac OS X\n  * Windows\n  * Cygwin\n  * MinGW\n
+    \ * Windows Mobile\n  * Symbian\n\n## Who Is Using Google Test? ##\n\nIn addition
+    to many internal projects at Google, Google Test is also used by\nthe following
+    notable projects:\n\n  * The [Chromium projects](http://www.chromium.org/) (behind
+    the Chrome\n    browser and Chrome OS).\n  * The [LLVM](http://llvm.org/) compiler.\n
+    \ * [Protocol Buffers](https://github.com/google/protobuf), Google's data\n    interchange
+    format.\n  * The [OpenCV](http://opencv.org/) computer vision library.\n\n## Related
+    Open Source Projects ##\n\n[Google Test UI](https://github.com/ospector/gtest-gbar)
+    is test runner that runs\nyour test binary, allows you to track its progress via
+    a progress bar, and\ndisplays a list of test failures. Clicking on one shows failure
+    text. Google\nTest UI is written in C#.\n\n[GTest TAP Listener](https://github.com/kinow/gtest-tap-listener)
+    is an event\nlistener for Google Test that implements the\n[TAP protocol](https://en.wikipedia.org/wiki/Test_Anything_Protocol)
+    for test\nresult output. If your test runner understands TAP, you may find it
+    useful.\n\n## Requirements ##\n\nGoogle Test is designed to have fairly minimal
+    requirements to build\nand use with your projects, but there are some.  Currently,
+    we support\nLinux, Windows, Mac OS X, and Cygwin.  We will also make our best\neffort
+    to support other platforms (e.g. Solaris, AIX, and z/OS).\nHowever, since core
+    members of the Google Test project have no access\nto these platforms, Google
+    Test may have outstanding issues there.  If\nyou notice any problems on your platform,
+    please notify\n<googletestframework@googlegroups.com>. Patches for fixing them
+    are\neven more welcome!\n\n### Linux Requirements ###\n\nThese are the base requirements
+    to build and use Google Test from a source\npackage (as described below):\n\n
+    \ * GNU-compatible Make or gmake\n  * POSIX-standard shell\n  * POSIX(-2) Regular
+    Expressions (regex.h)\n  * A C++98-standard-compliant compiler\n\n### Windows
+    Requirements ###\n\n  * Microsoft Visual C++ v7.1 or newer\n\n### Cygwin Requirements
+    ###\n\n  * Cygwin v1.5.25-14 or newer\n\n### Mac OS X Requirements ###\n\n  *
+    Mac OS X v10.4 Tiger or newer\n  * Xcode Developer Tools\n\n### Requirements for
+    Contributors ###\n\nWe welcome patches.  If you plan to contribute a patch, you
+    need to\nbuild Google Test and its own tests from a git checkout (described\nbelow),
+    which has further requirements:\n\n  * [Python](https://www.python.org/) v2.3
+    or newer (for running some of\n    the tests and re-generating certain source
+    files from templates)\n  * [CMake](https://cmake.org/) v2.6.4 or newer\n\n## Regenerating
+    Source Files ##\n\nSome of Google Test's source files are generated from templates
+    (not\nin the C++ sense) using a script.\nFor example, the\nfile include/gtest/internal/gtest-type-util.h.pump
+    is used to generate\ngtest-type-util.h in the same directory.\n\nYou don't need
+    to worry about regenerating the source files\nunless you need to modify them.
+    \ You would then modify the\ncorresponding `.pump` files and run the '[pump.py](googletest/scripts/pump.py)'\ngenerator
+    script.  See the [Pump Manual](googletest/docs/PumpManual.md).\n\n### Contributing
+    Code ###\n\nWe welcome patches.  Please read the\n[Developer's Guide](googletest/docs/DevGuide.md)\nfor
+    how you can contribute. In particular, make sure you have signed\nthe Contributor
+    License Agreement, or we won't be able to accept the\npatch.\n\nHappy testing!\n"

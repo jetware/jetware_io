@@ -1,0 +1,29 @@
+---
+- path: caffe-1.0/LICENSE
+  type: BSD-2-Clause
+  text: "COPYRIGHT\n\nAll contributions by the University of California:\nCopyright
+    (c) 2014-2017 The Regents of the University of California (Regents)\nAll rights
+    reserved.\n\nAll other contributions:\nCopyright (c) 2014-2017, the respective
+    contributors\nAll rights reserved.\n\nCaffe uses a shared copyright model: each
+    contributor holds copyright over\ntheir contributions to Caffe. The project versioning
+    records all such\ncontribution and copyright details. If a contributor wants to
+    further mark\ntheir specific copyright on a particular contribution, they should
+    indicate\ntheir copyright solely in the commit message of the change when it is\ncommitted.\n\nLICENSE\n\nRedistribution
+    and use in source and binary forms, with or without\nmodification, are permitted
+    provided that the following conditions are met: \n\n1. Redistributions of source
+    code must retain the above copyright notice, this\n   list of conditions and the
+    following disclaimer. \n2. Redistributions in binary form must reproduce the above
+    copyright notice,\n   this list of conditions and the following disclaimer in
+    the documentation\n   and/or other materials provided with the distribution. \n\nTHIS
+    SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY
+    EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES
+    OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO
+    EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT,
+    INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT
+    LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\nON ANY THEORY OF LIABILITY,
+    WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE)
+    ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+    OF SUCH DAMAGE.\n\nCONTRIBUTION AGREEMENT\n\nBy contributing to the BVLC/caffe
+    repository through pull-request, comment,\nor otherwise, the contributor releases
+    their content to the\nlicense and copyright terms herein.\n"

@@ -1,0 +1,575 @@
+---
+- path: libX11-1.6.3/COPYING
+  type: BSD-style,IBM,OMRON,OpenGroup,Tektronix,XFree86
+  text: "The following is the 'standard copyright' agreed upon by most contributors,\nand
+    is currently the canonical license preferred by the X.Org Foundation.\nThis is
+    a slight variant of the common MIT license form published by the\nOpen Source
+    Initiative at http://www.opensource.org/licenses/mit-license.php\n\nCopyright
+    holders of new code should use this license statement where\npossible, and insert
+    their name to this list.  Please sort by surname\nfor people, and by the full
+    name for other entities (e.g.  Juliusz\nChroboczek sorts before Intel Corporation
+    sorts before Daniel Stone).\n\nSee each individual source file or directory for
+    the license that applies\nto that file.\n\nCopyright (C) 2003-2006,2008 Jamey
+    Sharp, Josh Triplett\nCopyright © 2009 Red Hat, Inc.\nCopyright 1990-1992,1999,2000,2004,2009,2010
+    Oracle and/or its affiliates.\nAll rights reserved.\n\nPermission is hereby granted,
+    free of charge, to any person obtaining a\ncopy of this software and associated
+    documentation files (the \"Software\"),\nto deal in the Software without restriction,
+    including without limitation\nthe rights to use, copy, modify, merge, publish,
+    distribute, sublicense,\nand/or sell copies of the Software, and to permit persons
+    to whom the\nSoftware is furnished to do so, subject to the following conditions:\n\nThe
+    above copyright notice and this permission notice (including the next\nparagraph)
+    shall be included in all copies or substantial portions of the\nSoftware.\n\nTHE
+    SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED,
+    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A
+    PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL\nTHE AUTHORS OR COPYRIGHT
+    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION
+    OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER\nDEALINGS IN THE SOFTWARE.\n\n ----------------------------------------------------------------------\n\nThe
+    following licenses are 'legacy' - usually MIT/X11 licenses with the name\nof the
+    copyright holder(s) in the license statement:\n\nCopyright 1984-1994, 1998 The
+    Open Group\n\nPermission to use, copy, modify, distribute, and sell this software
+    and its\ndocumentation for any purpose is hereby granted without fee, provided
+    that\nthe above copyright notice appear in all copies and that both that\ncopyright
+    notice and this permission notice appear in supporting\ndocumentation.\n\nThe
+    above copyright notice and this permission notice shall be included in\nall copies
+    or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\",
+    WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO
+    THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    \ IN NO EVENT SHALL THE\nOPEN GROUP BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN\nAN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.\n\nExcept as contained in this notice, the name of The Open Group shall
+    not be\nused in advertising or otherwise to promote the sale, use or other dealings\nin
+    this Software without prior written authorization from The Open Group.\n\nX Window
+    System is a trademark of The Open Group.\n\n\t\t----------------------------------------\n\nCopyright
+    1985, 1986, 1987, 1988, 1989, 1990, 1991, 1994, 1996 X Consortium\nCopyright 2000
+    The XFree86 Project, Inc.\n\nPermission is hereby granted, free of charge, to
+    any person obtaining\na copy of this software and associated documentation files
+    (the\n\"Software\"), to deal in the Software without restriction, including\nwithout
+    limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense,
+    and/or sell copies of the Software, and to\npermit persons to whom the Software
+    is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright
+    notice and this permission notice shall be included\nin all copies or substantial
+    portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY
+    OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+    OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN
+    NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR\nOTHER LIABILITY,
+    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,\nARISING FROM, OUT OF OR
+    IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\nExcept
+    as contained in this notice, the name of the X Consortium shall\nnot be used in
+    advertising or otherwise to promote the sale, use or\nother dealings in this Software
+    without prior written authorization\nfrom the X Consortium.\n\nCopyright 1985,
+    1986, 1987, 1988, 1989, 1990, 1991 by\nDigital Equipment Corporation\n\nPortions
+    Copyright 1990, 1991 by Tektronix, Inc.\n\nPermission to use, copy, modify and
+    distribute this documentation for\nany purpose and without fee is hereby granted,
+    provided that the above\ncopyright notice appears in all copies and that both
+    that copyright notice\nand this permission notice appear in all copies, and that
+    the names of\nDigital and Tektronix not be used in in advertising or publicity
+    pertaining\nto this documentation without specific, written prior permission.\nDigital
+    and Tektronix makes no representations about the suitability\nof this documentation
+    for any purpose.\nIt is provided ``as is'' without express or implied warranty.\n\n\t\t----------------------------------------\n\nCopyright
+    (c) 1999-2000  Free Software Foundation, Inc.\n\nPermission is hereby granted,
+    free of charge, to any person obtaining a copy\nof this software and associated
+    documentation files (the \"Software\"), to deal\nin the Software without restriction,
+    including without limitation the rights\nto use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons
+    to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe
+    above copyright notice and this permission notice shall be included in\nall copies
+    or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\",
+    WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO
+    THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    \ IN NO EVENT SHALL THE\nFREE SOFTWARE FOUNDATION BE LIABLE FOR ANY CLAIM, DAMAGES
+    OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR\nIN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+    IN THE SOFTWARE.\n\nExcept as contained in this notice, the name of the Free Software
+    Foundation\nshall not be used in advertising or otherwise to promote the sale,
+    use or\nother dealings in this Software without prior written authorization from
+    the\nFree Software Foundation.\n\n\t\t----------------------------------------\n\nCode
+    and supporting documentation (c) Copyright 1990 1991 Tektronix, Inc.\n\tAll Rights
+    Reserved\n\nThis file is a component of an X Window System-specific implementation\nof
+    Xcms based on the TekColor Color Management System.  TekColor is a\ntrademark
+    of Tektronix, Inc.  The term \"TekHVC\" designates a particular\ncolor space that
+    is the subject of U.S. Patent No. 4,985,853 (equivalent\nforeign patents pending).
+    \ Permission is hereby granted to use, copy,\nmodify, sell, and otherwise distribute
+    this software and its\ndocumentation for any purpose and without fee, provided
+    that:\n\n1. This copyright, permission, and disclaimer notice is reproduced in\n
+    \  all copies of this software and any modification thereof and in\n   supporting
+    documentation;\n2. Any color-handling application which displays TekHVC color\n
+    \  cooordinates identifies these as TekHVC color coordinates in any\n   interface
+    that displays these coordinates and in any associated\n   documentation;\n3. The
+    term \"TekHVC\" is always used, and is only used, in association\n   with the
+    mathematical derivations of the TekHVC Color Space,\n   including those provided
+    in this file and any equivalent pathways and\n   mathematical derivations, regardless
+    of digital (e.g., floating point\n   or integer) representation.\n\nTektronix
+    makes no representation about the suitability of this software\nfor any purpose.
+    \ It is provided \"as is\" and with all faults.\n\nTEKTRONIX DISCLAIMS ALL WARRANTIES
+    APPLICABLE TO THIS SOFTWARE,\nINCLUDING THE IMPLIED WARRANTIES OF MERCHANTABILITY
+    AND FITNESS FOR A\nPARTICULAR PURPOSE.  IN NO EVENT SHALL TEKTRONIX BE LIABLE
+    FOR ANY\nSPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER\nRESULTING
+    FROM LOSS OF USE, DATA, OR PROFITS, WHETHER IN AN ACTION OF\nCONTRACT, NEGLIGENCE,
+    OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN\nCONNECTION WITH THE USE OR THE
+    PERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\n(c)
+    Copyright 1995 FUJITSU LIMITED\nThis is source code modified by FUJITSU LIMITED
+    under the Joint\nDevelopment Agreement for the CDE/Motif PST.\n\n\t\t----------------------------------------\n\nCopyright
+    1992 by Oki Technosystems Laboratory, Inc.\nCopyright 1992 by Fuji Xerox Co.,
+    Ltd.\n\nPermission to use, copy, modify, distribute, and sell this software\nand
+    its documentation for any purpose is hereby granted without fee,\nprovided that
+    the above copyright notice appear in all copies and\nthat both that copyright
+    notice and this permission notice appear\nin supporting documentation, and that
+    the name of Oki Technosystems\nLaboratory and Fuji Xerox not be used in advertising
+    or publicity\npertaining to distribution of the software without specific, written\nprior
+    permission.\nOki Technosystems Laboratory and Fuji Xerox make no representations\nabout
+    the suitability of this software for any purpose.  It is provided\n\"as is\" without
+    express or implied warranty.\n\nOKI TECHNOSYSTEMS LABORATORY AND FUJI XEROX DISCLAIM
+    ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES
+    OF\nMERCHANTABILITY AND FITNESS, IN NO EVENT SHALL OKI TECHNOSYSTEMS\nLABORATORY
+    AND FUJI XEROX BE LIABLE FOR ANY SPECIAL, INDIRECT OR\nCONSEQUENTIAL DAMAGES OR
+    ANY DAMAGES WHATSOEVER RESULTING FROM LOSS\nOF USE, DATA OR PROFITS, WHETHER IN
+    AN ACTION OF CONTRACT, NEGLIGENCE\nOR OTHER TORTIOUS ACTION, ARISING OUT OF OR
+    IN CONNECTION WITH THE USE\nOR PERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    1990, 1991, 1992, 1993, 1994 by FUJITSU LIMITED\n\nPermission to use, copy, modify,
+    distribute, and sell this software\nand its documentation for any purpose is hereby
+    granted without fee,\nprovided that the above copyright notice appear in all copies
+    and\nthat both that copyright notice and this permission notice appear\nin supporting
+    documentation, and that the name of FUJITSU LIMITED\nnot be used in advertising
+    or publicity pertaining to distribution\nof the software without specific, written
+    prior permission.\nFUJITSU LIMITED makes no representations about the suitability
+    of\nthis software for any purpose.\nIt is provided \"as is\" without express or
+    implied warranty.\n\nFUJITSU LIMITED DISCLAIM ALL WARRANTIES WITH REGARD TO THIS
+    SOFTWARE,\nINCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN
+    NO\nEVENT SHALL FUJITSU LIMITED BE LIABLE FOR ANY SPECIAL, INDIRECT OR\nCONSEQUENTIAL
+    DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF\nUSE, DATA OR PROFITS,
+    WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR\nOTHER TORTIOUS ACTION, ARISING
+    OUT OF OR IN CONNECTION WITH THE USE OR\nPERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\n\nCopyright
+    (c) 1995 David E. Wexelblat.  All rights reserved\n\nPermission is hereby granted,
+    free of charge, to any person obtaining\na copy of this software and associated
+    documentation files (the\n\"Software\"), to deal in the Software without restriction,
+    including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute,
+    sublicense, and/or sell copies of the Software, and to\npermit persons to whom
+    the Software is furnished to do so, subject to\nthe following conditions:\n\nThe
+    above copyright notice and this permission notice shall be included\nin all copies
+    or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\",
+    WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO
+    THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN
+    NO EVENT SHALL DAVID E. WEXELBLAT BE LIABLE FOR ANY CLAIM, DAMAGES OR\nOTHER LIABILITY,
+    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,\nARISING FROM, OUT OF OR
+    IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\nExcept
+    as contained in this notice, the name of David E. Wexelblat shall\nnot be used
+    in advertising or otherwise to promote the sale, use or\nother dealings in this
+    Software without prior written authorization\nfrom David E. Wexelblat.\n\n\t\t----------------------------------------\n\nCopyright
+    1990, 1991 by OMRON Corporation\n\nPermission to use, copy, modify, distribute,
+    and sell this software and its\ndocumentation for any purpose is hereby granted
+    without fee, provided that\nthe above copyright notice appear in all copies and
+    that both that\ncopyright notice and this permission notice appear in supporting\ndocumentation,
+    and that the name OMRON not be used in\nadvertising or publicity pertaining to
+    distribution of the software without\nspecific, written prior permission.  OMRON
+    makes no representations\nabout the suitability of this software for any purpose.
+    \ It is provided\n\"as is\" without express or implied warranty.\n\nOMRON DISCLAIMS
+    ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,\nINCLUDING ALL IMPLIED WARRANTIES
+    OF MERCHANTABILITY AND FITNESS, IN NO\nEVENT SHALL OMRON BE LIABLE FOR ANY SPECIAL,
+    INDIRECT OR\nCONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+    OF USE,\nDATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER\nTORTUOUS
+    ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR\nPERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    1985, 1986, 1987, 1988, 1989, 1990, 1991 by\nDigital Equipment Corporation\n\nPortions
+    Copyright 1990, 1991 by Tektronix, Inc\n\nRewritten for X.org by Chris Lee <clee@freedesktop.org>\n\nPermission
+    to use, copy, modify, distribute, and sell this documentation\nfor any purpose
+    and without fee is hereby granted, provided that the above\ncopyright notice and
+    this permission notice appear in all copies.\nChris Lee makes no representations
+    about the suitability for any purpose\nof the information in this document.  It
+    is provided \\`\\`as-is'' without\nexpress or implied warranty.\n\n\t\t----------------------------------------\n\nCopyright
+    1993 by Digital Equipment Corporation, Maynard, Massachusetts,\nCopyright 1994
+    by FUJITSU LIMITED\nCopyright 1994 by Sony Corporation\n\n                        All
+    Rights Reserved\n\nPermission to use, copy, modify, and distribute this software
+    and its\ndocumentation for any purpose and without fee is hereby granted,\nprovided
+    that the above copyright notice appear in all copies and that\nboth that copyright
+    notice and this permission notice appear in\nsupporting documentation, and that
+    the names of Digital, FUJITSU\nLIMITED and Sony Corporation not be used in advertising
+    or publicity\npertaining to distribution of the software without specific, written\nprior
+    permission.\n\nDIGITAL, FUJITSU LIMITED AND SONY CORPORATION DISCLAIMS ALL WARRANTIES\nWITH
+    REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY
+    AND FITNESS, IN NO EVENT SHALL DIGITAL, FUJITSU LIMITED\nAND SONY CORPORATION
+    BE LIABLE FOR ANY SPECIAL, INDIRECT OR\nCONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER
+    RESULTING FROM LOSS OF\nUSE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+    NEGLIGENCE OR\nOTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
+    USE OR\nPERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\n\nCopyright
+    1991 by the Open Software Foundation\n\nPermission to use, copy, modify, distribute,
+    and sell this software and its\ndocumentation for any purpose is hereby granted
+    without fee, provided that\nthe above copyright notice appear in all copies and
+    that both that\ncopyright notice and this permission notice appear in supporting\ndocumentation,
+    and that the name of Open Software Foundation\nnot be used in advertising or publicity
+    pertaining to distribution of the\nsoftware without specific, written prior permission.
+    \ Open Software\nFoundation makes no representations about the suitability of
+    this\nsoftware for any purpose.  It is provided \"as is\" without express or\nimplied
+    warranty.\n\nOPEN SOFTWARE FOUNDATION DISCLAIMS ALL WARRANTIES WITH REGARD TO\nTHIS
+    SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND\nFITNESS, IN
+    NO EVENT SHALL OPEN SOFTWARE FOUNDATIONN BE\nLIABLE FOR ANY SPECIAL, INDIRECT
+    OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE,
+    DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+    ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    1990, 1991, 1992,1993, 1994 by FUJITSU LIMITED\nCopyright 1993, 1994                  by
+    Sony Corporation\n\nPermission to use, copy, modify, distribute, and sell this
+    software and\nits documentation for any purpose is hereby granted without fee,
+    provided\nthat the above copyright notice appear in all copies and that both that\ncopyright
+    notice and this permission notice appear in supporting\ndocumentation, and that
+    the name of FUJITSU LIMITED and Sony Corporation\nnot be used in advertising or
+    publicity pertaining to distribution of the\nsoftware without specific, written
+    prior permission.  FUJITSU LIMITED and\nSony Corporation makes no representations
+    about the suitability of this\nsoftware for any purpose.  It is provided \"as
+    is\" without express or\nimplied warranty.\n\nFUJITSU LIMITED AND SONY CORPORATION
+    DISCLAIMS ALL WARRANTIES WITH REGARD\nTO THIS SOFTWARE, INCLUDING ALL IMPLIED
+    WARRANTIES OF MERCHANTABILITY AND\nFITNESS, IN NO EVENT SHALL FUJITSU LIMITED
+    OR SONY CORPORATION BE LIABLE\nFOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES
+    OR ANY DAMAGES WHATSOEVER\nRESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER
+    IN AN ACTION OF CONTRACT,\nNEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+    OR IN CONNECTION WITH THE\nUSE OR PERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    (c) 1993, 1995 by Silicon Graphics Computer Systems, Inc.\n\nPermission to use,
+    copy, modify, and distribute this\nsoftware and its documentation for any purpose
+    and without\nfee is hereby granted, provided that the above copyright\nnotice
+    appear in all copies and that both that copyright\nnotice and this permission
+    notice appear in supporting\ndocumentation, and that the name of Silicon Graphics
+    not be\nused in advertising or publicity pertaining to distribution\nof the software
+    without specific prior written permission.\nSilicon Graphics makes no representation
+    about the suitability\nof this software for any purpose. It is provided \"as is\"\nwithout
+    any express or implied warranty.\n\nSILICON GRAPHICS DISCLAIMS ALL WARRANTIES
+    WITH REGARD TO THIS\nSOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY\nAND
+    FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL SILICON\nGRAPHICS BE LIABLE
+    FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL\nDAMAGES OR ANY DAMAGES WHATSOEVER
+    RESULTING FROM LOSS OF USE,\nDATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+    NEGLIGENCE\nOR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION  WITH\nTHE
+    USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    1991, 1992, 1993, 1994 by FUJITSU LIMITED\nCopyright 1993 by Digital Equipment
+    Corporation\n\nPermission to use, copy, modify, distribute, and sell this software\nand
+    its documentation for any purpose is hereby granted without fee,\nprovided that
+    the above copyright notice appear in all copies and that\nboth that copyright
+    notice and this permission notice appear in\nsupporting documentation, and that
+    the name of FUJITSU LIMITED and\nDigital Equipment Corporation not be used in
+    advertising or publicity\npertaining to distribution of the software without specific,
+    written\nprior permission.  FUJITSU LIMITED and Digital Equipment Corporation\nmakes
+    no representations about the suitability of this software for\nany purpose.  It
+    is provided \"as is\" without express or implied\nwarranty.\n\nFUJITSU LIMITED
+    AND DIGITAL EQUIPMENT CORPORATION DISCLAIM ALL\nWARRANTIES WITH REGARD TO THIS
+    SOFTWARE, INCLUDING ALL IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS, IN
+    NO EVENT SHALL\nFUJITSU LIMITED AND DIGITAL EQUIPMENT CORPORATION BE LIABLE FOR\nANY
+    SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING
+    FROM LOSS OF USE, DATA OR PROFITS, WHETHER\nIN AN ACTION OF CONTRACT, NEGLIGENCE
+    OR OTHER TORTIOUS ACTION,\nARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
+    OF\nTHIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    1992, 1993 by FUJITSU LIMITED\nCopyright 1993 by Fujitsu Open Systems Solutions,
+    Inc.\nCopyright 1994 by Sony Corporation\n\nPermission to use, copy, modify, distribute
+    and sell this software\nand its documentation for any purpose is hereby granted
+    without fee,\nprovided that the above copyright notice appear in all copies and\nthat
+    both that copyright notice and this permission notice appear\nin supporting documentation,
+    and that the name of FUJITSU LIMITED,\nFujitsu Open Systems Solutions, Inc. and
+    Sony Corporation  not be\nused in advertising or publicity pertaining to distribution
+    of the\nsoftware without specific, written prior permission.\nFUJITSU LIMITED,
+    Fujitsu Open Systems Solutions, Inc. and\nSony Corporation make no representations
+    about the suitability of\nthis software for any purpose.  It is provided \"as
+    is\" without\nexpress or implied warranty.\n\nFUJITSU LIMITED, FUJITSU OPEN SYSTEMS
+    SOLUTIONS, INC. AND SONY\nCORPORATION DISCLAIM ALL WARRANTIES WITH REGARD TO THIS
+    SOFTWARE,\nINCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS,\nIN
+    NO EVENT SHALL FUJITSU OPEN SYSTEMS SOLUTIONS, INC., FUJITSU LIMITED\nAND SONY
+    CORPORATION BE LIABLE FOR ANY SPECIAL, INDIRECT OR\nCONSEQUENTIAL DAMAGES OR ANY
+    DAMAGES WHATSOEVER RESULTING FROM LOSS\nOF USE, DATA OR PROFITS, WHETHER IN AN
+    ACTION OF CONTRACT, NEGLIGENCE\nOR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+    CONNECTION WITH THE USE\nOR PERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    1987, 1988, 1990, 1993 by Digital Equipment Corporation,\nMaynard, Massachusetts,\n\n
+    \                       All Rights Reserved\n\nPermission to use, copy, modify,
+    and distribute this software and its\ndocumentation for any purpose and without
+    fee is hereby granted,\nprovided that the above copyright notice appear in all
+    copies and that\nboth that copyright notice and this permission notice appear
+    in\nsupporting documentation, and that the name of Digital not be\nused in advertising
+    or publicity pertaining to distribution of the\nsoftware without specific, written
+    prior permission.\n\nDIGITAL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+    INCLUDING\nALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT
+    SHALL\nDIGITAL BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR\nANY
+    DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,\nWHETHER IN AN
+    ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,\nARISING OUT OF OR IN
+    CONNECTION WITH THE USE OR PERFORMANCE OF THIS\nSOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    1993 by SunSoft, Inc.\nCopyright 1999-2000 by Bruno Haible\n\nPermission to use,
+    copy, modify, distribute, and sell this software\nand its documentation for any
+    purpose is hereby granted without fee,\nprovided that the above copyright notice
+    appear in all copies and\nthat both that copyright notice and this permission
+    notice appear\nin supporting documentation, and that the names of SunSoft, Inc.
+    and\nBruno Haible not be used in advertising or publicity pertaining to\ndistribution
+    of the software without specific, written prior\npermission.  SunSoft, Inc. and
+    Bruno Haible make no representations\nabout the suitability of this software for
+    any purpose.  It is\nprovided \"as is\" without express or implied warranty.\n\nSunSoft
+    Inc. AND Bruno Haible DISCLAIM ALL WARRANTIES WITH REGARD\nTO THIS SOFTWARE, INCLUDING
+    ALL IMPLIED WARRANTIES OF MERCHANTABILITY\nAND FITNESS, IN NO EVENT SHALL SunSoft,
+    Inc. OR Bruno Haible BE LIABLE\nFOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES
+    OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER
+    IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT\nOF
+    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    1991 by the Open Software Foundation\nCopyright 1993 by the TOSHIBA Corp.\n\nPermission
+    to use, copy, modify, distribute, and sell this software and its\ndocumentation
+    for any purpose is hereby granted without fee, provided that\nthe above copyright
+    notice appear in all copies and that both that\ncopyright notice and this permission
+    notice appear in supporting\ndocumentation, and that the names of Open Software
+    Foundation and TOSHIBA\nnot be used in advertising or publicity pertaining to
+    distribution of the\nsoftware without specific, written prior permission.  Open
+    Software\nFoundation and TOSHIBA make no representations about the suitability
+    of this\nsoftware for any purpose.  It is provided \"as is\" without express or\nimplied
+    warranty.\n\nOPEN SOFTWARE FOUNDATION AND TOSHIBA DISCLAIM ALL WARRANTIES WITH
+    REGARD TO\nTHIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+    AND\nFITNESS, IN NO EVENT SHALL OPEN SOFTWARE FOUNDATIONN OR TOSHIBA BE\nLIABLE
+    FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER
+    RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT,
+    NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE
+    USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    1988 by Wyse Technology, Inc., San Jose, Ca.,\n\n                        All Rights
+    Reserved\n\nPermission to use, copy, modify, and distribute this software and
+    its\ndocumentation for any purpose and without fee is hereby granted,\nprovided
+    that the above copyright notice appear in all copies and that\nboth that copyright
+    notice and this permission notice appear in\nsupporting documentation, and that
+    the name Wyse not be\nused in advertising or publicity pertaining to distribution
+    of the\nsoftware without specific, written prior permission.\n\nWYSE DISCLAIMS
+    ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING\nALL IMPLIED WARRANTIES
+    OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL\nDIGITAL BE LIABLE FOR ANY SPECIAL,
+    INDIRECT OR CONSEQUENTIAL DAMAGES OR\nANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+    OF USE, DATA OR PROFITS,\nWHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+    TORTIOUS ACTION,\nARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
+    OF THIS\nSOFTWARE.\n\n\t\t----------------------------------------\n\n\nCopyright
+    1991 by the Open Software Foundation\nCopyright 1993, 1994 by the Sony Corporation\n\nPermission
+    to use, copy, modify, distribute, and sell this software and its\ndocumentation
+    for any purpose is hereby granted without fee, provided that\nthe above copyright
+    notice appear in all copies and that both that\ncopyright notice and this permission
+    notice appear in supporting\ndocumentation, and that the names of Open Software
+    Foundation and\nSony Corporation not be used in advertising or publicity pertaining
+    to\ndistribution of the software without specific, written prior permission.\nOpen
+    Software Foundation and Sony Corporation make no\nrepresentations about the suitability
+    of this software for any purpose.\nIt is provided \"as is\" without express or
+    implied warranty.\n\nOPEN SOFTWARE FOUNDATION AND SONY CORPORATION DISCLAIM ALL\nWARRANTIES
+    WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED\nWARRANTIES OF MERCHANTABILITY
+    AND FITNESS, IN NO EVENT SHALL OPEN\nSOFTWARE FOUNDATIONN OR SONY CORPORATION
+    BE LIABLE FOR ANY SPECIAL,\nINDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER
+    RESULTING FROM\nLOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+    NEGLIGENCE\nOR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
+    USE OR\nPERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    1992, 1993 by FUJITSU LIMITED\nCopyright 1993 by Fujitsu Open Systems Solutions,
+    Inc.\n\nPermission to use, copy, modify, distribute and sell this software\nand
+    its documentation for any purpose is hereby granted without fee,\nprovided that
+    the above copyright notice appear in all copies and\nthat both that copyright
+    notice and this permission notice appear\nin supporting documentation, and that
+    the name of FUJITSU LIMITED and\nFujitsu Open Systems Solutions, Inc. not be used
+    in advertising or\npublicity pertaining to distribution of the software without
+    specific,\nwritten prior permission.\nFUJITSU LIMITED and Fujitsu Open Systems
+    Solutions, Inc. makes no\nrepresentations about the suitability of this software
+    for any purpose.\nIt is provided \"as is\" without express or implied warranty.\n\nFUJITSU
+    LIMITED AND FUJITSU OPEN SYSTEMS SOLUTIONS, INC. DISCLAIMS ALL\nWARRANTIES WITH
+    REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES\nOF MERCHANTABILITY
+    AND FITNESS, IN NO EVENT SHALL FUJITSU OPEN SYSTEMS\nSOLUTIONS, INC. AND FUJITSU
+    LIMITED BE LIABLE FOR ANY SPECIAL, INDIRECT\nOR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+    WHATSOEVER RESULTING FROM LOSS OF\nUSE, DATA OR PROFITS, WHETHER IN AN ACTION
+    OF CONTRACT, NEGLIGENCE OR OTHER\nTORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
+    WITH THE USE OR PERFORMANCE\nOF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    1993, 1994 by Sony Corporation\n\nPermission to use, copy, modify, distribute,
+    and sell this software\nand its documentation for any purpose is hereby granted
+    without fee,\nprovided that the above copyright notice appear in all copies and\nthat
+    both that copyright notice and this permission notice appear\nin supporting documentation,
+    and that the name of Sony Corporation\nnot be used in advertising or publicity
+    pertaining to distribution\nof the software without specific, written prior permission.\nSony
+    Corporation makes no representations about the suitability of\nthis software for
+    any purpose. It is provided \"as is\" without\nexpress or implied warranty.\n\nSONY
+    CORPORATION DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,\nINCLUDING
+    ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO\nEVENT SHALL SONY
+    CORPORATION BE LIABLE FOR ANY SPECIAL, INDIRECT OR\nCONSEQUENTIAL DAMAGES OR ANY
+    DAMAGES WHATSOEVER RESULTING FROM LOSS OF\nUSE, DATA OR PROFITS, WHETHER IN AN
+    ACTION OF CONTRACT, NEGLIGENCE OR\nOTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+    CONNECTION WITH THE USE OR\nPERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    1986, 1998  The Open Group\nCopyright (c) 2000  The XFree86 Project, Inc.\n\nPermission
+    to use, copy, modify, distribute, and sell this software and its\ndocumentation
+    for any purpose is hereby granted without fee, provided that\nthe above copyright
+    notice appear in all copies and that both that\ncopyright notice and this permission
+    notice appear in supporting\ndocumentation.\n\nThe above copyright notice and
+    this permission notice shall be included in\nall copies or substantial portions
+    of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY
+    KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nX CONSORTIUM
+    OR THE XFREE86 PROJECT BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION
+    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nExcept as
+    contained in this notice, the name of the X Consortium or of the\nXFree86 Project
+    shall not be used in advertising or otherwise to promote the\nsale, use or other
+    dealings in this Software without prior written\nauthorization from the X Consortium
+    and the XFree86 Project.\n\n\t\t----------------------------------------\n\nCopyright
+    1990, 1991 by OMRON Corporation, NTT Software Corporation,\n                     and
+    Nippon Telegraph and Telephone Corporation\nCopyright 1991 by the Open Software
+    Foundation\nCopyright 1993 by the FUJITSU LIMITED\n\nPermission to use, copy,
+    modify, distribute, and sell this software and its\ndocumentation for any purpose
+    is hereby granted without fee, provided that\nthe above copyright notice appear
+    in all copies and that both that\ncopyright notice and this permission notice
+    appear in supporting\ndocumentation, and that the names of OMRON, NTT Software,
+    NTT, and\nOpen Software Foundation not be used in advertising or publicity\npertaining
+    to distribution of the software without specific,\nwritten prior permission. OMRON,
+    NTT Software, NTT, and Open Software\nFoundation make no representations about
+    the suitability of this\nsoftware for any purpose.  It is provided \"as is\" without
+    express or\nimplied warranty.\n\nOMRON, NTT SOFTWARE, NTT, AND OPEN SOFTWARE FOUNDATION\nDISCLAIM
+    ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING\nALL IMPLIED WARRANTIES
+    OF MERCHANTABILITY AND FITNESS, IN NO EVENT\nSHALL OMRON, NTT SOFTWARE, NTT, OR
+    OPEN SOFTWARE FOUNDATION BE\nLIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL
+    DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+    WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
+    OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    1988 by Wyse Technology, Inc., San Jose, Ca,\nCopyright 1987 by Digital Equipment
+    Corporation, Maynard, Massachusetts,\n\n                        All Rights Reserved\n\nPermission
+    to use, copy, modify, and distribute this software and its\ndocumentation for
+    any purpose and without fee is hereby granted,\nprovided that the above copyright
+    notice appear in all copies and that\nboth that copyright notice and this permission
+    notice appear in\nsupporting documentation, and that the name Digital not be\nused
+    in advertising or publicity pertaining to distribution of the\nsoftware without
+    specific, written prior permission.\n\nDIGITAL AND WYSE DISCLAIM ALL WARRANTIES
+    WITH REGARD TO THIS SOFTWARE,\nINCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+    AND FITNESS, IN NO\nEVENT SHALL DIGITAL OR WYSE BE LIABLE FOR ANY SPECIAL, INDIRECT
+    OR\nCONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF\nUSE,
+    DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR\nOTHER TORTIOUS
+    ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR\nPERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\n\nCopyright
+    1991, 1992 by Fuji Xerox Co., Ltd.\nCopyright 1992, 1993, 1994 by FUJITSU LIMITED\n\nPermission
+    to use, copy, modify, distribute, and sell this software\nand its documentation
+    for any purpose is hereby granted without fee,\nprovided that the above copyright
+    notice appear in all copies and\nthat both that copyright notice and this permission
+    notice appear\nin supporting documentation, and that the name of Fuji Xerox,\nFUJITSU
+    LIMITED not be used in advertising or publicity pertaining\nto distribution of
+    the software without specific, written prior\npermission. Fuji Xerox, FUJITSU
+    LIMITED make no representations\nabout the suitability of this software for any
+    purpose.\nIt is provided \"as is\" without express or implied warranty.\n\nFUJI
+    XEROX, FUJITSU LIMITED DISCLAIM ALL WARRANTIES WITH\nREGARD TO THIS SOFTWARE,
+    INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS, IN NO EVENT
+    SHALL FUJI XEROX,\nFUJITSU LIMITED BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL\nDAMAGES
+    OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA\nOR PROFITS, WHETHER
+    IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER\nTORTIOUS ACTION, ARISING OUT OF
+    OR IN CONNECTION WITH THE USE OR\nPERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    2006 Josh Triplett\n\nPermission is hereby granted, free of charge, to any person
+    obtaining\na copy of this software and associated documentation files (the\n\"Software\"),
+    to deal in the Software without restriction, including\nwithout limitation the
+    rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell
+    copies of the Software, and to\npermit persons to whom the Software is furnished
+    to do so, subject to\nthe following conditions:\n\nThe above copyright notice
+    and this permission notice shall be included\nin all copies or substantial portions
+    of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY
+    KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE X
+    CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR\nOTHER LIABILITY, WHETHER IN AN
+    ACTION OF CONTRACT, TORT OR OTHERWISE,\nARISING FROM, OUT OF OR IN CONNECTION
+    WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n\t\t----------------------------------------\n\n(c)
+    Copyright 1996 by Sebastien Marineau and Holger Veit\n\t\t\t<marineau@genie.uottawa.ca>\n
+    \                    <Holger.Veit@gmd.de>\n\nPermission is hereby granted, free
+    of charge, to any person obtaining a\ncopy of this software and associated documentation
+    files (the \"Software\"),\nto deal in the Software without restriction, including
+    without limitation\nthe rights to use, copy, modify, merge, publish, distribute,
+    sublicense,\nand/or sell copies of the Software, and to permit persons to whom
+    the\nSoftware is furnished to do so, subject to the following conditions:\n\nThe
+    above copyright notice and this permission notice shall be included in\nall copies
+    or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\",
+    WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO
+    THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    \ IN NO EVENT SHALL\nHOLGER VEIT  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF\nOR IN CONNECTION
+    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nExcept as
+    contained in this notice, the name of Sebastien Marineau or Holger Veit\nshall
+    not be used in advertising or otherwise to promote the sale, use or other\ndealings
+    in this Software without prior written authorization from Holger Veit or\nSebastien
+    Marineau.\n\n\t\t----------------------------------------\n\nCopyright 1990, 1991
+    by OMRON Corporation, NTT Software Corporation,\n                     and Nippon
+    Telegraph and Telephone Corporation\nCopyright 1991 by the Open Software Foundation\nCopyright
+    1993 by the TOSHIBA Corp.\nCopyright 1993, 1994 by Sony Corporation\nCopyright
+    1993, 1994 by the FUJITSU LIMITED\n\nPermission to use, copy, modify, distribute,
+    and sell this software and its\ndocumentation for any purpose is hereby granted
+    without fee, provided that\nthe above copyright notice appear in all copies and
+    that both that\ncopyright notice and this permission notice appear in supporting\ndocumentation,
+    and that the names of OMRON, NTT Software, NTT, Open\nSoftware Foundation, and
+    Sony Corporation not be used in advertising\nor publicity pertaining to distribution
+    of the software without specific,\nwritten prior permission. OMRON, NTT Software,
+    NTT, Open Software\nFoundation, and Sony Corporation  make no representations
+    about the\nsuitability of this software for any purpose.  It is provided \"as
+    is\"\nwithout express or implied warranty.\n\nOMRON, NTT SOFTWARE, NTT, OPEN SOFTWARE
+    FOUNDATION, AND SONY\nCORPORATION DISCLAIM ALL WARRANTIES WITH REGARD TO THIS
+    SOFTWARE, INCLUDING\nALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN
+    NO EVENT\nSHALL OMRON, NTT SOFTWARE, NTT, OPEN SOFTWARE FOUNDATION, OR SONY\nCORPORATION
+    BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR\nANY DAMAGES WHATSOEVER
+    RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER\nIN AN ACTION OF CONTRACT,
+    NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT\nOF OR IN CONNECTION WITH THE
+    USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    2000 by Bruno Haible\n\nPermission to use, copy, modify, distribute, and sell
+    this software\nand its documentation for any purpose is hereby granted without
+    fee,\nprovided that the above copyright notice appear in all copies and\nthat
+    both that copyright notice and this permission notice appear\nin supporting documentation,
+    and that the name of Bruno Haible not\nbe used in advertising or publicity pertaining
+    to distribution of the\nsoftware without specific, written prior permission.  Bruno
+    Haible\nmakes no representations about the suitability of this software for\nany
+    purpose.  It is provided \"as is\" without express or implied\nwarranty.\n\nBruno
+    Haible DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,\nINCLUDING ALL IMPLIED
+    WARRANTIES OF MERCHANTABILITY AND FITNESS, IN\nNO EVENT SHALL Bruno Haible BE
+    LIABLE FOR ANY SPECIAL, INDIRECT OR\nCONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER
+    RESULTING FROM LOSS\nOF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+    NEGLIGENCE\nOR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
+    USE\nOR PERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    © 2003 Keith Packard\n\nPermission to use, copy, modify, distribute, and sell
+    this software and its\ndocumentation for any purpose is hereby granted without
+    fee, provided that\nthe above copyright notice appear in all copies and that both
+    that\ncopyright notice and this permission notice appear in supporting\ndocumentation,
+    and that the name of Keith Packard not be used in\nadvertising or publicity pertaining
+    to distribution of the software without\nspecific, written prior permission.  Keith
+    Packard makes no\nrepresentations about the suitability of this software for any
+    purpose.  It\nis provided \"as is\" without express or implied warranty.\n\nKEITH
+    PACKARD DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,\nINCLUDING ALL
+    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO\nEVENT SHALL KEITH PACKARD
+    BE LIABLE FOR ANY SPECIAL, INDIRECT OR\nCONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER
+    RESULTING FROM LOSS OF USE,\nDATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+    NEGLIGENCE OR OTHER\nTORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
+    USE OR\nPERFORMANCE OF THIS SOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    (c) 2007-2009, Troy D. Hanson\nAll rights reserved.\n\nRedistribution and use
+    in source and binary forms, with or without\nmodification, are permitted provided
+    that the following conditions are met:\n\nRedistributions of source code must
+    retain the above copyright\nnotice, this list of conditions and the following
+    disclaimer.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    \"AS\nIS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED\nTO,
+    THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A\nPARTICULAR PURPOSE
+    ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER\nOR CONTRIBUTORS BE LIABLE
+    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\nEXEMPLARY, OR CONSEQUENTIAL DAMAGES
+    (INCLUDING, BUT NOT LIMITED TO,\nPROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+    LOSS OF USE, DATA, OR\nPROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+    ANY THEORY OF\nLIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\nNEGLIGENCE
+    OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED
+    OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\t\t----------------------------------------\n\nCopyright
+    1992, 1993 by TOSHIBA Corp.\n\nPermission to use, copy, modify, and distribute
+    this software and its\ndocumentation for any purpose and without fee is hereby
+    granted, provided\nthat the above copyright notice appear in all copies and that
+    both that\ncopyright notice and this permission notice appear in supporting\ndocumentation,
+    and that the name of TOSHIBA not be used in advertising\nor publicity pertaining
+    to distribution of the software without specific,\nwritten prior permission. TOSHIBA
+    make no representations about the\nsuitability of this software for any purpose.
+    \ It is provided \"as is\"\nwithout express or implied warranty.\n\nTOSHIBA DISCLAIM
+    ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING\nALL IMPLIED WARRANTIES
+    OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL\nTOSHIBA BE LIABLE FOR ANY SPECIAL,
+    INDIRECT OR CONSEQUENTIAL DAMAGES OR\nANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+    OF USE, DATA OR PROFITS,\nWHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+    TORTIOUS ACTION,\nARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
+    OF THIS\nSOFTWARE.\n\n\n\t\t----------------------------------------\n\nCopyright
+    IBM Corporation 1993\n\nAll Rights Reserved\n\nLicense to use, copy, modify, and
+    distribute this software and its\ndocumentation for any purpose and without fee
+    is hereby granted,\nprovided that the above copyright notice appear in all copies
+    and that\nboth that copyright notice and this permission notice appear in\nsupporting
+    documentation, and that the name of IBM not be\nused in advertising or publicity
+    pertaining to distribution of the\nsoftware without specific, written prior permission.\n\nIBM
+    DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING\nALL IMPLIED
+    WARRANTIES OF MERCHANTABILITY, FITNESS, AND\nNONINFRINGEMENT OF THIRD PARTY RIGHTS,
+    IN NO EVENT SHALL\nIBM BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES
+    OR\nANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,\nWHETHER
+    IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,\nARISING OUT OF
+    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS\nSOFTWARE.\n\n\t\t----------------------------------------\n\nCopyright
+    1990, 1991 by OMRON Corporation, NTT Software Corporation,\n                     and
+    Nippon Telegraph and Telephone Corporation\n\nPermission to use, copy, modify,
+    distribute, and sell this software and its\ndocumentation for any purpose is hereby
+    granted without fee, provided that\nthe above copyright notice appear in all copies
+    and that both that\ncopyright notice and this permission notice appear in supporting\ndocumentation,
+    and that the names of OMRON, NTT Software, and NTT\nnot be used in advertising
+    or publicity pertaining to distribution of the\nsoftware without specific, written
+    prior permission. OMRON, NTT Software,\nand NTT make no representations about
+    the suitability of this\nsoftware for any purpose.  It is provided \"as is\" without
+    express or\nimplied warranty.\n\nOMRON, NTT SOFTWARE, AND NTT, DISCLAIM ALL WARRANTIES
+    WITH REGARD\nTO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY\nAND
+    FITNESS, IN NO EVENT SHALL OMRON, NTT SOFTWARE, OR NTT, BE\nLIABLE FOR ANY SPECIAL,
+    INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS
+    OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER
+    TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE
+    OF THIS SOFTWARE.\n\n"

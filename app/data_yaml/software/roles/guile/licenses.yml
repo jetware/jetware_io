@@ -1,0 +1,6 @@
+---
+- path: guile-2.0.11/LICENSE
+  type: LGPL-3.0
+  text: |
+    Guile is covered under the terms of the GNU Lesser General Public
+    License, version 3 or later.  See COPYING.LESSER and COPYING.

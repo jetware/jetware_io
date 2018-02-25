@@ -1,0 +1,362 @@
+---
+- path: zmq_hpp/zmq.hpp
+  type: MIT
+  text: "/*\n    Copyright (c) 2016-2017 ZeroMQ community\n    Copyright (c) 2009-2011
+    250bpm s.r.o.\n    Copyright (c) 2011 Botond Ballo\n    Copyright (c) 2007-2009
+    iMatix Corporation\n\n    Permission is hereby granted, free of charge, to any
+    person obtaining a copy\n    of this software and associated documentation files
+    (the \"Software\"), to\n    deal in the Software without restriction, including
+    without limitation the\n    rights to use, copy, modify, merge, publish, distribute,
+    sublicense, and/or\n    sell copies of the Software, and to permit persons to
+    whom the Software is\n    furnished to do so, subject to the following conditions:\n\n
+    \   The above copyright notice and this permission notice shall be included in\n
+    \   all copies or substantial portions of the Software.\n\n    THE SOFTWARE IS
+    PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n    IMPLIED, INCLUDING
+    BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n    FITNESS FOR A PARTICULAR
+    PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n    AUTHORS OR COPYRIGHT HOLDERS
+    BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n    LIABILITY, WHETHER IN AN ACTION
+    OF CONTRACT, TORT OR OTHERWISE, ARISING\n    FROM, OUT OF OR IN CONNECTION WITH
+    THE SOFTWARE OR THE USE OR OTHER DEALINGS\n    IN THE SOFTWARE.\n*/\n\n#ifndef
+    __ZMQ_HPP_INCLUDED__\n#define __ZMQ_HPP_INCLUDED__\n\n#if (__cplusplus >= 201103L)\n
+    \  #define ZMQ_CPP11\n   #define ZMQ_NOTHROW noexcept\n   #define ZMQ_EXPLICIT
+    explicit\n#elif  (defined(_MSC_VER) && (_MSC_VER >= 1900))\n   #define ZMQ_CPP11\n
+    \  #define ZMQ_NOTHROW noexcept\n   #define ZMQ_EXPLICIT explicit\n#else\n    #define
+    ZMQ_CPP03\n    #define ZMQ_NOTHROW\n    #define ZMQ_EXPLICIT\n#endif\n\n#include
+    <zmq.h>\n\n#include <algorithm>\n#include <cassert>\n#include <cstring>\n#include
+    <string>\n#include <exception>\n#include <vector>\n#include <iterator>\n\n#ifdef
+    ZMQ_CPP11\n#include <chrono>\n#include <tuple>\n#include <functional>\n#endif\n\n//
+    \ Detect whether the compiler supports C++11 rvalue references.\n#if (defined(__GNUC__)
+    && (__GNUC__ > 4 || \\\n      (__GNUC__ == 4 && __GNUC_MINOR__ > 2)) && \\\n      defined(__GXX_EXPERIMENTAL_CXX0X__))\n
+    \   #define ZMQ_HAS_RVALUE_REFS\n    #define ZMQ_DELETED_FUNCTION = delete\n#elif
+    defined(__clang__)\n    #if __has_feature(cxx_rvalue_references)\n        #define
+    ZMQ_HAS_RVALUE_REFS\n    #endif\n\n    #if __has_feature(cxx_deleted_functions)\n
+    \       #define ZMQ_DELETED_FUNCTION = delete\n    #else\n        #define ZMQ_DELETED_FUNCTION\n
+    \   #endif\n#elif defined(_MSC_VER) && (_MSC_VER >= 1900)\n    #define ZMQ_HAS_RVALUE_REFS\n
+    \   #define ZMQ_DELETED_FUNCTION = delete\n#elif defined(_MSC_VER) && (_MSC_VER
+    >= 1600)\n    #define ZMQ_HAS_RVALUE_REFS\n    #define ZMQ_DELETED_FUNCTION\n#else\n
+    \   #define ZMQ_DELETED_FUNCTION\n#endif\n\n#if ZMQ_VERSION >= ZMQ_MAKE_VERSION(3,
+    3, 0)\n#define ZMQ_NEW_MONITOR_EVENT_LAYOUT\n#endif\n\n#if ZMQ_VERSION >= ZMQ_MAKE_VERSION(4,
+    1, 0)\n#define ZMQ_HAS_PROXY_STEERABLE\n/*  Socket event data  */\ntypedef struct
+    {\n    uint16_t event;  // id of the event as bitfield\n    int32_t  value ; //
+    value is either error code, fd or reconnect interval\n} zmq_event_t;\n#endif\n\n//
+    Avoid using deprecated message receive function when possible\n#if ZMQ_VERSION
+    < ZMQ_MAKE_VERSION(3, 2, 0)\n#  define zmq_msg_recv(msg, socket, flags) zmq_recvmsg(socket,
+    msg, flags)\n#endif\n\n\n// In order to prevent unused variable warnings when
+    building in non-debug\n// mode use this macro to make assertions.\n#ifndef NDEBUG\n#
+    \  define ZMQ_ASSERT(expression) assert(expression)\n#else\n#   define ZMQ_ASSERT(expression)
+    (void)(expression)\n#endif\n\nnamespace zmq\n{\n\n    typedef zmq_free_fn free_fn;\n
+    \   typedef zmq_pollitem_t pollitem_t;\n\n    class error_t : public std::exception\n
+    \   {\n    public:\n\n        error_t () : errnum (zmq_errno ()) {}\n#ifdef ZMQ_CPP11\n
+    \       virtual const char *what () const noexcept\n        {\n            return
+    zmq_strerror (errnum);\n        }\n#else\n        virtual const char *what() const
+    throw ()\n        {\n            return zmq_strerror(errnum);\n        }\n#endif\n
+    \       int num () const\n        {\n            return errnum;\n        }\n\n
+    \   private:\n\n        int errnum;\n    };\n\n    inline int poll (zmq_pollitem_t
+    const* items_, size_t nitems_, long timeout_ = -1)\n    {\n        int rc = zmq_poll
+    (const_cast<zmq_pollitem_t*>(items_), static_cast<int>(nitems_), timeout_);\n
+    \       if (rc < 0)\n            throw error_t ();\n        return rc;\n    }\n\n
+    \   #ifdef ZMQ_CPP11\n    inline int poll(zmq_pollitem_t const* items, size_t
+    nitems, std::chrono::milliseconds timeout)\n    {\n        return poll(items,
+    nitems, static_cast<long>(timeout.count()));\n    }\n\n    inline int poll(std::vector<zmq_pollitem_t>
+    const& items, std::chrono::milliseconds timeout)\n    {\n        return poll(items.data(),
+    items.size(), static_cast<long>(timeout.count()));\n    }\n\n    inline int poll(std::vector<zmq_pollitem_t>
+    const& items, long timeout_ = -1)\n    {\n        return poll(items.data(), items.size(),
+    timeout_);\n    }\n    #endif\n\n\n\n    inline void proxy (void *frontend, void
+    *backend, void *capture)\n    {\n        int rc = zmq_proxy (frontend, backend,
+    capture);\n        if (rc != 0)\n            throw error_t ();\n    }\n\n#ifdef
+    ZMQ_HAS_PROXY_STEERABLE\n    inline void proxy_steerable (void *frontend, void
+    *backend, void *capture, void *control)\n    {\n        int rc = zmq_proxy_steerable
+    (frontend, backend, capture, control);\n        if (rc != 0)\n            throw
+    error_t ();\n    }\n#endif\n\n    inline void version (int *major_, int *minor_,
+    int *patch_)\n    {\n        zmq_version (major_, minor_, patch_);\n    }\n\n
+    \   #ifdef ZMQ_CPP11\n    inline std::tuple<int, int, int> version()\n    {\n
+    \       std::tuple<int, int, int> v;\n        zmq_version(&std::get<0>(v), &std::get<1>(v),
+    &std::get<2>(v) );\n        return v;\n    }\n    #endif\n\n    class message_t\n
+    \   {\n        friend class socket_t;\n\n    public:\n\n        inline message_t
+    ()\n        {\n            int rc = zmq_msg_init (&msg);\n            if (rc !=
+    0)\n                throw error_t ();\n        }\n\n        inline explicit message_t
+    (size_t size_)\n        {\n            int rc = zmq_msg_init_size (&msg, size_);\n
+    \           if (rc != 0)\n                throw error_t ();\n        }\n\n        template<typename
+    I> message_t(I first, I last):\n            msg()\n        {\n            typedef
+    typename std::iterator_traits<I>::difference_type size_type;\n            typedef
+    typename std::iterator_traits<I>::value_type value_t;\n\n            size_type
+    const size_ = std::distance(first, last)*sizeof(value_t);\n            int const
+    rc = zmq_msg_init_size (&msg, size_);\n            if (rc != 0)\n                throw
+    error_t ();\n            value_t* dest = data<value_t>();\n            while (first
+    != last)\n            {\n                *dest = *first;\n                ++dest;
+    ++first;\n            }\n        }\n\n        inline message_t (const void *data_,
+    size_t size_)\n        {\n            int rc = zmq_msg_init_size (&msg, size_);\n
+    \           if (rc != 0)\n                throw error_t ();\n            memcpy(data(),
+    data_, size_);\n        }\n\n        inline message_t (void *data_, size_t size_,
+    free_fn *ffn_,\n            void *hint_ = NULL)\n        {\n            int rc
+    = zmq_msg_init_data (&msg, data_, size_, ffn_, hint_);\n            if (rc !=
+    0)\n                throw error_t ();\n        }\n\n#ifdef ZMQ_HAS_RVALUE_REFS\n
+    \       inline message_t (message_t &&rhs): msg (rhs.msg)\n        {\n            int
+    rc = zmq_msg_init (&rhs.msg);\n            if (rc != 0)\n                throw
+    error_t ();\n        }\n\n        inline message_t &operator = (message_t &&rhs)
+    ZMQ_NOTHROW\n        {\n            std::swap (msg, rhs.msg);\n            return
+    *this;\n        }\n#endif\n\n        inline ~message_t () ZMQ_NOTHROW\n        {\n
+    \           int rc = zmq_msg_close (&msg);\n            ZMQ_ASSERT (rc == 0);\n
+    \       }\n\n        inline void rebuild ()\n        {\n            int rc = zmq_msg_close
+    (&msg);\n            if (rc != 0)\n                throw error_t ();\n            rc
+    = zmq_msg_init (&msg);\n            if (rc != 0)\n                throw error_t
+    ();\n        }\n\n        inline void rebuild (size_t size_)\n        {\n            int
+    rc = zmq_msg_close (&msg);\n            if (rc != 0)\n                throw error_t
+    ();\n            rc = zmq_msg_init_size (&msg, size_);\n            if (rc !=
+    0)\n                throw error_t ();\n        }\n\n        inline void rebuild
+    (const void *data_, size_t size_)\n        {\n            int rc = zmq_msg_close
+    (&msg);\n            if (rc != 0)\n                throw error_t ();\n            rc
+    = zmq_msg_init_size (&msg, size_);\n            if (rc != 0)\n                throw
+    error_t ();\n            memcpy(data(), data_, size_);\n        }\n\n        inline
+    void rebuild (void *data_, size_t size_, free_fn *ffn_,\n            void *hint_
+    = NULL)\n        {\n            int rc = zmq_msg_close (&msg);\n            if
+    (rc != 0)\n                throw error_t ();\n            rc = zmq_msg_init_data
+    (&msg, data_, size_, ffn_, hint_);\n            if (rc != 0)\n                throw
+    error_t ();\n        }\n\n        inline void move (message_t const *msg_)\n        {\n
+    \           int rc = zmq_msg_move (&msg, const_cast<zmq_msg_t*>(&(msg_->msg)));\n
+    \           if (rc != 0)\n                throw error_t ();\n        }\n\n        inline
+    void copy (message_t const *msg_)\n        {\n            int rc = zmq_msg_copy
+    (&msg, const_cast<zmq_msg_t*>(&(msg_->msg)));\n            if (rc != 0)\n                throw
+    error_t ();\n        }\n\n        inline bool more () const ZMQ_NOTHROW\n        {\n
+    \           int rc = zmq_msg_more (const_cast<zmq_msg_t*>(&msg) );\n            return
+    rc != 0;\n        }\n\n        inline void *data () ZMQ_NOTHROW\n        {\n            return
+    zmq_msg_data (&msg);\n        }\n\n        inline const void* data () const ZMQ_NOTHROW\n
+    \       {\n            return zmq_msg_data (const_cast<zmq_msg_t*>(&msg));\n        }\n\n
+    \       inline size_t size () const ZMQ_NOTHROW\n        {\n            return
+    zmq_msg_size (const_cast<zmq_msg_t*>(&msg));\n        }\n\n        template<typename
+    T> T* data() ZMQ_NOTHROW\n        {\n            return static_cast<T*>( data()
+    );\n        }\n\n        template<typename T> T const* data() const ZMQ_NOTHROW\n
+    \       {\n            return static_cast<T const*>( data() );\n        }\n\n
+    \       inline bool equal(const message_t* other) const ZMQ_NOTHROW\n        {\n
+    \           if (size() != other->size())\n                return false;\n            std::string
+    a(data<char>(), size());\n            std::string b(other->data<char>(), other->size());\n
+    \           return a == b;\n        }\n\n#if ZMQ_VERSION >= ZMQ_MAKE_VERSION(4,
+    1, 0)\n        inline const char* gets(const char *property_)\n        {\n            const
+    char* value = zmq_msg_gets (&msg, property_);\n            if (value == NULL)\n
+    \               throw error_t ();\n            return value;\n        }\n#endif\n\n
+    \   private:\n        //  The underlying message\n        zmq_msg_t msg;\n\n        //
+    \ Disable implicit message copying, so that users won't use shared\n        //
+    \ messages (less efficient) without being aware of the fact.\n        message_t
+    (const message_t&) ZMQ_DELETED_FUNCTION;\n        void operator = (const message_t&)
+    ZMQ_DELETED_FUNCTION;\n    };\n\n    class context_t\n    {\n        friend class
+    socket_t;\n\n    public:\n        inline context_t ()\n        {\n            ptr
+    = zmq_ctx_new ();\n            if (ptr == NULL)\n                throw error_t
+    ();\n        }\n\n\n        inline explicit context_t (int io_threads_, int max_sockets_
+    = ZMQ_MAX_SOCKETS_DFLT)\n        {\n            ptr = zmq_ctx_new ();\n            if
+    (ptr == NULL)\n                throw error_t ();\n\n            int rc = zmq_ctx_set
+    (ptr, ZMQ_IO_THREADS, io_threads_);\n            ZMQ_ASSERT (rc == 0);\n\n            rc
+    = zmq_ctx_set (ptr, ZMQ_MAX_SOCKETS, max_sockets_);\n            ZMQ_ASSERT (rc
+    == 0);\n        }\n\n#ifdef ZMQ_HAS_RVALUE_REFS\n        inline context_t (context_t
+    &&rhs) ZMQ_NOTHROW : ptr (rhs.ptr)\n        {\n            rhs.ptr = NULL;\n        }\n
+    \       inline context_t &operator = (context_t &&rhs) ZMQ_NOTHROW\n        {\n
+    \           std::swap (ptr, rhs.ptr);\n            return *this;\n        }\n#endif\n\n
+    \       inline ~context_t () ZMQ_NOTHROW\n        {\n            close();\n        }\n\n
+    \       inline void close() ZMQ_NOTHROW\n        {\n            if (ptr == NULL)\n
+    \               return;\n\n            int rc = zmq_ctx_destroy (ptr);\n            ZMQ_ASSERT
+    (rc == 0);\n            ptr = NULL;\n        }\n\n        //  Be careful with
+    this, it's probably only useful for\n        //  using the C api together with
+    an existing C++ api.\n        //  Normally you should never need to use this.\n
+    \       inline ZMQ_EXPLICIT operator void* () ZMQ_NOTHROW\n        {\n            return
+    ptr;\n        }\n\n        inline ZMQ_EXPLICIT operator void const* () const ZMQ_NOTHROW\n
+    \       {\n            return ptr;\n        }\n    private:\n\n        void *ptr;\n\n
+    \       context_t (const context_t&) ZMQ_DELETED_FUNCTION;\n        void operator
+    = (const context_t&) ZMQ_DELETED_FUNCTION;\n    };\n\n    #ifdef ZMQ_CPP11\n    enum
+    class socket_type: int\n    {\n        req = ZMQ_REQ,\n        rep = ZMQ_REP,\n
+    \       dealer = ZMQ_DEALER,\n        router = ZMQ_ROUTER,\n        pub = ZMQ_PUB,\n
+    \       sub = ZMQ_SUB,\n        xpub = ZMQ_XPUB,\n        xsub = ZMQ_XSUB,\n        push
+    = ZMQ_PUSH,\n        pull = ZMQ_PULL,\n#if ZMQ_VERSION_MAJOR >= 4\n        stream
+    = ZMQ_STREAM,\n#endif\n        pair = ZMQ_PAIR\n    };\n    #endif\n\n    class
+    socket_t\n    {\n        friend class monitor_t;\n        friend class poller_t;\n
+    \   public:\n        inline socket_t(context_t& context_, int type_)\n        {\n
+    \           init(context_, type_);\n        }\n\n        #ifdef ZMQ_CPP11\n        inline
+    socket_t(context_t& context_, socket_type type_)\n        {\n            init(context_,
+    static_cast<int>(type_));\n        }\n        #endif\n\n#ifdef ZMQ_HAS_RVALUE_REFS\n
+    \       inline socket_t(socket_t&& rhs) ZMQ_NOTHROW :\n            ptr(rhs.ptr),\n
+    \           ctxptr(rhs.ctxptr)\n        {\n            rhs.ptr    = NULL;\n            rhs.ctxptr
+    = NULL;\n        }\n        inline socket_t& operator=(socket_t&& rhs) ZMQ_NOTHROW\n
+    \       {\n            std::swap(ptr, rhs.ptr);\n            return *this;\n        }\n#endif\n\n
+    \       inline ~socket_t () ZMQ_NOTHROW\n        {\n            close();\n        }\n\n
+    \       inline operator void* () ZMQ_NOTHROW\n        {\n            return ptr;\n
+    \       }\n\n        inline operator void const* () const ZMQ_NOTHROW\n        {\n
+    \           return ptr;\n        }\n\n        inline void close() ZMQ_NOTHROW\n
+    \       {\n            if(ptr == NULL)\n                // already closed\n                return
+    ;\n            int rc = zmq_close (ptr);\n            ZMQ_ASSERT (rc == 0);\n
+    \           ptr = 0 ;\n        }\n\n        template<typename T> void setsockopt(int
+    option_, T const& optval)\n        {\n            setsockopt(option_, &optval,
+    sizeof(T) );\n        }\n\n        inline void setsockopt (int option_, const
+    void *optval_,\n            size_t optvallen_)\n        {\n            int rc
+    = zmq_setsockopt (ptr, option_, optval_, optvallen_);\n            if (rc != 0)\n
+    \               throw error_t ();\n        }\n\n        inline void getsockopt
+    (int option_, void *optval_,\n            size_t *optvallen_) const\n        {\n
+    \           int rc = zmq_getsockopt (ptr, option_, optval_, optvallen_);\n            if
+    (rc != 0)\n                throw error_t ();\n        }\n\n        template<typename
+    T> T getsockopt(int option_) const\n        {\n            T optval;\n            size_t
+    optlen = sizeof(T);\n            getsockopt(option_, &optval, &optlen );\n            return
+    optval;\n        }\n\n        inline void bind(std::string const& addr)\n        {\n
+    \           bind(addr.c_str());\n        }\n\n        inline void bind (const
+    char *addr_)\n        {\n            int rc = zmq_bind (ptr, addr_);\n            if
+    (rc != 0)\n                throw error_t ();\n        }\n\n        inline void
+    unbind(std::string const& addr)\n        {\n            unbind(addr.c_str());\n
+    \       }\n\n        inline void unbind (const char *addr_)\n        {\n            int
+    rc = zmq_unbind (ptr, addr_);\n            if (rc != 0)\n                throw
+    error_t ();\n        }\n\n        inline void connect(std::string const& addr)\n
+    \       {\n            connect(addr.c_str());\n        }\n\n        inline void
+    connect (const char *addr_)\n        {\n            int rc = zmq_connect (ptr,
+    addr_);\n            if (rc != 0)\n                throw error_t ();\n        }\n\n
+    \       inline void disconnect(std::string const& addr)\n        {\n            disconnect(addr.c_str());\n
+    \       }\n\n        inline void disconnect (const char *addr_)\n        {\n            int
+    rc = zmq_disconnect (ptr, addr_);\n            if (rc != 0)\n                throw
+    error_t ();\n        }\n\n        inline bool connected() const ZMQ_NOTHROW\n
+    \       {\n            return(ptr != NULL);\n        }\n\n        inline size_t
+    send (const void *buf_, size_t len_, int flags_ = 0)\n        {\n            int
+    nbytes = zmq_send (ptr, buf_, len_, flags_);\n            if (nbytes >= 0)\n                return
+    (size_t) nbytes;\n            if (zmq_errno () == EAGAIN)\n                return
+    0;\n            throw error_t ();\n        }\n\n        inline bool send (message_t
+    &msg_, int flags_ = 0)\n        {\n            int nbytes = zmq_msg_send (&(msg_.msg),
+    ptr, flags_);\n            if (nbytes >= 0)\n                return true;\n            if
+    (zmq_errno () == EAGAIN)\n                return false;\n            throw error_t
+    ();\n        }\n\n        template<typename I> bool send(I first, I last, int
+    flags_=0)\n        {\n            zmq::message_t msg(first, last);\n            return
+    send(msg, flags_);\n        }\n\n#ifdef ZMQ_HAS_RVALUE_REFS\n        inline bool
+    send (message_t &&msg_, int flags_ = 0)\n        {\n            return send(msg_,
+    flags_);\n        }\n#endif\n\n        inline size_t recv (void *buf_, size_t
+    len_, int flags_ = 0)\n        {\n            int nbytes = zmq_recv (ptr, buf_,
+    len_, flags_);\n            if (nbytes >= 0)\n                return (size_t)
+    nbytes;\n            if (zmq_errno () == EAGAIN)\n                return 0;\n
+    \           throw error_t ();\n        }\n\n        inline bool recv (message_t
+    *msg_, int flags_ = 0)\n        {\n            int nbytes = zmq_msg_recv (&(msg_->msg),
+    ptr, flags_);\n            if (nbytes >= 0)\n                return true;\n            if
+    (zmq_errno () == EAGAIN)\n                return false;\n            throw error_t
+    ();\n        }\n\n    private:\n        inline void init(context_t& context_,
+    int type_)\n        {\n            ctxptr = context_.ptr;\n            ptr = zmq_socket
+    (context_.ptr, type_ );\n            if (ptr == NULL)\n                throw error_t
+    ();\n        }\n\n        void *ptr;\n        void *ctxptr;\n\n        socket_t
+    (const socket_t&) ZMQ_DELETED_FUNCTION;\n        void operator = (const socket_t&)
+    ZMQ_DELETED_FUNCTION;\n    };\n\n    class monitor_t\n    {\n    public:\n        monitor_t()
+    : socketPtr(NULL), monitor_socket(NULL) {}\n\n        virtual ~monitor_t()\n        {\n
+    \         if (socketPtr)\n              zmq_socket_monitor(socketPtr, NULL, 0);\n\n
+    \         if (monitor_socket)\n            zmq_close (monitor_socket);\n\n        }\n\n\n#ifdef
+    ZMQ_HAS_RVALUE_REFS\n        monitor_t(monitor_t&& rhs) ZMQ_NOTHROW :\n            socketPtr(rhs.socketPtr),\n
+    \           monitor_socket(rhs.monitor_socket)\n        {\n            rhs.socketPtr
+    \   = NULL;\n            rhs.monitor_socket = NULL;\n        }\n\n        socket_t&
+    operator=(socket_t&& rhs) ZMQ_DELETED_FUNCTION ;\n#endif\n\n\n\n        void monitor(socket_t
+    &socket, std::string const& addr, int events = ZMQ_EVENT_ALL)\n        {\n            monitor(socket,
+    addr.c_str(), events);\n        }\n\n        void monitor(socket_t &socket, const
+    char *addr_, int events = ZMQ_EVENT_ALL)\n        {\n          init (socket, addr_,
+    events) ;\n          while(true)\n          {\n            check_event(-1) ;\n
+    \         }\n        }\n\n        void init(socket_t &socket, std::string const&
+    addr, int events = ZMQ_EVENT_ALL)\n        {\n            init(socket, addr.c_str(),
+    events);\n        }\n\n        void init(socket_t &socket, const char *addr_,
+    int events = ZMQ_EVENT_ALL)\n        {\n            int rc = zmq_socket_monitor(socket.ptr,
+    addr_, events);\n            if (rc != 0)\n                throw error_t ();\n\n
+    \           socketPtr = socket.ptr;\n            monitor_socket = zmq_socket (socket.ctxptr,
+    ZMQ_PAIR);\n            assert (monitor_socket);\n\n            rc = zmq_connect
+    (monitor_socket, addr_);\n            assert (rc == 0);\n\n            on_monitor_started();\n
+    \       }\n\n        bool check_event(int timeout = 0)\n        {\n            assert
+    (monitor_socket);\n\n            zmq_msg_t eventMsg;\n            zmq_msg_init
+    (&eventMsg);\n\n            zmq::pollitem_t items [] = {\n              { monitor_socket,
+    0, ZMQ_POLLIN, 0 },\n            };\n\n            zmq::poll (&items [0], 1, timeout);\n\n
+    \           if (items [0].revents & ZMQ_POLLIN)\n            {\n                int
+    rc = zmq_msg_recv (&eventMsg, monitor_socket, 0);\n                if (rc == -1
+    && zmq_errno() == ETERM)\n                    return false;\n                assert
+    (rc != -1);\n\n            }\n            else\n            {\n                zmq_msg_close
+    (&eventMsg);\n                return false;\n            }\n\n#if ZMQ_VERSION_MAJOR
+    >= 4\n            const char* data = static_cast<const char*>(zmq_msg_data(&eventMsg));\n
+    \           zmq_event_t msgEvent;\n            memcpy(&msgEvent.event, data, sizeof(uint16_t));
+    data += sizeof(uint16_t);\n            memcpy(&msgEvent.value, data, sizeof(int32_t));\n
+    \           zmq_event_t* event = &msgEvent;\n#else\n            zmq_event_t* event
+    = static_cast<zmq_event_t*>(zmq_msg_data(&eventMsg));\n#endif\n\n#ifdef ZMQ_NEW_MONITOR_EVENT_LAYOUT\n
+    \           zmq_msg_t addrMsg;\n            zmq_msg_init (&addrMsg);\n            int
+    rc = zmq_msg_recv (&addrMsg, monitor_socket, 0);\n            if (rc == -1 &&
+    zmq_errno() == ETERM)\n            {\n                zmq_msg_close (&eventMsg);\n
+    \               return false;\n            }\n\n            assert (rc != -1);\n
+    \           const char* str = static_cast<const char*>(zmq_msg_data (&addrMsg));\n
+    \           std::string address(str, str + zmq_msg_size(&addrMsg));\n            zmq_msg_close
+    (&addrMsg);\n#else\n            // Bit of a hack, but all events in the zmq_event_t
+    union have the same layout so this will work for all event types.\n            std::string
+    address = event->data.connected.addr;\n#endif\n\n#ifdef ZMQ_EVENT_MONITOR_STOPPED\n
+    \           if (event->event == ZMQ_EVENT_MONITOR_STOPPED)\n            {\n              zmq_msg_close
+    (&eventMsg);\n              return true;\n            }\n\n#endif\n\n            switch
+    (event->event) {\n            case ZMQ_EVENT_CONNECTED:\n                on_event_connected(*event,
+    address.c_str());\n                break;\n            case ZMQ_EVENT_CONNECT_DELAYED:\n
+    \               on_event_connect_delayed(*event, address.c_str());\n                break;\n
+    \           case ZMQ_EVENT_CONNECT_RETRIED:\n                on_event_connect_retried(*event,
+    address.c_str());\n                break;\n            case ZMQ_EVENT_LISTENING:\n
+    \               on_event_listening(*event, address.c_str());\n                break;\n
+    \           case ZMQ_EVENT_BIND_FAILED:\n                on_event_bind_failed(*event,
+    address.c_str());\n                break;\n            case ZMQ_EVENT_ACCEPTED:\n
+    \               on_event_accepted(*event, address.c_str());\n                break;\n
+    \           case ZMQ_EVENT_ACCEPT_FAILED:\n                on_event_accept_failed(*event,
+    address.c_str());\n                break;\n            case ZMQ_EVENT_CLOSED:\n
+    \               on_event_closed(*event, address.c_str());\n                break;\n
+    \           case ZMQ_EVENT_CLOSE_FAILED:\n                on_event_close_failed(*event,
+    address.c_str());\n                break;\n            case ZMQ_EVENT_DISCONNECTED:\n
+    \               on_event_disconnected(*event, address.c_str());\n                break;\n#ifdef
+    ZMQ_BUILD_DRAFT_API\n#if ZMQ_VERSION >= ZMQ_MAKE_VERSION(4, 2, 3)\n            case
+    ZMQ_EVENT_HANDSHAKE_FAILED_NO_DETAIL:\n                on_event_handshake_failed_no_detail(*event,
+    address.c_str());\n                break;\n            case ZMQ_EVENT_HANDSHAKE_FAILED_PROTOCOL:\n
+    \               on_event_handshake_failed_protocol(*event, address.c_str());\n
+    \               break;\n            case ZMQ_EVENT_HANDSHAKE_FAILED_AUTH:\n                on_event_handshake_failed_auth(*event,
+    address.c_str());\n                break;\n            case ZMQ_EVENT_HANDSHAKE_SUCCEEDED:\n
+    \               on_event_handshake_succeeded(*event, address.c_str());\n                break;\n#elif
+    ZMQ_VERSION >= ZMQ_MAKE_VERSION(4, 2, 1)\n            case ZMQ_EVENT_HANDSHAKE_FAILED:\n
+    \               on_event_handshake_failed(*event, address.c_str());\n                break;\n
+    \           case ZMQ_EVENT_HANDSHAKE_SUCCEED:\n                on_event_handshake_succeed(*event,
+    address.c_str());\n                break;\n#endif\n#endif\n            default:\n
+    \               on_event_unknown(*event, address.c_str());\n                break;\n
+    \           }\n            zmq_msg_close (&eventMsg);\n\n            return true
+    ;\n        }\n\n#ifdef ZMQ_EVENT_MONITOR_STOPPED\n        void abort()\n        {\n
+    \           if (socketPtr)\n                zmq_socket_monitor(socketPtr, NULL,
+    0);\n\n            if (monitor_socket)\n              zmq_close (monitor_socket);\n\n
+    \           socketPtr = NULL;\n            monitor_socket = NULL;\n        }\n#endif\n
+    \       virtual void on_monitor_started() {}\n        virtual void on_event_connected(const
+    zmq_event_t &event_, const char* addr_) { (void)event_; (void)addr_; }\n        virtual
+    void on_event_connect_delayed(const zmq_event_t &event_, const char* addr_) {
+    (void)event_; (void)addr_; }\n        virtual void on_event_connect_retried(const
+    zmq_event_t &event_, const char* addr_) { (void)event_; (void)addr_; }\n        virtual
+    void on_event_listening(const zmq_event_t &event_, const char* addr_) { (void)event_;
+    (void)addr_; }\n        virtual void on_event_bind_failed(const zmq_event_t &event_,
+    const char* addr_) { (void)event_; (void)addr_; }\n        virtual void on_event_accepted(const
+    zmq_event_t &event_, const char* addr_) { (void)event_; (void)addr_; }\n        virtual
+    void on_event_accept_failed(const zmq_event_t &event_, const char* addr_) { (void)event_;
+    (void)addr_; }\n        virtual void on_event_closed(const zmq_event_t &event_,
+    const char* addr_) { (void)event_; (void)addr_; }\n        virtual void on_event_close_failed(const
+    zmq_event_t &event_, const char* addr_) { (void)event_; (void)addr_; }\n        virtual
+    void on_event_disconnected(const zmq_event_t &event_, const char* addr_) { (void)event_;
+    (void)addr_; }\n#if ZMQ_VERSION >= ZMQ_MAKE_VERSION(4, 2, 3)\n        virtual
+    void on_event_handshake_failed_no_detail(const zmq_event_t &event_, const char*
+    addr_) { (void) event_; (void) addr_; }\n        virtual void on_event_handshake_failed_protocol(const
+    zmq_event_t &event_, const char* addr_) { (void) event_; (void) addr_; }\n        virtual
+    void on_event_handshake_failed_auth(const zmq_event_t &event_, const char* addr_)
+    { (void) event_; (void) addr_; }\n        virtual void on_event_handshake_succeeded(const
+    zmq_event_t &event_, const char* addr_) { (void) event_; (void) addr_; }\n#elif
+    ZMQ_VERSION >= ZMQ_MAKE_VERSION(4, 2, 1)\n        virtual void on_event_handshake_failed(const
+    zmq_event_t &event_, const char* addr_) { (void) event_; (void) addr_; }\n        virtual
+    void on_event_handshake_succeed(const zmq_event_t &event_, const char* addr_)
+    { (void) event_; (void) addr_; }\n#endif\t\t\n        virtual void on_event_unknown(const
+    zmq_event_t &event_, const char* addr_) { (void)event_; (void)addr_; }\n    private:\n\n
+    \       monitor_t (const monitor_t&) ZMQ_DELETED_FUNCTION;\n        void operator
+    = (const monitor_t&) ZMQ_DELETED_FUNCTION;\n\n        void* socketPtr;\n        void
+    *monitor_socket ;\n    };\n\n#if defined(ZMQ_BUILD_DRAFT_API) && defined(ZMQ_CPP11)
+    && defined(ZMQ_HAVE_POLLER)\n    class poller_t\n    {\n    public:\n        poller_t
+    () : poller_ptr (zmq_poller_new ())\n        {\n            if (!poller_ptr)\n
+    \               throw error_t ();\n        }\n\n        ~poller_t ()\n        {\n
+    \           zmq_poller_destroy (&poller_ptr);\n        }\n\n        bool add (zmq::socket_t
+    &socket, short events, std::function<void(void)> &handler)\n        {\n            if
+    (0 == zmq_poller_add (poller_ptr, socket.ptr, handler ? &handler : NULL, events))
+    {\n                poller_events.emplace_back (zmq_poller_event_t ());\n                return
+    true;\n            }\n            return false;\n        }\n\n        bool remove
+    (zmq::socket_t &socket)\n        {\n            if (0 == zmq_poller_remove (poller_ptr,
+    socket.ptr)) {\n                poller_events.pop_back ();\n                return
+    true;\n            }\n            return false;\n        }\n\n        bool wait
+    (std::chrono::milliseconds timeout)\n        {\n            int rc = zmq_poller_wait_all
+    (poller_ptr, poller_events.data (), static_cast<int> (poller_events.size ()),
+    static_cast<long>(timeout.count ()));\n            if (rc >= 0) {\n                std::for_each
+    (poller_events.begin (), poller_events.begin () + rc, [](zmq_poller_event_t& event)
+    {\n                    if (event.user_data != NULL)\n                        (*reinterpret_cast<std::function<void(void)>*>
+    (event.user_data)) ();\n                });\n                return true;\n            }\n\n#if
+    ZMQ_VERSION >= ZMQ_MAKE_VERSION(4, 2, 3)\n            if (zmq_errno () == EAGAIN)\n#else\t\t\t\n
+    \           if (zmq_errno () == ETIMEDOUT)\n#endif\t\t\t\n                return
+    false;\n\n            throw error_t ();\n        }\n\n    private:\n        void
+    *poller_ptr;\n        std::vector<zmq_poller_event_t> poller_events;\n    };\n#endif
+    //  defined(ZMQ_BUILD_DRAFT_API) && defined(ZMQ_CPP11) && defined(ZMQ_HAVE_POLLER)\n\n}\n\n#endif\n"

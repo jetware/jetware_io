@@ -1,0 +1,439 @@
+---
+- path: cgiserver-master/cgiserver.c
+  type: BSD-style
+  text: "/*\n * A Light, CGI-capable HTTP/1.1 Web Server\n *\n * Implemented for UIUC
+    CS241 Fall 2010 Machine Problem #8\n *\n * Copyright (c) 2010 Kevin Lange.  All
+    rights reserved.\n * \n * Developed by: Kevin Lange\n *               University
+    of Illinois, Urbana-Champaign\n *               http://b.dakko.us\n * \n * Permission
+    is hereby granted, free of charge, to any person obtaining a copy\n * of this
+    software and associated documentation files (the \"Software\"), to\n * deal with
+    the Software without restriction, including without limitation the\n * rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or\n * sell
+    copies of the Software, and to permit persons to whom the Software is\n * furnished
+    to do so, subject to the following conditions:\n *   1. Redistributions of source
+    code must retain the above copyright notice,\n *      this list of conditions
+    and the following disclaimers.\n *   2. Redistributions in binary form must reproduce
+    the above copyright\n *      notice, this list of conditions and the following
+    disclaimers in the\n *      documentation and/or other materials provided with
+    the distribution.\n *   3. Neither the names of Kevin Lange, the University of
+    Illinois Urbana-\n *      Champaign, nor the names of its contributors may be
+    used to endorse\n *      or promote products derived from this Software without
+    specific prior\n *      written permission.\n * \n * THE SOFTWARE IS PROVIDED
+    \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n * IMPLIED, INCLUDING BUT
+    NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n * FITNESS FOR A PARTICULAR
+    PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\n * CONTRIBUTORS OR COPYRIGHT
+    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n * LIABILITY, WHETHER IN AN
+    ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\n * FROM, OUT OF OR IN CONNECTION
+    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS\n * WITH THE SOFTWARE.\n * \n */\n\n#define
+    _POSIX_C_SOURCE 200809L\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include
+    <unistd.h>\n#include <netinet/in.h>\n#include <sys/socket.h>\n#include <pthread.h>\n#include
+    <sys/types.h>\n#include <sys/stat.h>\n#include <assert.h>\n#include <dirent.h>\n#include
+    <fcntl.h>\n#include <signal.h>\n#include <dirent.h>\n#include <sys/wait.h>\n#include
+    <netdb.h>\n#include <arpa/inet.h>\n#include <ctype.h>\n\n#define PORT          80
+    \    /* Server port */\n#define HEADER_SIZE   10240L /* Maximum size of a request
+    header line */\n#define CGI_POST      10240L /* Buffer size for reading POST data
+    to CGI */\n#define CGI_BUFFER    10240L /* Buffer size for reading CGI output
+    */\n#define FLAT_BUFFER   10240L /* Buffer size for reading flat files */\n\n/*\n
+    * Standard extensions\n */\n#define ENABLE_EXTENSIONS\n#ifdef  ENABLE_EXTENSIONS\n#define
+    ENABLE_CGI      1    /* Whether or not to enable CGI (also POST and HEAD) */\n#define
+    ENABLE_DEFAULTS 1    /* Whether or not to enable default index files (.php, .pl,
+    .html) */\n#else\n#define ENABLE_CGI      0\n#define ENABLE_DEFAULTS 0\n#endif\n\n/*\n
+    * Default indexes and execution restrictions.\n */\n#define INDEX_DEFAULTS  {\"index.php\",
+    \"index.pl\", \"index.py\", \"index.htm\", \"index.html\", 0}\n#define INDEX_EXECUTES
+    \ {          1,          1,          1,           0,            0, -1}\n\n/*\n
+    * Directory to serve out of.\n */\n#define PAGES_DIRECTORY \"pages\"\n#define
+    VERSION_STRING  \"klange/0.5\"\n\n/*\n * Incoming request socket data\n */\nstruct
+    socket_request {\n\tint                fd;       /* Socket itself */\n\tsocklen_t
+    \         addr_len; /* Length of the address type */\n\tstruct sockaddr_in address;
+    \ /* Remote address */\n\tpthread_t          thread;   /* Handler thread */\n};\n\n/*\n
+    * CGI process data\n */\nstruct cgi_wait {\n\tint                fd;       /*
+    Read */\n\tint                fd2;      /* Write */\n\tint                pid;
+    \     /* Process ID */\n};\n\n/*\n * Server socket.\n */\nint serversock;\n\n/*\n
+    * Port\n */\nint port;\n\n/*\n * Last unaccepted socket pointer\n * so we can
+    free it.\n */\nvoid * _last_unaccepted;\n\n/*\n * Better safe than sorry,\n *
+    shutdown the socket and exit.\n */\nvoid handleShutdown(int sig) {\n\tprintf(\"\\n[info]
+    Shutting down.\\n\");\n\n\t/*\n\t * Shutdown the socket.\n\t */\n\tshutdown(serversock,
+    SHUT_RDWR);\n\tclose(serversock);\n\n\t/*\n\t * Free the thread data block\n\t
+    * for the next expected connection.\n\t */\n\tfree(_last_unaccepted);\n\n\t/*\n\t
+    * Exit.\n\t */\n\texit(sig);\n}\n\n/*\n * Resizeable vector\n */\ntypedef struct
+    {\n\tvoid ** buffer;\n\tunsigned int size;\n\tunsigned int alloc_size;\n} vector_t;\n\n#define
+    INIT_VEC_SIZE 1024\n\nvector_t * alloc_vector(void) {\n\tvector_t* v = (vector_t
+    *) malloc(sizeof(vector_t));\n\tv->buffer = (void **) malloc(INIT_VEC_SIZE * sizeof(void
+    *));\n\tv->size = 0;\n\tv->alloc_size = INIT_VEC_SIZE;\n\n\treturn v;\n}\n\nvoid
+    free_vector(vector_t* v) {\n\tfree(v->buffer);\n\tfree(v);\n}\n\nvoid vector_append(vector_t
+    * v, void * item) {\n\tif(v->size == v->alloc_size) {\n\t\tv->alloc_size = v->alloc_size
+    * 2;\n\t\tv->buffer = (void **) realloc(v->buffer, v->alloc_size * sizeof(void
+    *));\n\t}\n\n\tv->buffer[v->size] = item;\n\tv->size++;\n}\n\nvoid * vector_at(vector_t
+    * v, unsigned int idx) {\n\treturn idx >= v->size ? NULL : v->buffer[idx];\n}\n\n/*\n
+    * Delete a vector\n * Free its contents and then it.\n */\nvoid delete_vector(vector_t
+    * vector) {\n\tunsigned int i = 0;\n\tfor (i = 0; i < vector->size; ++i) {\n\t\tfree(vector_at(vector,
+    i));\n\t}\n\tfree_vector(vector);\n}\n\n/*\n * Convert a character from two hex
+    digits\n * to the raw character. (URL decode)\n */\nchar from_hex(char ch) {\n\treturn
+    isdigit(ch) ? ch - '0' : tolower(ch) - 'a' + 10;\n}\n\n/*\n * Generic text-only
+    response with a particular status.\n * Used for bad requests mostly.\n */\nvoid
+    generic_response(FILE * socket_stream, char * status, char * message) {\n\tfprintf(socket_stream,\n\t\t\t\"HTTP/1.1
+    %s\\r\\n\"\n\t\t\t\"Server: \" VERSION_STRING \"\\r\\n\"\n\t\t\t\"Content-Type:
+    text/plain\\r\\n\"\n\t\t\t\"Content-Length: %zu\\r\\n\"\n\t\t\t\"\\r\\n\"\n\t\t\t\"%s\\r\\n\",
+    status, strlen(message), message);\n}\n\n/*\n * Wait for a CGI thread to finish
+    and\n * close its pipe.\n */\nvoid *wait_pid(void * onwhat) {\n\tstruct cgi_wait
+    * cgi_w = (struct cgi_wait*)onwhat;\n\tint status;\n\n\t/*\n\t * Wait for the
+    process to finish\n\t */\n\twaitpid(cgi_w->pid, &status, 0);\n\n\t/*\n\t * Close
+    the respective pipe\n\t */\n\tclose(cgi_w->fd);\n\tclose(cgi_w->fd2);\n\n\t/*\n\t
+    * Free the data we were sent.\n\t */\n\tfree(onwhat);\n\treturn NULL;\n}\n\n/*\n
+    * Handle an incoming connection request.\n */\nvoid *handleRequest(void *socket)
+    {\n\tstruct socket_request * request = (struct socket_request *)socket;\n\n\t/*\n\t
+    * Convert the socket into a standard file descriptor\n\t */\n\tFILE *socket_stream
+    = NULL;\n\tsocket_stream = fdopen(request->fd, \"r+\");\n\tif (!socket_stream)
+    {\n\t\tfprintf(stderr,\"Ran out of a file descriptors, can not respond to request.\\n\");\n\t\tgoto
+    _disconnect;\n\t};\n\n\t/*\n\t * Read requests until the client disconnects.\n\t
+    */\n\twhile (1) {\n\t\tvector_t * queue = alloc_vector();\n\t\tchar buf[HEADER_SIZE];\n\t\twhile
+    (!feof(socket_stream)) {\n\t\t\t/*\n\t\t\t * While the client has not yet disconnected,\n\t\t\t
+    * read request headers into the queue.\n\t\t\t */\n\t\t\tchar * in = fgets( buf,
+    HEADER_SIZE - 2, socket_stream );\n\n\t\t\tif (!in) {\n\t\t\t\t/*\n\t\t\t\t *
+    EOF\n\t\t\t\t */\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tif (!strcmp(in, \"\\r\\n\")
+    || !strcmp(in,\"\\n\")) {\n\t\t\t\t/*\n\t\t\t\t * Reached end of headers.\n\t\t\t\t
+    */\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tif (!strstr(in, \"\\n\")) {\n\t\t\t\t/*\n\t\t\t\t
+    * Oversized request line.\n\t\t\t\t */\n\t\t\t\tgeneric_response(socket_stream,
+    \"400 Bad Request\", \"Bad request: Request line was too long.\");\n\t\t\t\tdelete_vector(queue);\n\t\t\t\tgoto
+    _disconnect;\n\t\t\t}\n\t\t\t/*\n\t\t\t * Store the request line in the queue
+    for this request.\n\t\t\t */\n\t\t\tchar * request_line = malloc((strlen(buf)+1)
+    * sizeof(char));\n\t\t\tstrcpy(request_line, buf);\n\t\t\tvector_append(queue,
+    (void*)request_line);\n\t\t}\n\n\t\tif (feof(socket_stream)) {\n\t\t\t/*\n\t\t\t
+    * End of stream -> Client closed connection.\n\t\t\t */\n\t\t\tdelete_vector(queue);\n\t\t\tbreak;\n\t\t}\n\n\t\t/*\n\t\t
+    * Request variables\n\t\t */\n\t\tchar * filename          = NULL; /* Filename
+    as received (ie, /index.php) */\n\t\tchar * querystring       = NULL; /* Query
+    string, URL encoded */\n\t\tint request_type         = 0;    /* Request type,
+    0=GET, 1=POST, 2=HEAD ... */\n\t\tchar * _filename         = NULL; /* Filename
+    relative to server (ie, pages/index.php) */\n\t\tchar * ext               = NULL;
+    /* Extension for requested file */\n\t\tchar * host              = NULL; /* Hostname
+    for request, if supplied. */\n\t\tchar * http_version      = NULL; /* HTTP version
+    used in request */\n\t\tunsigned long c_length   = 0L;   /* Content-Length, usually
+    for POST */\n\t\tchar * c_type            = NULL; /* Content-Type, usually for
+    POST */\n\t\tchar * c_cookie          = NULL; /* HTTP_COOKIE */\n\t\tchar * c_uagent
+    \         = NULL; /* User-Agent, for CGI */\n\t\tchar * c_referer         = NULL;
+    /* Referer, for CGI */\n\n\t\t/*\n\t\t * Process headers\n\t\t */\n\t\tunsigned
+    int i = 0;\n\t\tfor (i = 0; i < queue->size; ++i) {\n\t\t\tchar * str = (char*)(vector_at(queue,i));\n\n\t\t\t/*\n\t\t\t
+    * Find the colon for a header\n\t\t\t */\n\t\t\tchar * colon = strstr(str,\":
+    \");\n\t\t\tif (!colon) {\n\t\t\t\tif (i > 0) {\n\t\t\t\t\t/*\n\t\t\t\t\t * Request
+    string outside of first entry.\n\t\t\t\t\t */\n\t\t\t\t\tgeneric_response(socket_stream,
+    \"400 Bad Request\", \"Bad request: A header line was missing colon.\");\n\t\t\t\t\tdelete_vector(queue);\n\t\t\t\t\tgoto
+    _disconnect;\n\t\t\t\t}\n\n\t\t\t\t/*\n\t\t\t\t * Request type\n\t\t\t\t */\n\t\t\t\tint
+    r_type_width = 0;\n\t\t\t\tswitch (str[0]) {\n\t\t\t\t\tcase 'G':\n\t\t\t\t\t\tif
+    (strstr(str, \"GET \") == str) {\n\t\t\t\t\t\t\t/*\n\t\t\t\t\t\t\t * GET: Retreive
+    file\n\t\t\t\t\t\t\t */\n\t\t\t\t\t\t\tr_type_width = 4;\n\t\t\t\t\t\t\trequest_type
+    = 1;\n\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\tgoto _unsupported;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tbreak;\n#if
+    ENABLE_CGI\n\t\t\t\t\tcase 'P':\n\t\t\t\t\t\tif (strstr(str, \"POST \") == str)
+    {\n\t\t\t\t\t\t\t/*\n\t\t\t\t\t\t\t * POST: Send data to CGI\n\t\t\t\t\t\t\t */\n\t\t\t\t\t\t\tr_type_width
+    = 5;\n\t\t\t\t\t\t\trequest_type = 2;\n\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\tgoto
+    _unsupported;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tcase 'H':\n\t\t\t\t\t\tif
+    (strstr(str, \"HEAD \") == str) {\n\t\t\t\t\t\t\t/*\n\t\t\t\t\t\t\t * HEAD: Retreive
+    headers only\n\t\t\t\t\t\t\t */\n\t\t\t\t\t\t\tr_type_width = 5;\n\t\t\t\t\t\t\trequest_type
+    = 3;\n\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\tgoto _unsupported;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tbreak;\n#endif\n\t\t\t\t\tdefault:\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t
+    * Unsupported method.\n\t\t\t\t\t\t */\n\t\t\t\t\t\tgoto _unsupported;\n\t\t\t\t\t\tbreak;\n\t\t\t\t}\n\n\t\t\t\tfilename
+    = str + r_type_width;\n\t\t\t\tif (filename[0] == ' ' || filename[0] == '\\r'
+    || filename[0] == '\\n') {\n\t\t\t\t\t/*\n\t\t\t\t\t * Request was missing a filename
+    or was in a form we don't want to handle.\n\t\t\t\t\t */\n\t\t\t\t\tgeneric_response(socket_stream,
+    \"400 Bad Request\", \"Bad request: No filename.\");\n\t\t\t\t\tdelete_vector(queue);\n\t\t\t\t\tgoto
+    _disconnect;\n\t\t\t\t}\n\n\t\t\t\t/*\n\t\t\t\t * Get the HTTP version.\n\t\t\t\t
+    */\n\t\t\t\thttp_version = strstr(filename, \"HTTP/\");\n\t\t\t\tif (!http_version)
+    {\n\t\t\t\t\t/*\n\t\t\t\t\t * No HTTP version was present in the request.\n\t\t\t\t\t
+    */\n\t\t\t\t\tgeneric_response(socket_stream, \"400 Bad Request\", \"Bad request:
+    No HTTP version supplied.\");\n\t\t\t\t\tdelete_vector(queue);\n\t\t\t\t\tgoto
+    _disconnect;\n\t\t\t\t}\n\t\t\t\thttp_version[-1] = '\\0';\n\t\t\t\tchar * tmp_newline;\n\t\t\t\ttmp_newline
+    = strstr(http_version, \"\\r\\n\");\n\t\t\t\tif (tmp_newline) {\n\t\t\t\t\ttmp_newline[0]
+    = '\\0';\n\t\t\t\t}\n\t\t\t\ttmp_newline = strstr(http_version, \"\\n\");\n\t\t\t\tif
+    (tmp_newline) {\n\t\t\t\t\ttmp_newline[0] = '\\0';\n\t\t\t\t}\n\t\t\t\t/*\n\t\t\t\t
+    * Get the query string.\n\t\t\t\t */\n\t\t\t\tquerystring = strstr(filename, \"?\");\n\t\t\t\tif
+    (querystring) {\n\t\t\t\t\tquerystring++;\n\t\t\t\t\tquerystring[-1] = '\\0';\n\t\t\t\t}\n\t\t\t}
+    else {\n\n\t\t\t\tif (i == 0) {\n\t\t\t\t\t/*\n\t\t\t\t\t * Non-request line on
+    first line.\n\t\t\t\t\t */\n\t\t\t\t\tgeneric_response(socket_stream, \"400 Bad
+    Request\", \"Bad request: First line was not a request.\");\n\t\t\t\t\tdelete_vector(queue);\n\t\t\t\t\tgoto
+    _disconnect;\n\t\t\t\t}\n\n\t\t\t\t/*\n\t\t\t\t * Split up the header.\n\t\t\t\t
+    */\n\t\t\t\tcolon[0] = '\\0';\n\t\t\t\tcolon += 2;\n\t\t\t\tchar * eol = strstr(colon,\"\\r\");\n\t\t\t\tif
+    (eol) {\n\t\t\t\t\teol[0] = '\\0';\n\t\t\t\t\teol[1] = '\\0';\n\t\t\t\t} else
+    {\n\t\t\t\t\teol = strstr(colon,\"\\n\");\n\t\t\t\t\tif (eol) {\n\t\t\t\t\t\teol[0]
+    = '\\0';\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\t/*\n\t\t\t\t * Process the header\n\t\t\t\t
+    * str: colon\n\t\t\t\t */\n\t\t\t\tif (!strcmp(str, \"Host\")) {\n\t\t\t\t\t/*\n\t\t\t\t\t
+    * Host: The hostname of the (virtual) host the request was for.\n\t\t\t\t\t */\n\t\t\t\t\thost
+    = colon;\n\t\t\t\t} else if (!strcmp(str, \"Content-Length\")) {\n\t\t\t\t\t/*\n\t\t\t\t\t
+    * Content-Length: Length of message (after these headers) in bytes.\n\t\t\t\t\t
+    */\n\t\t\t\t\tc_length = atol(colon);\n\t\t\t\t} else if (!strcmp(str, \"Content-Type\"))
+    {\n\t\t\t\t\t/*\n\t\t\t\t\t * Content-Type: MIME-type of the message.\n\t\t\t\t\t
+    */\n\t\t\t\t\tc_type = colon;\n\t\t\t\t} else if (!strcmp(str, \"Cookie\")) {\n\t\t\t\t\t/*\n\t\t\t\t\t
+    * Cookie: CGI cookies\n\t\t\t\t\t */\n\t\t\t\t\tc_cookie = colon;\n\t\t\t\t} else
+    if (!strcmp(str, \"User-Agent\")) {\n\t\t\t\t\t/*\n\t\t\t\t\t * Client user-agent
+    string\n\t\t\t\t\t */\n\t\t\t\t\tc_uagent = colon;\n\t\t\t\t} else if (!strcmp(str,
+    \"Referer\")) {\n\t\t\t\t\t/*\n\t\t\t\t\t * Referer page\n\t\t\t\t\t */\n\t\t\t\t\tc_referer
+    = colon;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t/*\n\t\t * All Headers have been read\n\t\t
+    */\n\t\tif (!request_type) {\n_unsupported:\n\t\t\t/*\n\t\t\t * We did not understand
+    the request\n\t\t\t */\n\t\t\tgeneric_response(socket_stream, \"501 Not Implemented\",
+    \"Not implemented: The request type sent is not understood by the server.\");\n\t\t\tdelete_vector(queue);\n\t\t\tgoto
+    _disconnect;\n\t\t}\n\n\t\tif (!filename || strstr(filename, \"'\") || strstr(filename,\"
+    \") ||\n\t\t\t(querystring && strstr(querystring,\" \"))) {\n\t\t\t/*\n\t\t\t
+    * If a filename wasn't specified, we received\n\t\t\t * an invalid or malformed
+    request and we should\n\t\t\t * probably dump it.\n\t\t\t */\n\t\t\tgeneric_response(socket_stream,
+    \"400 Bad Request\", \"Bad request: No filename provided.\");\n\t\t\tdelete_vector(queue);\n\t\t\tgoto
+    _disconnect;\n\t\t}\n\n\t\t/*\n\t\t * Get some important information on the requested
+    file\n\t\t * _filename: the local file name, relative to `.`\n\t\t */\n\t\t_filename
+    = calloc(sizeof(char) * (strlen(PAGES_DIRECTORY) + strlen(filename) + 2), 1);\n\t\tstrcat(_filename,
+    PAGES_DIRECTORY);\n\t\tstrcat(_filename, filename);\n\t\tif (strstr(_filename,
+    \"%\")) {\n\t\t\t/*\n\t\t\t * Convert from URL encoded string.\n\t\t\t */\n\t\t\tchar
+    * buf = malloc(strlen(_filename) + 1);\n\t\t\tchar * pstr = _filename;\n\t\t\tchar
+    * pbuf = buf;\n\t\t\twhile (*pstr) {\n\t\t\t\tif (*pstr == '%') {\n\t\t\t\t\tif
+    (pstr[1] && pstr[2]) {\n\t\t\t\t\t\t*pbuf++ = from_hex(pstr[1]) << 4 | from_hex(pstr[2]);\n\t\t\t\t\t\tpstr
+    += 2;\n\t\t\t\t\t}\n\t\t\t\t} else if (*pstr == '+') { \n\t\t\t\t\t*pbuf++ = '
+    ';\n\t\t\t\t} else {\n\t\t\t\t\t*pbuf++ = *pstr;\n\t\t\t\t}\n\t\t\t\tpstr++;\n\t\t\t}\n\t\t\t*pbuf
+    = '\\0';\n\t\t\tfree(_filename);\n\t\t\t_filename = buf;\n\t\t}\n\n\t\t/*\n\t\t
+    * ext: the file extension, or NULL if it lacks one\n\t\t */\n\t\text = filename
+    + 1;\n\t\twhile (strstr(ext+1,\".\")) {\n\t\t\text = strstr(ext+1,\".\");\n\t\t}\n\t\tif
+    (ext == filename + 1) {\n\t\t\t/*\n\t\t\t * Either we didn't find a dot,\n\t\t\t
+    * or that dot is at the front.\n\t\t\t * If the dot is at the front, it is not
+    an extension,\n\t\t\t * but rather an extension-less hidden file.\n\t\t\t */\n\t\t\text
+    = NULL;\n\t\t}\n\n\t\t/*\n\t\t * Check if it's a directory (reliably)\n\t\t */\n\t\tstruct
+    stat stats;\n\t\tif (stat(_filename, &stats) == 0 && S_ISDIR(stats.st_mode)) {\n\t\t\tif
+    (_filename[strlen(_filename)-1] != '/') {\n\t\t\t\t/*\n\t\t\t\t * Request for
+    a directory without a trailing /.\n\t\t\t\t * Throw a 'moved permanently' and
+    redirect the client\n\t\t\t\t * to the directory /with/ the /.\n\t\t\t\t */\n\t\t\t\tfprintf(socket_stream,
+    \"HTTP/1.1 301 Moved Permanently\\r\\n\");\n\t\t\t\tfprintf(socket_stream, \"Server:
+    \" VERSION_STRING \"\\r\\n\");\n\t\t\t\tfprintf(socket_stream, \"Location: %s/\\r\\n\",
+    filename);\n\t\t\t\tfprintf(socket_stream, \"Content-Length: 0\\r\\n\\r\\n\");\n\t\t\t}
+    else {\n\n#if ENABLE_DEFAULTS\n\t\t\t\t/*\n\t\t\t\t * Check for default indexes.\n\t\t\t\t
+    */\n\t\t\t\tstruct stat extra_stats;\n\t\t\t\tchar index_php[strlen(_filename)
+    + 30];\n\n\t\t\t\t/*\n\t\t\t\t * The types and exection properties of index files\n\t\t\t\t
+    * are describe in a #define at the top of this file.\n\t\t\t\t */\n\t\t\t\tchar
+    *       index_defaults[] = INDEX_DEFAULTS;\n\t\t\t\tunsigned int index_executes[]
+    = INDEX_EXECUTES;\n\t\t\t\tunsigned int index = 0;\n\n\t\t\t\twhile (index_defaults[index]
+    != (char *)0) {\n\t\t\t\t\tindex_php[0] = '\\0';\n\t\t\t\t\tstrcat(index_php,
+    _filename);\n\t\t\t\t\tstrcat(index_php, index_defaults[index]);\n\t\t\t\t\tif
+    ((stat(index_php, &extra_stats) == 0) && ((extra_stats.st_mode & S_IXOTH) == index_executes[index]))
+    {\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t * This index exists, use it instead of the directory
+    listing.\n\t\t\t\t\t\t */\n\t\t\t\t\t\t_filename = realloc(_filename, strlen(index_php)+1);\n\t\t\t\t\t\tstats
+    = extra_stats;\n\t\t\t\t\t\tmemcpy(_filename, index_php, strlen(index_php)+1);\n\t\t\t\t\t\text
+    = _filename;\n\t\t\t\t\t\twhile (strstr(ext+1,\".\")) {\n\t\t\t\t\t\t\text = strstr(ext+1,\".\");\n\t\t\t\t\t\t}\n\t\t\t\t\t\tgoto
+    _use_file;\n\t\t\t\t\t}\n\t\t\t\t\t++index;\n\t\t\t\t}\n#endif\n\n\t\t\t\t/*\n\t\t\t\t
+    * This is a directory, and we were requested properly.\n\t\t\t\t * A default file
+    was not found, so display a listing.\n\t\t\t\t */\n\t\t\t\tstruct dirent **files
+    = {0};\n\t\t\t\tint filecount = -1;\n\t\t\t\tfilecount = scandir(_filename, &files,
+    0, alphasort);\n\n\t\t\t\t/*\n\t\t\t\t * Prepare to print directory listing.\n\t\t\t\t
+    */\n\t\t\t\tfprintf(socket_stream, \"HTTP/1.1 200 OK\\r\\n\");\n\t\t\t\tfprintf(socket_stream,
+    \"Server: \" VERSION_STRING \"\\r\\n\");\n\t\t\t\tfprintf(socket_stream, \"Content-Type:
+    text/html\\r\\n\");\n\n\t\t\t\t/*\n\t\t\t\t * Allocate some memory for the HTML\n\t\t\t\t
+    */\n\t\t\t\tchar * listing = malloc(1024);\n\t\t\t\tlisting[0] = '\\0';\n\t\t\t\tstrcat(listing,
+    \"<!doctype html><html><head><title>Directory Listing</title></head><body>\");\n\t\t\t\tint
+    i = 0;\n\t\t\t\tfor (i = 0; i < filecount; ++i) {\n\t\t\t\t\t/*\n\t\t\t\t\t *
+    Get the full name relative the server so we can stat\n\t\t\t\t\t * this entry
+    to see if it's a directory.\n\t\t\t\t\t */\n\t\t\t\t\tchar _fullname[strlen(_filename)
+    + 1 + strlen(files[i]->d_name) + 1];\n\t\t\t\t\tsprintf(_fullname, \"%s/%s\",
+    _filename, files[i]->d_name);\n\t\t\t\t\tif (stat(_fullname, &stats) == 0 && S_ISDIR(stats.st_mode))
+    {\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t * Ignore directories.\n\t\t\t\t\t\t */\n\t\t\t\t\t\tfree(files[i]);\n\t\t\t\t\t\tcontinue;\n\t\t\t\t\t}\n\n\t\t\t\t\t/*\n\t\t\t\t\t
+    * Append a link to the file.\n\t\t\t\t\t */\n\t\t\t\t\tchar _file[2 * strlen(files[i]->d_name)
+    + 64];\n\t\t\t\t\tsprintf(_file, \"<a href=\\\"%s\\\">%s</a><br>\\n\", files[i]->d_name,
+    files[i]->d_name);\n\t\t\t\t\tlisting = realloc(listing, strlen(listing) + strlen(_file)
+    + 1);\n\t\t\t\t\tstrcat(listing, _file);\n\t\t\t\t\tfree(files[i]);\n\t\t\t\t}\n\t\t\t\tfree(files);\n\n\t\t\t\t/*\n\t\t\t\t
+    * Close up our HTML\n\t\t\t\t */\n\t\t\t\tlisting = realloc(listing, strlen(listing)
+    + 64);\n\t\t\t\tstrcat(listing,\"</body></html>\");\n\n\t\t\t\t/*\n\t\t\t\t *
+    Send out the listing.\n\t\t\t\t */\n\t\t\t\tfprintf(socket_stream, \"Content-Length:
+    %zu\\r\\n\", (sizeof(char) * strlen(listing)));\n\t\t\t\tfprintf(socket_stream,
+    \"\\r\\n\");\n\t\t\t\tfprintf(socket_stream, \"%s\", listing);\n\t\t\t\tfree(listing);\n\t\t\t}\n\t\t}
+    else {\n_use_file:\n\t\t\t;\n\t\t\t/*\n\t\t\t * Open the requested file.\n\t\t\t
+    */\n\t\t\tFILE * content = fopen(_filename, \"rb\");\n\t\t\tif (!content) {\n\t\t\t\t/*\n\t\t\t\t
+    * Could not open file - 404. (Perhaps 403)\n\t\t\t\t */\n\t\t\t\tcontent = fopen(PAGES_DIRECTORY
+    \"/404.htm\", \"rb\");\n\n\t\t\t\tif (!content) {\n\t\t\t\t\t/*\n\t\t\t\t\t *
+    If the expected default 404 page was not found\n\t\t\t\t\t * return the generic
+    one and move to the next response.\n\t\t\t\t\t */\n\t\t\t\t\tgeneric_response(socket_stream,
+    \"404 File Not Found\", \"The requested file could not be found.\");\n\t\t\t\t\tgoto
+    _next;\n\t\t\t\t}\n\n\t\t\t\t/*\n\t\t\t\t * Replace the internal filenames with
+    the 404 page\n\t\t\t\t * and continue to load it.\n\t\t\t\t */\n\t\t\t\tfprintf(socket_stream,
+    \"HTTP/1.1 404 File Not Found\\r\\n\");\n\t\t\t\t_filename = realloc(_filename,
+    strlen(PAGES_DIRECTORY \"/404.htm\") + 1);\n\t\t\t\t_filename[0] = '\\0';\n\t\t\t\tstrcat(_filename,
+    PAGES_DIRECTORY \"/404.htm\");\n\t\t\t\text = strstr(_filename, \".\");\n\t\t\t}
+    else {\n\t\t\t\t/*\n\t\t\t\t * We're good to go.\n\t\t\t\t */\n#if ENABLE_CGI\n\t\t\t\tif
+    (stats.st_mode & S_IXOTH) {\n\t\t\t\t\t/*\n\t\t\t\t\t * CGI Executable\n\t\t\t\t\t
+    * Close the file\n\t\t\t\t\t */\n\t\t\t\t\tfclose(content);\n\n\t\t\t\t\t/*\n\t\t\t\t\t
+    * Prepare pipes.\n\t\t\t\t\t */\n\t\t\t\t\tint cgi_pipe_r[2];\n\t\t\t\t\tint cgi_pipe_w[2];\n\t\t\t\t\tif
+    (pipe(cgi_pipe_r) < 0) {\n\t\t\t\t\t\tfprintf(stderr, \"Failed to create read
+    pipe!\\n\");\n\t\t\t\t\t}\n\t\t\t\t\tif (pipe(cgi_pipe_w) < 0) {\n\t\t\t\t\t\tfprintf(stderr,
+    \"Failed to create write pipe!\\n\");\n\t\t\t\t\t}\n\n\t\t\t\t\t/*\n\t\t\t\t\t
+    * Fork.\n\t\t\t\t\t */\n\t\t\t\t\tpid_t _pid = 0;\n\t\t\t\t\t_pid = fork();\n\t\t\t\t\tif
+    (_pid == 0) {\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t * Set pipes\n\t\t\t\t\t\t */\n\t\t\t\t\t\tdup2(cgi_pipe_r[0],STDIN_FILENO);\n\t\t\t\t\t\tdup2(cgi_pipe_w[1],STDOUT_FILENO);\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t
+    * This is actually cheating on my pipe.\n\t\t\t\t\t\t */\n\t\t\t\t\t\tfprintf(stdout,
+    \"Expires: -1\\r\\n\");\n\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t * Operate in the correct
+    directory.\n\t\t\t\t\t\t */\n\t\t\t\t\t\tchar * dir = _filename;\n\t\t\t\t\t\twhile
+    (strstr(_filename,\"/\")) {\n\t\t\t\t\t\t\t_filename = strstr(_filename,\"/\")
+    + 1;\n\t\t\t\t\t\t}\n\t\t\t\t\t\t_filename[-1] = '\\0';\n\t\t\t\t\t\tchar docroot[1024];\n\t\t\t\t\t\tgetcwd(docroot,
+    1023);\n\t\t\t\t\t\tstrcat(docroot, \"/\" PAGES_DIRECTORY);\n\t\t\t\t\t\tchdir(dir);\n\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t
+    * Set CGI environment variables.\n\t\t\t\t\t\t * CONTENT_LENGTH    : POST message
+    length\n\t\t\t\t\t\t * CONTENT_TYPE      : POST encoding type\n\t\t\t\t\t\t *
+    DOCUMENT_ROOT     : the root directory\n\t\t\t\t\t\t * GATEWAY_INTERFACE : The
+    CGI version (CGI/1.1)\n\t\t\t\t\t\t * HTTP_COOKIE       : Cookies provided by
+    client\n\t\t\t\t\t\t * HTTP_HOST         : Same as above\n\t\t\t\t\t\t * HTTP_REFERER
+    \     : Referer page.\n\t\t\t\t\t\t * HTTP_USER_AGENT   : Browser user agent\n\t\t\t\t\t\t
+    * PATH_TRANSLATED   : On-disk file path\n\t\t\t\t\t\t * QUERY_STRING      : /file.ext?this_stuff&here\n\t\t\t\t\t\t
+    * REDIRECT_STATUS   : HTTP status of CGI redirection (PHP)\n\t\t\t\t\t\t * REMOTE_ADDR
+    \      : IP of remote user\n\t\t\t\t\t\t * REMOTE_HOST       : Hostname of remote
+    user (reverse DNS)\n\t\t\t\t\t\t * REQUEST_METHOD    : GET, POST, HEAD, etc.\n\t\t\t\t\t\t
+    * SCRIPT_FILENAME   : Same as PATH_TRANSLATED (PHP, primarily)\n\t\t\t\t\t\t *
+    SCRIPT_NAME       : Request file path\n\t\t\t\t\t\t * SERVER_NAME       : Our
+    hostname or Host: header\n\t\t\t\t\t\t * SERVER_PORT       : TCP host port\n\t\t\t\t\t\t
+    * SERVER_PROTOCOL   : The HTTP version of the request\n\t\t\t\t\t\t * SERVER_SOFTWARE
+    \  : Our application name and version\n\t\t\t\t\t\t */\n\t\t\t\t\t\tsetenv(\"SERVER_SOFTWARE\",
+    VERSION_STRING, 1);\n\t\t\t\t\t\tif (!host) {\n\t\t\t\t\t\t\tchar hostname[1024];\n\t\t\t\t\t\t\thostname[1023]='\\0';\n\t\t\t\t\t\t\tgethostname(hostname,
+    1023);\n\t\t\t\t\t\t\tsetenv(\"SERVER_NAME\", hostname, 1);\n\t\t\t\t\t\t\tsetenv(\"HTTP_HOST\",
+    \  hostname, 1);\n\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\tsetenv(\"SERVER_NAME\",
+    host, 1);\n\t\t\t\t\t\t\tsetenv(\"HTTP_HOST\",   host, 1);\n\t\t\t\t\t\t}\n\t\t\t\t\t\tsetenv(\"DOCUMENT_ROOT\",
+    docroot, 1);\n\t\t\t\t\t\tsetenv(\"GATEWAY_INTERFACE\", \"CGI/1.1\", 1);\n\t\t\t\t\t\tsetenv(\"SERVER_PROTOCOL\",
+    http_version, 1);\n\t\t\t\t\t\tchar port_string[20];\n\t\t\t\t\t\tsprintf(port_string,
+    \"%d\", port);\n\t\t\t\t\t\tsetenv(\"SERVER_PORT\", port_string, 1);\n\t\t\t\t\t\tif
+    (request_type == 1) {\n\t\t\t\t\t\t\tsetenv(\"REQUEST_METHOD\", \"GET\", 1);\n\t\t\t\t\t\t}
+    else if (request_type == 2) {\n\t\t\t\t\t\t\tsetenv(\"REQUEST_METHOD\", \"POST\",
+    1); \n\t\t\t\t\t\t} else if (request_type == 3) {\n\t\t\t\t\t\t\tsetenv(\"REQUEST_METHOD\",
+    \"HEAD\", 1);\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif (querystring) {\n\t\t\t\t\t\t\tif
+    (strlen(querystring)) {\n\t\t\t\t\t\t\t\tsetenv(\"QUERY_STRING\", querystring,
+    1);\n\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\tsetenv(\"QUERY_STRING\", \"\", 1);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t\tchar
+    fullpath[1024 + strlen(_filename)];\n\t\t\t\t\t\tgetcwd(fullpath, 1023);\n\t\t\t\t\t\tstrcat(fullpath,
+    \"/\");\n\t\t\t\t\t\tstrcat(fullpath, _filename);\n\t\t\t\t\t\tsetenv(\"PATH_TRANSLATED\",
+    fullpath, 1);\n\t\t\t\t\t\tsetenv(\"SCRIPT_NAME\", filename, 1);\n\t\t\t\t\t\tsetenv(\"SCRIPT_FILENAME\",
+    fullpath, 1);\n\t\t\t\t\t\tsetenv(\"REDIRECT_STATUS\", \"200\", 1);\n\t\t\t\t\t\tchar
+    c_lengths[100];\n\t\t\t\t\t\tc_lengths[0] = '\\0';\n\t\t\t\t\t\tsprintf(c_lengths,
+    \"%lu\", c_length);\n\t\t\t\t\t\tsetenv(\"CONTENT_LENGTH\", c_lengths, 1);\n\t\t\t\t\t\tif
+    (c_type) {\n\t\t\t\t\t\t\tsetenv(\"CONTENT_TYPE\", c_type, 1);\n\t\t\t\t\t\t}\n\t\t\t\t\t\tstruct
+    hostent * client;\n\t\t\t\t\t\tclient = gethostbyaddr((const char *)&request->address.sin_addr.s_addr,\n\t\t\t\t\t\t\t\tsizeof(request->address.sin_addr.s_addr),
+    AF_INET);\n\t\t\t\t\t\tif (client != NULL) {\n\t\t\t\t\t\t\tsetenv(\"REMOTE_HOST\",
+    client->h_name, 1);\n\t\t\t\t\t\t}\n\t\t\t\t\t\tsetenv(\"REMOTE_ADDR\", inet_ntoa(request->address.sin_addr),
+    1);\n\t\t\t\t\t\tif (c_cookie) {\n\t\t\t\t\t\t\tsetenv(\"HTTP_COOKIE\", c_cookie,
+    1);\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif (c_uagent) {\n\t\t\t\t\t\t\tsetenv(\"HTTP_USER_AGENT\",
+    c_uagent, 1);\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif (c_referer) {\n\t\t\t\t\t\t\tsetenv(\"HTTP_REFERER\",
+    c_referer, 1);\n\t\t\t\t\t\t}\n\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t * Execute.\n\t\t\t\t\t\t
+    */\n\t\t\t\t\t\tchar executable[1024];\n\t\t\t\t\t\texecutable[0] = '\\0';\n\t\t\t\t\t\tsprintf(executable,
+    \"./%s\", _filename);\n\t\t\t\t\t\texeclp(executable, executable, (char *)NULL);\n\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t
+    * The CGI application failed to execute. ;_;\n\t\t\t\t\t\t * This is a bad thing.\n\t\t\t\t\t\t
+    */\n\t\t\t\t\t\tfprintf(stderr,\"[warn] Failed to execute CGI script: %s?%s.\\n\",
+    fullpath, querystring);\n\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t * Clean the crap from
+    the original process.\n\t\t\t\t\t\t */\n\t\t\t\t\t\tdelete_vector(queue);\n\t\t\t\t\t\tfree(dir);\n\t\t\t\t\t\tfree(_last_unaccepted);\n\t\t\t\t\t\tpthread_detach(request->thread);\n\t\t\t\t\t\tfree(request);\n\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t
+    * Our thread back in the main process should be fine.\n\t\t\t\t\t\t */\n\t\t\t\t\t\treturn
+    NULL;\n\t\t\t\t\t}\n\n\t\t\t\t\t/*\n\t\t\t\t\t * We are the server thread.\n\t\t\t\t\t
+    * Open a thread to close the other end of the pipe\n\t\t\t\t\t * when the CGI
+    application finishes executing.\n\t\t\t\t\t */\n\t\t\t\t\tstruct cgi_wait * cgi_w
+    = malloc(sizeof(struct cgi_wait));\n\t\t\t\t\tcgi_w->pid = _pid;\n\t\t\t\t\tcgi_w->fd
+    \ = cgi_pipe_w[1];\n\t\t\t\t\tcgi_w->fd2 = cgi_pipe_r[0];\n\t\t\t\t\tpthread_t
+    _waitthread;\n\t\t\t\t\tpthread_create(&_waitthread, NULL, wait_pid, (void *)(cgi_w));\n\n\t\t\t\t\t/*\n\t\t\t\t\t
+    * Open our end of the pipes.\n\t\t\t\t\t * We map cgi_pipe for reading the output
+    from the CGI application.\n\t\t\t\t\t * cgi_pipe_post is mapped to the stdin for
+    the CGI application\n\t\t\t\t\t * and we pipe our POST data (if there is any)
+    here.\n\t\t\t\t\t */\n\t\t\t\t\tFILE * cgi_pipe = fdopen(cgi_pipe_w[0], \"r\");\n\t\t\t\t\tFILE
+    * cgi_pipe_post = fdopen(cgi_pipe_r[1], \"w\");\n\n\t\t\t\t\tif (c_length > 0)
+    {\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t * Write the POST data to the application.\n\t\t\t\t\t\t
+    */\n\t\t\t\t\t\tsize_t total_read = 0;\n\t\t\t\t\t\tchar buf[CGI_POST];\n\t\t\t\t\t\twhile
+    ((total_read < c_length) && (!feof(socket_stream))) {\n\t\t\t\t\t\t\tsize_t diff
+    = c_length - total_read;\n\t\t\t\t\t\t\tif (diff > CGI_POST) {\n\t\t\t\t\t\t\t\t/*\n\t\t\t\t\t\t\t\t
+    * If there's more than our buffer left,\n\t\t\t\t\t\t\t\t * obviously, only read
+    enough for the buffer.\n\t\t\t\t\t\t\t\t */\n\t\t\t\t\t\t\t\tdiff = CGI_POST;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tsize_t
+    read;\n\t\t\t\t\t\t\tread = fread(buf, 1, diff, socket_stream);\n\t\t\t\t\t\t\ttotal_read
+    += read;\n\t\t\t\t\t\t\t/*\n\t\t\t\t\t\t\t * Write to the CGI pipe\n\t\t\t\t\t\t\t
+    */\n\t\t\t\t\t\t\tfwrite(buf, 1, read, cgi_pipe_post);\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tif
+    (cgi_pipe_post) {\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t * If we need to, close the pipe.\n\t\t\t\t\t\t
+    */\n\t\t\t\t\t\tfclose(cgi_pipe_post);\n\t\t\t\t\t}\n\n\t\t\t\t\t/*\n\t\t\t\t\t
+    * Read the headers from the CGI application.\n\t\t\t\t\t */\n\t\t\t\t\tchar buf[CGI_BUFFER];\n\t\t\t\t\tif
+    (!cgi_pipe) {\n\t\t\t\t\t\tgeneric_response(socket_stream, \"500 Internal Server
+    Error\", \"Failed to execute CGI script.\");\n\t\t\t\t\t\tpthread_detach(_waitthread);\n\t\t\t\t\t\tgoto
+    _next;\n\t\t\t\t\t}\n\t\t\t\t\tfprintf(socket_stream, \"HTTP/1.1 200 OK\\r\\n\");\n\t\t\t\t\tfprintf(socket_stream,
+    \"Server: \" VERSION_STRING \"\\r\\n\");\n\t\t\t\t\tunsigned int j = 0;\n\t\t\t\t\twhile
+    (!feof(cgi_pipe)) {\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t * Read until we are out of headers.\n\t\t\t\t\t\t
+    */\n\t\t\t\t\t\tchar * in = fgets(buf, CGI_BUFFER - 2, cgi_pipe);\n\t\t\t\t\t\tif
+    (!in) {\n\t\t\t\t\t\t\tfprintf(stderr,\"[warn] Read nothing [%d on %p %d %d]\\n\",
+    ferror(cgi_pipe), (void *)cgi_pipe, cgi_pipe_w[1], _pid);\n\t\t\t\t\t\t\tperror(\"[warn]
+    Specifically\");\n\t\t\t\t\t\t\tbuf[0] = '\\0';\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif
+    (!strcmp(in, \"\\r\\n\") || !strcmp(in, \"\\n\")) {\n\t\t\t\t\t\t\t/*\n\t\t\t\t\t\t\t
+    * Done reading headers.\n\t\t\t\t\t\t\t */\n\t\t\t\t\t\t\tbuf[0] = '\\0';\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif
+    (!strstr(in, \": \") && !strstr(in, \"\\r\\n\")) {\n\t\t\t\t\t\t\t/*\n\t\t\t\t\t\t\t
+    * Line was too long or is garbage?\n\t\t\t\t\t\t\t */\n\t\t\t\t\t\t\tfprintf(stderr,
+    \"[warn] Garbage trying to read header line from CGI [%zu]\\n\", strlen(buf));\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tfwrite(in,
+    1, strlen(in), socket_stream);\n\t\t\t\t\t\t++j;\n\t\t\t\t\t}\n\t\t\t\t\tif (j
+    < 1) {\n\t\t\t\t\t\tfprintf(stderr,\"[warn] CGI script did not give us headers.\\n\");\n\t\t\t\t\t}\n\t\t\t\t\tif
+    (feof(cgi_pipe)) {\n\t\t\t\t\t\tfprintf(stderr,\"[warn] Sadness: Pipe closed during
+    headers.\\n\");\n\t\t\t\t\t}\n\n\t\t\t\t\tif (request_type == 3) {\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t
+    * On a HEAD request, we're done here.\n\t\t\t\t\t\t */\n\t\t\t\t\t\tfprintf(socket_stream,
+    \"\\r\\n\");\n\t\t\t\t\t\tpthread_detach(_waitthread);\n\t\t\t\t\t\tgoto _next;\n\t\t\t\t\t}\n\n\t\t\t\t\tint
+    enc_mode = 0;\n\t\t\t\t\tif (!strcmp(http_version, \"HTTP/1.1\")) {\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t
+    * Set Transfer-Encoding to chunked so we can send\n\t\t\t\t\t\t * pieces as soon
+    as we get them and not have\n\t\t\t\t\t\t * to read all of the output at once.\n\t\t\t\t\t\t
+    */\n\t\t\t\t\t\tfprintf(socket_stream, \"Transfer-Encoding: chunked\\r\\n\");\n\t\t\t\t\t}
+    else {\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t * Not HTTP/1.1\n\t\t\t\t\t\t * Use Connection:
+    Close\n\t\t\t\t\t\t */\n\t\t\t\t\t\tfprintf(socket_stream, \"Connection: close\\r\\n\\r\\n\");\n\t\t\t\t\t\tenc_mode
+    = 1;\n\t\t\t\t\t}\n\n\t\t\t\t\t/*\n\t\t\t\t\t * Sometimes, shit gets borked.\n\t\t\t\t\t
+    */\n\t\t\t\t\tif (strlen(buf) > 0) {\n\t\t\t\t\t\tfprintf(stderr, \"[warn] Trying
+    to dump remaining content.\\n\");\n\t\t\t\t\t\tfprintf(socket_stream, \"\\r\\n%zX\\r\\n\",
+    strlen(buf));\n\t\t\t\t\t\tfwrite(buf, 1, strlen(buf), socket_stream);\n\t\t\t\t\t}\n\n\t\t\t\t\t/*\n\t\t\t\t\t
+    * Read output from CGI script and send as chunks.\n\t\t\t\t\t */\n\t\t\t\t\twhile
+    (!feof(cgi_pipe)) {\n\t\t\t\t\t\tsize_t read = -1;\n\t\t\t\t\t\tread = fread(buf,
+    1, CGI_BUFFER - 1, cgi_pipe);\n\t\t\t\t\t\tif (read < 1) {\n\t\t\t\t\t\t\t/*\n\t\t\t\t\t\t\t
+    * Read nothing, we are done (or something broke)\n\t\t\t\t\t\t\t */\n\t\t\t\t\t\t\tfprintf(stderr,
+    \"[warn] Read nothing on content without eof.\\n\");\n\t\t\t\t\t\t\tperror(\"[warn]
+    Error on read\");\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif (enc_mode
+    == 0) {\n\t\t\t\t\t\t\t/*\n\t\t\t\t\t\t\t * Length of this chunk.\n\t\t\t\t\t\t\t
+    */\n\t\t\t\t\t\t\tfprintf(socket_stream, \"\\r\\n%zX\\r\\n\", read);\n\t\t\t\t\t\t}\n\t\t\t\t\t\tfwrite(buf,
+    1, read, socket_stream);\n\t\t\t\t\t}\n\t\t\t\t\tif (enc_mode == 0) {\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t
+    * We end `chunked` encoding with a 0-length block\n\t\t\t\t\t\t */\n\t\t\t\t\t\tfprintf(socket_stream,
+    \"\\r\\n0\\r\\n\\r\\n\");\n\t\t\t\t\t}\n\n\t\t\t\t\t/*\n\t\t\t\t\t * Release memory
+    for the waiting thread.\n\t\t\t\t\t */\n\t\t\t\t\tpthread_detach(_waitthread);\n\t\t\t\t\tif
+    (cgi_pipe) {\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t * If we need to, close this pipe as
+    well.\n\t\t\t\t\t\t */\n\t\t\t\t\t\tfclose(cgi_pipe);\n\t\t\t\t\t}\n\n\t\t\t\t\t/*\n\t\t\t\t\t
+    * Done executing CGI, move to next request or close\n\t\t\t\t\t */\n\t\t\t\t\tif
+    (enc_mode == 0) {\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t * HTTP/1.1\n\t\t\t\t\t\t * Chunked
+    encoding.\n\t\t\t\t\t\t */\n\t\t\t\t\t\tgoto _next;\n\t\t\t\t\t} else {\n\t\t\t\t\t\t/*\n\t\t\t\t\t\t
+    * HTTP/1.0\n\t\t\t\t\t\t * Non-chunked, break the connection.\n\t\t\t\t\t\t */\n\t\t\t\t\t\tdelete_vector(queue);\n\t\t\t\t\t\tgoto
+    _disconnect;\n\t\t\t\t\t}\n\t\t\t\t}\n#endif\n\n\t\t\t\t/*\n\t\t\t\t * Flat file:
+    Status OK.\n\t\t\t\t */\n\t\t\t\tfprintf(socket_stream, \"HTTP/1.1 200 OK\\r\\n\");\n\t\t\t}\n\n\t\t\t/*\n\t\t\t
+    * Server software header\n\t\t\t */\n\t\t\tfprintf(socket_stream, \"Server: \"
+    VERSION_STRING \"\\r\\n\");\n\n\t\t\t/*\n\t\t\t * Determine the MIME type for
+    the file.\n\t\t\t */\n\t\t\tif (ext) {\n\t\t\t\tif (!strcmp(ext,\".htm\") || !strcmp(ext,\".html\"))
+    {\n\t\t\t\t\tfprintf(socket_stream, \"Content-Type: text/html\\r\\n\");\n\t\t\t\t}
+    else if (!strcmp(ext,\".css\")) {\n\t\t\t\t\tfprintf(socket_stream, \"Content-Type:
+    text/css\\r\\n\");\n\t\t\t\t} else if (!strcmp(ext,\".png\")) {\n\t\t\t\t\tfprintf(socket_stream,
+    \"Content-Type: image/png\\r\\n\");\n\t\t\t\t} else if (!strcmp(ext,\".jpg\"))
+    {\n\t\t\t\t\tfprintf(socket_stream, \"Content-Type: image/jpeg\\r\\n\");\n\t\t\t\t}
+    else if (!strcmp(ext,\".gif\")) {\n\t\t\t\t\tfprintf(socket_stream, \"Content-Type:
+    image/gif\\r\\n\");\n\t\t\t\t} else if (!strcmp(ext,\".pdf\")) {\n\t\t\t\t\tfprintf(socket_stream,
+    \"Content-Type: application/pdf\\r\\n\");\n\t\t\t\t} else if (!strcmp(ext,\".manifest\"))
+    {\n\t\t\t\t\tfprintf(socket_stream, \"Content-Type: text/cache-manifest\\r\\n\");\n\t\t\t\t}
+    else {\n\t\t\t\t\tfprintf(socket_stream, \"Content-Type: text/unknown\\r\\n\");\n\t\t\t\t}\n\t\t\t}
+    else {\n\t\t\t\tfprintf(socket_stream, \"Content-Type: text/unknown\\r\\n\");\n\t\t\t}\n\n\t\t\tif
+    (request_type == 3) {\n\t\t\t\t/*\n\t\t\t\t * On a HEAD request, stop here,\n\t\t\t\t
+    * we only needed the headers.\n\t\t\t\t */\n\t\t\t\tfprintf(socket_stream, \"\\r\\n\");\n\t\t\t\tfclose(content);\n\t\t\t\tgoto
+    _next;\n\t\t\t}\n\n\t\t\t/*\n\t\t\t * Determine the length of the response.\n\t\t\t
+    */\n\t\t\tfseek(content, 0L, SEEK_END);\n\t\t\tlong size = ftell(content);\n\t\t\tfseek(content,
+    0L, SEEK_SET);\n\n\t\t\t/*\n\t\t\t * Send that length.\n\t\t\t */\n\t\t\tfprintf(socket_stream,
+    \"Content-Length: %lu\\r\\n\", size);\n\t\t\tfprintf(socket_stream, \"\\r\\n\");\n\n\t\t\t/*\n\t\t\t
+    * Read the file.\n\t\t\t */\n\t\t\tchar buffer[FLAT_BUFFER];\n\t\t\tfflush(stdout);\n\t\t\twhile
+    (!feof(content)) {\n\t\t\t\t/*\n\t\t\t\t * Write out the file as a stream until\n\t\t\t\t
+    * we hit the end of it.\n\t\t\t\t */\n\t\t\t\tsize_t read = fread(buffer, 1, FLAT_BUFFER-1,
+    content);\n\t\t\t\tfwrite(buffer, 1, read, socket_stream);\n\t\t\t}\n\n\t\t\tfprintf(socket_stream,
+    \"\\r\\n\");\n\n\t\t\t/*\n\t\t\t * Close the file.\n\t\t\t */\n\t\t\tfclose(content);\n\t\t}\n\n_next:\n\t\t/*\n\t\t
+    * Clean up.\n\t\t */\n\t\tfflush(socket_stream);\n\t\tfree(_filename);\n\t\tdelete_vector(queue);\n\t}\n\n_disconnect:\n\t/*\n\t
+    * Disconnect.\n\t */\n\tif (socket_stream) {\n\t\tfclose(socket_stream);\n\t}\n\tshutdown(request->fd,
+    2);\n\n\t/*\n\t * Clean up the thread\n\t */\n\tif (request->thread) {\n\t\tpthread_detach(request->thread);\n\t}\n\tfree(request);\n\n\t/*\n\t
+    * pthread_exit is implicit when we return...\n\t */\n\treturn NULL;\n}\n\nint
+    main(int argc, char ** argv) {\n\t/*\n\t * Determine what port we should run on.\n\t
+    */\n\tport = PORT;\n\tif (argc > 1) {\n\t\tport = atoi(argv[1]);\n\t}\n\n\t/*\n\t
+    * Initialize the TCP socket\n\t */\n\tstruct sockaddr_in sin;\n\tserversock          =
+    socket(AF_INET, SOCK_STREAM, 0);\n\tsin.sin_family      = AF_INET;\n\tsin.sin_port
+    \       = htons(port);\n\tsin.sin_addr.s_addr = INADDR_ANY;\n\n\t/*\n\t * Set
+    reuse for the socket.\n\t */\n\tint _true = 1;\n\tif (setsockopt(serversock, SOL_SOCKET,
+    SO_REUSEADDR, &_true, sizeof(int)) < 0) {\n\t\tclose(serversock);\n\t\treturn
+    -1;\n\t}\n\n\t/*\n\t * Bind the socket.\n\t */\n\tif (bind(serversock, (struct
+    sockaddr *)&sin, sizeof(sin)) < 0) {\n\t\tfprintf(stderr,\"Failed to bind socket
+    to port %d!\\n\", port);\n\t\treturn -1;\n\t}\n\n\t/*\n\t * Start listening for
+    requests from browsers.\n\t */\n\tlisten(serversock, 50);\n\tprintf(\"[info] Listening
+    on port %d.\\n\", port);\n\tprintf(\"[info] Serving out of '\" PAGES_DIRECTORY
+    \"'.\\n\");\n\tprintf(\"[info] Server version string is \" VERSION_STRING \".\\n\");\n\n\t/*\n\t
+    * Extensions\n\t */\n#if ENABLE_CGI\n\tprintf(\"[extn] CGI support is enabled.\\n\");\n#endif\n#if
+    ENABLE_DEFAULTS\n\tprintf(\"[extn] Default indexes are enabled.\\n\");\n#endif\n\n\t/*\n\t
+    * Use our shutdown handler.\n\t */\n\tsignal(SIGINT, handleShutdown);\n\n\t/*\n\t
+    * Ignore SIGPIPEs so we can do unsafe writes\n\t */\n\tsignal(SIGPIPE, SIG_IGN);\n\n\t/*\n\t
+    * Start accepting connections\n\t */\n\twhile (1) {\n\t\t/*\n\t\t * Accept an
+    incoming connection and pass it on to a new thread.\n\t\t */\n\t\tunsigned int
+    c_len;\n\t\tstruct socket_request * incoming = calloc(sizeof(struct socket_request),1);\n\t\tc_len
+    = sizeof(incoming->address);\n\t\t_last_unaccepted = (void *)incoming;\n\t\tincoming->fd
+    = accept(serversock, (struct sockaddr *) &(incoming->address), &c_len);\n\t\t_last_unaccepted
+    = NULL;\n\t\tpthread_create(&(incoming->thread), NULL, handleRequest, (void *)(incoming));\n\t}\n\n\t/*\n\t
+    * We will clean up when we receive a SIGINT.\n\t */\n}\n"

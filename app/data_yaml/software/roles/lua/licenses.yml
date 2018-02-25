@@ -1,0 +1,323 @@
+---
+- path: lua-5.3.4/src/lua.h
+  type: MIT
+  text: "/*\n** $Id: lua.h,v 1.332 2016/12/22 15:51:20 roberto Exp $\n** Lua - A Scripting
+    Language\n** Lua.org, PUC-Rio, Brazil (http://www.lua.org)\n** See Copyright Notice
+    at the end of this file\n*/\n\n\n#ifndef lua_h\n#define lua_h\n\n#include <stdarg.h>\n#include
+    <stddef.h>\n\n\n#include \"luaconf.h\"\n\n\n#define LUA_VERSION_MAJOR\t\"5\"\n#define
+    LUA_VERSION_MINOR\t\"3\"\n#define LUA_VERSION_NUM\t\t503\n#define LUA_VERSION_RELEASE\t\"4\"\n\n#define
+    LUA_VERSION\t\"Lua \" LUA_VERSION_MAJOR \".\" LUA_VERSION_MINOR\n#define LUA_RELEASE\tLUA_VERSION
+    \".\" LUA_VERSION_RELEASE\n#define LUA_COPYRIGHT\tLUA_RELEASE \"  Copyright (C)
+    1994-2017 Lua.org, PUC-Rio\"\n#define LUA_AUTHORS\t\"R. Ierusalimschy, L. H. de
+    Figueiredo, W. Celes\"\n\n\n/* mark for precompiled code ('<esc>Lua') */\n#define
+    LUA_SIGNATURE\t\"\\x1bLua\"\n\n/* option for multiple returns in 'lua_pcall' and
+    'lua_call' */\n#define LUA_MULTRET\t(-1)\n\n\n/*\n** Pseudo-indices\n** (-LUAI_MAXSTACK
+    is the minimum valid index; we keep some free empty\n** space after that to help
+    overflow detection)\n*/\n#define LUA_REGISTRYINDEX\t(-LUAI_MAXSTACK - 1000)\n#define
+    lua_upvalueindex(i)\t(LUA_REGISTRYINDEX - (i))\n\n\n/* thread status */\n#define
+    LUA_OK\t\t0\n#define LUA_YIELD\t1\n#define LUA_ERRRUN\t2\n#define LUA_ERRSYNTAX\t3\n#define
+    LUA_ERRMEM\t4\n#define LUA_ERRGCMM\t5\n#define LUA_ERRERR\t6\n\n\ntypedef struct
+    lua_State lua_State;\n\n\n/*\n** basic types\n*/\n#define LUA_TNONE\t\t(-1)\n\n#define
+    LUA_TNIL\t\t0\n#define LUA_TBOOLEAN\t\t1\n#define LUA_TLIGHTUSERDATA\t2\n#define
+    LUA_TNUMBER\t\t3\n#define LUA_TSTRING\t\t4\n#define LUA_TTABLE\t\t5\n#define LUA_TFUNCTION\t\t6\n#define
+    LUA_TUSERDATA\t\t7\n#define LUA_TTHREAD\t\t8\n\n#define LUA_NUMTAGS\t\t9\n\n\n\n/*
+    minimum Lua stack available to a C function */\n#define LUA_MINSTACK\t20\n\n\n/*
+    predefined values in the registry */\n#define LUA_RIDX_MAINTHREAD\t1\n#define
+    LUA_RIDX_GLOBALS\t2\n#define LUA_RIDX_LAST\t\tLUA_RIDX_GLOBALS\n\n\n/* type of
+    numbers in Lua */\ntypedef LUA_NUMBER lua_Number;\n\n\n/* type for integer functions
+    */\ntypedef LUA_INTEGER lua_Integer;\n\n/* unsigned integer type */\ntypedef LUA_UNSIGNED
+    lua_Unsigned;\n\n/* type for continuation-function contexts */\ntypedef LUA_KCONTEXT
+    lua_KContext;\n\n\n/*\n** Type for C functions registered with Lua\n*/\ntypedef
+    int (*lua_CFunction) (lua_State *L);\n\n/*\n** Type for continuation functions\n*/\ntypedef
+    int (*lua_KFunction) (lua_State *L, int status, lua_KContext ctx);\n\n\n/*\n**
+    Type for functions that read/write blocks when loading/dumping Lua chunks\n*/\ntypedef
+    const char * (*lua_Reader) (lua_State *L, void *ud, size_t *sz);\n\ntypedef int
+    (*lua_Writer) (lua_State *L, const void *p, size_t sz, void *ud);\n\n\n/*\n**
+    Type for memory-allocation functions\n*/\ntypedef void * (*lua_Alloc) (void *ud,
+    void *ptr, size_t osize, size_t nsize);\n\n\n\n/*\n** generic extra include file\n*/\n#if
+    defined(LUA_USER_H)\n#include LUA_USER_H\n#endif\n\n\n/*\n** RCS ident string\n*/\nextern
+    const char lua_ident[];\n\n\n/*\n** state manipulation\n*/\nLUA_API lua_State
+    *(lua_newstate) (lua_Alloc f, void *ud);\nLUA_API void       (lua_close) (lua_State
+    *L);\nLUA_API lua_State *(lua_newthread) (lua_State *L);\n\nLUA_API lua_CFunction
+    (lua_atpanic) (lua_State *L, lua_CFunction panicf);\n\n\nLUA_API const lua_Number
+    *(lua_version) (lua_State *L);\n\n\n/*\n** basic stack manipulation\n*/\nLUA_API
+    int   (lua_absindex) (lua_State *L, int idx);\nLUA_API int   (lua_gettop) (lua_State
+    *L);\nLUA_API void  (lua_settop) (lua_State *L, int idx);\nLUA_API void  (lua_pushvalue)
+    (lua_State *L, int idx);\nLUA_API void  (lua_rotate) (lua_State *L, int idx, int
+    n);\nLUA_API void  (lua_copy) (lua_State *L, int fromidx, int toidx);\nLUA_API
+    int   (lua_checkstack) (lua_State *L, int n);\n\nLUA_API void  (lua_xmove) (lua_State
+    *from, lua_State *to, int n);\n\n\n/*\n** access functions (stack -> C)\n*/\n\nLUA_API
+    int             (lua_isnumber) (lua_State *L, int idx);\nLUA_API int             (lua_isstring)
+    (lua_State *L, int idx);\nLUA_API int             (lua_iscfunction) (lua_State
+    *L, int idx);\nLUA_API int             (lua_isinteger) (lua_State *L, int idx);\nLUA_API
+    int             (lua_isuserdata) (lua_State *L, int idx);\nLUA_API int             (lua_type)
+    (lua_State *L, int idx);\nLUA_API const char     *(lua_typename) (lua_State *L,
+    int tp);\n\nLUA_API lua_Number      (lua_tonumberx) (lua_State *L, int idx, int
+    *isnum);\nLUA_API lua_Integer     (lua_tointegerx) (lua_State *L, int idx, int
+    *isnum);\nLUA_API int             (lua_toboolean) (lua_State *L, int idx);\nLUA_API
+    const char     *(lua_tolstring) (lua_State *L, int idx, size_t *len);\nLUA_API
+    size_t          (lua_rawlen) (lua_State *L, int idx);\nLUA_API lua_CFunction   (lua_tocfunction)
+    (lua_State *L, int idx);\nLUA_API void\t       *(lua_touserdata) (lua_State *L,
+    int idx);\nLUA_API lua_State      *(lua_tothread) (lua_State *L, int idx);\nLUA_API
+    const void     *(lua_topointer) (lua_State *L, int idx);\n\n\n/*\n** Comparison
+    and arithmetic functions\n*/\n\n#define LUA_OPADD\t0\t/* ORDER TM, ORDER OP */\n#define
+    LUA_OPSUB\t1\n#define LUA_OPMUL\t2\n#define LUA_OPMOD\t3\n#define LUA_OPPOW\t4\n#define
+    LUA_OPDIV\t5\n#define LUA_OPIDIV\t6\n#define LUA_OPBAND\t7\n#define LUA_OPBOR\t8\n#define
+    LUA_OPBXOR\t9\n#define LUA_OPSHL\t10\n#define LUA_OPSHR\t11\n#define LUA_OPUNM\t12\n#define
+    LUA_OPBNOT\t13\n\nLUA_API void  (lua_arith) (lua_State *L, int op);\n\n#define
+    LUA_OPEQ\t0\n#define LUA_OPLT\t1\n#define LUA_OPLE\t2\n\nLUA_API int   (lua_rawequal)
+    (lua_State *L, int idx1, int idx2);\nLUA_API int   (lua_compare) (lua_State *L,
+    int idx1, int idx2, int op);\n\n\n/*\n** push functions (C -> stack)\n*/\nLUA_API
+    void        (lua_pushnil) (lua_State *L);\nLUA_API void        (lua_pushnumber)
+    (lua_State *L, lua_Number n);\nLUA_API void        (lua_pushinteger) (lua_State
+    *L, lua_Integer n);\nLUA_API const char *(lua_pushlstring) (lua_State *L, const
+    char *s, size_t len);\nLUA_API const char *(lua_pushstring) (lua_State *L, const
+    char *s);\nLUA_API const char *(lua_pushvfstring) (lua_State *L, const char *fmt,\n
+    \                                                     va_list argp);\nLUA_API
+    const char *(lua_pushfstring) (lua_State *L, const char *fmt, ...);\nLUA_API void
+    \ (lua_pushcclosure) (lua_State *L, lua_CFunction fn, int n);\nLUA_API void  (lua_pushboolean)
+    (lua_State *L, int b);\nLUA_API void  (lua_pushlightuserdata) (lua_State *L, void
+    *p);\nLUA_API int   (lua_pushthread) (lua_State *L);\n\n\n/*\n** get functions
+    (Lua -> stack)\n*/\nLUA_API int (lua_getglobal) (lua_State *L, const char *name);\nLUA_API
+    int (lua_gettable) (lua_State *L, int idx);\nLUA_API int (lua_getfield) (lua_State
+    *L, int idx, const char *k);\nLUA_API int (lua_geti) (lua_State *L, int idx, lua_Integer
+    n);\nLUA_API int (lua_rawget) (lua_State *L, int idx);\nLUA_API int (lua_rawgeti)
+    (lua_State *L, int idx, lua_Integer n);\nLUA_API int (lua_rawgetp) (lua_State
+    *L, int idx, const void *p);\n\nLUA_API void  (lua_createtable) (lua_State *L,
+    int narr, int nrec);\nLUA_API void *(lua_newuserdata) (lua_State *L, size_t sz);\nLUA_API
+    int   (lua_getmetatable) (lua_State *L, int objindex);\nLUA_API int  (lua_getuservalue)
+    (lua_State *L, int idx);\n\n\n/*\n** set functions (stack -> Lua)\n*/\nLUA_API
+    void  (lua_setglobal) (lua_State *L, const char *name);\nLUA_API void  (lua_settable)
+    (lua_State *L, int idx);\nLUA_API void  (lua_setfield) (lua_State *L, int idx,
+    const char *k);\nLUA_API void  (lua_seti) (lua_State *L, int idx, lua_Integer
+    n);\nLUA_API void  (lua_rawset) (lua_State *L, int idx);\nLUA_API void  (lua_rawseti)
+    (lua_State *L, int idx, lua_Integer n);\nLUA_API void  (lua_rawsetp) (lua_State
+    *L, int idx, const void *p);\nLUA_API int   (lua_setmetatable) (lua_State *L,
+    int objindex);\nLUA_API void  (lua_setuservalue) (lua_State *L, int idx);\n\n\n/*\n**
+    'load' and 'call' functions (load and run Lua code)\n*/\nLUA_API void  (lua_callk)
+    (lua_State *L, int nargs, int nresults,\n                           lua_KContext
+    ctx, lua_KFunction k);\n#define lua_call(L,n,r)\t\tlua_callk(L, (n), (r), 0, NULL)\n\nLUA_API
+    int   (lua_pcallk) (lua_State *L, int nargs, int nresults, int errfunc,\n                            lua_KContext
+    ctx, lua_KFunction k);\n#define lua_pcall(L,n,r,f)\tlua_pcallk(L, (n), (r), (f),
+    0, NULL)\n\nLUA_API int   (lua_load) (lua_State *L, lua_Reader reader, void *dt,\n
+    \                         const char *chunkname, const char *mode);\n\nLUA_API
+    int (lua_dump) (lua_State *L, lua_Writer writer, void *data, int strip);\n\n\n/*\n**
+    coroutine functions\n*/\nLUA_API int  (lua_yieldk)     (lua_State *L, int nresults,
+    lua_KContext ctx,\n                               lua_KFunction k);\nLUA_API int
+    \ (lua_resume)     (lua_State *L, lua_State *from, int narg);\nLUA_API int  (lua_status)
+    \    (lua_State *L);\nLUA_API int (lua_isyieldable) (lua_State *L);\n\n#define
+    lua_yield(L,n)\t\tlua_yieldk(L, (n), 0, NULL)\n\n\n/*\n** garbage-collection function
+    and options\n*/\n\n#define LUA_GCSTOP\t\t0\n#define LUA_GCRESTART\t\t1\n#define
+    LUA_GCCOLLECT\t\t2\n#define LUA_GCCOUNT\t\t3\n#define LUA_GCCOUNTB\t\t4\n#define
+    LUA_GCSTEP\t\t5\n#define LUA_GCSETPAUSE\t\t6\n#define LUA_GCSETSTEPMUL\t7\n#define
+    LUA_GCISRUNNING\t\t9\n\nLUA_API int (lua_gc) (lua_State *L, int what, int data);\n\n\n/*\n**
+    miscellaneous functions\n*/\n\nLUA_API int   (lua_error) (lua_State *L);\n\nLUA_API
+    int   (lua_next) (lua_State *L, int idx);\n\nLUA_API void  (lua_concat) (lua_State
+    *L, int n);\nLUA_API void  (lua_len)    (lua_State *L, int idx);\n\nLUA_API size_t
+    \  (lua_stringtonumber) (lua_State *L, const char *s);\n\nLUA_API lua_Alloc (lua_getallocf)
+    (lua_State *L, void **ud);\nLUA_API void      (lua_setallocf) (lua_State *L, lua_Alloc
+    f, void *ud);\n\n\n\n/*\n** {==============================================================\n**
+    some useful macros\n** ===============================================================\n*/\n\n#define
+    lua_getextraspace(L)\t((void *)((char *)(L) - LUA_EXTRASPACE))\n\n#define lua_tonumber(L,i)\tlua_tonumberx(L,(i),NULL)\n#define
+    lua_tointeger(L,i)\tlua_tointegerx(L,(i),NULL)\n\n#define lua_pop(L,n)\t\tlua_settop(L,
+    -(n)-1)\n\n#define lua_newtable(L)\t\tlua_createtable(L, 0, 0)\n\n#define lua_register(L,n,f)
+    (lua_pushcfunction(L, (f)), lua_setglobal(L, (n)))\n\n#define lua_pushcfunction(L,f)\tlua_pushcclosure(L,
+    (f), 0)\n\n#define lua_isfunction(L,n)\t(lua_type(L, (n)) == LUA_TFUNCTION)\n#define
+    lua_istable(L,n)\t(lua_type(L, (n)) == LUA_TTABLE)\n#define lua_islightuserdata(L,n)\t(lua_type(L,
+    (n)) == LUA_TLIGHTUSERDATA)\n#define lua_isnil(L,n)\t\t(lua_type(L, (n)) == LUA_TNIL)\n#define
+    lua_isboolean(L,n)\t(lua_type(L, (n)) == LUA_TBOOLEAN)\n#define lua_isthread(L,n)\t(lua_type(L,
+    (n)) == LUA_TTHREAD)\n#define lua_isnone(L,n)\t\t(lua_type(L, (n)) == LUA_TNONE)\n#define
+    lua_isnoneornil(L, n)\t(lua_type(L, (n)) <= 0)\n\n#define lua_pushliteral(L, s)\tlua_pushstring(L,
+    \"\" s)\n\n#define lua_pushglobaltable(L)  \\\n\t((void)lua_rawgeti(L, LUA_REGISTRYINDEX,
+    LUA_RIDX_GLOBALS))\n\n#define lua_tostring(L,i)\tlua_tolstring(L, (i), NULL)\n\n\n#define
+    lua_insert(L,idx)\tlua_rotate(L, (idx), 1)\n\n#define lua_remove(L,idx)\t(lua_rotate(L,
+    (idx), -1), lua_pop(L, 1))\n\n#define lua_replace(L,idx)\t(lua_copy(L, -1, (idx)),
+    lua_pop(L, 1))\n\n/* }==============================================================
+    */\n\n\n/*\n** {==============================================================\n**
+    compatibility macros for unsigned conversions\n** ===============================================================\n*/\n#if
+    defined(LUA_COMPAT_APIINTCASTS)\n\n#define lua_pushunsigned(L,n)\tlua_pushinteger(L,
+    (lua_Integer)(n))\n#define lua_tounsignedx(L,i,is)\t((lua_Unsigned)lua_tointegerx(L,i,is))\n#define
+    lua_tounsigned(L,i)\tlua_tounsignedx(L,(i),NULL)\n\n#endif\n/* }==============================================================
+    */\n\n/*\n** {======================================================================\n**
+    Debug API\n** =======================================================================\n*/\n\n\n/*\n**
+    Event codes\n*/\n#define LUA_HOOKCALL\t0\n#define LUA_HOOKRET\t1\n#define LUA_HOOKLINE\t2\n#define
+    LUA_HOOKCOUNT\t3\n#define LUA_HOOKTAILCALL 4\n\n\n/*\n** Event masks\n*/\n#define
+    LUA_MASKCALL\t(1 << LUA_HOOKCALL)\n#define LUA_MASKRET\t(1 << LUA_HOOKRET)\n#define
+    LUA_MASKLINE\t(1 << LUA_HOOKLINE)\n#define LUA_MASKCOUNT\t(1 << LUA_HOOKCOUNT)\n\ntypedef
+    struct lua_Debug lua_Debug;  /* activation record */\n\n\n/* Functions to be called
+    by the debugger in specific events */\ntypedef void (*lua_Hook) (lua_State *L,
+    lua_Debug *ar);\n\n\nLUA_API int (lua_getstack) (lua_State *L, int level, lua_Debug
+    *ar);\nLUA_API int (lua_getinfo) (lua_State *L, const char *what, lua_Debug *ar);\nLUA_API
+    const char *(lua_getlocal) (lua_State *L, const lua_Debug *ar, int n);\nLUA_API
+    const char *(lua_setlocal) (lua_State *L, const lua_Debug *ar, int n);\nLUA_API
+    const char *(lua_getupvalue) (lua_State *L, int funcindex, int n);\nLUA_API const
+    char *(lua_setupvalue) (lua_State *L, int funcindex, int n);\n\nLUA_API void *(lua_upvalueid)
+    (lua_State *L, int fidx, int n);\nLUA_API void  (lua_upvaluejoin) (lua_State *L,
+    int fidx1, int n1,\n                                               int fidx2,
+    int n2);\n\nLUA_API void (lua_sethook) (lua_State *L, lua_Hook func, int mask,
+    int count);\nLUA_API lua_Hook (lua_gethook) (lua_State *L);\nLUA_API int (lua_gethookmask)
+    (lua_State *L);\nLUA_API int (lua_gethookcount) (lua_State *L);\n\n\nstruct lua_Debug
+    {\n  int event;\n  const char *name;\t/* (n) */\n  const char *namewhat;\t/* (n)
+    'global', 'local', 'field', 'method' */\n  const char *what;\t/* (S) 'Lua', 'C',
+    'main', 'tail' */\n  const char *source;\t/* (S) */\n  int currentline;\t/* (l)
+    */\n  int linedefined;\t/* (S) */\n  int lastlinedefined;\t/* (S) */\n  unsigned
+    char nups;\t/* (u) number of upvalues */\n  unsigned char nparams;/* (u) number
+    of parameters */\n  char isvararg;        /* (u) */\n  char istailcall;\t/* (t)
+    */\n  char short_src[LUA_IDSIZE]; /* (S) */\n  /* private part */\n  struct CallInfo
+    *i_ci;  /* active function */\n};\n\n/* }======================================================================
+    */\n\n\n/******************************************************************************\n*
+    Copyright (C) 1994-2017 Lua.org, PUC-Rio.\n*\n* Permission is hereby granted,
+    free of charge, to any person obtaining\n* a copy of this software and associated
+    documentation files (the\n* \"Software\"), to deal in the Software without restriction,
+    including\n* without limitation the rights to use, copy, modify, merge, publish,\n*
+    distribute, sublicense, and/or sell copies of the Software, and to\n* permit persons
+    to whom the Software is furnished to do so, subject to\n* the following conditions:\n*\n*
+    The above copyright notice and this permission notice shall be\n* included in
+    all copies or substantial portions of the Software.\n*\n* THE SOFTWARE IS PROVIDED
+    \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\n* EXPRESS OR IMPLIED, INCLUDING BUT
+    NOT LIMITED TO THE WARRANTIES OF\n* MERCHANTABILITY, FITNESS FOR A PARTICULAR
+    PURPOSE AND NONINFRINGEMENT.\n* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+    BE LIABLE FOR ANY\n* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+    CONTRACT,\n* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\n*
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n******************************************************************************/\n\n\n#endif\n"
+- path: lua-5.3.4/doc/readme.html
+  type: MIT,MIT-style
+  text: "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<HTML>\n<HEAD>\n<TITLE>Lua
+    5.3 readme</TITLE>\n<LINK REL=\"stylesheet\" TYPE=\"text/css\" HREF=\"lua.css\">\n<META
+    HTTP-EQUIV=\"content-type\" CONTENT=\"text/html; charset=iso-8859-1\">\n<STYLE
+    TYPE=\"text/css\">\nblockquote, .display {\n\tborder: solid #a0a0a0 2px ;\n\tborder-radius:
+    8px ;\n\tpadding: 1em ;\n\tmargin: 0px ;\n}\n\n.display {\n\tword-spacing: 0.25em
+    ;\n}\n\ndl.display dd {\n\tpadding-bottom: 0.2em ;\n}\n\ntt, kbd, code {\n\tfont-size:
+    12pt ;\n}\n</STYLE>\n</HEAD>\n\n<BODY>\n\n<H1>\n<A HREF=\"http://www.lua.org/\"><IMG
+    SRC=\"logo.gif\" ALT=\"Lua\"></A>\nWelcome to Lua 5.3\n</H1>\n\n<DIV CLASS=\"menubar\">\n<A
+    HREF=\"#about\">about</A>\n&middot;\n<A HREF=\"#install\">installation</A>\n&middot;\n<A
+    HREF=\"#changes\">changes</A>\n&middot;\n<A HREF=\"#license\">license</A>\n&middot;\n<A
+    HREF=\"contents.html\">reference manual</A>\n</DIV>\n\n<H2><A NAME=\"about\">About
+    Lua</A></H2>\n<P>\nLua is a powerful, fast, lightweight, embeddable scripting
+    language\ndeveloped by a\n<A HREF=\"http://www.lua.org/authors.html\">team</A>\nat\n<A
+    HREF=\"http://www.puc-rio.br/\">PUC-Rio</A>,\nthe Pontifical Catholic University
+    of Rio de Janeiro in Brazil.\nLua is\n<A HREF=\"#license\">free software</A>\nused
+    in many products and projects around the world.\n\n<P>\nLua's\n<A HREF=\"http://www.lua.org/\">official
+    web site</A>\nprovides complete information\nabout Lua,\nincluding\nan\n<A HREF=\"http://www.lua.org/about.html\">executive
+    summary</A>\nand\nupdated\n<A HREF=\"http://www.lua.org/docs.html\">documentation</A>,\nespecially
+    the\n<A HREF=\"http://www.lua.org/manual/5.3/\">reference manual</A>,\nwhich may
+    differ slightly from the\n<A HREF=\"contents.html\">local copy</A>\ndistributed
+    in this package.\n\n<H2><A NAME=\"install\">Installing Lua</A></H2>\n<P>\nLua
+    is distributed in\n<A HREF=\"http://www.lua.org/ftp/\">source</A>\nform.\nYou
+    need to build it before using it.\nBuilding Lua should be straightforward\nbecause\nLua
+    is implemented in pure ANSI C and compiles unmodified in all known\nplatforms
+    that have an ANSI C compiler.\nLua also compiles unmodified as C++.\nThe instructions
+    given below for building Lua are for Unix-like platforms.\nSee also\n<A HREF=\"#other\">instructions
+    for other systems</A>\nand\n<A HREF=\"#customization\">customization options</A>.\n\n<P>\nIf
+    you don't have the time or the inclination to compile Lua yourself,\nget a binary
+    from\n<A HREF=\"http://lua-users.org/wiki/LuaBinaries\">LuaBinaries</A>.\nTry
+    also\n<A HREF=\"http://luadist.org/\">LuaDist</A>,\na multi-platform distribution
+    of Lua that includes batteries.\n\n<H3>Building Lua</H3>\n<P>\nIn most Unix-like
+    platforms, simply do \"<KBD>make</KBD>\" with a suitable target.\nHere are the
+    details.\n\n<OL>\n<LI>\nOpen a terminal window and move to\nthe top-level directory,
+    which is named <TT>lua-5.3.x</TT>.\nThe <TT>Makefile</TT> there controls both
+    the build process and the installation process.\n<P>\n<LI>\n  Do \"<KBD>make</KBD>\"
+    and see if your platform is listed.\n  The platforms currently supported are:\n<P>\n<P
+    CLASS=\"display\">\n   aix bsd c89 freebsd generic linux macosx mingw posix solaris\n</P>\n<P>\n
+    \ If your platform is listed, just do \"<KBD>make xxx</KBD>\", where xxx\n  is
+    your platform name.\n<P>\n  If your platform is not listed, try the closest one
+    or posix, generic,\n  c89, in this order.\n<P>\n<LI>\nThe compilation takes only
+    a few moments\nand produces three files in the <TT>src</TT> directory:\nlua (the
+    interpreter),\nluac (the compiler),\nand liblua.a (the library).\n<P>\n<LI>\n
+    \ To check that Lua has been built correctly, do \"<KBD>make test</KBD>\"\n  after
+    building Lua. This will run the interpreter and print its version.\n</OL>\n<P>\nIf
+    you're running Linux and get compilation errors,\nmake sure you have installed
+    the <TT>readline</TT> development package\n(which is probably named <TT>libreadline-dev</TT>
+    or <TT>readline-devel</TT>).\nIf you get link errors after that,\nthen try \"<KBD>make
+    linux MYLIBS=-ltermcap</KBD>\".\n\n<H3>Installing Lua</H3>\n<P>\n  Once you have
+    built Lua, you may want to install it in an official\n  place in your system.
+    In this case, do \"<KBD>make install</KBD>\". The official\n  place and the way
+    to install files are defined in the <TT>Makefile</TT>. You'll\n  probably need
+    the right permissions to install files.\n\n<P>\n  To build and install Lua in
+    one step, do \"<KBD>make xxx install</KBD>\",\n  where xxx is your platform name.\n\n<P>\n
+    \ To install Lua locally, do \"<KBD>make local</KBD>\".\n  This will create a
+    directory <TT>install</TT> with subdirectories\n  <TT>bin</TT>, <TT>include</TT>,
+    <TT>lib</TT>, <TT>man</TT>, <TT>share</TT>,\n  and install Lua as listed below.\n\n
+    \ To install Lua locally, but in some other directory, do\n  \"<KBD>make install
+    INSTALL_TOP=xxx</KBD>\", where xxx is your chosen directory.\n  The installation
+    starts in the <TT>src</TT> and <TT>doc</TT> directories,\n  so take care if <TT>INSTALL_TOP</TT>
+    is not an absolute path.\n\n<DL CLASS=\"display\">\n<DT>\n    bin:\n<DD>\n    lua
+    luac\n<DT>\n    include:\n<DD>\n    lua.h luaconf.h lualib.h lauxlib.h lua.hpp\n<DT>\n
+    \   lib:\n<DD>\n    liblua.a\n<DT>\n    man/man1:\n<DD>\n    lua.1 luac.1\n</DL>\n\n<P>\n
+    \ These are the only directories you need for development.\n  If you only want
+    to run Lua programs,\n  you only need the files in <TT>bin</TT> and <TT>man</TT>.\n
+    \ The files in <TT>include</TT> and <TT>lib</TT> are needed for\n  embedding Lua
+    in C or C++ programs.\n\n<H3><A NAME=\"customization\">Customization</A></H3>\n<P>\n
+    \ Three kinds of things can be customized by editing a file:\n<UL>\n    <LI> Where
+    and how to install Lua &mdash; edit <TT>Makefile</TT>.\n    <LI> How to build
+    Lua &mdash; edit <TT>src/Makefile</TT>.\n    <LI> Lua features &mdash; edit <TT>src/luaconf.h</TT>.\n</UL>\n\n<P>\n
+    \ You don't actually need to edit the Makefiles because you may set the\n  relevant
+    variables in the command line when invoking make.\n  Nevertheless, it's probably
+    best to edit and save the Makefiles to\n  record the changes you've made.\n\n<P>\n
+    \ On the other hand, if you need to customize some Lua features, you'll need\n
+    \ to edit <TT>src/luaconf.h</TT> before building and installing Lua.\n  The edited
+    file will be the one installed, and\n  it will be used by any Lua clients that
+    you build, to ensure consistency.\n  Further customization is available to experts
+    by editing the Lua sources.\n\n<H3><A NAME=\"other\">Building Lua on other systems</A></H3>\n<P>\n
+    \ If you're not using the usual Unix tools, then the instructions for\n  building
+    Lua depend on the compiler you use. You'll need to create\n  projects (or whatever
+    your compiler uses) for building the library,\n  the interpreter, and the compiler,
+    as follows:\n\n<DL CLASS=\"display\">\n<DT>\nlibrary:\n<DD>\nlapi.c lcode.c lctype.c
+    ldebug.c ldo.c ldump.c lfunc.c lgc.c llex.c\nlmem.c lobject.c lopcodes.c lparser.c
+    lstate.c lstring.c ltable.c\nltm.c lundump.c lvm.c lzio.c\nlauxlib.c lbaselib.c
+    lbitlib.c lcorolib.c ldblib.c liolib.c\nlmathlib.c loslib.c lstrlib.c ltablib.c
+    lutf8lib.c loadlib.c linit.c\n<DT>\ninterpreter:\n<DD>\n  library, lua.c\n<DT>\ncompiler:\n<DD>\n
+    \ library, luac.c\n</DL>\n\n<P>\n  To use Lua as a library in your own programs
+    you'll need to know how to\n  create and use libraries with your compiler. Moreover,
+    to dynamically load\n  C libraries for Lua you'll need to know how to create dynamic
+    libraries\n  and you'll need to make sure that the Lua API functions are accessible
+    to\n  those dynamic libraries &mdash; but <EM>don't</EM> link the Lua library\n
+    \ into each dynamic library. For Unix, we recommend that the Lua library\n  be
+    linked statically into the host program and its symbols exported for\n  dynamic
+    linking; <TT>src/Makefile</TT> does this for the Lua interpreter.\n  For Windows,
+    we recommend that the Lua library be a DLL.\n  In all cases, the compiler luac
+    should be linked statically.\n\n<P>\n  As mentioned above, you may edit <TT>src/luaconf.h</TT>
+    to customize\n  some features before building Lua.\n\n<H2><A NAME=\"changes\">Changes
+    since Lua 5.2</A></H2>\n<P>\nHere are the main changes introduced in Lua 5.3.\nThe\n<A
+    HREF=\"contents.html\">reference manual</A>\nlists the\n<A HREF=\"manual.html#8\">incompatibilities</A>
+    that had to be introduced.\n\n<H3>Main changes</H3>\n<UL>\n<LI> integers (64-bit
+    by default)\n<LI> official support for 32-bit numbers\n<LI> bitwise operators\n<LI>
+    basic utf-8 support\n<LI> functions for packing and unpacking values\n\n</UL>\n\nHere
+    are the other changes introduced in Lua 5.3:\n<H3>Language</H3>\n<UL>\n<LI> userdata
+    can have any Lua value as uservalue\n<LI> floor division\n<LI> more flexible rules
+    for some metamethods\n</UL>\n\n<H3>Libraries</H3>\n<UL>\n<LI> <CODE>ipairs</CODE>
+    and the table library respect metamethods\n<LI> strip option in <CODE>string.dump</CODE>\n<LI>
+    table library respects metamethods\n<LI> new function <CODE>table.move</CODE>\n<LI>
+    new function <CODE>string.pack</CODE>\n<LI> new function <CODE>string.unpack</CODE>\n<LI>
+    new function <CODE>string.packsize</CODE>\n</UL>\n\n<H3>C API</H3>\n<UL>\n<LI>
+    simpler API for continuation functions in C\n<LI> <CODE>lua_gettable</CODE> and
+    similar functions return type of resulted value\n<LI> strip option in <CODE>lua_dump</CODE>\n<LI>
+    new function: <CODE>lua_geti</CODE>\n<LI> new function: <CODE>lua_seti</CODE>\n<LI>
+    new function: <CODE>lua_isyieldable</CODE>\n<LI> new function: <CODE>lua_numbertointeger</CODE>\n<LI>
+    new function: <CODE>lua_rotate</CODE>\n<LI> new function: <CODE>lua_stringtonumber</CODE>\n</UL>\n\n<H3>Lua
+    standalone interpreter</H3>\n<UL>\n<LI> can be used as calculator; no need to
+    prefix with '='\n<LI> <CODE>arg</CODE> table available to all code\n</UL>\n\n<H2><A
+    NAME=\"license\">License</A></H2>\n<P>\n<A HREF=\"http://www.opensource.org/docs/definition.php\">\n<IMG
+    SRC=\"osi-certified-72x60.png\" ALIGN=\"right\" ALT=\"[osi certified]\" STYLE=\"padding-left:
+    30px ;\">\n</A>\nLua is free software distributed under the terms of the\n<A HREF=\"http://www.opensource.org/licenses/mit-license.html\">MIT
+    license</A>\nreproduced below;\nit may be used for any purpose, including commercial
+    purposes,\nat absolutely no cost without having to ask us.\n\nThe only requirement
+    is that if you do use Lua,\nthen you should give us credit by including the appropriate
+    copyright notice somewhere in your product or its documentation.\n\nFor details,
+    see\n<A HREF=\"http://www.lua.org/license.html\">this</A>.\n\n<BLOCKQUOTE STYLE=\"padding-bottom:
+    0em\">\nCopyright &copy; 1994&ndash;2017 Lua.org, PUC-Rio.\n\n<P>\nPermission
+    is hereby granted, free of charge, to any person obtaining a copy\nof this software
+    and associated documentation files (the \"Software\"), to deal\nin the Software
+    without restriction, including without limitation the rights\nto use, copy, modify,
+    merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and
+    to permit persons to whom the Software is\nfurnished to do so, subject to the
+    following conditions:\n\n<P>\nThe above copyright notice and this permission notice
+    shall be included in\nall copies or substantial portions of the Software.\n\n<P>\nTHE
+    SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED,
+    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A
+    PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT
+    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION
+    OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n</BLOCKQUOTE>\n<P>\n\n<P
+    CLASS=\"footer\">\nLast update:\nThu Dec 22 18:22:57 BRST 2016\n</P>\n<!--\nLast
+    change: revised for Lua 5.3.4\n-->\n\n</BODY>\n</HTML>\n"

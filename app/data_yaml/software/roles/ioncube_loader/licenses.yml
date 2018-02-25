@@ -1,0 +1,141 @@
+---
+- path: ioncube/LICENSE.txt
+  type: Non-commercial
+  text: "LICENCE AGREEMENT FOR THE IONCUBE PHP LOADER, PROVIDED TO ENABLE THE USE\r\nOF
+    IONCUBE ENCODED FILES AND AS PART OF THE IONCUBE24 SERVICE (ioncube24.com)\r\n\r\nYOU
+    SHOULD CAREFULLY READ THE FOLLOWING TERMS AND CONDITIONS BEFORE USING THE\r\nLOADER
+    SOFTWARE. THE INSTALLATION AND/OR USE OR COPYING OF THE IONCUBE PHP\r\nLOADER
+    SOFTWARE INDICATES YOUR ACCEPTANCE OF THIS LICENCE AGREEMENT.  IF YOU\r\nDO NOT
+    ACCEPT THE TERMS OF THIS LICENCE AGREEMENT, DO NOT INSTALL, COPY\r\nAND/OR USE
+    THE LOADER SOFTWARE.\r\n\r\nDEFINITIONS\r\n\r\nThe following definitions shall
+    apply in this document:\r\n\r\nLOADER shall mean the ionCube PHP Loader software
+    package or collection \r\nof Loaders, including any modifications or upgrades
+    to the software, used for\r\nexecuting PHP scripts previously encoded with the
+    ionCube PHP Encoder\r\nsoftware to render them non-humanly readable, and any associated\r\ndocumentation
+    or electronic or online materials relating to the software.\r\n\r\nENCODER shall
+    mean any ionCube PHP Encoder software or service used for the\r\npurpose of producing
+    non-humanly readable encoded files from PHP scripts.\r\n\r\nENCODED FILE shall
+    mean a non-humanly readable file produced by the \r\nEncoder and being derived
+    from humanly readable PHP script source.\r\n\r\nPROVIDER shall mean ionCube Ltd.\r\n\r\nUSER/YOU
+    shall mean any entity who has downloaded or obtained through any\r\nother means
+    a version of the Loader software.\r\n\r\n\r\n1 LICENSE ENTITLEMENT \r\n\r\n1.1
+    The Loader is provided without charge.  Title to the Loader does not pass\r\nto
+    the user in any circumstances.  The Loader is supplied as object code.\r\n\r\n1.2
+    The provider grants a personal, non-transferable, non-exclusive licence to\r\nuse
+    the Loader in accordance with the terms and conditions of this Licence\r\nAgreement.\r\n\r\n1.3
+    The installation or downloading and use of the Loader entitles the user\r\nto
+    install and use the Loader for its own internal lawful purposes.\r\n\r\n\r\n2
+    DISTRIBUTION \r\n\r\n2.1 The Loader may be freely distributed to third parties
+    alone or as \r\npart of a distribution containing other items provided that this
+    license\r\nis also included. \r\n\r\n2.2 The Loader may under no circumstances
+    be branded as another product, \r\nwhether distributed or not. \r\n\r\n2.3 Distribution
+    as part of a commercial product is permitted provided such\r\ndistribution is
+    in accordance with clauses 2.1 and 2.2 with respect to the \r\nLoader.\r\n\r\n\r\n3
+    ANALYSIS / REVERSE ENGINEERING / MODIFICATION \r\n\r\nExcept insofar as the user
+    is permitted to do so in accordance with applicable\r\nlaw:\r\n\r\n3.1 Any analysis
+    of the Loader and embedded data by any means and by\r\nany entity whether human
+    or otherwise and including but without limitation to\r\ndiscover details of internal
+    operation, to reverse engineer, to de-compile\r\nobject code, or to modify for
+    the purposes of modifying behaviour is\r\nforbidden.\r\n\r\n3.2 Any analysis of
+    encoded files by any means and by any entity whether human\r\nor otherwise and
+    including but without limitation to discover details of file\r\nformat or for
+    the purposes of modifying behaviour or scope of their usage is\r\nforbidden.\r\n\r\n\r\n4
+    WARRANTY\r\n\r\nTHE LOADER SOFTWARE IS PROVIDED \"AS IS\" AND ANY EXPRESSED OR
+    IMPLIED \r\nWARRANTIES INCLUDING BUT WITHOUT LIMITATION THE IMPLIED WARRANTIES\r\nOF
+    MERCHANTABILITY AND FITNESS FOR ANY PARTICULAR PURPOSE ARE\r\nDISCLAIMED. THE
+    PROVIDER DOES NOT WARRANT THAT THE LOADER IS UNINTERRUPTED\r\nOR ERROR FREE, NOR
+    THAT THE OPERATION OF THE LOADER WILL FUNCTION IN\r\nCONJUNCTION WITH ANY OTHER
+    PRODUCT.  \r\n\r\n\r\n5 LIMITATION OF LIABILITY \r\n\r\n5.1 IN NO EVENT WILL THE
+    PROVIDER OF THE LOADER BE LIABLE TO THE USER OR ANY\r\nPARTY FOR ANY DIRECT, INDIRECT,
+    PUNITIVE, SPECIAL, INCIDENTAL OR OTHER\r\nCONSEQUENTIAL DAMAGES ARISING DIRECTLY
+    OR INDIRECTLY FROM THIS LICENCE\r\nAGREEMENT OR ANY USE OF THE LOADER OR ENCODED
+    FILES, EVEN IF THE PROVIDER IS\r\nEXPRESSLY ADVISED OF THE POSSIBILITY OF SUCH
+    DAMAGES.\r\n\r\n5.2 THE LOADER IS PROVIDED ON AN \"AS IS\" BASIS.  THE PROVIDER
+    EXCLUDES ALL\r\nWARRANTIES, CONDITIONS, TERMS, UNDERTAKINGS AND REPRESENTATIONS
+    (EXCLUDING\r\nFRAUDULENT MISREPRESENTATION) OF ANY KIND, EXPRESS OR IMPLIED, STATUTORY
+    OR\r\nOTHERWISE IN CONNECTION WITH THE LOADER TO THE FULLEST EXTENT PERMITTED
+    BY\r\nLAW.\r\n\r\n5.3 DOWNLOADING THE LOADER IS AT YOUR OWN RISK AND THE PROVIDER
+    DOES NOT\r\nACCEPT LIABILITY FOR ANY DIRECT OR INDIRECT LOSS OR DAMAGE HOWSOEVER
+    CAUSED AS\r\nA RESULT OF ANY COMPUTER VIRUSES, BUGS, TROJAN HORSES, WORMS, SOFTWARE
+    BOMBS\r\nOR OTHER SIMILAR PROGRAMS ARISING FROM YOUR USE OF THE LOADER.  WHILST
+    THE\r\nPROVIDER WILL DO ITS BEST TO ENSURE THAT THE LOADER IS FREE FROM SUCH\r\nDESTRUCTIVE
+    PROGRAMS, IT IS YOUR RESPONSIBILITY TO TAKE REASONABLE PRECAUTIONS\r\nTO SCAN
+    FOR SUCH DESTRUCTIVE PROGRAMS DOWNLOADED FROM THE INTERNET.\r\n\r\n5.4 THE PROVIDER'S
+    MAXIMUM LIABILITY FOR ANY LOSS OR DAMAGE ARISING FROM THIS\r\nLICENCE AGREEMENT
+    SHALL IN ANY EVENT BE LIMITED IN THE SOLE DISCRETION OF THE\r\nPROVIDER TO THE
+    REPLACEMENT OF THE LOADER PRODUCT.\r\n\r\n5.5 DUE TO THE NATURE OF THE INTERNET,
+    THE PROVIDER CANNOT GUARANTEE THAT ANY\r\nE-MAILS OR OTHER ELECTRONIC TRANSMISSIONS
+    WILL BE SENT TO YOU OR RECEIVED BY\r\nTHE PROVIDER OR THAT THE CONTENT OF SUCH
+    TRANSMISSIONS WILL BE SECURE DURING\r\nTRANSMISSION.\r\n\r\n\r\n6 BUG FIXING AND
+    PRODUCT SUPPORT \r\n\r\n6.1 The provider will use reasonable endeavours to provide
+    support to users.\r\nThe provider will at their discretion only provide support
+    for the latest\r\nrelease.\r\n\r\n6.2 Support comprises of fault reporting via
+    tickets and fault diagnosis,\r\nrecommendations on workarounds, and where reasonably
+    possible a timely\r\nresolution.\r\n\r\n6.3 The user accepts that on occasion
+    the ability of the provider to meet\r\nanticipated or published support schedules
+    may be impaired due to, but without\r\nlimitation, Internet service provider failures
+    or software failures that\r\naffect the ability to communicate for an indeterminate
+    period.\r\n\r\n6.4 The provider reserves the right to refuse to provide support
+    at any time.\r\n\r\n6.5 The provider wishes to maintain and offer a product of
+    the highest\r\npossible quality, and accordingly may from time to time and at
+    its discretion\r\nmake product changes for the purpose of correcting behaviour
+    in variance to\r\nthe published specification or the user's reasonable expectations.
+    \r\n\r\n6.6 The provider reserves the right to charge for support where the user
+    does\r\nnot have a valid support plan in place, or where the support offered exceeds\r\nthe
+    scope of the active support plan.\r\n\r\n\r\n7 PRODUCT UPGRADES\r\n\r\n7.1 The
+    provider may from time to time release product upgrades. These will\r\nbe provided
+    free of charge and attempts made to provide a timely notification\r\nto customers
+    of the existence of any new release.\r\n\r\n\r\n8 ERRORS AND OMISSIONS\r\n\r\nWhilst
+    reasonable endeavours are made to ensure the accuracy of documentation\r\nconcerning
+    the details of the Loader, the user accepts the possibility of\r\ninaccuracies
+    in information presented in any format, including email\r\ncommunications and
+    online services. The provider shall under no circumstances\r\nbe liable for any
+    events that arise as a result of unintentional inaccuracies\r\nor omissions.\r\n\r\n\r\n9
+    USER INDEMNITY\r\n\r\nYou agree to fully indemnify, defend and hold the provider
+    harmless\r\nimmediately upon demand from and against all actions, liability, claims,\r\nlosses,
+    damages, costs and expenses (including legal/attorney fees) incurred\r\nby the
+    provider arising directly or indirectly as a result of your breach of\r\nthis
+    Licence Agreement.\r\n\r\n\r\n10 INTELLECTUAL PROPERTY RIGHTS\r\n\r\n10.1 The
+    user acknowledges that the Loader and associated documentation and\r\nmaterials
+    contain proprietary information of the provider and are and shall\r\nremain the
+    exclusive property of the provider and/or its licensors and all\r\ntitle, copyright,
+    trade marks, trade names, patents and other intellectual\r\nproperty rights therein
+    of whatever nature shall remain the sole property of\r\nthe provider and/or its
+    licensors.\r\n\r\n10.2 No title to or rights of ownership, copyright or other
+    intellectual\r\nproperty in the Loader is transferred to the user (other than
+    the licence\r\nrights expressly granted in this Licence Agreement).\r\n\r\n\r\n11
+    TERMINATION\r\n\r\n11.1 The provider reserves the right to terminate this Licence
+    Agreement\r\nimmediately by notice in writing against the user if the user is
+    in breach of\r\nany terms and conditions of this Licence Agreement.\r\n\r\n11.2
+    Termination of this Licence Agreement for any reason shall be without\r\nprejudice
+    to any other rights or remedies of the provider which may have\r\narisen on or
+    before the date of termination under this Licence Agreement or in\r\nlaw.\r\n\r\n11.3
+    The provisions of the following clauses shall survive any termination of\r\nthis
+    agreement; clause 3, 5, 10 and 13.\r\n\r\n\r\n12 GENERAL\r\n\r\n12.1 The provider
+    reserves the right to transfer or assign all or any of its\r\nrights and duties
+    and responsibilities set out in this Licence Agreement to\r\nanother party.\r\n\r\n12.2
+    Headings have been included for convenience only and will not be used in\r\nconstruing
+    any provision of this Licence Agreement.\r\n\r\n12.3 No delay or failure by the
+    provider to exercise any powers, rights or\r\nremedies under this Licence Agreement
+    will operate as a waiver of them nor\r\nwill any single or partial exercise of
+    any such powers, rights or remedies\r\ninclude any other or further exercise of
+    them.\r\n\r\n12.4 If any part of this Licence Agreement is found by a court of
+    competent\r\njurisdiction or other competent authority to be invalid, unlawful
+    or\r\nunenforceable then such part shall be severed from the remainder of this\r\nLicence
+    Agreement which will continue to be valid and enforceable to the\r\nfullest extent
+    permitted by applicable law.\r\n\r\n12.5 This Licence Agreement including the
+    documents or other sources referred\r\nto herein supersede all prior representations,
+    understandings and agreements\r\nbetween the user and the provider relating to
+    the Loader and sets forth the\r\nentire agreement and understanding between the
+    user and the provider relating\r\nto the Loader.\r\n\r\n12.6 Nothing in this Licence
+    Agreement shall be deemed to constitute a\r\npartnership between you and the provider
+    nor constitute either party being an\r\nagent of the other party.\r\n\r\n12.7
+    This Agreement does not create any rights or benefits enforceable by any\r\nperson
+    not a party to it (within the meaning of the U.K.Contracts (Rights of\r\nThird
+    Parties) Act 1999) except that a person who under clause 12.1 is a\r\npermitted
+    successor or assignee of the rights or benefits of the provider may\r\nenforce
+    such rights or benefits.\r\n\r\n\r\n13 GOVERNING LAW AND JURISDICTION\r\n\r\nThis
+    License Agreement and any issues relating thereto shall be construed and\r\ninterpreted
+    in accordance with the laws of England and subject to the\r\nexclusive jurisdiction
+    of the English courts.\r\n\r\nCopyright (c) 2002-2016 ionCube Ltd.          Last
+    revised 23-April-2015\r\n"

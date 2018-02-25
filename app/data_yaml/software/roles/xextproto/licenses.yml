@@ -1,0 +1,130 @@
+---
+- path: xextproto-7.3.0/COPYING
+  type: BSD-style,OpenGroup,X11
+  text: "Copyright 1989, 1998  The Open Group\n\nPermission to use, copy, modify,
+    distribute, and sell this software and its\ndocumentation for any purpose is hereby
+    granted without fee, provided that\nthe above copyright notice appear in all copies
+    and that both that\ncopyright notice and this permission notice appear in supporting\ndocumentation.\n\nThe
+    above copyright notice and this permission notice shall be included in\nall copies
+    or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\",
+    WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO
+    THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    \ IN NO EVENT SHALL THE\nOPEN GROUP BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN\nAN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.\n\nExcept as contained in this notice, the name of The Open Group shall
+    not be\nused in advertising or otherwise to promote the sale, use or other dealings\nin
+    this Software without prior written authorization from The Open Group.\n\n\nCopyright
+    (c) 1997 by Silicon Graphics Computer Systems, Inc.\nPermission to use, copy,
+    modify, and distribute this\nsoftware and its documentation for any purpose and
+    without\nfee is hereby granted, provided that the above copyright\nnotice appear
+    in all copies and that both that copyright\nnotice and this permission notice
+    appear in supporting\ndocumentation, and that the name of Silicon Graphics not
+    be\nused in advertising or publicity pertaining to distribution\nof the software
+    without specific prior written permission.\nSilicon Graphics makes no representation
+    about the suitability\nof this software for any purpose. It is provided \"as is\"\nwithout
+    any express or implied warranty.\nSILICON GRAPHICS DISCLAIMS ALL WARRANTIES WITH
+    REGARD TO THIS\nSOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY\nAND
+    FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL SILICON\nGRAPHICS BE LIABLE
+    FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL\nDAMAGES OR ANY DAMAGES WHATSOEVER
+    RESULTING FROM LOSS OF USE,\nDATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+    NEGLIGENCE\nOR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION  WITH\nTHE
+    USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nCopyright 1992 Network Computing Devices\n\nPermission
+    to use, copy, modify, distribute, and sell this software and its\ndocumentation
+    for any purpose is hereby granted without fee, provided that\nthe above copyright
+    notice appear in all copies and that both that\ncopyright notice and this permission
+    notice appear in supporting\ndocumentation, and that the name of NCD. not be used
+    in advertising or\npublicity pertaining to distribution of the software without
+    specific,\nwritten prior permission.  NCD. makes no representations about the\nsuitability
+    of this software for any purpose.  It is provided \"as is\"\nwithout express or
+    implied warranty.\n\nNCD. DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+    INCLUDING ALL\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT
+    SHALL NCD.\nBE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY
+    DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+    ACTION\nOF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+    \nCONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nCopyright (c)
+    1994, 1995  Hewlett-Packard Company\n\nPermission is hereby granted, free of charge,
+    to any person obtaining\na copy of this software and associated documentation
+    files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout
+    limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense,
+    and/or sell copies of the Software, and to\npermit persons to whom the Software
+    is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright
+    notice and this permission notice shall be included\nin all copies or substantial
+    portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY
+    OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+    OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN
+    NO EVENT SHALL HEWLETT-PACKARD COMPANY BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR\nTHE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.\n\nExcept as contained in this notice, the name of the Hewlett-Packard\nCompany
+    shall not be used in advertising or otherwise to promote the\nsale, use or other
+    dealings in this Software without prior written\nauthorization from the Hewlett-Packard
+    Company.\n\n\nCopyright (c) 1996 Digital Equipment Corporation, Maynard, Massachusetts.\n\nPermission
+    is hereby granted, free of charge, to any person obtaining a copy\nof this software
+    and associated documentation files (the \"Software\"), to deal\nin the Software
+    without restriction, including without limitation the rights\nto use, copy, modify,
+    merge, publish, distribute, sublicense, and/or sell\ncopies of the Software.\n\nThe
+    above copyright notice and this permission notice shall be included in\nall copies
+    or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\",
+    WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO
+    THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    \ IN NO EVENT SHALL\nDIGITAL EQUIPMENT CORPORATION BE LIABLE FOR ANY CLAIM, DAMAGES,
+    INCLUDING, \nBUT NOT LIMITED TO CONSEQUENTIAL OR INCIDENTAL DAMAGES, OR OTHER
+    LIABILITY, \nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR \nIN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.\n\nExcept as contained in this notice, the name of Digital Equipment
+    Corporation \nshall not be used in advertising or otherwise to promote the sale,
+    use or other\ndealings in this Software without prior written authorization from
+    Digital \nEquipment Corporation.\n\n\nCopyright 1988, 1989, 1990, 1994 Network
+    Computing Devices, Inc.\n\nPermission to use, copy, modify, distribute, and sell
+    this software and\nits documentation for any purpose is hereby granted without
+    fee, provided\nthat the above copyright notice appear in all copies and that both
+    that\ncopyright notice and this permission notice appear in supporting\ndocumentation,
+    and that the name Network Computing Devices, Inc. not be\nused in advertising
+    or publicity pertaining to distribution of this \nsoftware without specific, written
+    prior permission.\n\nTHIS SOFTWARE IS PROVIDED `AS-IS'.  NETWORK COMPUTING DEVICES,
+    INC.,\nDISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING WITHOUT\nLIMITATION
+    ALL IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A\nPARTICULAR PURPOSE,
+    OR NONINFRINGEMENT.  IN NO EVENT SHALL NETWORK\nCOMPUTING DEVICES, INC., BE LIABLE
+    FOR ANY DAMAGES WHATSOEVER, INCLUDING\nSPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES,
+    INCLUDING LOSS OF USE,\nDATA, OR PROFITS, EVEN IF ADVISED OF THE POSSIBILITY THEREOF,
+    AND\nREGARDLESS OF WHETHER IN AN ACTION IN CONTRACT, TORT OR NEGLIGENCE,\nARISING
+    OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS\nSOFTWARE.\n\n\nCopyright
+    1991,1993 by Digital Equipment Corporation, Maynard, Massachusetts,\nand Olivetti
+    Research Limited, Cambridge, England.\n\n                        All Rights Reserved\n\nPermission
+    to use, copy, modify, and distribute this software and its \ndocumentation for
+    any purpose and without fee is hereby granted, \nprovided that the above copyright
+    notice appear in all copies and that\nboth that copyright notice and this permission
+    notice appear in \nsupporting documentation, and that the names of Digital or
+    Olivetti\nnot be used in advertising or publicity pertaining to distribution of
+    the\nsoftware without specific, written prior permission.  \n\nDIGITAL AND OLIVETTI
+    DISCLAIM ALL WARRANTIES WITH REGARD TO THIS\nSOFTWARE, INCLUDING ALL IMPLIED WARRANTIES
+    OF MERCHANTABILITY AND\nFITNESS, IN NO EVENT SHALL THEY BE LIABLE FOR ANY SPECIAL,
+    INDIRECT OR\nCONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+    OF\nUSE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR\nOTHER
+    TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR\nPERFORMANCE
+    OF THIS SOFTWARE.\n\n\nCopyright 1986, 1987, 1988 by Hewlett-Packard Corporation\n\nPermission
+    to use, copy, modify, and distribute this\nsoftware and its documentation for
+    any purpose and without\nfee is hereby granted, provided that the above copyright\nnotice
+    appear in all copies and that both that copyright\nnotice and this permission
+    notice appear in supporting\ndocumentation, and that the name of Hewlett-Packard
+    not be used in\nadvertising or publicity pertaining to distribution of the\nsoftware
+    without specific, written prior permission.\n\nHewlett-Packard makes no representations
+    about the \nsuitability of this software for any purpose.  It is provided \n\"as
+    is\" without express or implied warranty.\n\nThis software is not subject to any
+    license of the American\nTelephone and Telegraph Company or of the Regents of
+    the\nUniversity of California.\n\n\nCopyright © 2007-2008 Peter Hutterer\n\nPermission
+    is hereby granted, free of charge, to any person obtaining a\ncopy of this software
+    and associated documentation files (the \"Software\"),\nto deal in the Software
+    without restriction, including without limitation\nthe rights to use, copy, modify,
+    merge, publish, distribute, sublicense,\nand/or sell copies of the Software, and
+    to permit persons to whom the\nSoftware is furnished to do so, subject to the
+    following conditions:\n\nThe above copyright notice and this permission notice
+    (including the next\nparagraph) shall be included in all copies or substantial
+    portions of the\nSoftware.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY
+    OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+    OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN
+    NO EVENT SHALL\nTHE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
+    OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER\nDEALINGS IN THE
+    SOFTWARE.\n"

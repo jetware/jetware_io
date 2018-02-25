@@ -1,0 +1,49 @@
+---
+- path: lz4-d86dc916771c126afb797637dda9f6421c0cb998/Makefile
+  type: BSD-2-Clause
+  text: "# ################################################################\n# LZ4
+    - Makefile\n# Copyright (C) Yann Collet 2011-2015\n# All rights reserved.\n# \n#
+    BSD license\n# Redistribution and use in source and binary forms, with or without
+    modification,\n# are permitted provided that the following conditions are met:\n#
+    \n# * Redistributions of source code must retain the above copyright notice, this\n#
+    \  list of conditions and the following disclaimer.\n# \n# * Redistributions in
+    binary form must reproduce the above copyright notice, this\n#   list of conditions
+    and the following disclaimer in the documentation and/or\n#   other materials
+    provided with the distribution.\n# \n# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
+    HOLDERS AND CONTRIBUTORS \"AS IS\" AND\n# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+    BUT NOT LIMITED TO, THE IMPLIED\n# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+    A PARTICULAR PURPOSE ARE\n# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER
+    OR CONTRIBUTORS BE LIABLE FOR\n# ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+    OR CONSEQUENTIAL DAMAGES\n# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+    GOODS OR SERVICES;\n# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+    HOWEVER CAUSED AND ON\n# ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+    LIABILITY, OR TORT\n# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+    OF THE USE OF THIS\n# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n#
+    \n# You can contact the author at :\n#  - LZ4 source repository : https://github.com/Cyan4973/lz4\n#
+    \ - LZ4 forum froup : https://groups.google.com/forum/#!forum/lz4c\n# ################################################################\n\n#
+    Version number\nexport VERSION=131\nexport RELEASE=r$(VERSION)\n\nDESTDIR?=\nPREFIX
+    ?= /usr/local\n\nLIBDIR ?= $(PREFIX)/lib\nINCLUDEDIR=$(PREFIX)/include\nPRGDIR
+    \ = programs\nLZ4DIR  = lib\n\n\n# Select test target for Travis CI's Build Matrix\nifneq
+    (,$(filter test-%,$(LZ4_TRAVIS_CI_ENV)))\nTRAVIS_TARGET=prg-travis\nelse\nTRAVIS_TARGET=$(LZ4_TRAVIS_CI_ENV)\nendif\n\n#
+    Define nul output\nifneq (,$(filter Windows%,$(OS)))\nVOID = nul\nelse\nVOID =
+    /dev/null\nendif\n\n\n.PHONY: default all lib lz4programs clean test versionsTest\n\ndefault:
+    lz4programs\n\nall: lib\n\t@cd $(PRGDIR); $(MAKE) -e all\n\nlib:\n\t@cd $(LZ4DIR);
+    $(MAKE) -e all\n\nlz4programs:\n\t@cd $(PRGDIR); $(MAKE) -e\n\nclean:\n\t@cd $(PRGDIR);
+    $(MAKE) clean > $(VOID)\n\t@cd $(LZ4DIR); $(MAKE) clean > $(VOID)\n\t@cd examples;
+    \ $(MAKE) clean > $(VOID)\n\t@cd versionsTest; $(MAKE) clean > $(VOID)\n\t@echo
+    Cleaning completed\n\n\n#------------------------------------------------------------------------\n#make
+    install is validated only for Linux, OSX, kFreeBSD and Hurd targets\nifneq (,$(filter
+    $(shell uname),Linux Darwin GNU/kFreeBSD GNU))\n\ninstall:\n\t@cd $(LZ4DIR); $(MAKE)
+    -e install\n\t@cd $(PRGDIR); $(MAKE) -e install\n\nuninstall:\n\t@cd $(LZ4DIR);
+    $(MAKE) uninstall\n\t@cd $(PRGDIR); $(MAKE) uninstall\n\ntravis-install:\n\tsudo
+    $(MAKE) install\n\ntest:\n\t@cd $(PRGDIR); $(MAKE) -e test\n\ntest-travis: $(TRAVIS_TARGET)\n\ncmake:\n\t@cd
+    cmake_unofficial; cmake CMakeLists.txt; $(MAKE)\n\ngpptest: clean\n\t$(MAKE) all
+    CC=g++ CFLAGS=\"-O3 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Werror\"\n\nclangtest:
+    clean\n\t$(MAKE) all CC=clang CPPFLAGS=\"-Werror -Wconversion -Wno-sign-conversion\"\n\nsanitize:
+    clean\n\t$(MAKE) test CC=clang CPPFLAGS=\"-g -fsanitize=undefined\" FUZZER_TIME=\"-T1mn\"
+    NB_LOOPS=-i1\n\nstaticAnalyze: clean\n\tCPPFLAGS=-g scan-build --status-bugs -v
+    $(MAKE) all\n\narmtest: clean\n\tcd lib; $(MAKE) -e all CC=arm-linux-gnueabi-gcc
+    CPPFLAGS=\"-Werror\"\n\tcd programs; $(MAKE) -e bins CC=arm-linux-gnueabi-gcc
+    CPPFLAGS=\"-Werror\"\n\nversionsTest: clean\n\t@cd versionsTest; $(MAKE)\n\nexamples:\n\tcd
+    lib; $(MAKE) -e\n\tcd programs; $(MAKE) -e lz4\n\tcd examples; $(MAKE) -e test\n\nprg-travis:\n\t@cd
+    $(PRGDIR); $(MAKE) -e test-travis\n\nendif\n"

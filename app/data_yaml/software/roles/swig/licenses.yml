@@ -1,0 +1,17 @@
+---
+- path: swig-3.0.12/LICENSE
+  type: GPL-3.0+
+  text: "SWIG is free software: you can redistribute it and/or modify it\nunder the
+    terms of the GNU General Public License as published by\nthe Free Software Foundation,
+    either version 3 of the License, or\n(at your option) any later version. See the
+    LICENSE-GPL file for\nthe full terms of the GNU General Public license version
+    3.\n\nPortions of SWIG are also licensed under the terms of the licenses\nin the
+    file LICENSE-UNIVERSITIES. You must observe the terms of\nthese licenses, as well
+    as the terms of the GNU General Public License,\nwhen you distribute SWIG.\n\nThe
+    SWIG library and examples, under the Lib and Examples top level \ndirectories,
+    are distributed under the following terms:\n\n  You may copy, modify, distribute,
+    and make derivative works based on\n  this software, in source code or object
+    code form, without\n  restriction. If you distribute the software to others, you
+    may do\n  so according to the terms of your choice. This software is offered as\n
+    \ is, without warranty of any kind.\n\nSee the COPYRIGHT file for a list of contributors
+    to SWIG and their\ncopyright notices.\n"

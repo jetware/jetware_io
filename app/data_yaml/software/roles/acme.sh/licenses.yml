@@ -1,0 +1,150 @@
+---
+- path: acme.sh-2.6.8/README.md
+  type: GPL-3.0
+  text: "# An ACME Shell script: acme.sh [![Build Status](https://travis-ci.org/Neilpang/acme.sh.svg?branch=master)](https://travis-ci.org/Neilpang/acme.sh)\n-
+    An ACME protocol client written purely in Shell (Unix shell) language.\n- Full
+    ACME protocol implementation.\n- Simple, powerful and very easy to use. You only
+    need 3 minutes to learn it.\n- Bash, dash and sh compatible.\n- Simplest shell
+    script for Let's Encrypt free certificate client.\n- Purely written in Shell with
+    no dependencies on python or the official Let's Encrypt client.\n- Just one script
+    to issue, renew and install your certificates automatically.\n- DOES NOT require
+    `root/sudoer` access.\n- Docker friendly\n\nIt's probably the `easiest&smallest&smartest`
+    shell script to automatically issue & renew the free certificates from Let's Encrypt.\n\nWiki:
+    https://github.com/Neilpang/acme.sh/wiki\n\nFor Docker Fans: [acme.sh :two_hearts:
+    Docker ](https://github.com/Neilpang/acme.sh/wiki/Run-acme.sh-in-docker)\n\nTwitter:
+    [@neilpangxa](https://twitter.com/neilpangxa)\n\n\n# [中文说明](https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E)\n\n#
+    Who are using **acme.sh**\n- [FreeBSD.org](https://blog.crashed.org/letsencrypt-in-freebsd-org/)\n-
+    [ruby-china.org](https://ruby-china.org/topics/31983)\n- [Proxmox](https://pve.proxmox.com/wiki/HTTPS_Certificate_Configuration_(Version_4.x_and_newer))\n-
+    [pfsense](https://github.com/pfsense/FreeBSD-ports/pull/89)\n- [webfaction](https://community.webfaction.com/questions/19988/using-letsencrypt)\n-
+    [Loadbalancer.org](https://www.loadbalancer.org/blog/loadbalancer-org-with-lets-encrypt-quick-and-dirty)\n-
+    [discourse.org](https://meta.discourse.org/t/setting-up-lets-encrypt/40709)\n-
+    [Centminmod](http://centminmod.com/letsencrypt-acmetool-https.html)\n- [splynx](https://forum.splynx.com/t/free-ssl-cert-for-splynx-lets-encrypt/297)\n-
+    [archlinux](https://aur.archlinux.org/packages/acme.sh-git/)\n- [more...](https://github.com/Neilpang/acme.sh/wiki/Blogs-and-tutorials)\n\n#
+    Tested OS\n\n| NO | Status| Platform|\n|----|-------|---------|\n|1|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/ubuntu-latest.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|
+    Ubuntu\n|2|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/debian-latest.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|
+    Debian\n|3|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/centos-latest.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|CentOS\n|4|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/windows-cygwin.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|Windows
+    (cygwin with curl, openssl and crontab included)\n|5|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/freebsd.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|FreeBSD\n|6|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/pfsense.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|pfsense\n|7|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/opensuse-latest.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|openSUSE\n|8|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/alpine-latest.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|Alpine
+    Linux (with curl)\n|9|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/base-archlinux.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|Archlinux\n|10|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/fedora-latest.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|fedora\n|11|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/kalilinux-kali-linux-docker.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|Kali
+    Linux\n|12|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/oraclelinux-latest.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|Oracle
+    Linux\n|13|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/proxmox.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|
+    Proxmox https://pve.proxmox.com/wiki/HTTPSCertificateConfiguration#Let.27s_Encrypt_using_acme.sh\n|14|-----|
+    Cloud Linux  https://github.com/Neilpang/le/issues/111\n|15|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/openbsd.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|OpenBSD\n|16|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/mageia.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|Mageia\n|17|-----|
+    OpenWRT: Tested and working. See [wiki page](https://github.com/Neilpang/acme.sh/wiki/How-to-run-on-OpenWRT)\n|18|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/solaris.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|SunOS/Solaris\n|19|[![](https://cdn.rawgit.com/Neilpang/acmetest/master/status/gentoo-stage3-amd64.svg)](https://github.com/Neilpang/letest#here-are-the-latest-status)|Gentoo
+    Linux\n|20|[![Build Status](https://travis-ci.org/Neilpang/acme.sh.svg?branch=master)](https://travis-ci.org/Neilpang/acme.sh)|Mac
+    OSX\n\nFor all build statuses, check our [daily build project](https://github.com/Neilpang/acmetest):\n\nhttps://github.com/Neilpang/acmetest\n\n\n#
+    Supported modes\n\n- Webroot mode\n- Standalone mode\n- Apache mode\n- Nginx mode
+    ( Beta )\n- DNS mode\n- [Stateless mode](https://github.com/Neilpang/acme.sh/wiki/Stateless-Mode)\n\n\n#
+    1. How to install\n\n### 1. Install online\n\nCheck this project: https://github.com/Neilpang/get.acme.sh\n\n```bash\ncurl
+    https://get.acme.sh | sh\n```\n\nOr:\n\n```bash\nwget -O -  https://get.acme.sh
+    | sh\n```\n\n\n### 2. Or, Install from git\n\nClone this project and launch installation:\n\n```bash\ngit
+    clone https://github.com/Neilpang/acme.sh.git\ncd ./acme.sh\n./acme.sh --install\n```\n\nYou
+    `don't have to be root` then, although `it is recommended`.\n\nAdvanced Installation:
+    https://github.com/Neilpang/acme.sh/wiki/How-to-install\n\nThe installer will
+    perform 3 actions:\n\n1. Create and copy `acme.sh` to your home dir (`$HOME`):
+    `~/.acme.sh/`.\nAll certs will be placed in this folder too.\n2. Create alias
+    for: `acme.sh=~/.acme.sh/acme.sh`.\n3. Create daily cron job to check and renew
+    the certs if needed.\n\nCron entry example:\n\n```bash\n0 0 * * * \"/home/user/.acme.sh\"/acme.sh
+    --cron --home \"/home/user/.acme.sh\" > /dev/null\n```\n\nAfter the installation,
+    you must close the current terminal and reopen it to make the alias take effect.\n\nOk,
+    you are ready to issue certs now.\n\nShow help message:\n\n```\nroot@v1:~# acme.sh
+    -h\n```\n\n# 2. Just issue a cert\n\n**Example 1:** Single domain.\n\n```bash\nacme.sh
+    --issue -d example.com -w /home/wwwroot/example.com\n```\n\n**Example 2:** Multiple
+    domains in the same cert.\n\n```bash\nacme.sh --issue -d example.com -d www.example.com
+    -d cp.example.com -w /home/wwwroot/example.com\n```\n\nThe parameter `/home/wwwroot/example.com`
+    is the web root folder. You **MUST** have `write access` to this folder.\n\nSecond
+    argument **\"example.com\"** is the main domain you want to issue the cert for.\nYou
+    must have at least one domain there.\n\nYou must point and bind all the domains
+    to the same webroot dir: `/home/wwwroot/example.com`.\n\nGenerated/issued certs
+    will be placed in `~/.acme.sh/example.com/`\n\nThe issued cert will be renewed
+    automatically every **60** days.\n\nMore examples: https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert\n\n\n#
+    3. Install the issued cert to Apache/Nginx etc.\n\nAfter you issue a cert, you
+    probably want to install/copy the cert to your Apache/Nginx or other servers.\nYou
+    **MUST** use this command to copy the certs to the target files, **DO NOT** use
+    the certs files in **~/.acme.sh/** folder, they are for internal use only, the
+    folder structure may change in the future.\n\n**Apache** example:\n```bash\nacme.sh
+    --install-cert -d example.com \\\n--cert-file      /path/to/certfile/in/apache/cert.pem
+    \ \\\n--key-file       /path/to/keyfile/in/apache/key.pem  \\\n--fullchain-file
+    /path/to/fullchain/certfile/apache/fullchain.pem \\\n--reloadcmd     \"service
+    apache2 force-reload\"\n```\n\n**Nginx** example:\n```bash\nacme.sh --install-cert
+    -d example.com \\\n--key-file       /path/to/keyfile/in/nginx/key.pem  \\\n--fullchain-file
+    /path/to/fullchain/nginx/cert.pem \\\n--reloadcmd     \"service nginx force-reload\"\n```\n\nOnly
+    the domain is required, all the other parameters are optional.\n\nThe ownership
+    and permission info of existing files are preserved. You may want to precreate
+    the files to have defined ownership and permission.\n\nInstall/copy the issued
+    cert/key to the production Apache or Nginx path.\n\nThe cert will be `renewed
+    every **60** days by default` (which is configurable). Once the cert is renewed,
+    the Apache/Nginx service will be restarted automatically by the command: `service
+    apache2 restart` or `service nginx restart`.\n\n\n# 4. Use Standalone server to
+    issue cert\n\n**(requires you to be root/sudoer or have permission to listen on
+    port 80 (TCP))**\n\nPort `80` (TCP) **MUST** be free to listen on, otherwise you
+    will be prompted to free it and try again.\n\n```bash\nacme.sh --issue --standalone
+    -d example.com -d www.example.com -d cp.example.com\n```\n\nMore examples: https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert\n\n\n#
+    5. Use Standalone TLS server to issue cert\n\n**(requires you to be root/sudoer
+    or have permission to listen on port 443 (TCP))**\n\nacme.sh supports `tls-sni-01`
+    validation.\n\nPort `443` (TCP) **MUST** be free to listen on, otherwise you will
+    be prompted to free it and try again.\n\n```bash\nacme.sh --issue --tls -d example.com
+    -d www.example.com -d cp.example.com\n```\n\nMore examples: https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert\n\n\n#
+    6. Use Apache mode\n\n**(requires you to be root/sudoer, since it is required
+    to interact with Apache server)**\n\nIf you are running a web server, Apache or
+    Nginx, it is recommended to use the `Webroot mode`.\n\nParticularly, if you are
+    running an Apache server, you should use Apache mode instead. This mode doesn't
+    write any files to your web root folder.\n\nJust set string \"apache\" as the
+    second argument and it will force use of apache plugin automatically.\n\n```\nacme.sh
+    --issue --apache -d example.com -d www.example.com -d cp.example.com\n```\n\nMore
+    examples: https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert\n\n# 7.
+    Use Nginx mode\n\n**(requires you to be root/sudoer, since it is required to interact
+    with Nginx server)**\n\nIf you are running a web server, Apache or Nginx, it is
+    recommended to use the `Webroot mode`.\n\nParticularly, if you are running an
+    nginx server, you can use nginx mode instead. This mode doesn't write any files
+    to your web root folder.\n\nJust set string \"nginx\" as the second argument.\n\nIt
+    will configure nginx server automatically to verify the domain and then restore
+    the nginx config to the original version.\n\nSo, the config is not changed.\n\n```\nacme.sh
+    --issue --nginx -d example.com -d www.example.com -d cp.example.com\n```\n\nMore
+    examples: https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert\n\n# 8.
+    Use DNS mode:\n\nSupport the `dns-01` challenge.\n\n```bash\nacme.sh --issue --dns
+    -d example.com -d www.example.com -d cp.example.com\n```\n\nYou should get an
+    output like below:\n\n```\nAdd the following txt record:\nDomain:_acme-challenge.example.com\nTxt
+    value:9ihDbjYfTExAYeDs4DBUeuTo18KBzwvTEjUnSwd32-c\n\nAdd the following txt record:\nDomain:_acme-challenge.www.example.com\nTxt
+    value:9ihDbjxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n\nPlease add those txt records
+    to the domains. Waiting for the dns to take effect.\n```\n\nThen just rerun with
+    `renew` argument:\n\n```bash\nacme.sh --renew -d example.com\n```\n\nOk, it's
+    finished.\n\n\n# 9. Automatic DNS API integration\n\nIf your DNS provider supports
+    API access, we can use that API to automatically issue the certs.\n\nYou don't
+    have to do anything manually!\n\n### Currently acme.sh supports:\n\n1. CloudFlare.com
+    API\n1. DNSPod.cn API\n1. CloudXNS.com API\n1. GoDaddy.com API\n1. OVH, kimsufi,
+    soyoustart and runabove API\n1. AWS Route 53\n1. PowerDNS.com API\n1. lexicon
+    DNS API: https://github.com/Neilpang/acme.sh/wiki/How-to-use-lexicon-dns-api\n
+    \  (DigitalOcean, DNSimple, DNSMadeEasy, DNSPark, EasyDNS, Namesilo, NS1, PointHQ,
+    Rage4 and Vultr etc.)\n1. LuaDNS.com API\n1. DNSMadeEasy.com API\n1. nsupdate
+    API\n1. aliyun.com(阿里云) API\n1. ISPConfig 3.1 API\n1. Alwaysdata.com API\n1. Linode.com
+    API\n1. FreeDNS (https://freedns.afraid.org/)\n1. cyon.ch\n1. Domain-Offensive/Resellerinterface/Domainrobot
+    API\n1. Gandi LiveDNS API\n1. Knot DNS API\n1. DigitalOcean API (native)\n1. ClouDNS.net
+    API\n1. Infoblox NIOS API (https://www.infoblox.com/)\n\n**More APIs coming soon...**\n\nIf
+    your DNS provider is not on the supported list above, you can write your own DNS
+    API script easily. If you do, please consider submitting a [Pull Request](https://github.com/Neilpang/acme.sh/pulls)
+    and contribute it to the project.\n\nFor more details: [How to use DNS API](dnsapi)\n\n\n#
+    10. Issue ECC certificates\n\n`Let's Encrypt` can now issue **ECDSA** certificates.\n\nAnd
+    we support them too!\n\nJust set the `length` parameter with a prefix `ec-`.\n\nFor
+    example:\n\n### Single domain ECC certificate\n\n```bash\nacme.sh --issue -w /home/wwwroot/example.com
+    -d example.com --keylength ec-256\n```\n\n### SAN multi domain ECC certificate\n\n```bash\nacme.sh
+    --issue -w /home/wwwroot/example.com -d example.com -d www.example.com --keylength
+    ec-256\n```\n\nPlease look at the last parameter above.\n\nValid values are:\n\n1.
+    **ec-256 (prime256v1, \"ECDSA P-256\")**\n2. **ec-384 (secp384r1,  \"ECDSA P-384\")**\n3.
+    **ec-521 (secp521r1,  \"ECDSA P-521\", which is not supported by Let's Encrypt
+    yet.)**\n\n\n# 11. How to renew the issued certs\n\nNo, you don't need to renew
+    the certs manually. All the certs will be renewed automatically every **60** days.\n\nHowever,
+    you can also force to renew any cert:\n\n```\nacme.sh --renew -d example.com --force\n```\n\nor,
+    for ECC cert:\n\n```\nacme.sh --renew -d example.com --force --ecc\n```\n\n\n#
+    12. How to upgrade `acme.sh`\n\nacme.sh is in constant development, so it's strongly
+    recommended to use the latest code.\n\nYou can update acme.sh to the latest code:\n\n```\nacme.sh
+    --upgrade\n```\n\nYou can also enable auto upgrade:\n\n```\nacme.sh --upgrade
+    --auto-upgrade\n```\n\nThen **acme.sh** will be kept up to date automatically.\n\nDisable
+    auto upgrade:\n\n```\nacme.sh --upgrade --auto-upgrade 0\n```\n\n\n# 13. Issue
+    a cert from an existing CSR\n\nhttps://github.com/Neilpang/acme.sh/wiki/Issue-a-cert-from-existing-CSR\n\n\n#
+    14. Under the Hood\n\nSpeak ACME language using shell, directly to \"Let's Encrypt\".\n\nTODO:\n\n\n#
+    15. Acknowledgments\n\n1. Acme-tiny: https://github.com/diafygi/acme-tiny\n2.
+    ACME protocol: https://github.com/ietf-wg-acme/acme\n3. Certbot: https://github.com/certbot/certbot\n\n\n#
+    16. License & Others\n\nLicense is GPLv3\n\nPlease Star and Fork me.\n\n[Issues](https://github.com/Neilpang/acme.sh/issues)
+    and [pull requests](https://github.com/Neilpang/acme.sh/pulls) are welcome.\n\n\n#
+    17. Donate\nYour donation makes **acme.sh** better:\n\n1. PayPal/Alipay(支付宝)/Wechat(微信):
+    [https://donate.acme.sh/](https://donate.acme.sh/)\n  \n[Donate List](https://github.com/Neilpang/acme.sh/wiki/Donate-list)\n"

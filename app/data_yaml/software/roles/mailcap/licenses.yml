@@ -1,0 +1,15 @@
+---
+- path: mailcap-2.1.47/COPYING
+  type: Bellcore,MIT,MIT-style,Public-domain
+  text: "Red Hat disclaims any copyright on the \"mailcap\" and \"mime-types\" files
+    and places them in the public domain. You are \nfree to do whatever you wish with
+    these files.\n\nThe mailcap.4 man page is under an MIT license:\n\nCopyright (c)
+    1991 Bell Communications Research, Inc. (Bellcore)\n\nPermission to use, copy,
+    modify, and distribute this material\nfor any purpose and without fee is hereby
+    granted, provided\nthat the above copyright notice and this permission notice\nappear
+    in all copies, and that the name of Bellcore not be\nused in advertising or publicity
+    pertaining to this\nmaterial without the specific, prior written permission\nof
+    an authorized representative of Bellcore.  BELLCORE\nMAKES NO REPRESENTATIONS
+    ABOUT THE ACCURACY OR SUITABILITY\nOF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED
+    \"AS IS\",\nWITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.\n\n\nTom Callaway, Fedora
+    Legal, Red Hat\nThu Sep 17, 2009\n"

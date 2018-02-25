@@ -1,0 +1,18 @@
+---
+- path: kbproto-1.0.6/COPYING
+  type: BSD-style
+  text: "Copyright (c) 1993 by Silicon Graphics Computer Systems, Inc.\n\nPermission
+    to use, copy, modify, and distribute this\nsoftware and its documentation for
+    any purpose and without\nfee is hereby granted, provided that the above copyright\nnotice
+    appear in all copies and that both that copyright\nnotice and this permission
+    notice appear in supporting\ndocumentation, and that the name of Silicon Graphics
+    not be \nused in advertising or publicity pertaining to distribution \nof the
+    software without specific prior written permission.\nSilicon Graphics makes no
+    representation about the suitability \nof this software for any purpose. It is
+    provided \"as is\"\nwithout any express or implied warranty.\n\nSILICON GRAPHICS
+    DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS \nSOFTWARE, INCLUDING ALL IMPLIED
+    WARRANTIES OF MERCHANTABILITY \nAND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT
+    SHALL SILICON\nGRAPHICS BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL \nDAMAGES
+    OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, \nDATA OR PROFITS, WHETHER
+    IN AN ACTION OF CONTRACT, NEGLIGENCE \nOR OTHER TORTIOUS ACTION, ARISING OUT OF
+    OR IN CONNECTION  WITH\nTHE USE OR PERFORMANCE OF THIS SOFTWARE.\n"

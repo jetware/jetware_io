@@ -1,0 +1,57 @@
+---
+- path: hdf5-1.8.19/COPYING
+  type: BSD-style,IJG
+  text: "\nCopyright Notice and License Terms for \nHDF5 (Hierarchical Data Format
+    5) Software Library and Utilities\n-----------------------------------------------------------------------------\n\nHDF5
+    (Hierarchical Data Format 5) Software Library and Utilities\nCopyright 2006-2016
+    by The HDF Group.\n\nNCSA HDF5 (Hierarchical Data Format 5) Software Library and
+    Utilities\nCopyright 1998-2006 by the Board of Trustees of the University of Illinois.\n\nAll
+    rights reserved.\n\nRedistribution and use in source and binary forms, with or
+    without \nmodification, are permitted for any purpose (including commercial purposes)
+    \nprovided that the following conditions are met:\n\n1. Redistributions of source
+    code must retain the above copyright notice, \n   this list of conditions, and
+    the following disclaimer.\n\n2. Redistributions in binary form must reproduce
+    the above copyright notice, \n   this list of conditions, and the following disclaimer
+    in the documentation \n   and/or materials provided with the distribution.\n\n3.
+    In addition, redistributions of modified forms of the source or binary \n   code
+    must carry prominent notices stating that the original code was \n   changed and
+    the date of the change.\n\n4. All publications or advertising materials mentioning
+    features or use of \n   this software are asked, but not required, to acknowledge
+    that it was \n   developed by The HDF Group and by the National Center for Supercomputing
+    \n   Applications at the University of Illinois at Urbana-Champaign and \n   credit
+    the contributors.\n\n5. Neither the name of The HDF Group, the name of the University,
+    nor the \n   name of any Contributor may be used to endorse or promote products
+    derived \n   from this software without specific prior written permission from
+    \n   The HDF Group, the University, or the Contributor, respectively.\n\nDISCLAIMER:
+    \nTHIS SOFTWARE IS PROVIDED BY THE HDF GROUP AND THE CONTRIBUTORS \n\"AS IS\"
+    WITH NO WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED.  In no \nevent shall
+    The HDF Group or the Contributors be liable for any damages \nsuffered by the
+    users arising out of the use of this software, even if \nadvised of the possibility
+    of such damage. \n\n-----------------------------------------------------------------------------\n-----------------------------------------------------------------------------\n\nContributors:
+    \  National Center for Supercomputing Applications (NCSA) at \nthe University
+    of Illinois, Fortner Software, Unidata Program Center (netCDF), \nThe Independent
+    JPEG Group (JPEG), Jean-loup Gailly and Mark Adler (gzip), \nand Digital Equipment
+    Corporation (DEC).\n\n-----------------------------------------------------------------------------\n\nPortions
+    of HDF5 were developed with support from the Lawrence Berkeley \nNational Laboratory
+    (LBNL) and the United States Department of Energy \nunder Prime Contract No. DE-AC02-05CH11231.\n\n-----------------------------------------------------------------------------\n\nPortions
+    of HDF5 were developed with support from the University of \nCalifornia, Lawrence
+    Livermore National Laboratory (UC LLNL).  \nThe following statement applies to
+    those portions of the product and must \nbe retained in any redistribution of
+    source code, binaries, documentation, \nand/or accompanying materials:\n\n   This
+    work was partially produced at the University of California, \n   Lawrence Livermore
+    National Laboratory (UC LLNL) under contract \n   no. W-7405-ENG-48 (Contract
+    48) between the U.S. Department of Energy \n   (DOE) and The Regents of the University
+    of California (University) \n   for the operation of UC LLNL.\n\n   DISCLAIMER:
+    \n   This work was prepared as an account of work sponsored by an agency of \n
+    \  the United States Government. Neither the United States Government nor \n   the
+    University of California nor any of their employees, makes any \n   warranty,
+    express or implied, or assumes any liability or responsibility \n   for the accuracy,
+    completeness, or usefulness of any information, \n   apparatus, product, or process
+    disclosed, or represents that its use \n   would not infringe privately- owned
+    rights. Reference herein to any \n   specific commercial products, process, or
+    service by trade name, \n   trademark, manufacturer, or otherwise, does not necessarily
+    constitute \n   or imply its endorsement, recommendation, or favoring by the United
+    \n   States Government or the University of California. The views and \n   opinions
+    of authors expressed herein do not necessarily state or reflect \n   those of
+    the United States Government or the University of California, \n   and shall not
+    be used for advertising or product endorsement purposes.\n-----------------------------------------------------------------------------\n\n\n"

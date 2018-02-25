@@ -1,0 +1,179 @@
+---
+- path: Archive_Tar-1.4.2/package.xml
+  type: BSD
+  text: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<package packagerversion=\"1.9.5\"
+    version=\"2.0\" xmlns=\"http://pear.php.net/dtd/package-2.0\" xmlns:tasks=\"http://pear.php.net/dtd/tasks-1.0\"
+    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd\">\n
+    <name>Archive_Tar</name>\n <channel>pear.php.net</channel>\n <summary>Tar file
+    management class</summary>\n <description>This class provides handling of tar
+    files in PHP.\nIt supports creating, listing, extracting and adding to tar files.\nGzip
+    support is available if PHP has the zlib extension built-in or\nloaded. Bz2 compression
+    is also supported with the bz2 extension loaded.</description>\n <lead>\n  <name>Vincent
+    Blavet</name>\n  <user>vblavet</user>\n  <email>vincent@phpconcept.net</email>\n
+    \ <active>no</active>\n </lead>\n <lead>\n  <name>Greg Beaver</name>\n  <user>cellog</user>\n
+    \ <email>greg@chiaraquartet.net</email>\n  <active>no</active>\n </lead>\n <lead>\n
+    \ <name>Michiel Rook</name>\n  <user>mrook</user>\n  <email>mrook@php.net</email>\n
+    \ <active>yes</active>\n </lead>\n <helper>\n  <name>Stig Bakken</name>\n  <user>ssb</user>\n
+    \ <email>stig@php.net</email>\n  <active>no</active>\n </helper>\n <date>2016-02-25</date>\n
+    <time>10:26:28</time>\n <version>\n  <release>1.4.2</release>\n  <api>1.4.0</api>\n
+    </version>\n <stability>\n  <release>stable</release>\n  <api>stable</api>\n </stability>\n
+    <license uri=\"http://www.opensource.org/licenses/bsd-license.php\">New BSD License</license>\n
+    <notes>\n* Fix reading of archives with files &gt; 8GB\n* Performance optimizations\n*
+    Do not try to call require_once on PEAR.php if it has already been loaded by the
+    autoloader\n </notes>\n <contents>\n  <dir name=\"/\">\n   <file baseinstalldir=\"/\"
+    md5sum=\"144e74e95d95de4f342f511b008c80ea\" name=\"Archive/Tar.php\" role=\"php\"
+    />\n   <file baseinstalldir=\"/\" md5sum=\"2fb90f0be7089a45c09a0d1182792419\"
+    name=\"docs/Archive_Tar.txt\" role=\"doc\" />\n  </dir>\n </contents>\n <compatible>\n
+    \ <name>PEAR</name>\n  <channel>pear.php.net</channel>\n  <min>1.8.0</min>\n  <max>1.10.10</max>\n
+    </compatible>\n <dependencies>\n  <required>\n   <php>\n    <min>5.2.0</min>\n
+    \  </php>\n   <pearinstaller>\n    <min>1.9.0</min>\n   </pearinstaller>\n  </required>\n
+    </dependencies>\n <phprelease />\n <changelog>\n  <release>\n   <version>\n    <release>1.4.1</release>\n
+    \   <api>1.4.0</api>\n   </version>\n   <stability>\n    <release>stable</release>\n
+    \   <api>stable</api>\n   </stability>\n   <date>2015-08-05</date>\n   <license
+    uri=\"http://www.opensource.org/licenses/bsd-license.php\">New BSD License</license>\n
+    \  <notes>\n* Update composer.json to use pear-core-minimal 1.10.0alpha2\n   </notes>\n
+    \ </release>\n  <release>\n   <version>\n    <release>1.4.0</release>\n    <api>1.4.0</api>\n
+    \  </version>\n   <stability>\n    <release>stable</release>\n    <api>stable</api>\n
+    \  </stability>\n   <date>2015-07-20</date>\n   <license uri=\"http://www.opensource.org/licenses/bsd-license.php\">New
+    BSD License</license>\n   <notes>\n* Add support for PHP 7\n* Drop support for
+    PHP 4\n* Add visibility declarations to methods and properties\n   </notes>\n
+    \ </release>\n  <release>\n   <version>\n    <release>1.3.16</release>\n    <api>1.3.1</api>\n
+    \  </version>\n   <stability>\n    <release>stable</release>\n    <api>stable</api>\n
+    \  </stability>\n   <date>2015-04-14</date>\n   <license uri=\"http://www.opensource.org/licenses/bsd-license.php\">New
+    BSD License</license>\n   <notes>\n* Fix Bug #20514: invalid package.xml; not
+    installable with pyrus [mrook]\n   </notes>\n  </release>\n  <release>\n   <version>\n
+    \   <release>1.3.15</release>\n    <api>1.3.1</api>\n   </version>\n   <stability>\n
+    \   <release>stable</release>\n    <api>stable</api>\n   </stability>\n   <date>2015-03-05</date>\n
+    \  <license uri=\"http://www.opensource.org/licenses/bsd-license.php\">New BSD
+    License</license>\n   <notes>\n* Fixes composer.json parse error\n   </notes>\n
+    \ </release>\n  <release>\n   <version>\n    <release>1.3.14</release>\n    <api>1.3.1</api>\n
+    \  </version>\n   <stability>\n    <release>stable</release>\n    <api>stable</api>\n
+    \  </stability>\n   <date>2015-02-26</date>\n   <license uri=\"http://www.opensource.org/licenses/bsd-license.php\">New
+    BSD License</license>\n   <notes>\n* Fix Bug #18505: Possible incorrect handling
+    of file names in TAR [mrook]\n   </notes>\n  </release>\n  <release>\n   <version>\n
+    \   <release>1.3.13</release>\n    <api>1.3.1</api>\n   </version>\n   <stability>\n
+    \   <release>stable</release>\n    <api>stable</api>\n   </stability>\n   <date>2014-09-02</date>\n
+    \  <license uri=\"http://www.opensource.org/licenses/bsd-license.php\">New BSD\n
+    License</license>\n   <notes>\n* Fix Bug #20382: gzopen fix [mrook]\n   </notes>\n
+    \ </release>\n  <release>\n   <version>\n    <release>1.3.12</release>\n    <api>1.3.1</api>\n
+    \  </version>\n   <stability>\n    <release>stable</release>\n    <api>stable</api>\n
+    \  </stability>\n   <date>2014-08-04</date>\n   <license uri=\"http://www.opensource.org/licenses/bsd-license.php\">New
+    BSD\n License</license>\n   <notes>\n* Fix Bug #19964: Memory leaking in Archive_Tar
+    [mrook]\n * Fix Bug #20246: Broken with php 5.5.9 [mrook]\n * Fix Bug #20275:
+    &quot;pax_global_header&quot; looks like a regular file\n * [mrook]\n * Implement
+    Feature #19827: pass filename to _addFile function - downstream\n * patch [mrook]\n
+    * Implement Feature #20132: Add custom mode/uid/gid to addString() [mrook]\n   </notes>\n
+    \ </release>\n  <release>\n   <version>\n    <release>1.3.11</release>\n    <api>1.3.1</api>\n
+    \  </version>\n   <stability>\n    <release>stable</release>\n    <api>stable</api>\n
+    \  </stability>\n   <date>2013-02-09</date>\n   <license uri=\"http://www.opensource.org/licenses/bsd-license.php\">New
+    BSD\n   License</license>\n   <notes>\n* Fix Bug #19746: Broken with PHP 5.5 [mrook]\n
+    * Implement Feature #11258: Custom date/time in files added on-the-fly\n * [mrook]\n
+    \  </notes>\n  </release>\n  <release>\n   <version>\n    <release>1.3.10</release>\n
+    \   <api>1.3.1</api>\n   </version>\n   <stability>\n    <release>stable</release>\n
+    \   <api>stable</api>\n   </stability>\n   <date>2012-04-10</date>\n   <license
+    uri=\"http://www.opensource.org/licenses/bsd-license.php\">New BSD\n   License</license>\n
+    \  <notes>\n* Fix Bug #13361: Unable to add() some files (ex. mp3) [mrook]\n *
+    Fix Bug #19330: Class creates incorrect (non-readable) tar.gz file\n * [mrook]\n
+    \  </notes>\n  </release>\n  <release>\n   <version>\n    <release>1.3.9</release>\n
+    \   <api>1.3.1</api>\n   </version>\n   <stability>\n    <release>stable</release>\n
+    \   <api>stable</api>\n   </stability>\n   <date>2012-02-27</date>\n   <license
+    uri=\"http://www.opensource.org/licenses/bsd-license.php\">New BSD   License</license>\n
+    \  <notes>\n* Fix Bug #16759: No error thrown from missing PHP zlib functions
+    [mrook]\n * Fix Bug #18877: Incorrect handling of backslashes in filenames on
+    Linux [mrook]\n * Fix Bug #19085: Error while packaging [mrook]\n * Fix Bug #19289:
+    Invalid tar file generated [mrook]\n   </notes>\n  </release>\n  <release>\n   <version>\n
+    \   <release>1.3.8</release>\n    <api>1.3.1</api>\n   </version>\n   <stability>\n
+    \   <release>stable</release>\n    <api>stable</api>\n   </stability>\n   <date>2011-10-14</date>\n
+    \  <license uri=\"http://www.opensource.org/licenses/bsd-license.php\">New BSD
+    License</license>\n   <notes>\n* Fix Bug #17853: Test failure: dirtraversal.phpt
+    [mrook]\n * Fix Bug #18512: dead links are not saved in tar file [mrook]\n * Fix
+    Bug #18702: Unpacks incorrectly on long file names using header prefix [mrook]\n
+    * Implement Feature #10145: Patch to return a Pear Error Object on failure [mrook]\n
+    * Implement Feature #17491: Option to preserve permissions [mrook]\n * Implement
+    Feature #17813: Prevent PHP notice when extracting corrupted archive [mrook]\n
+    \  </notes>\n  </release>\n  <release>\n   <version>\n    <release>1.3.7</release>\n
+    \   <api>1.3.1</api>\n   </version>\n   <stability>\n    <release>stable</release>\n
+    \   <api>stable</api>\n   </stability>\n   <date>2010-04-26</date>\n   <license
+    uri=\"http://www.opensource.org/licenses/bsd-license.php\">New BSD License</license>\n
+    \  <notes>\nPEAR compatibility update\n   </notes>\n  </release>\n  <release>\n
+    \  <version>\n    <release>1.3.6</release>\n    <api>1.3.1</api>\n   </version>\n
+    \  <stability>\n    <release>stable</release>\n    <api>stable</api>\n   </stability>\n
+    \  <date>2010-03-09</date>\n   <license uri=\"http://www.opensource.org/licenses/bsd-license.php\">New
+    BSD License</license>\n   <notes>\n* Fix Bug #16963: extractList can&apos;t extract
+    zipped files from big tar [mrook]\n * Implement Feature #4013: Ignoring files
+    and directories on creating an archive. [mrook]\n   </notes>\n  </release>\n  <release>\n
+    \  <version>\n    <release>1.3.5</release>\n    <api>1.3.1</api>\n   </version>\n
+    \  <stability>\n    <release>stable</release>\n    <api>stable</api>\n   </stability>\n
+    \  <date>2009-12-31</date>\n   <license uri=\"http://www.opensource.org/licenses/bsd-license.php\">New
+    BSD License</license>\n   <notes>\n* Fix Bug #16958: Update &apos;compatible&apos;
+    tag in package.xml [mrook]\n   </notes>\n  </release>\n  <release>\n   <version>\n
+    \   <release>1.3.4</release>\n    <api>1.3.1</api>\n   </version>\n   <stability>\n
+    \   <release>stable</release>\n    <api>stable</api>\n   </stability>\n   <date>2009-12-30</date>\n
+    \  <license uri=\"http://www.opensource.org/licenses/bsd-license.php\">New BSD
+    License</license>\n   <notes>\n* Fix Bug #11871: wrong result of ::listContent()
+    if filename begins or ends with space [mrook]\n * Fix Bug #12462: invalid tar
+    magic [mrook]\n * Fix Bug #13918: Long filenames may get up to 511 0x00 bytes
+    appended on read [mrook]\n * Fix Bug #16202: Bogus modification times [mrook]\n
+    * Implement Feature #16212: Die is not exception [mrook]\n   </notes>\n  </release>\n
+    \ <release>\n   <version>\n    <release>1.3.3</release>\n    <api>1.3.1</api>\n
+    \  </version>\n   <stability>\n    <release>stable</release>\n    <api>stable</api>\n
+    \  </stability>\n   <date>2009-03-27</date>\n   <license uri=\"http://www.opensource.org/licenses/bsd-license.php\">New
+    BSD License</license>\n   <notes>\nChange the license to New BSD license\n\n   minor
+    bugfix release\n   * fix Bug #9921 compression with bzip2 fails [cellog]\n   *
+    fix Bug #11594 _readLongHeader leaves 0 bytes in filename [jamessas]\n   * fix
+    Bug #11769 Incorrect symlink handing [fajar99]\n   </notes>\n  </release>\n  <release>\n
+    \  <version>\n    <release>1.3.2</release>\n    <api>1.3.1</api>\n   </version>\n
+    \  <stability>\n    <release>stable</release>\n    <api>stable</api>\n   </stability>\n
+    \  <date>2007-01-03</date>\n   <license uri=\"http://www.php.net/license\">PHP
+    License</license>\n   <notes>\nCorrect Bug #4016\nRemove duplicate remove error
+    display with &apos;@&apos;\nCorrect Bug #3909 : Check existence of OS_WINDOWS
+    constant\nCorrect Bug #5452 fix for &quot;lone zero block&quot; when untarring
+    packages\nChange filemode (from pear-core/Archive/Tar.php v.1.21)\nCorrect Bug
+    #6486 Can not extract symlinks\nCorrect Bug #6933 Archive_Tar (Tar file management
+    class) Directory traversal\nCorrect Bug #8114 Files added on-the-fly not storing
+    date\nCorrect Bug #9352 Bug on _dirCheck function over nfs path\n   </notes>\n
+    \ </release>\n  <release>\n   <version>\n    <release>1.3.1</release>\n    <api>1.3.1</api>\n
+    \  </version>\n   <stability>\n    <release>stable</release>\n    <api>stable</api>\n
+    \  </stability>\n   <date>2005-03-17</date>\n   <license uri=\"http://www.php.net/license\">PHP
+    License</license>\n   <notes>\nCorrect Bug #3855\n   </notes>\n  </release>\n
+    \ <release>\n   <version>\n    <release>1.3.0</release>\n    <api>1.3.0</api>\n
+    \  </version>\n   <stability>\n    <release>stable</release>\n    <api>stable</api>\n
+    \  </stability>\n   <date>2005-03-06</date>\n   <license uri=\"http://www.php.net/license\">PHP
+    License</license>\n   <notes>\nBugs correction (2475, 2488, 2135, 2176)\n   </notes>\n
+    \ </release>\n  <release>\n   <version>\n    <release>1.2</release>\n    <api>1.2</api>\n
+    \  </version>\n   <stability>\n    <release>stable</release>\n    <api>stable</api>\n
+    \  </stability>\n   <date>2004-05-08</date>\n   <license uri=\"http://www.php.net/license\">PHP
+    License</license>\n   <notes>\nAdd support for other separator than the space
+    char and bug\n\tcorrection\n   </notes>\n  </release>\n  <release>\n   <version>\n
+    \   <release>1.1</release>\n    <api>1.1</api>\n   </version>\n   <stability>\n
+    \   <release>stable</release>\n    <api>stable</api>\n   </stability>\n   <date>2003-05-28</date>\n
+    \  <license uri=\"http://www.php.net/license\">PHP License</license>\n   <notes>\n*
+    Add support for BZ2 compression\n* Add support for add and extract without using
+    temporary files : methods addString() and extractInString()\n   </notes>\n  </release>\n
+    \ <release>\n   <version>\n    <release>1.0</release>\n    <api>1.0</api>\n   </version>\n
+    \  <stability>\n    <release>stable</release>\n    <api>stable</api>\n   </stability>\n
+    \  <date>2003-01-24</date>\n   <license uri=\"http://www.php.net/license\">PHP
+    License</license>\n   <notes>\nChange status to stable\n   </notes>\n  </release>\n
+    \ <release>\n   <version>\n    <release>0.10-b1</release>\n    <api>0.10-b1</api>\n
+    \  </version>\n   <stability>\n    <release>beta</release>\n    <api>beta</api>\n
+    \  </stability>\n   <date>2003-01-08</date>\n   <license uri=\"http://www.php.net/license\">PHP
+    License</license>\n   <notes>\nAdd support for long filenames (greater than 99
+    characters)\n   </notes>\n  </release>\n  <release>\n   <version>\n    <release>0.9</release>\n
+    \   <api>0.9</api>\n   </version>\n   <stability>\n    <release>stable</release>\n
+    \   <api>stable</api>\n   </stability>\n   <date>2002-05-27</date>\n   <license
+    uri=\"http://www.php.net/license\">PHP License</license>\n   <notes>\nAuto-detect
+    gzip&apos;ed files\n   </notes>\n  </release>\n  <release>\n   <version>\n    <release>0.4</release>\n
+    \   <api>0.4</api>\n   </version>\n   <stability>\n    <release>stable</release>\n
+    \   <api>stable</api>\n   </stability>\n   <date>2002-05-20</date>\n   <license
+    uri=\"http://www.php.net/license\">PHP License</license>\n   <notes>\nWindows
+    bugfix: use forward slashes inside archives\n   </notes>\n  </release>\n  <release>\n
+    \  <version>\n    <release>0.2</release>\n    <api>0.2</api>\n   </version>\n
+    \  <stability>\n    <release>stable</release>\n    <api>stable</api>\n   </stability>\n
+    \  <date>2002-02-18</date>\n   <license uri=\"http://www.php.net/license\">PHP
+    License</license>\n   <notes>\nFrom initial commit to stable\n   </notes>\n  </release>\n
+    \ <release>\n   <version>\n    <release>0.3</release>\n    <api>0.3</api>\n   </version>\n
+    \  <stability>\n    <release>stable</release>\n    <api>stable</api>\n   </stability>\n
+    \  <date>2002-04-13</date>\n   <license uri=\"http://www.php.net/license\">PHP
+    License</license>\n   <notes>\nWindows bugfix: used wrong directory separators\n
+    \  </notes>\n  </release>\n </changelog>\n</package>\n"

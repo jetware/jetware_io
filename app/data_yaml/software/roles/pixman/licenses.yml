@@ -1,0 +1,30 @@
+---
+- path: pixman-0.34.0/COPYING
+  type: XFree86
+  text: "The following is the MIT license, agreed upon by most contributors.\nCopyright
+    holders of new code should use this license statement where\npossible. They may
+    also add themselves to the list below.\n\n/*\n * Copyright 1987, 1988, 1989, 1998
+    \ The Open Group\n * Copyright 1987, 1988, 1989 Digital Equipment Corporation\n
+    * Copyright 1999, 2004, 2008 Keith Packard\n * Copyright 2000 SuSE, Inc.\n * Copyright
+    2000 Keith Packard, member of The XFree86 Project, Inc.\n * Copyright 2004, 2005,
+    2007, 2008, 2009, 2010 Red Hat, Inc.\n * Copyright 2004 Nicholas Miell\n * Copyright
+    2005 Lars Knoll & Zack Rusin, Trolltech\n * Copyright 2005 Trolltech AS\n * Copyright
+    2007 Luca Barbato\n * Copyright 2008 Aaron Plattner, NVIDIA Corporation\n * Copyright
+    2008 Rodrigo Kumpera\n * Copyright 2008 André Tupinambá\n * Copyright 2008 Mozilla
+    Corporation\n * Copyright 2008 Frederic Plourde\n * Copyright 2009, Oracle and/or
+    its affiliates. All rights reserved.\n * Copyright 2009, 2010 Nokia Corporation\n
+    *\n * Permission is hereby granted, free of charge, to any person obtaining a\n
+    * copy of this software and associated documentation files (the \"Software\"),\n
+    * to deal in the Software without restriction, including without limitation\n
+    * the rights to use, copy, modify, merge, publish, distribute, sublicense,\n *
+    and/or sell copies of the Software, and to permit persons to whom the\n * Software
+    is furnished to do so, subject to the following conditions:\n *\n * The above
+    copyright notice and this permission notice (including the next\n * paragraph)
+    shall be included in all copies or substantial portions of the\n * Software.\n
+    * \n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n
+    * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL\n *
+    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n *
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\n * FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER\n * DEALINGS IN
+    THE SOFTWARE.\n */\n"

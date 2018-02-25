@@ -1,0 +1,80 @@
+---
+- path: NVIDIA-Linux-x86_64-387.22/LICENSE
+  type: Nvidia-EULA
+  text: "           License For Customer Use of NVIDIA Software\n\n\nIMPORTANT NOTICE
+    -- READ CAREFULLY: This License For Customer Use of\nNVIDIA Software (\"LICENSE\")
+    is the agreement which governs use of\nthe software of NVIDIA Corporation and
+    its subsidiaries (\"NVIDIA\")\ndownloadable herefrom, including computer software
+    and associated\nprinted materials (\"SOFTWARE\").  By downloading, installing,
+    copying,\nor otherwise using the SOFTWARE, you agree to be bound by the terms\nof
+    this LICENSE.  If you do not agree to the terms of this LICENSE,\ndo not download
+    the SOFTWARE.\n\nRECITALS\n\nUse of NVIDIA's products requires three elements:
+    the SOFTWARE, the\nhardware on a graphics controller board, and a personal computer.
+    The\nSOFTWARE is protected by copyright laws and international copyright\ntreaties,
+    as well as other intellectual property laws and treaties.\nThe SOFTWARE is not
+    sold, and instead is only licensed for use,\nstrictly in accordance with this
+    document.  The hardware is protected\nby various patents, and is sold, but this
+    agreement does not cover\nthat sale, since it may not necessarily be sold as a
+    package with\nthe SOFTWARE.  This agreement sets forth the terms and conditions\nof
+    the SOFTWARE LICENSE only.\n\n1.  DEFINITIONS\n\n1.1  Customer.  Customer means
+    the entity or individual that\ndownloads the SOFTWARE.\n\n2.  GRANT OF LICENSE\n\n2.1
+    \ Rights and Limitations of Grant.  NVIDIA hereby grants Customer\nthe following
+    non-exclusive, non-transferable right to use the\nSOFTWARE, with the following
+    limitations:\n\n2.1.1  Rights.  Customer may install and use multiple copies of
+    the\nSOFTWARE on a shared computer or concurrently on different computers,\nand
+    make multiple back-up copies of the SOFTWARE, solely for Customer's\nuse within
+    Customer's Enterprise. \"Enterprise\" shall mean individual use\nby Customer or
+    any legal entity (such as a corporation or university)\nand the subsidiaries it
+    owns by more than fifty percent (50%).\n\n2.1.2  Linux/FreeBSD Exception.  Notwithstanding
+    the foregoing terms\nof Section 2.1.1, SOFTWARE designed exclusively for use on
+    the Linux or\nFreeBSD operating systems, or other operating systems derived from
+    the\nsource code to these operating systems, may be copied and redistributed,\nprovided
+    that the binary files thereof are not modified in any way\n(except for unzipping
+    of compressed files).\n\n2.1.3  Limitations.\n\nNo Reverse Engineering.  Customer
+    may not reverse engineer,\ndecompile, or disassemble the SOFTWARE, nor attempt
+    in any other\nmanner to obtain the source code.\n\nNo Separation of Components.
+    \ The SOFTWARE is licensed as a\nsingle product.  Its component parts may not
+    be separated for use\non more than one computer, nor otherwise used separately
+    from the\nother parts.\n\nNo Rental.  Customer may not rent or lease the SOFTWARE
+    to someone\nelse.\n\n3.  TERMINATION\n\nThis LICENSE will automatically terminate
+    if Customer fails to\ncomply with any of the terms and conditions hereof.  In
+    such event,\nCustomer must destroy all copies of the SOFTWARE and all of its\ncomponent
+    parts.\n\nDefensive Suspension.  If Customer commences or participates in any
+    legal\nproceeding against NVIDIA, then NVIDIA may, in its sole discretion,\nsuspend
+    or terminate all license grants and any other rights provided\nunder this LICENSE
+    during the pendency of such legal proceedings.\n\n4.  COPYRIGHT\n\nAll title and
+    copyrights in and to the SOFTWARE (including but\nnot limited to all images, photographs,
+    animations, video, audio,\nmusic, text, and other information incorporated into
+    the SOFTWARE),\nthe accompanying printed materials, and any copies of the SOFTWARE,\nare
+    owned by NVIDIA, or its suppliers.  The SOFTWARE is protected\nby copyright laws
+    and international treaty provisions.  Accordingly,\nCustomer is required to treat
+    the SOFTWARE like any other copyrighted\nmaterial, except as otherwise allowed
+    pursuant to this LICENSE\nand that it may make one copy of the SOFTWARE solely
+    for backup or\narchive purposes.\n\n5.  APPLICABLE LAW\n\nThis agreement shall
+    be deemed to have been made in, and shall be\nconstrued pursuant to, the laws
+    of the State of California.\n\n6.  DISCLAIMER OF WARRANTIES AND LIMITATION ON
+    LIABILITY\n\n6.1  No Warranties.  TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE\nLAW,
+    THE SOFTWARE IS PROVIDED \"AS IS\" AND NVIDIA AND ITS SUPPLIERS\nDISCLAIM ALL
+    WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT\nNOT LIMITED TO, IMPLIED
+    WARRANTIES OF MERCHANTABILITY AND FITNESS\nFOR A PARTICULAR PURPOSE.\n\n6.2  No
+    Liability for Consequential Damages.  TO THE MAXIMUM\nEXTENT PERMITTED BY APPLICABLE
+    LAW, IN NO EVENT SHALL NVIDIA OR\nITS SUPPLIERS BE LIABLE FOR ANY SPECIAL, INCIDENTAL,
+    INDIRECT, OR\nCONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION,\nDAMAGES
+    FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS\nOF BUSINESS INFORMATION,
+    OR ANY OTHER PECUNIARY LOSS) ARISING OUT\nOF THE USE OF OR INABILITY TO USE THE
+    SOFTWARE, EVEN IF NVIDIA HAS\nBEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.\n\n6.3
+    \ Specific Use.  SOFTWARE is licensed only for use with NVIDIA products.\nCustomer’s
+    use of NVIDIA products with any other firmware is at its own\nrisk and may cause
+    an NVIDIA product to become non-compliant with certain\nof its certification markings.\n\n7.
+    \ MISCELLANEOUS \n\nThe United Nations Convention on Contracts for the International\nSale
+    of Goods is specifically disclaimed.  If any provision of this\nLICENSE is inconsistent
+    with, or cannot be fully enforced under,\nthe law, such provision will be construed
+    as limited to the extent\nnecessary to be consistent with and fully enforceable
+    under the law.\nThis agreement is the final, complete and exclusive agreement
+    between\nthe parties relating to the subject matter hereof, and supersedes\nall
+    prior or contemporaneous understandings and agreements relating\nto such subject
+    matter, whether oral or written.  Customer agrees\nthat it will not ship, transfer
+    or export the SOFTWARE into any\ncountry, or use the SOFTWARE in any manner, prohibited
+    by the\nUnited States Bureau of Export Administration or any export laws,\nrestrictions
+    or regulations.  This LICENSE may only be modified in\nwriting signed by an authorized
+    officer of NVIDIA.\n\n"

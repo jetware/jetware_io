@@ -1,0 +1,16 @@
+---
+- path: recordproto-1.14.2/COPYING
+  type: MIT-style
+  text: "Copyright 1995 Network Computing Devices\n\nPermission to use, copy, modify,
+    distribute, and sell this software and\nits documentation for any purpose is hereby
+    granted without fee, provided\nthat the above copyright notice appear in all copies
+    and that both that\ncopyright notice and this permission notice appear in supporting\ndocumentation,
+    and that the name of Network Computing Devices \nnot be used in advertising or
+    publicity pertaining to distribution\nof the software without specific, written
+    prior permission.\n\nNETWORK COMPUTING DEVICES DISCLAIMs ALL WARRANTIES WITH REGARD
+    TO \nTHIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY \nAND
+    FITNESS, IN NO EVENT SHALL NETWORK COMPUTING DEVICES BE LIABLE \nFOR ANY SPECIAL,
+    INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES \nWHATSOEVER RESULTING FROM LOSS
+    OF USE, DATA OR PROFITS, WHETHER IN \nAN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+    TORTIOUS ACTION, ARISING \nOUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
+    OF THIS SOFTWARE.\n"

@@ -1,0 +1,24 @@
+---
+- path: SuperLU_5.2.0/License.txt
+  type: BSD-3-Clause
+  text: "Copyright (c) 2003, The Regents of the University of California, through\nLawrence
+    Berkeley National Laboratory (subject to receipt of any required \napprovals from
+    U.S. Dept. of Energy) \n\nAll rights reserved. \n\nRedistribution and use in source
+    and binary forms, with or without\nmodification, are permitted provided that the
+    following conditions are met: \n\n(1) Redistributions of source code must retain
+    the above copyright notice,\nthis list of conditions and the following disclaimer.
+    \n(2) Redistributions in binary form must reproduce the above copyright notice,\nthis
+    list of conditions and the following disclaimer in the documentation\nand/or other
+    materials provided with the distribution. \n(3) Neither the name of Lawrence Berkeley
+    National Laboratory, U.S. Dept. of\nEnergy nor the names of its contributors may
+    be used to endorse or promote\nproducts derived from this software without specific
+    prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS
+    AND CONTRIBUTORS \"AS\nIS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+    BUT NOT LIMITED TO,\nTHE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+    A PARTICULAR\nPURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR\nCONTRIBUTORS
+    BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\nEXEMPLARY, OR CONSEQUENTIAL
+    DAMAGES (INCLUDING, BUT NOT LIMITED TO,\nPROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+    LOSS OF USE, DATA, OR\nPROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+    ANY THEORY OF\nLIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\nNEGLIGENCE
+    OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED
+    OF THE POSSIBILITY OF SUCH DAMAGE. \n"
