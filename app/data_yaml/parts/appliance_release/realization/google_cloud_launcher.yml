@@ -1,0 +1,5 @@
+title: Google Cloud Launcher
+provider:
+  website: https://cloud.google.com/launcher/
+  pricing: https://cloud.google.com/pricing/
+  control_panel: https://console.cloud.google.com/launcher
